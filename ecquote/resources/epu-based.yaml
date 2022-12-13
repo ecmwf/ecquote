@@ -1,0 +1,264 @@
+I-i-a:
+  E: 1
+  D: 1
+  M: 1
+I-i-b:
+  E: 1
+  D: 1
+  M: 1
+I-i-c:
+  E: 1
+  D: 1
+  M: 1
+I-i-d:
+  E: 1
+  D: 1
+  M: 1
+I-ii:
+  E: 1
+  D: 1
+  M: 1
+I-iii:
+  E: 0
+  D: 0
+  M: 0
+I-iv:
+  E: 1
+  D: 1
+  M: 1
+II-i:
+  E: 1
+  D: 1
+  M: 1
+III-i-a:
+  E: 1.4
+  D: 1
+  M: 1
+III-i-b:
+  E: 1.4
+  D: 1
+  M: 1
+III-i-c:
+  E: 1.4
+  D: 1
+  M: 1
+III-i-d:
+  E: 1.4
+  D: 1
+  M: 1
+III-ii:
+  E: 1
+  D: 1
+  M: 1
+III-iii-a:
+  E: 1
+  D: 1
+  M: 1
+III-iii-b:
+  E: 1
+  D: 1
+  M: 1
+III-iii-c:
+  E: 1
+  D: 1
+  M: 1
+III-iii-d:
+  E: 1
+  D: 1
+  M: 1
+III-iii-e:
+  E: 1
+  D: 1
+  M: 1
+III-iii-f:
+  E: 1
+  D: 1
+  M: 1
+III-iv:
+  E: 1.4
+  D: 1
+  M: 1
+III-v-a:
+  E: 1
+  D: 1
+  M: 1
+III-v-b:
+  E: 1
+  D: 1
+  M: 1
+III-v-c:
+  E: 1
+  D: 1
+  M: 1
+III-v-d:
+  E: 1
+  D: 1
+  M: 1
+III-vi-a:
+  E: 1
+  D: 1
+  M: 1
+III-vi-b:
+  E: 1
+  D: 1
+  M: 1
+III-vii-a:
+  E: 1
+  D: 1
+  M: 1
+III-vii-b:
+  E: 1
+  D: 1
+  M: 1
+III-viii:
+  E: 0
+  D: 0
+  M: 0
+IV-i:
+  E: 1.4
+  D: 1
+  M: 1
+IV-ii-a:
+  E: 1
+  D: 1
+  M: 1
+IV-ii-b:
+  E: 1
+  D: 1
+  M: 1
+IV-iii-a:
+  E: 1
+  D: 1
+  M: 1
+IV-iii-b:
+  E: 1
+  D: 1
+  M: 1
+V-i-a:
+  E: 1
+  D: 40
+  M: 1
+V-i-b:
+  E: 1
+  D: 40
+  M: 1
+V-ii-a:
+  E: 1
+  D: 80
+  M: 1
+V-ii-b:
+  E: 1
+  D: 80
+  M: 1
+V-iii-a:
+  E: 1.4
+  D: 40
+  M: 1
+V-iii-b:
+  E: 1.4
+  D: 40
+  M: 1
+V-iii-c:
+  E: 1.4
+  D: 40
+  M: 1
+V-iv-a:
+  E: 1.4
+  D: 80
+  M: 1
+V-iv-b:
+  E: 1.4
+  D: 80
+  M: 1
+V-v-a:
+  E: 1.4
+  D: 2
+  M: 1
+V-v-b:
+  E: 1.4
+  D: 2
+  M: 1
+V-v-c:
+  E: 1.4
+  D: 2
+  M: 1
+V-v-d:
+  E: 1.4
+  D: 2
+  M: 1
+V-v-e:
+  E: 1.4
+  D: 2
+  M: 1
+VI-i-a:
+  E: 1
+  D: 15
+  M: 1
+VI-i-b:
+  E: 1
+  D: 15
+  M: 1
+VI-ii-a:
+  E: 1
+  D: 30
+  M: 1
+VI-ii-b:
+  E: 1
+  D: 30
+  M: 1
+VI-iii-a:
+  E: 1.4
+  D: 15
+  M: 1
+VI-iii-b:
+  E: 1.4
+  D: 15
+  M: 1
+VI-iv-a:
+  E: 1.4
+  D: 30
+  M: 1
+VI-iv-b:
+  E: 1.4
+  D: 30
+  M: 1
+VI-v-a:
+  E: 1.4
+  D: 1
+  M: 1
+VI-v-b:
+  E: 1.4
+  D: 1
+  M: 1
+VI-v-c:
+  E: 1.4
+  D: 1
+  M: 1
+VI-v-d:
+  E: 1.4
+  D: 1
+  M: 1
+VI-vi-a:
+  E: 1
+  D: 1
+  M: 1
+VI-vi-b:
+  E: 1
+  D: 1
+  M: 1
+VI-vi-c:
+  E: 1
+  D: 1
+  M: 1
+VI-vi-d:
+  E: 1
+  D: 1
+  M: 1
+VI-vii-a:
+  E: 1
+  D: 15
+  M: 1
+VI-vii-b:
+  E: 1
+  D: 15
+  M: 1

@@ -1,0 +1,202 @@
+# CREATED AT: 2021-05-11 08:42:01.128695+00:00
+# MODIFIED AT: 2021-05-11 08:42:01.128746+00:00
+##### MSL #######
+disseminate,target=EGE:EE,option=delay/gts,
+  class               = od,
+  stream              = oper,
+  expver              = 0001,
+  domain              = g,
+  type                = an,
+  levtype             = sfc,
+  param               = msl,
+  time                = 0000/1200,
+  step                = 0,
+  area                = 90/0/-90/-0.5,
+  grid                = .5/.5,
+  priority            = 50
+
+disseminate,
+  type                = fc,
+  step                = 24/to/240/by/24
+
+# 06/18
+disseminate,
+  stream              = scda,
+  type                = an,
+  time                = 0600/1800,
+  step                = 0
+
+disseminate,
+  type                = fc,
+  step                = 24/48/72
+
+######## GH ########
+disseminate,
+  stream              = oper,
+  type                = an,
+  levtype             = pl,
+  param               = gh,
+  levelist            = 500,
+  time                = 0000/1200,
+  step                = 0
+
+disseminate,
+  type                = fc,
+  step                = 24/to/240/by/24
+
+# 06/18
+disseminate,
+  stream              = scda,
+  type                = an,
+  time                = 0600/1800,
+  step                = 0
+
+disseminate,
+  type                = fc,
+  step                = 24/48/72
+
+#
+# U/V;
+#
+disseminate,
+  stream              = oper,
+  type                = an,
+  param               = u/v,
+  levelist            = 850,
+  time                = 0000/1200,
+  step                = 0
+
+disseminate,
+  type                = fc,
+  step                = 24/to/240/by/24
+
+# 06/18
+disseminate,
+  stream              = scda,
+  type                = an,
+  time                = 0600/1800,
+  step                = 0
+
+disseminate,
+  type                = fc,
+  step                = 24/48/72
+
+#
+# T;
+#
+disseminate,
+  stream              = oper,
+  type                = an,
+  param               = t,
+  time                = 0000/1200,
+  step                = 0
+
+disseminate,
+  type                = fc,
+  step                = 24/to/240/by/24
+
+# 06/18
+disseminate,
+  stream              = scda,
+  type                = an,
+  time                = 0600/1800,
+  step                = 0
+
+disseminate,
+  type                = fc,
+  step                = 24/48/72
+
+#
+# EPS ############################################
+#
+# 
+# EM; MSL;
+#
+disseminate,
+  stream              = enfo,
+  type                = em,
+  levtype             = sfc,
+  param               = msl,
+  levelist            = off,
+  time                = 0000/1200,
+  step                = 0/to/240/by/24
+
+#
+# EM; GH;
+#
+disseminate,
+  levtype             = pl,
+  param               = gh,
+  levelist            = 500
+
+#
+# EM; WS;
+#
+disseminate,
+  param               = ws,
+  levelist            = 850
+
+#
+# EM; T;
+#
+disseminate,
+  param               = t
+
+#
+# ES; MSL;
+#
+disseminate,
+  type                = es,
+  levtype             = sfc,
+  param               = msl,
+  levelist            = off
+
+#
+# ES; GH;
+#
+disseminate,
+  levtype             = pl,
+  param               = gh,
+  levelist            = 500
+
+#
+# ES; WS;
+#
+disseminate,
+  param               = ws,
+  levelist            = 850
+
+#
+# ES; T;
+#
+disseminate,
+  param               = t
+
+#*************************************
+#
+# Enfo Tropical Cyclone;   TODO    ADD 06/18 for TC when implemented
+#
+disseminate,
+  type                = tf,
+  levtype             = sfc,
+  param               = off,
+  levelist            = off,
+  step                = 240,
+  area                = 90/0/-90/359.9,
+  grid                = off
+
+#
+# Oper Tropical Cyclone;
+#
+disseminate,
+  stream              = oper
+
+disseminate,
+  stream              = scda,
+  time                = 0600/1800,
+  step                = 90
+
+disseminate,
+  stream              = enfo,
+  step                = 144,
+  use                 = bc

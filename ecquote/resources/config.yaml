@@ -1,0 +1,135 @@
+volumes_estimates:
+  weather_parameters:
+    oper: 500
+    enfo: 20000
+  cyclone_tacks:
+    oper: 1200
+    scda: 1200
+    enfo: 25000
+
+minimum_area: 6
+
+##############################################################################
+# Post processing keywords. TODO: read from metkit language file
+##############################################################################
+
+keywords:
+  fields:
+  - class
+  - type
+  - stream
+  - levtype
+  - expver
+  - domain
+  - param
+  - time
+  - step
+  - levelist
+  - number
+  - quantile
+  - origin
+  - system
+  - method
+  - fcmonth
+  - direction
+  - frequency
+  - channel
+  - ident
+  - instrument
+  - repres
+  - leg
+  - dataset
+  use:
+  - use
+  - location
+  postproc:
+  - area
+  - grid
+  - frame
+  - bitmap
+  - rotation
+  - resol
+  - gaussian
+  - accuracy
+  - packing
+  - compatibility
+  - interpolation
+  disposition:
+  - target
+  - option
+  - priority
+  - format
+  ignore:
+  - date
+  - hdate
+  attributes:
+  - line
+  - path
+
+##############################################################################
+# Which parameters are in spherical harmonics
+
+# The 'a' version are a guess and need checking
+
+spherical_harmonics:
+  param: [d, etadot, lnsp, r, t, u, v, vo, w, z, gh, da, etadota, lnspa, ra, ta, ua, va, voa, wa, za, gha]
+  levtype: [ml, pl, pt, pv]
+##############################################################################
+
+hindcast_streams: [enfh, enwh]
+hindcast_dates: 20
+
+high_frequency_streams: [scda, scwv]
+
+seasonal_streams: [mmsf, wasf]
+
+wave_streams:
+- wave
+- scwv
+- waef
+- swmm
+- enwh
+- wasf
+
+need_leg:
+- enfo
+- waef
+- efov
+# - enfh
+# - enwh
+
+constant_fields:
+- levtype: sfc
+  param: [lsm, z, wmb, gh, fsr, aluvd, aluvp, anid, anip, anor, cl, cvh, cvl, dl, isor, slor, sdor, laihv, lailv, slt, tvh, tvl]
+- levtype: ml
+  param: [z, gh, lnsp]
+#################
+# Possible values: mask, polygon, fixed
+# landsea_ratio_method: binary
+landsea_ratio_method: mask
+# By default, we don't support a default representation
+default_representation: no
+
+free-wmo-essential: true
+free-open-data: true
+
+
+#######################################################
+# Options below are set by the command lines parameters
+#######################################################
+
+categories: false
+category: null
+
+# Strict mode is used by web
+strict-mode: false
+
+# Extra free
+free-data: null
+free-data-grid: null
+
+# Modification rules
+modify: null
+
+# Group-by option
+group-by: null

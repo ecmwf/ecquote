@@ -1,0 +1,279 @@
+# CREATED AT: 2022-01-18 12:00:59.976075+00:00
+# MODIFIED AT: 2022-04-11 13:23:01.282792+00:00
+#####  OPEN DATA SET REQUIREMENTS #######
+#i)
+# surface
+disseminate,target=EGS:EE,option=normal/opendata,
+  class               = od,
+  stream              = oper,
+  expver              = 0001,
+  domain              = g,
+  type                = fc,
+  levtype             = sfc,
+  param               = 10u/10v/2t/msl/ro/tp/skt/sp/stl1/tcwv,
+  time                = 0000/1200,
+  step                = 0/to/144/by/3,
+  area                = 90/-180/-90/179.6,
+  grid                = .4/.4
+
+disseminate,
+  step                = 150/to/240/by/6
+
+disseminate,
+  stream              = scda,
+  time                = 0600/1800,
+  step                = 0/to/90/by/3
+
+# pressure levels
+disseminate,
+  stream              = oper,
+  levtype             = pl,
+  param               = d/gh/q/r/t/u/v/vo,
+  levelist            = 1000/925/850/700/500/300/250/200/50,
+  time                = 0000/1200,
+  step                = 0/to/144/by/3
+
+disseminate,
+  step                = 150/to/240/by/6
+
+disseminate,
+  stream              = scda,
+  time                = 0600/1800,
+  step                = 0/to/90/by/3
+
+#00&12
+disseminate,
+  stream              = wave,
+  levtype             = sfc,
+  param               = swh/mwp/mwd/pp1d/mp2,
+  levelist            = off,
+  time                = 0000/1200,
+  step                = 0/to/144/by/3
+
+disseminate,
+  step                = 150/to/240/by/6
+
+disseminate,
+  stream              = scwv,
+  time                = 0600/1800,
+  step                = 0/to/90/by/3
+
+#iii
+#Based on ENS
+#Perturbed
+disseminate,
+  stream              = enfo,
+  type                = pf,
+  param               = 10u/10v/2t/msl/ro/tp/skt/sp/stl1/tcwv,
+  time                = 0000/1200,
+  step                = 0/to/144/by/3,
+  number              = 1/to/50
+
+disseminate,
+  step                = 150/to/360/by/6
+
+#Control
+disseminate,
+  type                = cf,
+  step                = 0/to/144/by/3,
+  number              = off
+
+disseminate,
+  step                = 150/to/360/by/6
+
+disseminate,
+  type                = pf,
+  time                = 0600/1800,
+  step                = 0/to/144/by/3,
+  use                 = bc,
+  number              = 1/to/50
+
+#Control
+disseminate,
+  type                = cf,
+  number              = off
+
+#pressure levels
+# pressure levels
+disseminate,
+  type                = pf,
+  levtype             = pl,
+  param               = d/gh/q/r/t/u/v/vo,
+  levelist            = 1000/925/850/700/500/300/250/200/50,
+  time                = 0000/1200,
+  use                 = off,
+  number              = 1/to/50
+
+disseminate,
+  step                = 150/to/360/by/6
+
+#Control
+disseminate,
+  type                = cf,
+  step                = 0/to/144/by/3,
+  number              = off
+
+disseminate,
+  step                = 150/to/360/by/6
+
+disseminate,
+  type                = pf,
+  time                = 0600/1800,
+  step                = 0/to/144/by/3,
+  use                 = bc,
+  number              = 1/to/50
+
+#Control
+disseminate,
+  type                = cf,
+  number              = off
+
+disseminate,
+  stream              = waef,
+  type                = pf,
+  levtype             = sfc,
+  param               = swh/mwp/mwd/pp1d/mp2,
+  levelist            = off,
+  time                = 0000/1200,
+  use                 = off,
+  number              = 1/to/50
+
+disseminate,
+  step                = 150/to/360/by/6
+
+disseminate,
+  type                = cf,
+  step                = 0/to/144/by/3,
+  number              = off
+
+disseminate,
+  step                = 150/to/360/by/6
+
+disseminate,
+  type                = pf,
+  time                = 0600/1800,
+  step                = 0/to/144/by/3,
+  use                 = bc,
+  number              = 1/to/50
+
+disseminate,
+  type                = cf,
+  number              = off
+
+#v) EM and ES
+#EM
+disseminate,
+  stream              = enfo,
+  type                = em,
+  param               = msl,
+  time                = 0000/1200,
+  use                 = off
+
+disseminate,
+  step                = 150/to/360/by/6
+
+disseminate,
+  levtype             = pl,
+  param               = gh,
+  levelist            = 300/500/1000,
+  step                = 0/to/144/by/3
+
+disseminate,
+  step                = 150/to/360/by/6
+
+disseminate,
+  param               = t,
+  levelist            = 250/500/850,
+  step                = 0/to/144/by/3
+
+disseminate,
+  step                = 150/to/360/by/6
+
+disseminate,
+  param               = ws,
+  levelist            = 250/850,
+  step                = 0/to/144/by/3
+
+disseminate,
+  step                = 150/to/360/by/6
+
+#ES
+disseminate,
+  type                = es,
+  levtype             = sfc,
+  param               = msl,
+  levelist            = off,
+  step                = 0/to/144/by/3
+
+disseminate,
+  step                = 150/to/360/by/6
+
+disseminate,
+  levtype             = pl,
+  param               = gh,
+  levelist            = 300/500/1000,
+  step                = 0/to/144/by/3
+
+disseminate,
+  step                = 150/to/360/by/6
+
+disseminate,
+  param               = t,
+  levelist            = 250/500/850,
+  step                = 0/to/144/by/3
+
+disseminate,
+  step                = 150/to/360/by/6
+
+disseminate,
+  param               = ws,
+  levelist            = 250/850,
+  step                = 0/to/144/by/3
+
+disseminate,
+  step                = 150/to/360/by/6
+
+#vi) probabilities daily
+disseminate,
+  type                = ep,
+  levtype             = sfc,
+  param               = tpg1/tpg5/tpg10/tpg20/tpg25/tpg50/tpg100/10fgg10/10fgg15/10fgg25,
+  levelist            = off,
+  step                = 0-24/12-36/24-48/36-60/48-72/60-84/72-96/84-108/96-120/108-132/120-144/132-156/144-168/156-180/168-192/180-204/192-216/204-228/216-240/228-252/240-264/252-276/264-288/276-300/288-312/300-324/312-336/324-348/336-360
+
+#vii) probabilities instantaneous
+disseminate,
+  levtype             = pl,
+  param               = ptsa_gt_1stdev/ptsa_gt_1p5stdev/ptsa_gt_2stdev/ptsa_lt_1stdev/ptsa_lt_1p5stdev/ptsa_lt_2stdev,
+  levelist            = 850,
+  step                = 12/to/360/by/12
+
+#viii) probabilities wave
+disseminate,
+  stream              = waef,
+  levtype             = sfc,
+  param               = swhg2/swhg4/swhg6/swhg8,
+  levelist            = off
+
+# trajectory forecast
+disseminate,
+  stream              = oper,
+  type                = tf,
+  param               = off,
+  step                = 240,
+  grid                = off
+
+disseminate,
+  stream              = scda,
+  time                = 0600/1800,
+  step                = 90
+
+disseminate,
+  stream              = enfo,
+  time                = 0000/1200,
+  step                = 240
+
+disseminate,
+  time                = 0600/1800,
+  step                = 144,
+  use                 = bc
