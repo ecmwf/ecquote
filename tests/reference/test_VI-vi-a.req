@@ -1,0 +1,14 @@
+# subset=VI-vi-a
+
+time=0000,
+stream=enfo,
+step=0-168/168-336/336-504/504-672/672-840/840-1008,
+levtype=sfc,
+type=ep,
+class=od,
+param=2talm2,
+domain=g,
+expver=0001,
+use=monday
+
+

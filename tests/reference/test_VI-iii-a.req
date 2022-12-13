@@ -1,0 +1,24 @@
+# subset=VI-iii-a
+
+stream=enfo,
+step=0,
+levtype=sfc,
+type=fcmean,
+class=od,
+time=0000,
+param=z,
+domain=g,
+expver=0001,
+use=monday
+
+
+stream=enfo,
+step=0,
+levtype=sfc,
+type=fcmean,
+class=od,
+time=0000,
+param=z,
+domain=g,
+expver=0001,
+use=thursday

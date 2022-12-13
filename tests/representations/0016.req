@@ -1,0 +1,11 @@
+class=od,
+domain=g,
+expver=0001,
+leg=1,
+levelist=126/128/129/131/133/134/136/137,
+levtype=ml,
+param=t/u/v,
+step=0/3/6/9/12/15/18/21/24/27/30,
+stream=enfo,
+time=0000/0600/1200/1800,
+type=cf

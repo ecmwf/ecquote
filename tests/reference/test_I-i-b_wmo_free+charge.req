@@ -1,0 +1,27 @@
+# epus=0
+# subset=I-i-b
+
+class=od,
+stream=oper,
+expver=0001,
+levtype=pl,
+type=fc,
+time=0000/1200,
+step=0/to/240/by/24,
+param=gh,
+levelist=500/850,
+domain=g,
+grid=0.5/0.5
+
+
+class=od,
+stream=oper,
+expver=0001,
+levtype=pl,
+type=fc,
+time=0000/1200,
+step=0/to/240/by/24,
+param=gh,
+levelist=500/850,
+domain=g,
+grid=0.5/0.5

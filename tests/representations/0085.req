@@ -1,0 +1,9 @@
+class=od,
+domain=g,
+expver=0001,
+levtype=sfc,
+param=swh/mwp/mwd/pp1d/mp2,
+step=0,
+stream=scwv,
+time=0600/1800,
+type=an

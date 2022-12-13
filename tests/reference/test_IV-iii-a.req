@@ -1,0 +1,24 @@
+# subset=IV-iii-a
+
+time=0000,
+stream=waef,
+step=0-24/24-48/48-72/72-96/96-120/120-144/144-168,
+domain=g,
+levtype=sfc,
+type=efi,
+class=od,
+param=maxswhi,
+expver=0001
+
+
+time=1200,
+stream=waef,
+step=12-36/36-60/60-84/84-108/108-132/132-156/156-180,
+domain=g,
+levtype=sfc,
+type=efi,
+class=od,
+param=maxswhi,
+expver=0001
+
+

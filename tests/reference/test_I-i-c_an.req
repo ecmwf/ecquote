@@ -1,0 +1,24 @@
+# subset=I-i-c
+
+class=od,
+stream=oper,
+expver=0001,
+type=an,
+time=0000/0600/1200/1800,
+levtype=ml,
+param=t/u/v,
+levelist=1/to/137,
+domain=g
+
+
+class=od,
+stream=oper,
+expver=0001,
+type=an,
+time=0000/0600/1200/1800,
+levtype=ml,
+param=lnsp,
+levelist=1,
+domain=g
+
+

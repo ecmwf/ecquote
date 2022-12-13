@@ -1,0 +1,13 @@
+# subset=III-iii-b
+
+time=0000/1200,
+stream=enfo,
+step=120-240/120-168/168-240/240-360,
+levtype=sfc,
+type=ep,
+class=od,
+param=tprl1,
+domain=g,
+expver=0001
+
+

@@ -1,0 +1,27 @@
+# group=core
+# subset=III-i-a
+
+class=od,
+stream=enfo,
+expver=0001,
+type=pf,
+time=0000/1200,
+levtype=sfc,
+step=0/to/144/by/3,
+number=1/to/50,
+param=2t/10u/10v,
+domain=g
+
+
+class=od,
+stream=enfo,
+expver=0001,
+type=cf,
+time=0000/1200,
+levtype=sfc,
+step=0/to/144/by/3,
+param=2t/10u/10v,
+domain=g,
+number=off
+
+

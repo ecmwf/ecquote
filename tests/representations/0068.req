@@ -1,0 +1,12 @@
+class=od,
+domain=g,
+expver=0001,
+fcmonth=1/2/3/4/5/6/7,
+levtype=sfc,
+method=1,
+origin=ecmf,
+param=2t/mn2t24/msl/mx2t24/sst/stl1/tprate,
+stream=msmm,
+system=5,
+time=0000,
+type=em

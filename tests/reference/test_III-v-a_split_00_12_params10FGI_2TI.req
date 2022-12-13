@@ -1,0 +1,29 @@
+# epus=1481
+# subset=III-v-a
+
+grid=0.2/0.2,
+area=73.6/-27.0/33.0/45.0,
+time=0000,
+stream=enfo,
+step=0-24/24-48,
+levtype=sfc,
+class=od,
+type=efi,
+param=2ti/10fgi,
+domain=g,
+expver=0001
+
+
+grid=0.2/0.2,
+area=73.6/-27.0/33.0/45.0,
+time=1200,
+stream=enfo,
+step=12-36/36-60,
+levtype=sfc,
+class=od,
+type=efi,
+param=2ti/10fgi,
+domain=g,
+expver=0001
+
+

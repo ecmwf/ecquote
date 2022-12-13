@@ -1,0 +1,9 @@
+class=od,
+domain=g,
+expver=0001,
+levtype=sfc,
+param=tcc/mx2t6/tprate/mn2t/mx2t/mn2t6/2t/10v/10u,
+step=0-168/168-336/336-504/504-672/672-840/840-1008,
+stream=enfo,
+time=0000,
+type=taem

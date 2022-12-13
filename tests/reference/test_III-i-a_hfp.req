@@ -1,0 +1,27 @@
+# group=high-frequency
+# subset=III-i-a
+
+class=od,
+stream=enfo,
+expver=0001,
+type=pf,
+time=0600/1800,
+levtype=sfc,
+step=0/to/90/by/1,
+number=1/to/50,
+param=2t/10u/10v,
+domain=g,
+use=bc
+
+
+class=od,
+stream=enfo,
+expver=0001,
+type=cf,
+time=0600/1800,
+levtype=sfc,
+step=0/to/90/by/1,
+param=2t/10u/10v,
+domain=g,
+use=bc,
+number=off

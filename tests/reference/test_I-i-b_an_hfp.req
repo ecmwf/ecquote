@@ -1,0 +1,25 @@
+# subset=I-i-b
+
+class=od,
+stream=scda,
+expver=0001,
+type=an,
+time=0600/1800,
+levtype=pl,
+param=t/u/v,
+levelist=700/800/850/900/925/950/1000,
+domain=g
+
+
+class=od,
+stream=oper,
+expver=0001,
+type=an,
+time=0000/1200,
+levtype=pl,
+param=t/u/v,
+levelist=700/800/850/900/925/950/1000,
+domain=g,
+use=bc
+
+

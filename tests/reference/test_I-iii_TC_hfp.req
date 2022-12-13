@@ -1,0 +1,14 @@
+# subset=I-iii
+
+class=od,
+stream=scda,
+expver=0001,
+type=tf,
+time=0600/1800,
+levtype=sfc,
+step=90,
+param=tc,
+domain=g,
+format=bufr
+
+

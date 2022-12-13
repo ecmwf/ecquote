@@ -1,0 +1,22 @@
+# subset=I-i-a
+
+class=od,
+stream=oper,
+expver=0001,
+type=an,
+time=0000/0600/1200/1800,
+levtype=sfc,
+param=100u/100v/200u/200v,
+domain=g
+
+
+class=od,
+stream=oper,
+expver=0001,
+type=an,
+time=0000/0600/1200/1800,
+levtype=sfc,
+param=lsm,
+domain=g
+
+

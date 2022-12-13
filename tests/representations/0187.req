@@ -1,0 +1,9 @@
+class=od,
+domain=g,
+expver=0001,
+levtype=sfc,
+param=tpi,
+step=0-120/24-144/0-240,
+stream=enfo,
+time=0000,
+type=efic

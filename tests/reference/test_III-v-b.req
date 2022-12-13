@@ -1,0 +1,25 @@
+# group=core
+# subset=III-v-b
+
+class=od,
+stream=enfo,
+expver=0001,
+type=efi,
+time=0000,
+levtype=sfc,
+step=0-120/0-240/0-72/24-96/24-144/48-120/48-168/72-192/72-144/96-216/96-168/120-192/144-216,
+param=tpi/2ti/10wsi/wvfi/sfi,
+domain=g
+
+
+class=od,
+stream=enfo,
+expver=0001,
+type=efi,
+time=1200,
+levtype=sfc,
+step=0-240/12-132/12-84/36-108/36-156/60-132/60-180/84-156/84-204/108-228/108-180/132-204/156-228,
+param=tpi/2ti/10wsi/wvfi/sfi,
+domain=g
+
+

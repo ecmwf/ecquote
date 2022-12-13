@@ -1,0 +1,9 @@
+class=od,
+domain=g,
+expver=0001,
+levtype=sfc,
+param=tpag0/tpag10/tpag20,
+step=96-264/264-432/432-600/600-768,
+stream=enfo,
+time=0000,
+type=ep

@@ -1,0 +1,15 @@
+# group=core
+# subset=III-viii
+
+class=od,
+stream=enfo,
+expver=0001,
+type=tf,
+time=0000/1200,
+levtype=sfc,
+step=240,
+param=tc,
+domain=g,
+format=bufr
+
+

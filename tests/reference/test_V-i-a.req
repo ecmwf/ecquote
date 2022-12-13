@@ -1,0 +1,16 @@
+# subset=V-i-a
+
+fcmonth=1/2/3/4/5/6/7,
+system=5,
+time=0000,
+stream=msmm,
+origin=ecmf,
+levtype=sfc,
+type=em,
+class=od,
+method=1,
+param=10v,
+domain=g,
+expver=0001
+
+

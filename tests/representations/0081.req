@@ -1,0 +1,9 @@
+class=od,
+domain=g,
+expver=0001,
+levtype=sfc,
+param=tprate/2t,
+step=0-168/168-336/336-504/504-672,
+stream=efhs,
+time=0000,
+type=taem

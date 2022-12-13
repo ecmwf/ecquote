@@ -1,0 +1,29 @@
+# group=core
+# subset=III-ii
+
+number=1/to/6,
+time=0000,
+stream=enfo,
+step=72,
+levtype=pl,
+type=cm,
+class=od,
+param=gh,
+levelist=500,
+domain=g,
+expver=0001
+
+
+number=1/to/6,
+time=0000,
+stream=enfo,
+step=72,
+levtype=pl,
+type=cr,
+class=od,
+param=gh,
+levelist=500,
+domain=g,
+expver=0001
+
+

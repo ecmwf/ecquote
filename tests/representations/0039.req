@@ -1,0 +1,9 @@
+class=od,
+domain=g,
+expver=0001,
+levtype=sfc,
+param=hmax/mdts/mdww/mpts/mpww/mwd/mwp/mp2/p2ps/tmax/shts/shww/swh,
+step=0,
+stream=wave,
+time=0000/0600/1200/1800,
+type=an

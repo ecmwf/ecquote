@@ -1,0 +1,27 @@
+# epus=236
+# subset=IV-iii-a
+
+grid=0.25/0.25,
+area=73.5/-27.0/33.0/45.0,
+time=0000,
+stream=waef,
+domain=g,
+step=0-24/24-48,
+levtype=sfc,
+class=od,
+type=efi,
+param=maxswhi,
+expver=0001
+
+
+grid=0.25/0.25,
+area=73.5/-27.0/33.0/45.0,
+time=1200,
+stream=waef,
+domain=g,
+step=12-36,
+levtype=sfc,
+class=od,
+type=efi,
+param=maxswhi,
+expver=0001

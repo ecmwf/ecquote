@@ -1,0 +1,13 @@
+# subset=III-iii-a
+
+time=0000/1200,
+stream=enfo,
+step=24/to/360/by/24,
+levtype=sfc,
+type=ep,
+class=od,
+param=10spg15,
+domain=g,
+expver=0001
+
+

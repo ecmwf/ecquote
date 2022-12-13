@@ -1,0 +1,15 @@
+# epus=1773
+
+grid=1280,
+location=4,
+time=0000/1200,
+stream=oper,
+step=0/to/240/by/6,
+levtype=sfc,
+type=wp,
+class=od,
+param=10fg6/10u,
+domain=g,
+expver=0001
+
+

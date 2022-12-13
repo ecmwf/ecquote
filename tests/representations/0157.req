@@ -1,0 +1,10 @@
+class=od,
+domain=g,
+expver=0001,
+leg=1,
+levtype=sfc,
+param=tpvar,
+step=360,
+stream=efov,
+time=0000,
+type=cf

@@ -1,0 +1,18 @@
+# subset=V-v-d
+
+number=0/to/10,
+system=5,
+time=0000,
+stream=mmsf,
+origin=ecmf,
+step=0/to/4416/by/12,
+levtype=ml,
+type=fc,
+class=od,
+method=1,
+param=ciwc,
+levelist=33,
+domain=g,
+expver=0001
+
+

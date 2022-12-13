@@ -1,0 +1,10 @@
+class=od,
+domain=g,
+expver=0001,
+levelist=850,
+levtype=pl,
+param=ptsa_gt_1stdev/ptsa_gt_1p5stdev/ptsa_gt_2stdev/ptsa_lt_1stdev/ptsa_lt_1p5stdev/ptsa_lt_2stdev,
+step=12/24/36/48/60/72/84/96/108/120/132/144/156/168/180/192/204/216/228/240/252/264/276/288/300/312/324/336/348/360,
+stream=enfo,
+time=0000/1200,
+type=ep

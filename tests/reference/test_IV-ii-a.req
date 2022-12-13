@@ -1,0 +1,13 @@
+# subset=IV-ii-a
+
+time=0000,
+stream=waef,
+step=12/to/360/by/12,
+levtype=sfc,
+type=ep,
+class=od,
+param=mwpg10/swhg2,
+domain=g,
+expver=0001
+
+

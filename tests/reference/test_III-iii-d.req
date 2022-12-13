@@ -1,0 +1,14 @@
+# subset=III-iii-d
+
+time=0000/1200,
+stream=enfo,
+step=120-240/120-168/168-240/240-360,
+levtype=pl,
+type=ep,
+class=od,
+param=tag2,
+levelist=850,
+domain=g,
+expver=0001
+
+

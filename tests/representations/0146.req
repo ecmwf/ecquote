@@ -1,0 +1,10 @@
+class=od,
+domain=g,
+expver=0001,
+levelist=850,
+levtype=pl,
+param=tag2,
+step=120-168/120-240/168-240,
+stream=enfo,
+time=0000/1200,
+type=ep

@@ -1,0 +1,17 @@
+# subset=V-v-a
+
+number=0/to/50,
+system=5,
+time=0000,
+stream=mmsf,
+origin=ecmf,
+step=0/to/5160/by/6,
+levtype=sfc,
+type=fc,
+class=od,
+method=1,
+param=inss,
+domain=g,
+expver=0001
+
+

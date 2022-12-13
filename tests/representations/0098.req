@@ -1,0 +1,10 @@
+class=od,
+domain=g,
+expver=0001,
+levtype=sfc,
+number=90,
+param=10fgi/2ti,
+step=0-24/24-48/48-72/72-96/96-120/120-144/144-168,
+stream=enfo,
+time=0000,
+type=sot

@@ -1,0 +1,17 @@
+# epus=21216
+
+grid=0.2/0.2,
+area=67.4/-43.8/20.6/58.4,
+number=1/to/50,
+time=1200/1800,
+stream=enfo,
+step=0/to/24/by/1,
+levtype=ml,
+type=pf,
+class=od,
+param=d,
+levelist=1,
+domain=g,
+expver=0001
+
+

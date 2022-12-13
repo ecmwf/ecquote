@@ -1,0 +1,17 @@
+# subset=V-iii-c
+
+fcmonth=1/2/3/4/5/6/7,
+number=0/to/50,
+system=5,
+time=0000,
+stream=swmm,
+origin=ecmf,
+levtype=sfc,
+type=fcmean,
+class=od,
+method=1,
+param=pp1d,
+domain=g,
+expver=0001,
+
+

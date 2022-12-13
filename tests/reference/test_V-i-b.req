@@ -1,0 +1,17 @@
+# subset=V-i-b
+
+fcmonth=1/2/3/4/5/6/7,
+system=5,
+time=0000,
+stream=msmm,
+origin=ecmf,
+levtype=pl,
+type=em,
+class=od,
+method=1,
+param=d,
+levelist=200/300/400/500/700/850/925/1000,
+domain=g,
+expver=0001,
+
+

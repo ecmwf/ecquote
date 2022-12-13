@@ -1,0 +1,15 @@
+# group=high-frequency
+# subset=III-viii
+
+class=od,
+stream=enfo,
+expver=0001,
+type=tf,
+time=0600/1800,
+levtype=sfc,
+step=144,
+param=tc,
+domain=g,
+format=bufr
+
+

@@ -1,0 +1,15 @@
+# epus=14782
+
+grid=0.1/0.1,
+area=73.5/-27.0/33.0/45.0,
+time=0000,
+stream=oper,
+step=6/to/240/by/6,
+levtype=sfc,
+class=od,
+type=fc,
+param=10fg6,
+domain=g,
+expver=0001
+
+

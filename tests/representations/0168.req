@@ -1,0 +1,9 @@
+class=od,
+domain=g,
+expver=0001,
+levtype=sfc,
+param=10wsi/2ti/10fgi/tpi/sfi/mx2ti/mn2ti/capei/capesi,
+step=12-36/36-60/60-84/84-108/108-132/132-156/156-180,
+stream=enfo,
+time=1200,
+type=efic

@@ -1,0 +1,10 @@
+class=od,
+domain=g,
+expver=0001,
+levelist=1,
+levtype=ml,
+param=lnsp/z,
+step=0,
+stream=scda,
+time=0600/1800,
+type=an

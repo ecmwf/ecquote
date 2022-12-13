@@ -18,6 +18,10 @@ from ecquote.utils import as_numbers
 LOG = logging.getLogger(__name__)
 
 
+def key_to_issue(key):
+    return f"issues/reference-{key}.req"
+
+
 def list_of_tests():
     top = os.path.join(os.path.dirname(__file__), "reference")
     tests = {}
@@ -27,6 +31,15 @@ def list_of_tests():
                 full = os.path.join(root, file)
                 key = full[len(top) + 1 : -4]
                 tests[key] = full
+
+    tst = {}
+    for t in tests.keys():
+        issue = key_to_issue(t)
+        if os.path.exists(issue):
+            tst[t] = tests[t]
+
+    if tst:
+        return tst
 
     return tests
 
@@ -40,34 +53,61 @@ percent = 0.0
 def test_references(req):
     path = TESTS[req]
 
+    issue = key_to_issue(req)
+    cart = None
+
     cost = {}
     with open(path) as f:
         for line in f:
             if line.startswith("# "):
                 if "=" in line:
                     key, value = line[2:].strip().split("=")
-                    cost[key.strip()] = as_numbers(value.strip())
+                    key = key.strip()
+                    value = value.strip()
+                    if "," in value:
+                        cost[key] = value.split(",")
+                    else:
+                        cost[key] = as_numbers(value)
+    try:
 
-    cart = Cart.from_request_files(path, inherit=True)
-    costing = cart.costing()
-    ok = False
+        assert len(cost) <= 3
 
-    if "epus" in cost:
-        ok = True
-        epus = costing["total"]["epus"]
+        cart = Cart.from_request_files(path, inherit=True)
+        costing = cart.costing()
+        ok = False
 
-        assert epus == cost["epus"]
+        if "epus" in cost:
+            ok = True
+            epus = costing["total"]["epus"]
 
-    if "subset" in cost:
-        ok = True
-        for r in cart.requests:
-            if not r.subset.name.startswith("X-"):
-                assert r.subset.name.replace("-cf", "") == cost["subset"]
+            assert epus == cost["epus"]
 
-    if "group" in cost:
-        ok = True
-        for r in cart.requests:
-            assert r.group == cost["group"]
+        if "subset" in cost:
+            ok = True
+            for r in cart.requests:
+                if not r.subset.name.startswith("X-"):
+                    subset = r.subset.name.replace("-cf", "")
+                    assert (subset == cost["subset"]) or (
+                        isinstance(cost["subset"], list) and subset in cost["subset"]
+                    )
 
-    if not ok:
-        raise ValueError("Nothing to check")
+        if "group" in cost:
+            ok = True
+            for r in cart.requests:
+                assert r.group == cost["group"]
+
+        if not ok:
+            raise ValueError("Nothing to check")
+
+    except Exception:
+        if cart is None:
+            cart = Cart.from_request_files(path, inherit=True)
+        path = os.path.dirname(issue)
+        if not os.path.exists(path):
+            os.mkdir(path)
+        with open(issue, "w") as f:
+            for k, v in sorted(cost.items()):
+                print(f"# {k}={v}", file=f)
+            print(file=f)
+            cart.dump_requests(file=f)
+        raise

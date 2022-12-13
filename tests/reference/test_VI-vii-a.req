@@ -1,0 +1,26 @@
+# subset=VI-vii-a
+
+stream=enfo,
+step=0-168/168-336/336-504/504-672/672-840/840-1008,
+levtype=sfc,
+time=0000,
+type=efi,
+class=od,
+param=2ti,
+domain=g,
+expver=0001,
+use=monday
+
+
+stream=enfo,
+step=96-264/264-432/432-600/600-768/768-936/936-1104,
+levtype=sfc,
+time=0000,
+type=efi,
+class=od,
+param=2ti,
+domain=g,
+expver=0001,
+use=thursday
+
+

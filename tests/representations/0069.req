@@ -1,0 +1,9 @@
+class=od,
+domain=g,
+expver=0001,
+levtype=sfc,
+param=swhg6/swhg4/swhg8/swhg2/mwpg8/mwpg10/mwpg12/mwpg15,
+step=120-168/120-240/168-240/240-360,
+stream=waef,
+time=0000/1200,
+type=ep

@@ -1,0 +1,9 @@
+class=od,
+domain=g,
+expver=0001,
+levtype=sfc,
+param=tpi/2ti/10wsi,
+step=0-120/0-240/0-72/24-96/24-144/48-120/48-168/72-192/72-144/96-216/96-168/120-192/144-216,
+stream=enfo,
+time=0000,
+type=efi

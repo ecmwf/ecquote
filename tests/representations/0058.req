@@ -1,0 +1,10 @@
+class=od,
+domain=g,
+expver=0001,
+levtype=sfc,
+number=90,
+param=tpi,
+step=0-24/24-48/48-72,
+stream=enfo,
+time=0000,
+type=sot

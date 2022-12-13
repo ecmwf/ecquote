@@ -1,0 +1,13 @@
+# subset=I-i-a
+
+time=0000/1200,
+stream=oper,
+step=0/6/12/18/24/30/36/42/48/54/60/66/72/96/120/144/168,
+levtype=sfc,
+type=fc,
+class=od,
+param=2t,
+domain=g,
+expver=0001
+
+

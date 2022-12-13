@@ -1,0 +1,10 @@
+class=od,
+domain=g,
+expver=0001,
+levtype=sfc,
+number=1/2/3/4/5/6/7/8/9/10,
+param=tp,
+step=12/36/60/72/84/96/108/120/132/144/156/168/180/204/228/252/276/300/324/348,
+stream=enfh,
+time=0000,
+type=pf
