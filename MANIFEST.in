@@ -1,0 +1,5 @@
+include ecquote/resources/*.yaml
+include ecquote/resources/*.json
+include ecquote/resources/*.diss
+include ecquote/resources/*.diss
+include ecquote/resources/*.ascii
