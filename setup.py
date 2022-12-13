@@ -41,7 +41,7 @@ setuptools.setup(
     url="https://github.com/ecmwf/ecquote",
     packages=setuptools.find_packages(),
     include_package_data=True,
-    install_requires=["requests", "tqdm", "pytz", "python-dateutil", "pyyaml"],
+    install_requires=["pyyaml"],
     zip_safe=True,
     keywords="tool",
     classifiers=[
@@ -56,4 +56,9 @@ setuptools.setup(
         "Programming Language :: Python :: Implementation :: PyPy",
         "Operating System :: OS Independent",
     ],
+    tests_require=[
+        "pytest",
+    ],
+    test_suite="tests",
+    entry_points={"console_scripts": ["ecquote=ecquote.__main__:main"]},
 )
