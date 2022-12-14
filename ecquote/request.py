@@ -541,6 +541,10 @@ class Request:
     def user(self):
         return self._attributes.get("user")
 
+    @property
+    def destination(self):
+        return self._attributes.get("destination")
+
     def dump(self, all_keys=None, **kwargs):
         if all_keys is None:
             all_keys = set()

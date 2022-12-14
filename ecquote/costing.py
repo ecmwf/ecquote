@@ -296,11 +296,13 @@ class Costing:
         self.per_group = defaultdict(coster_class)
         self.per_category = defaultdict(coster_class)
         self.per_user = defaultdict(coster_class)
+        self.per_destination = defaultdict(coster_class)
         for r in requests:
             self.per_target[r.tag].add(r)
             self.per_group[r.group].add(r)
             self.per_category[r.category].add(r)
             self.per_user[r.user].add(r)
+            self.per_destination[r.destination].add(r)
 
     def as_dict(self):
         result = {
@@ -317,6 +319,11 @@ class Costing:
             per_user = result["per_user"] = {}
             for user, coster in sorted(self.per_user.items()):
                 per_user[user] = coster.as_dict()
+
+        if self.per_destination:
+            per_destination = result["per_destination"] = {}
+            for destination, coster in sorted(self.per_destination.items()):
+                per_destination[destination] = coster.as_dict()
 
         per_target = result["per_target"] = {}
         for target, coster in sorted(self.per_target.items()):
@@ -356,7 +363,9 @@ class Costing:
         targets=False,
         categories=False,
         users=False,
+        destinations=False,
     ):
+        print("destinations", destinations)
         print("Version   :", __version__)
         print("Date (UTC):", datetime.datetime.utcnow().isoformat().split(".")[0])
         print()
@@ -495,6 +504,8 @@ class Costing:
                             print("      user:            ", r.user)
                         if r.category:
                             print("      category:        ", r.category)
+                        if r.destination:
+                            print("      destination:     ", r.destination)
                         if r.lineno:
                             print("      file/line:       ", r.lineno)
                     print("      splits:          ", r._attributes.get("split", []))
@@ -511,6 +522,11 @@ class Costing:
             for user, coster in sorted(self.per_user.items()):
                 if user is not None:
                     coster.summary(f"Total for user '{user}':")
+
+        if detailed or destinations:
+            for destination, coster in sorted(self.per_destination.items()):
+                if destination is not None:
+                    coster.summary(f"Total for destination '{destination}':")
 
         if detailed or targets:
             for target, coster in sorted(self.per_target.items()):
@@ -531,27 +547,60 @@ class Costing:
         targets=False,
         categories=False,
         users=False,
+        destinations=False,
     ):
         import csv
 
         fieldnames = []
         rows = []
+        ok = True
 
-        if categories:
+        if categories and ok:
+            ok = False
             for category, coster in sorted(self.per_category.items()):
                 rows.append(dict(category=category, **coster.as_dict()))
 
-        if users:
+        if users and ok:
+            ok = False
             for user, coster in sorted(self.per_user.items()):
                 rows.append(dict(user=user, **coster.as_dict()))
 
-        if targets:
+        if targets and ok:
+            ok = False
             for target, coster in sorted(self.per_target.items()):
                 rows.append(dict(target=target, **coster.as_dict()))
 
-        if groups:
+        if groups and ok:
+            ok = False
             for group, coster in sorted(self.per_group.items()):
                 rows.append(dict(group=group, **coster.as_dict()))
+
+        if destinations or ok:  # The 'or' is not a typo
+
+            categories = {}
+            path = config("categories")
+            if path:
+                with open(path) as csvfile:
+                    cats = set()
+                    for row in csv.reader(csvfile, delimiter=","):
+                        categories[row[0]] = row[1:]
+                        cats.add(row[1])
+
+            for destination, coster in sorted(self.per_destination.items()):
+                r = dict(destination=destination)
+                if categories:
+                    category, user = categories.get(destination, ["unknown", "unknown"])
+                    r["user"] = user
+                    r["category"] = category
+                r.update(coster.as_dict())
+                r["max_charge_limit"] = self.max_charge_limit
+                r["max_charge"] = coster.euros >= self.max_charge_limit
+                r["actual_charge"] = (
+                    self.max_charge_limit
+                    if coster.euros >= self.max_charge_limit
+                    else int(coster.euros)
+                )
+                rows.append(r)
 
         fieldnames = list(rows[0].keys())
 

@@ -14,6 +14,7 @@ from ..resources import config
 from .canonical import splitter as canonical_splitter
 from .category import splitter as category_splitter
 from .constant import splitter as constant_splitter
+from .destination import splitter as destination_splitter
 from .free_sets import splitter as free_splitter
 from .freebies import splitter as freebies_splitter
 from .group_by import splitter as group_by_splitter
@@ -42,6 +43,9 @@ def first_splitters(requests, categories=None, category=None, **kwargs):
 
     if categories:
         s = category_splitter(s, categories, category)
+
+    if config("destinations"):
+        s = destination_splitter(s)
 
     return s
 

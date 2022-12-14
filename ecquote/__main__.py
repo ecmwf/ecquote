@@ -48,6 +48,7 @@ def main():
             "categories",
             "users",
             "types",
+            "destinations",
         ),
         action=Multiple,
         default=[],

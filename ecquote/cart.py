@@ -106,20 +106,9 @@ class Cart:
 
     def summary(
         self,
-        *,
-        detailed=False,
-        groups=False,
-        targets=False,
-        categories=False,
-        users=False,
+        **kwargs,
     ):
-        self._costing().summary(
-            detailed=detailed,
-            groups=groups,
-            targets=targets,
-            categories=categories,
-            users=users,
-        )
+        self._costing().summary(**kwargs)
 
     def postproc(self, waves=False):
         seen = set()
