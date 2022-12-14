@@ -10,6 +10,7 @@
 
 import datetime
 import logging
+import sys
 from collections import defaultdict
 
 from . import __version__
@@ -522,6 +523,41 @@ class Costing:
         self.totals.update_subcosts(self.per_group)
 
         self.totals.summary("Grand total:", self.max_charge_limit)
+
+    def csv(
+        self,
+        file=sys.stdout,
+        groups=False,
+        targets=False,
+        categories=False,
+        users=False,
+    ):
+        import csv
+
+        fieldnames = []
+        rows = []
+
+        if categories:
+            for category, coster in sorted(self.per_category.items()):
+                rows.append(dict(category=category, **coster.as_dict()))
+
+        if users:
+            for user, coster in sorted(self.per_user.items()):
+                rows.append(dict(user=user, **coster.as_dict()))
+
+        if targets:
+            for target, coster in sorted(self.per_target.items()):
+                rows.append(dict(target=target, **coster.as_dict()))
+
+        if groups:
+            for group, coster in sorted(self.per_group.items()):
+                rows.append(dict(group=group, **coster.as_dict()))
+
+        fieldnames = list(rows[0].keys())
+
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
 
 
 def costing(requests):

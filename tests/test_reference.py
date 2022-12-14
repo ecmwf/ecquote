@@ -32,14 +32,15 @@ def list_of_tests():
                 key = full[len(top) + 1 : -4]
                 tests[key] = full
 
-    tst = {}
-    for t in tests.keys():
-        issue = key_to_issue(t)
-        if os.path.exists(issue):
-            tst[t] = tests[t]
+    if False:
+        tst = {}
+        for t in tests.keys():
+            issue = key_to_issue(t)
+            if os.path.exists(issue):
+                tst[t] = tests[t]
 
-    if tst:
-        return tst
+        if tst:
+            return tst
 
     return tests
 
@@ -68,6 +69,10 @@ def test_references(req):
                         cost[key] = value.split(",")
                     else:
                         cost[key] = as_numbers(value)
+
+    if "skip" in cost:
+        raise pytest.skip(cost["skip"])
+
     try:
 
         assert len(cost) <= 3

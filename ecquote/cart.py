@@ -101,6 +101,9 @@ class Cart:
     def costing(self):
         return as_dict(self._costing())
 
+    def csv(self, **kwargs):
+        self._costing().csv(**kwargs)
+
     def summary(
         self,
         *,

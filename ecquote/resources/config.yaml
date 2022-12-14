@@ -135,3 +135,6 @@ group-by: null
 
 max-charge-core: 100000
 max-charge-high-frequency: 108000
+
+# Destination mode, look for XXX:XX
+destinations: False

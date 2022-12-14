@@ -62,6 +62,8 @@ def main():
     parser.add_argument("-v", "--verbose", action="store_true")
     parser.add_argument("-w", "--warnings", action="store_true")
     parser.add_argument("-j", "--json", action="store_true")
+    parser.add_argument("--csv", action="store_true")
+    parser.add_argument("--destinations", action="store_true")
 
     parser.add_argument("--who-uses", metavar="REQUEST")
     parser.add_argument("--requests", action="store_true")
@@ -140,6 +142,9 @@ def main():
 
     if ARGS.strict_mode:
         config("strict-mode", True)
+
+    if ARGS.destinations:
+        config("destinations", True)
 
     if ARGS.max_charge_core is not None:
         config("max-charge-core", ARGS.max_charge_core)
@@ -224,9 +229,15 @@ def main():
                 indent=4,
             )
         )
-    else:
+        return
+
+    if ARGS.csv:
         extra = {k: True for k in ARGS.show if k != "all"}
-        cart.summary(detailed=ARGS.detailed, **extra)
+        cart.csv(**extra)
+        return
+
+    extra = {k: True for k in ARGS.show if k != "all"}
+    cart.summary(detailed=ARGS.detailed, **extra)
 
 
 if __name__ == "__main__":
