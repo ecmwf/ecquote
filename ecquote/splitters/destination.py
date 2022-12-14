@@ -7,4 +7,13 @@
 # granted to it by virtue of its status as an intergovernmental organisation
 # nor does it submit to any jurisdiction.
 
-__version__ = "1.2.3"
+import logging
+
+LOG = logging.getLogger(__name__)
+
+
+def splitter(requests):
+
+    for r in requests:
+        d = r.tag.split(":")[0]
+        yield r.annotate("destination", d)
