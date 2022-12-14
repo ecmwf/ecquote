@@ -11,7 +11,6 @@
 import logging
 
 from ..resources import config
-from .canonical import canonical_grid
 from .canonical import splitter as canonical_splitter
 from .category import splitter as category_splitter
 from .constant import splitter as constant_splitter
@@ -74,7 +73,6 @@ def second_splitters(requests, group_by=None, **kwargs):
         s = free_splitter(
             s,
             config("free-data"),
-            canonical_grid([float(x) for x in config("free-data-grid").split("/")]),
         )
 
     s = freebies_splitter(s)
