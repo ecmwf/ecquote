@@ -133,3 +133,6 @@ modify: null
 
 # Group-by option
 group-by: null
+
+max-charge-core: 100000
+max-charge-high-frequency: 108000

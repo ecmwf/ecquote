@@ -196,7 +196,7 @@ class EPUBased(Coster):
 
         return result
 
-    def summary(self, title):
+    def summary(self, title, max_charge_limit=None):
         super().summary(title)
         print("   EPUs:            ", "{:,}".format(int(self.epus)))
         print("   Discounted EPUs: ", "{:,}".format(int(self.discounted_epus)))
@@ -209,6 +209,10 @@ class EPUBased(Coster):
             print(f" ({result})")
         else:
             print()
+        if max_charge_limit is not None:
+            max_charge_order = self.euros >= max_charge_limit
+            print(f"   Max charge limit: EUR {max_charge_limit:,}")
+            print(f"   Max charge order: {'yes' if max_charge_order else 'no'}")
         print()
 
     def update_subcosts(self, costs):
@@ -325,7 +329,23 @@ class Costing:
 
         result["total"] = self.totals.as_dict()
 
+        result["max_charge_limit"] = self.max_charge_limit
+        result["max_charge"] = self.euros >= result["max_charge_limit"]
+
         return result
+
+    @property
+    def chargeable_high_frequency(self):
+        hf = self.per_group.get("high-frequency")
+        if hf is None:
+            return False
+        return hf.euros > 0
+
+    @property
+    def max_charge_limit(self):
+        if self.chargeable_high_frequency:
+            return config("max-charge-high-frequency")
+        return config("max-charge-core")
 
     def summary(
         self,
@@ -501,7 +521,7 @@ class Costing:
 
         self.totals.update_subcosts(self.per_group)
 
-        self.totals.summary("Grand total:")
+        self.totals.summary("Grand total:", self.max_charge_limit)
 
 
 def costing(requests):

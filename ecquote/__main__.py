@@ -86,6 +86,9 @@ def main():
     parser.add_argument("--modify", metavar="PATH-TO-MODIFY-YAML")
     parser.add_argument("--category", metavar="CATEGORY")
 
+    parser.add_argument("--max-charge-core", type=int)
+    parser.add_argument("--max-charge-high-frequency", type=int)
+
     parser.add_argument("-r", "--request")
     parser.add_argument("files", metavar="FILES-OR-DIRECTORIES", type=str, nargs="*")
     ARGS = parser.parse_args()
@@ -144,6 +147,12 @@ def main():
 
     if ARGS.strict_mode:
         config("strict-mode", True)
+
+    if ARGS.max_charge_core is not None:
+        config("max-charge-core", ARGS.max_charge_core)
+
+    if ARGS.max_charge_high_frequency is not None:
+        config("max-charge-high-frequency", ARGS.max_charge_high_frequency)
 
     if ARGS.rest:
         from ecquote.rest import run
