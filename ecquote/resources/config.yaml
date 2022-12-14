@@ -126,7 +126,6 @@ strict-mode: false
 
 # Extra free
 free-data: null
-free-data-grid: null
 
 # Modification rules
 modify: null

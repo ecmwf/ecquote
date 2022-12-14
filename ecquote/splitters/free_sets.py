@@ -300,14 +300,11 @@ def match(r, free_grid):
     return True
 
 
-def splitter(requests, free_set_name, free_grid):
+def splitter(requests, free_set_name):
 
     from ..cart import Cart
 
     debug = LOG.isEnabledFor(logging.DEBUG)
-
-    free_grid = tuple(float(x) for x in free_grid)
-    # free_postproc = dict(grid=free_grid)
 
     path = (
         free_set_name if free_set_name.startswith("/") else resource_path(free_set_name)
@@ -317,6 +314,25 @@ def splitter(requests, free_set_name, free_grid):
         path,
         inherit=True,
     )
+
+    free_grid = set()
+    for r in free_cart.requests:
+        if r.repres.used_when_computing_free_data_grid():
+            try:
+                free_grid.add(r.repres.grid)
+            except AttributeError:
+                LOG.error("%s: could not get grid from request %s", free_set_name, r)
+                raise
+
+    if len(free_grid) == 0:
+        raise ValueError("Cannot establish reference grid from %s", free_set_name)
+
+    if len(free_grid) > 1:
+        raise ValueError("Too many gris in %s: %s", free_set_name, free_grid)
+
+    free_grid = list(free_grid)[0]
+    free_grid = tuple(float(x) for x in free_grid)
+    # free_postproc = dict(grid=free_grid)
 
     public_sets = free_cart.by_product_sets
     if debug:

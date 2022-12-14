@@ -80,7 +80,6 @@ def main():
     parser.add_argument("--disable-inheritance", action="store_true")
 
     parser.add_argument("--free-data", metavar="PATH-TO-DISS-FILE")
-    parser.add_argument("--free-data-grid", metavar="GRID")
     parser.add_argument("--group-by", metavar="KEY1,KEY2,...")
 
     parser.add_argument("--modify", metavar="PATH-TO-MODIFY-YAML")
@@ -118,13 +117,7 @@ def main():
         config("free-wmo-essential", False)
 
     if ARGS.free_data:
-        if not ARGS.free_data_grid:
-            parser.error(
-                "Please specify a reference grid for the free dataset, e.g. --free-data-grid 0.5/0.5"
-            )
-
         config("free-data", os.path.realpath(ARGS.free_data))
-        config("free-data-grid", ARGS.free_data_grid)
 
     if ARGS.group_by:
         config("group-by", ARGS.group_by)

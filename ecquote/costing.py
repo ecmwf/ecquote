@@ -330,7 +330,7 @@ class Costing:
         result["total"] = self.totals.as_dict()
 
         result["max_charge_limit"] = self.max_charge_limit
-        result["max_charge"] = self.euros >= result["max_charge_limit"]
+        result["max_charge"] = self.totals.euros >= result["max_charge_limit"]
 
         return result
 

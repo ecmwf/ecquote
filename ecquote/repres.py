@@ -449,6 +449,9 @@ class Repres:
         )
         return "?"
 
+    def used_when_computing_free_data_grid(self):
+        raise NotImplementedError()
+
 
 class Field(Repres):
     accuracy = PgenAccuracy()
@@ -514,6 +517,9 @@ class Field(Repres):
             explain.append("1 field")
 
         return " ".join(str(e) for e in explain)
+
+    def used_when_computing_free_data_grid(self):
+        return True
 
 
 class Area:
@@ -1197,6 +1203,9 @@ class TF(Repres):
 
     def details(self):
         return f"area: {self.area}"
+
+    def used_when_computing_free_data_grid(self):
+        return False
 
 
 REPRES = {

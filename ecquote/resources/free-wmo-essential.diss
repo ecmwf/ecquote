@@ -18,6 +18,7 @@ disseminate,target=EGE:EE,option=delay/gts,
 disseminate,
   type                = fc,
   step                = 24/to/240/by/24
+  grid                = .5/.5,
 
 # 06/18
 disseminate,
@@ -109,7 +110,7 @@ disseminate,
 #
 # EPS ############################################
 #
-# 
+#
 # EM; MSL;
 #
 disseminate,

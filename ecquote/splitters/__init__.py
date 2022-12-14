@@ -61,13 +61,13 @@ def second_splitters(requests, group_by=None, **kwargs):
         s = free_splitter(
             s,
             "free-open-data",
-            canonical_grid([0.4, 0.4]),
+            # canonical_grid([0.4, 0.4]),
         )
     if config("free-wmo-essential"):
         s = free_splitter(
             s,
             "free-wmo-essential",
-            canonical_grid([0.5, 0.5]),
+            # canonical_grid([0.5, 0.5]),
         )
 
     if config("free-data"):
