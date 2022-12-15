@@ -12,8 +12,7 @@ time=0000,
 type=pf,
 domain=g,
 grid=0.2/0.2,
-area=45.0/-90.0/-45.0/90.0,
-target=output
+area=45.0/-90.0/-45.0/90.0
 
 
 class=od,
@@ -27,8 +26,7 @@ time=0000,
 type=cf,
 domain=g,
 grid=0.2/0.2,
-area=45.0/-90.0/-45.0/90.0,
-target=output
+area=45.0/-90.0/-45.0/90.0
 
 
 class=od,
@@ -42,5 +40,4 @@ time=0000,
 type=fc,
 domain=g,
 grid=0.2/0.2,
-area=45.0/-90.0/-45.0/90.0,
-target=output
+area=45.0/-90.0/-45.0/90.0

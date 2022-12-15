@@ -11,8 +11,7 @@ stream=enfo,
 time=0000/0600/1200/1800,
 type=pf,
 domain=g,
-grid=0.4/0.4,
-target=output
+grid=0.4/0.4
 
 
 class=od,
@@ -25,7 +24,6 @@ stream=enfo,
 time=0000/0600/1200/1800,
 type=cf,
 domain=g,
-grid=0.4/0.4,
-target=output
+grid=0.4/0.4
 
 
