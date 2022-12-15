@@ -28,6 +28,18 @@ ECMWF/ACDP/8(07)A introduces M
 """
 
 
+def band(volume):
+
+    daily_gb = volume / 365 / 1024 / 1024 / 1024
+    volume_bands = resource("volume-bands")
+
+    for gb, price in sorted(volume_bands.items()):
+        if daily_gb <= gb:
+            return gb, price["euros"], None
+
+    return None, None, f"Daily volume exceeds {max(volume_bands.keys())}"
+
+
 class Roman:
     def __init__(self, n):
         self.n = n
@@ -99,19 +111,7 @@ class Coster:
             print("   Volume cost:     ", "EUR {:,}".format(euro))
 
     def band(self):
-        daily_gb = self.volume / 365 / 1024 / 1024 / 1024
-        volume_bands = resource("volume-bands")
-
-        band = None
-        for gb, price in volume_bands.items():
-            if daily_gb < gb:
-                if band is None or gb < band[0]:
-                    band = (gb, price)
-
-        if band is None:
-            return None, None, f"Daily volume exceeds {max(volume_bands.keys())}"
-        else:
-            return band[0], band[1]["euros"], None
+        return band(self.volume)
 
 
 class EPUBased(Coster):
