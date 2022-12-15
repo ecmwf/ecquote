@@ -145,3 +145,5 @@ tmp*
 *.req
 issues/
 ?.*
+reqs/
+*.csv
