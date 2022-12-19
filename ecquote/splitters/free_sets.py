@@ -328,11 +328,12 @@ def splitter(requests, free_set_name):
         raise ValueError("Cannot establish reference grid from %s", free_set_name)
 
     if len(free_grid) > 1:
-        raise ValueError("Too many gris in %s: %s", free_set_name, free_grid)
+        raise ValueError("Too many grid in %s: %s", free_set_name, free_grid)
 
     free_grid = list(free_grid)[0]
     free_grid = tuple(float(x) for x in free_grid)
-    # free_postproc = dict(grid=free_grid)
+
+    LOG.info("Reference grid for %s: %s", free_set_name, free_grid)
 
     public_sets = free_cart.by_product_sets
     if debug:

@@ -64,7 +64,19 @@ def main():
     parser.add_argument("-w", "--warnings", action="store_true")
     parser.add_argument("-j", "--json", action="store_true")
     parser.add_argument("--csv", action="store_true")
-    parser.add_argument("--destinations", action="store_true")
+    parser.add_argument(
+        "--by",
+        choices=[
+            "targets",
+            "groups",
+            "categories",
+            "users",
+            "types",
+            "destinations",
+        ],
+        const='destinations',
+        default="destinations",nargs='?',
+    )
 
     parser.add_argument("--who-uses", metavar="REQUEST")
     parser.add_argument("--requests", action="store_true")
@@ -73,16 +85,16 @@ def main():
     parser.add_argument("--landsea", metavar="AREA")
     parser.add_argument("--statistics", action="store_true")
     parser.add_argument("--strict-mode", action="store_true")
-    parser.add_argument("--nofree", action="store_true")
+    parser.add_argument("--no-free", action="store_true")
 
     parser.add_argument("--number-of-points", action="store_true")
     parser.add_argument("--volume", action="store_true")
     parser.add_argument("--rest", action="store_true")
     parser.add_argument("--config", metavar="KEY=VALUE", action="append")
-    parser.add_argument("--categories", metavar="PATH-TO-CSV-FILE")
+    parser.add_argument("-C", "--categories", metavar="PATH-TO-CSV-FILE")
     parser.add_argument("--disable-inheritance", action="store_true")
 
-    parser.add_argument("--free-data", metavar="PATH-TO-DISS-FILE")
+    parser.add_argument("--free-data", metavar="PATH-TO-DISS-FILE", action="append")
     parser.add_argument("--group-by", metavar="KEY1,KEY2,...")
 
     parser.add_argument("--modify", metavar="PATH-TO-MODIFY-YAML")
@@ -96,18 +108,15 @@ def main():
     ARGS = parser.parse_args()
 
     level = logging.ERROR
+
     if ARGS.warnings:
         level = logging.WARNING
+
     if ARGS.verbose:
         level = logging.INFO
+
     if ARGS.debug:
         level = logging.DEBUG
-
-    # logging.basicConfig(
-    #     format="%(asctime)s %(levelname)-8s %(message)s",
-    #     level=level,
-    #     datefmt="%Y-%m-%d %H:%M:%S",
-    # )
 
     logging.basicConfig(
         format="%(levelname)-8s %(message)s",
@@ -115,12 +124,12 @@ def main():
         datefmt="%Y-%m-%d %H:%M:%S",
     )
 
-    if ARGS.nofree:
+    if ARGS.no_free:
         config("free-open-data", False)
         config("free-wmo-essential", False)
 
     if ARGS.free_data:
-        config("free-data", os.path.realpath(ARGS.free_data))
+        config("free-data", [os.path.realpath(x) for x in ARGS.free_data])
 
     if ARGS.group_by:
         config("group-by", ARGS.group_by)
@@ -144,7 +153,7 @@ def main():
     if ARGS.strict_mode:
         config("strict-mode", True)
 
-    if ARGS.destinations:
+    if ARGS.csv or ("destinations" in ARGS.show):
         config("destinations", True)
 
     if ARGS.max_charge_core is not None:
@@ -233,11 +242,11 @@ def main():
         return
 
     if ARGS.csv:
-        extra = {k: True for k in ARGS.show if k != "all"}
+        extra = {f"by_{ARGS.by}": True}
         cart.csv(**extra)
         return
 
-    extra = {k: True for k in ARGS.show if k != "all"}
+    extra = {f"show_{k}": True for k in ARGS.show if k != "all"}
     cart.summary(detailed=ARGS.detailed, **extra)
 
 

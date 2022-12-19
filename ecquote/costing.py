@@ -359,13 +359,13 @@ class Costing:
         self,
         *,
         detailed=False,
-        groups=False,
-        targets=False,
-        categories=False,
-        users=False,
-        destinations=False,
+        show_groups=False,
+        show_targets=False,
+        show_categories=False,
+        show_users=False,
+        show_destinations=False,
     ):
-        print("destinations", destinations)
+        print("destinations", show_destinations)
         print("Version   :", __version__)
         print("Date (UTC):", datetime.datetime.utcnow().isoformat().split(".")[0])
         print()
@@ -513,26 +513,26 @@ class Costing:
                         print("      WARNING:         ", w)
                     print()
 
-        if detailed or categories:
+        if detailed or show_categories:
             for category, coster in sorted(self.per_category.items()):
                 if category is not None:
                     coster.summary(f"Total for category '{category}':")
 
-        if detailed or users:
+        if detailed or show_users:
             for user, coster in sorted(self.per_user.items()):
                 if user is not None:
                     coster.summary(f"Total for user '{user}':")
 
-        if detailed or destinations:
+        if detailed or show_destinations:
             for destination, coster in sorted(self.per_destination.items()):
                 if destination is not None:
                     coster.summary(f"Total for destination '{destination}':")
 
-        if detailed or targets:
+        if detailed or show_targets:
             for target, coster in sorted(self.per_target.items()):
                 coster.summary(f"Total for target '{target}':")
 
-        if detailed or groups:
+        if detailed or show_groups:
             for group, coster in sorted(self.per_group.items()):
                 coster.summary(f"Total for group '{group}':")
 
@@ -543,11 +543,11 @@ class Costing:
     def csv(
         self,
         file=sys.stdout,
-        groups=False,
-        targets=False,
-        categories=False,
-        users=False,
-        destinations=False,
+        by_groups=False,
+        by_targets=False,
+        by_categories=False,
+        by_users=False,
+        by_destinations=False,
     ):
         import csv
 
@@ -555,43 +555,11 @@ class Costing:
         rows = []
         ok = True
 
-        if categories and ok:
-            ok = False
-            for category, coster in sorted(self.per_category.items()):
-                rows.append(dict(category=category, **coster.as_dict()))
-
-        if users and ok:
-            ok = False
-            for user, coster in sorted(self.per_user.items()):
-                rows.append(dict(user=user, **coster.as_dict()))
-
-        if targets and ok:
-            ok = False
-            for target, coster in sorted(self.per_target.items()):
-                rows.append(dict(target=target, **coster.as_dict()))
-
-        if groups and ok:
-            ok = False
-            for group, coster in sorted(self.per_group.items()):
-                rows.append(dict(group=group, **coster.as_dict()))
-
-        if destinations or ok:  # The 'or' is not a typo
-
-            categories = {}
-            path = config("categories")
-            if path:
-                with open(path) as csvfile:
-                    cats = set()
-                    for row in csv.reader(csvfile, delimiter=","):
-                        categories[row[0]] = row[1:]
-                        cats.add(row[1])
-
-            for destination, coster in sorted(self.per_destination.items()):
-                r = dict(destination=destination)
+        def _(collection, per_collection, categories=None, default={}):
+            for name, coster in sorted(per_collection.items()):
+                r = {collection:name}
                 if categories:
-                    category, user = categories.get(destination, ["unknown", "unknown"])
-                    r["user"] = user
-                    r["category"] = category
+                    r.update(categories.get(name, default))
                 r.update(coster.as_dict())
                 r["max_charge_limit"] = self.max_charge_limit
                 r["max_charge"] = coster.euros >= self.max_charge_limit
@@ -601,6 +569,47 @@ class Costing:
                     else int(coster.euros)
                 )
                 rows.append(r)
+
+        if by_categories and ok:
+            ok = False
+            _("category", self.per_category)
+
+        if by_targets and ok:
+            ok = False
+            _("target", self.per_target)
+
+        if by_groups and ok:
+            ok = False
+            _("group", self.per_group)
+
+        if by_users and ok:
+            ok = False
+            # Load categories
+            categories = {}
+            default = {}
+            path = config("categories")
+            if path:
+                default = dict(category="unknown")
+                categories = defaultdict(set)
+                with open(path) as csvfile:
+                    for row in csv.reader(csvfile, delimiter=","):
+                        categories[row[2]].add(row[1])
+                for k, v in list(categories.items()):
+                    categories[k] = dict(category=', '.join(sorted(v)))
+            _("user", self.per_user, categories, default)
+
+        if by_destinations or ok:  # The 'or' is not a typo
+            # Load categories
+            categories = {}
+            default = {}
+            path = config("categories")
+            if path:
+                default = dict(category="unknown", user="unknown")
+                with open(path) as csvfile:
+                    for row in csv.reader(csvfile, delimiter=","):
+                        categories[row[0]] = dict(category=row[1], user=row[2])
+
+            _("destination", self.per_destination, categories, default)
 
         fieldnames = list(rows[0].keys())
 
