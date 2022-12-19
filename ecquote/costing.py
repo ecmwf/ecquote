@@ -365,7 +365,6 @@ class Costing:
         show_users=False,
         show_destinations=False,
     ):
-        print("destinations", show_destinations)
         print("Version   :", __version__)
         print("Date (UTC):", datetime.datetime.utcnow().isoformat().split(".")[0])
         print()
