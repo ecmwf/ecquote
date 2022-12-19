@@ -74,8 +74,9 @@ def main():
             "types",
             "destinations",
         ],
-        const='destinations',
-        default="destinations",nargs='?',
+        const="destinations",
+        default="destinations",
+        nargs="?",
     )
 
     parser.add_argument("--who-uses", metavar="REQUEST")

@@ -557,7 +557,7 @@ class Costing:
 
         def _(collection, per_collection, categories=None, default={}):
             for name, coster in sorted(per_collection.items()):
-                r = {collection:name}
+                r = {collection: name}
                 if categories:
                     r.update(categories.get(name, default))
                 r.update(coster.as_dict())
@@ -595,7 +595,7 @@ class Costing:
                     for row in csv.reader(csvfile, delimiter=","):
                         categories[row[2]].add(row[1])
                 for k, v in list(categories.items()):
-                    categories[k] = dict(category=', '.join(sorted(v)))
+                    categories[k] = dict(category=", ".join(sorted(v)))
             _("user", self.per_user, categories, default)
 
         if by_destinations or ok:  # The 'or' is not a typo
