@@ -44,3 +44,13 @@ You then should get a result such as:
         Information cost: EUR 5,388 (core: 5,388)
 
 To get a description of how the cost is determined, rerun the command with the option `--detailed`.
+
+# Conditions of use
+
+This tool is provided for evaluation and review purchases only.  Only quotes submitted via the Product Requirements Catalogue will be reviewed/considered/approved:  https://apps.ecmwf.int/shopping-cart/ 
+
+# Licence
+
+Copyright 2022 European Centre for Medium-Range Weather Forecasts (ECMWF).
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at: http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
