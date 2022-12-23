@@ -290,6 +290,10 @@ class Request:
     def estimated_volume(self):
         return self.repres.estimated_volume()
 
+    @cached_method
+    def data_values(self):
+        return self.repres.data_values()
+
     @property
     @cached_method
     def repres(self):

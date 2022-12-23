@@ -322,6 +322,16 @@ class Repres:
     def finalise(self):
         return self
 
+    def data_values(self):
+        log_warning_once(
+            LOG,
+            "Ignoring data_values calculation for type %s. (%s)",
+            self.__class__.__name__,
+            self.request,
+            raise_exception=ValueError,
+        )
+        return 1
+
     def estimated_volume(self):
         npoints, nmissing = self.encoded_values()
 
@@ -561,6 +571,7 @@ class Gridded(Field):
         self.area = area
         return self
 
+    @cached_method
     def encoded_values(self):
 
         npoints = self.number_of_points()
@@ -585,6 +596,14 @@ class Gridded(Field):
             npoints -= nmissing
 
         return npoints, nmissing
+
+    @cached_method
+    def data_values(self):
+        if True:
+            npoints, _ = self.encoded_values()
+            return npoints * self.request.number_of_fields()
+        else:
+            return self.number_of_points() * self.request.number_of_fields()
 
     def set_frame(self, frame):
         self.frame = frame
@@ -848,6 +867,9 @@ class Spectral(Field):
         nmissing = 0
         return npoints, nmissing
 
+    def data_values(self):
+        return self.number_of_points()
+
     def number_of_points(self):
         assert self.resol, self.request
         T = self.resol
@@ -1086,6 +1108,7 @@ class WP(Repres):
         assert isinstance(area, Point)
         return self
 
+    @cached_method
     def estimated_volume(self):
         # See webdev/..../dissemination_requirements.py
         sizes = config("volumes_estimates")["weather_parameters"]
@@ -1098,6 +1121,14 @@ class WP(Repres):
         product_size = sizes[self.request.stream]
 
         return product_count * product_size
+
+    @cached_method
+    def data_values(self):
+        product_count = 1
+        for k, v in self.request.fields.items():
+            if k not in ("number",):
+                product_count *= len(v)
+        return dict(enfo=51, oper=1)[self.request.stream] * product_count
 
     def factor_A(self):
         return config("minimum_area") / (360 * 180)
@@ -1206,6 +1237,10 @@ class TF(Repres):
 
     def used_when_computing_free_data_grid(self):
         return False
+
+    def data_values(self):
+        # TODO: Do the real count
+        return self.estimated_volume() / 2
 
 
 REPRES = {

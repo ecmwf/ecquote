@@ -63,30 +63,36 @@ class Roman:
 
 class Coster:
     def __init__(self):
-        self.volume = 0
-        self.fields = 0
+        self.yearly_volume = 0
+        self.yearly_fields = 0
+        self.yearly_data_values = 0
         self.daily_volume = 0
         self.daily_fields = 0
+        self.daily_data_values = 0
         self.requests = []
         self.subcosts = {}
 
     def add(self, *requests):
         for r in requests:
             with capture_warnings(r):
-                self.volume += r.estimated_volume() * r.frequency()
-                self.fields += r.number_of_fields() * r.frequency()
+                self.yearly_volume += r.estimated_volume() * r.frequency()
+                self.yearly_fields += r.number_of_fields() * r.frequency()
+                self.yearly_data_values += r.data_values() * r.frequency()
                 self.daily_volume += r.estimated_volume()
                 self.daily_fields += r.number_of_fields()
+                self.daily_data_values += r.data_values()
         self.requests += requests
 
     def as_dict(self):
         result = {
-            "yearly_volume": self.volume,
-            "yearly_fields": self.fields,
+            "yearly_volume": self.yearly_volume,
+            "yearly_data_values": self.yearly_data_values,
+            "yearly_fields": self.yearly_fields,
             "worst_daily_volume": self.daily_volume,
             "worst_daily_fields": self.daily_fields,
-            "average_daily_volume": int(self.volume / 365 + 0.5),
-            "average_daily_fields": int(self.fields / 365 + 0.5),
+            "average_daily_volume": int(self.yearly_volume / 365 + 0.5),
+            "average_daily_fields": int(self.yearly_fields / 365 + 0.5),
+            "average_daily_data_values": int(self.yearly_data_values / 365 + 0.5),
         }
 
         band, euro, error = self.band()
@@ -100,8 +106,8 @@ class Coster:
     def summary(self, title):
         print(title)
         print()
-        print("   Yearly volume:   ", bytes(self.volume))
-        print("   Yearly fields:   ", "{:,}".format(self.fields))
+        print("   Yearly volume:   ", bytes(self.yearly_volume))
+        print("   Yearly fields:   ", "{:,}".format(self.yearly_fields))
 
         band, euro, error = self.band()
         if error:
@@ -111,7 +117,7 @@ class Coster:
             print("   Volume cost:     ", "EUR {:,}".format(euro))
 
     def band(self):
-        return band(self.volume)
+        return band(self.yearly_volume)
 
 
 class EPUBased(Coster):
