@@ -138,3 +138,6 @@ max-charge-high-frequency: 108000
 
 # Destination mode, look for XXX:XX
 destinations: False
+
+experimental: False
+commercial: null

@@ -35,9 +35,31 @@ def band(volume):
 
     for gb, price in sorted(volume_bands.items()):
         if daily_gb <= gb:
-            return gb, price["euros"], None
+            return gb, price["euros"], None, daily_gb
 
-    return None, None, f"Daily volume exceeds {max(volume_bands.keys())}"
+    return None, None, f"Daily volume exceeds {max(volume_bands.keys())}", daily_gb
+
+
+def data_values_band(data_values):
+
+    daily_data_values_millions = data_values / 365 / 1000 / 1000
+    data_values_band = resource("data-values-bands")
+
+    for million, price in sorted(data_values_band.items()):
+        if daily_data_values_millions <= million:
+            return million, price["euros"], None, daily_data_values_millions
+
+    return (
+        None,
+        None,
+        f"Daily data values exceeds {max(data_values_band.keys())}",
+        daily_data_values_millions,
+    )
+
+
+def commercial(s):
+    s = s.lower()
+    return ("commercial" in s) and ("non-commercial" not in s)
 
 
 class Roman:
@@ -71,36 +93,62 @@ class Coster:
         self.daily_data_values = 0
         self.requests = []
         self.subcosts = {}
+        self.experimental = config("experimental")
 
     def add(self, *requests):
         for r in requests:
             with capture_warnings(r):
                 self.yearly_volume += r.estimated_volume() * r.frequency()
                 self.yearly_fields += r.number_of_fields() * r.frequency()
-                self.yearly_data_values += r.data_values() * r.frequency()
                 self.daily_volume += r.estimated_volume()
                 self.daily_fields += r.number_of_fields()
-                self.daily_data_values += r.data_values()
+                if self.experimental:
+                    self.yearly_data_values += r.data_values() * r.frequency()
+                    self.daily_data_values += r.data_values()
         self.requests += requests
 
     def as_dict(self):
         result = {
             "yearly_volume": self.yearly_volume,
-            "yearly_data_values": self.yearly_data_values,
             "yearly_fields": self.yearly_fields,
             "worst_daily_volume": self.daily_volume,
             "worst_daily_fields": self.daily_fields,
             "average_daily_volume": int(self.yearly_volume / 365 + 0.5),
             "average_daily_fields": int(self.yearly_fields / 365 + 0.5),
-            "average_daily_data_values": int(self.yearly_data_values / 365 + 0.5),
         }
 
-        band, euro, error = self.band()
+        band, euro, error, ref = self.band()
         if error:
             result["volume_band"] = error
         else:
             result["volume_band"] = band
             result["volume_cost"] = euro
+
+        if self.experimental:
+
+            result["yearly_data_values"] = self.yearly_data_values
+            result["average_daily_data_values"] = int(
+                self.yearly_data_values / 365 + 0.5
+            )
+
+            band, euro, error, ref = self.data_values_band()
+
+            if error:
+                result["data_values_band"] = error
+            else:
+                result["data_values_band"] = band
+                result["data_values_cost"] = euro
+
+            try:
+                result["diff"] = result["data_values_cost"] - result["volume_cost"]
+            except KeyError:
+                result["diff"] = None
+
+            result["data_values_ref"] = ref
+            result["data_values_ratio"] = (
+                self.yearly_volume / self.yearly_data_values,
+            )
+
         return result
 
     def summary(self, title):
@@ -118,6 +166,9 @@ class Coster:
 
     def band(self):
         return band(self.yearly_volume)
+
+    def data_values_band(self):
+        return data_values_band(self.yearly_data_values)
 
 
 class EPUBased(Coster):
@@ -559,6 +610,7 @@ class Costing:
         fieldnames = []
         rows = []
         ok = True
+        filter_commercial = config('commercial')
 
         def _(collection, per_collection, categories=None, default={}):
             for name, coster in sorted(per_collection.items()):
@@ -573,6 +625,12 @@ class Costing:
                     if coster.euros >= self.max_charge_limit
                     else int(coster.euros)
                 )
+
+                if filter_commercial is not None:
+                    print(filter_commercial, r.get('commercial'))
+                    if r.get('commercial') is not filter_commercial:
+                        continue
+
                 rows.append(r)
 
         if by_categories and ok:
@@ -594,13 +652,16 @@ class Costing:
             default = {}
             path = config("categories")
             if path:
-                default = dict(category="unknown")
+                default = dict(category="unknown", commercial="unknown")
                 categories = defaultdict(set)
                 with open(path) as csvfile:
                     for row in csv.reader(csvfile, delimiter=","):
                         categories[row[2]].add(row[1])
                 for k, v in list(categories.items()):
-                    categories[k] = dict(category=", ".join(sorted(v)))
+                    categories[k] = dict(
+                        category=", ".join(sorted(v)),
+                        commercial=any(commercial(x) for x in v),
+                    )
             _("user", self.per_user, categories, default)
 
         if by_destinations or ok:  # The 'or' is not a typo
@@ -609,10 +670,14 @@ class Costing:
             default = {}
             path = config("categories")
             if path:
-                default = dict(category="unknown", user="unknown")
+                default = dict(category="unknown", user="unknown", commercial="unknown")
                 with open(path) as csvfile:
                     for row in csv.reader(csvfile, delimiter=","):
-                        categories[row[0]] = dict(category=row[1], user=row[2])
+                        categories[row[0]] = dict(
+                            category=row[1],
+                            user=row[2],
+                            commercial=commercial(row[1]),
+                        )
 
             _("destination", self.per_destination, categories, default)
 
