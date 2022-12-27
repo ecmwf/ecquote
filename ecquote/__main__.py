@@ -106,6 +106,12 @@ def main():
     parser.add_argument("--max-charge-core", type=int)
     parser.add_argument("--max-charge-high-frequency", type=int)
 
+    parser.add_argument("-X", "--experimental", action="store_true")
+    parser.add_argument("--commercial", action="store_true")
+    parser.add_argument("--non-commercial", action="store_false", dest='commercial')
+    parser.set_defaults(commercial=None)
+
+
     parser.add_argument("-r", "--request")
     parser.add_argument("files", metavar="FILES-OR-DIRECTORIES", type=str, nargs="*")
     ARGS = parser.parse_args()
@@ -164,6 +170,10 @@ def main():
 
     if ARGS.max_charge_high_frequency is not None:
         config("max-charge-high-frequency", ARGS.max_charge_high_frequency)
+
+    if ARGS.commercial is not None:
+        config("commercial", ARGS.commercial)
+
 
     if ARGS.rest:
         from ecquote.rest import run
