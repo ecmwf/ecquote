@@ -64,6 +64,8 @@ def main():
     parser.add_argument("-w", "--warnings", action="store_true")
     parser.add_argument("-j", "--json", action="store_true")
     parser.add_argument("--csv", action="store_true")
+    parser.add_argument("--xlsx")
+
     parser.add_argument(
         "--by",
         choices=[
@@ -154,7 +156,7 @@ def main():
     if ARGS.strict_mode:
         config("strict-mode", True)
 
-    if ARGS.csv or ("destinations" in ARGS.show):
+    if ARGS.csv or ARGS.xlsx or ("destinations" in ARGS.show):
         config("destinations", True)
 
     if ARGS.max_charge_core is not None:
@@ -245,6 +247,11 @@ def main():
     if ARGS.csv:
         extra = {f"by_{ARGS.by}": True}
         cart.csv(**extra)
+        return
+
+    if ARGS.xlsx:
+        extra = {f"by_{ARGS.by}": True}
+        cart.xlsx(**extra)
         return
 
     extra = {f"show_{k}": True for k in ARGS.show if k != "all"}

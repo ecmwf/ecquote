@@ -147,3 +147,4 @@ issues/
 ?.*
 reqs/
 *.csv
+*.xlsx

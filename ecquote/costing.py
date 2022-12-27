@@ -545,9 +545,8 @@ class Costing:
 
         self.totals.summary("Grand total:", self.max_charge_limit)
 
-    def csv(
+    def _rows(
         self,
-        file=sys.stdout,
         by_groups=False,
         by_targets=False,
         by_categories=False,
@@ -556,7 +555,6 @@ class Costing:
     ):
         import csv
 
-        fieldnames = []
         rows = []
         ok = True
 
@@ -616,11 +614,113 @@ class Costing:
 
             _("destination", self.per_destination, categories, default)
 
+        return rows
+
+    def csv(
+        self,
+        file=sys.stdout,
+        by_groups=False,
+        by_targets=False,
+        by_categories=False,
+        by_users=False,
+        by_destinations=False,
+    ):
+        import csv
+
+        rows = self._rows(
+            by_groups=by_groups,
+            by_targets=by_targets,
+            by_categories=by_categories,
+            by_users=by_users,
+            by_destinations=by_destinations,
+        )
+
         fieldnames = list(rows[0].keys())
 
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
+
+    def xlsx(
+        self,
+        file=sys.stdout,
+        by_groups=False,
+        by_targets=False,
+        by_categories=False,
+        by_users=False,
+        by_destinations=False,
+    ):
+        import xlsxwriter
+
+        rows = self._rows(
+            by_groups=by_groups,
+            by_targets=by_targets,
+            by_categories=by_categories,
+            by_users=by_users,
+            by_destinations=by_destinations,
+        )
+
+        fieldnames = list(rows[0].keys())
+        workbook = xlsxwriter.Workbook("hello.xlsx")
+        worksheet = workbook.add_worksheet()
+
+        def title(s):
+            s = s.replace("_", " ")
+            return s[0].upper() + s[1:]
+
+        header = workbook.add_format(
+            {
+                "bold": True,
+                "center_across": True,
+                "bottom": True,
+            }
+        )
+        for col, fieldname in enumerate(fieldnames):
+            worksheet.write(0, col, title(fieldname), header)
+
+        class StrFormat:
+            def __init__(self, name, workbook):
+                self.format = None
+                self.width = len(name)
+
+            def add(self, value):
+                self.width = max(self.width, len(value))
+
+        class IntFormat:
+            def __init__(self, name, workbook):
+                self.format = workbook.add_format()
+                self.format.set_num_format(3)
+                self.width = len(name)
+
+            def add(self, value):
+                self.width = max(self.width, (len(str(value)) + 2) // 3 * 4)
+
+        class BoolFormat:
+            def __init__(self, name, workbook):
+                self.format = None
+                self.width = len(name)
+
+            def add(self, value):
+                pass
+
+        formats = {str: StrFormat, int: IntFormat, bool: BoolFormat}
+
+        def cell_formats(colname, value):
+            if colname not in formats:
+                formats[colname] = formats[type(value)](colname, workbook)
+            formats[colname].add(value)
+            return formats[colname].format
+
+        for row, values in enumerate(rows):
+            for col, fieldname in enumerate(fieldnames):
+                value = values.get(fieldname)
+                worksheet.write(row + 1, col, value, cell_formats(fieldname, value))
+
+        for col, fieldname in enumerate(fieldnames):
+            # worksheet.write(0, col, fieldname)
+            worksheet.set_column(col, col, formats[fieldname].width * 0.9)
+
+        workbook.close()
 
 
 def costing(requests):

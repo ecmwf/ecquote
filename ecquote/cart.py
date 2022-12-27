@@ -104,6 +104,9 @@ class Cart:
     def csv(self, **kwargs):
         self._costing().csv(**kwargs)
 
+    def xlsx(self, **kwargs):
+        self._costing().xlsx(**kwargs)
+
     def summary(
         self,
         **kwargs,
