@@ -148,3 +148,5 @@ issues/
 reqs/
 *.csv
 *.xlsx
+*.cache
+*.pickle

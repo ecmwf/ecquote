@@ -36,7 +36,10 @@ class Multiple(argparse.Action):
 def main():
     parser = argparse.ArgumentParser("ecquote")
     parser.add_argument(
-        "-D", "--detailed", action="store_true", help="Print a detailed report"
+        "-D",
+        "--detailed",
+        action="store_true",
+        help="Print a detailed report",
     )
 
     parser.add_argument(
@@ -55,7 +58,9 @@ def main():
     )
 
     parser.add_argument(
-        "--streams", action="store_true", help="List the streams found in the requests"
+        "--streams",
+        action="store_true",
+        help="List the streams found in the requests",
     )
     parser.add_argument("--samples")
     parser.add_argument("--split", action="store_true")
@@ -108,9 +113,8 @@ def main():
 
     parser.add_argument("-X", "--experimental", action="store_true")
     parser.add_argument("--commercial", action="store_true")
-    parser.add_argument("--non-commercial", action="store_false", dest='commercial')
+    parser.add_argument("--non-commercial", action="store_false", dest="commercial")
     parser.set_defaults(commercial=None)
-
 
     parser.add_argument("-r", "--request")
     parser.add_argument("files", metavar="FILES-OR-DIRECTORIES", type=str, nargs="*")
@@ -146,6 +150,9 @@ def main():
     if ARGS.modify:
         config("modify", ARGS.modify)
 
+    if ARGS.experimental:
+        config("experimental", ARGS.experimental)
+
     if ARGS.config:
         for c in ARGS.config:
             k, v = c.split("=")
@@ -173,7 +180,6 @@ def main():
 
     if ARGS.commercial is not None:
         config("commercial", ARGS.commercial)
-
 
     if ARGS.rest:
         from ecquote.rest import run
@@ -261,7 +267,7 @@ def main():
 
     if ARGS.xlsx:
         extra = {f"by_{ARGS.by}": True}
-        cart.xlsx(**extra)
+        cart.xlsx(path=ARGS.xlsx, **extra)
         return
 
     extra = {f"show_{k}": True for k in ARGS.show if k != "all"}

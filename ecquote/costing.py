@@ -145,9 +145,7 @@ class Coster:
                 result["diff"] = None
 
             result["data_values_ref"] = ref
-            result["data_values_ratio"] = (
-                self.yearly_volume / self.yearly_data_values,
-            )
+            result["data_values_ratio"] = self.yearly_volume / self.yearly_data_values
 
         return result
 
@@ -608,7 +606,7 @@ class Costing:
 
         rows = []
         ok = True
-        filter_commercial = config('commercial')
+        filter_commercial = config("commercial")
 
         def _(collection, per_collection, categories=None, default={}):
             for name, coster in sorted(per_collection.items()):
@@ -625,8 +623,8 @@ class Costing:
                 )
 
                 if filter_commercial is not None:
-                    print(filter_commercial, r.get('commercial'))
-                    if r.get('commercial') is not filter_commercial:
+                    print(filter_commercial, r.get("commercial"))
+                    if r.get("commercial") is not filter_commercial:
                         continue
 
                 rows.append(r)
@@ -708,7 +706,7 @@ class Costing:
 
     def xlsx(
         self,
-        file=sys.stdout,
+        path="ecquote.xlsx",
         by_groups=False,
         by_targets=False,
         by_categories=False,
@@ -726,7 +724,7 @@ class Costing:
         )
 
         fieldnames = list(rows[0].keys())
-        workbook = xlsxwriter.Workbook("hello.xlsx")
+        workbook = xlsxwriter.Workbook(path)
         worksheet = workbook.add_worksheet()
 
         def title(s):
@@ -768,11 +766,28 @@ class Costing:
             def add(self, value):
                 pass
 
-        formats = {str: StrFormat, int: IntFormat, bool: BoolFormat}
+        class FloatFormat:
+            def __init__(self, name, workbook):
+                self.format = None
+                self.width = len(name)
+
+            def add(self, value):
+                pass
+
+        formats = {
+            str: StrFormat,
+            int: IntFormat,
+            bool: BoolFormat,
+            float: FloatFormat,
+        }
 
         def cell_formats(colname, value):
             if colname not in formats:
-                formats[colname] = formats[type(value)](colname, workbook)
+                try:
+                    formats[colname] = formats[type(value)](colname, workbook)
+                except KeyError:
+                    print(colname, value, type(value))
+                    raise
             formats[colname].add(value)
             return formats[colname].format
 
