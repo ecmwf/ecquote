@@ -155,7 +155,7 @@ class Coster:
         print("   Yearly volume:   ", bytes(self.yearly_volume))
         print("   Yearly fields:   ", "{:,}".format(self.yearly_fields))
 
-        band, euro, error = self.band()
+        band, euro, error, _ = self.band()
         if error:
             print("   Volume band:     ", error)
         else:
