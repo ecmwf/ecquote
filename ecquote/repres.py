@@ -1130,9 +1130,11 @@ class WP(Repres):
                 product_count *= len(v)
         return dict(enfo=51, oper=1)[self.request.stream] * product_count
 
+    @cached_method
     def factor_A(self):
         return config("minimum_area") / (360 * 180)
 
+    @cached_method
     def _for_R(self):
         from .request import Request
         from .splitters import prepare_request

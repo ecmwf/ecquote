@@ -53,16 +53,20 @@ class Cart:
         if len(args) == 1 and isinstance(args[0], (list, tuple)):
             args = args[0]
 
-        requests = []
+        paths = []
         for path in args:
             if os.path.isdir(path):
                 for root, _, files in os.walk(path):
                     for file in files:
                         if file.endswith(".req"):
                             full = os.path.join(root, file)
-                            requests += parse_request_file(full, inherit)
+                            paths.append(full)
             else:
-                requests += parse_request_file(path, inherit)
+                paths.append(path)
+
+        requests = []
+        for path in progress(paths, "Parse"):
+            requests += parse_request_file(path, inherit)
 
         return cls(requests, preprocessor, **kwargs)
 

@@ -13,16 +13,16 @@ import re
 from contextlib import contextmanager
 
 
-def progress(x):
+def progress(x, title, delay=2):
     try:
         from tqdm import tqdm
     except ImportError:
         return x
 
-    if len(x) > 10000:
-        return tqdm(x)
+    # if len(x) > 5000:
+    return tqdm(x, desc=title, delay=delay, dynamic_ncols=True)
 
-    return x
+    # return x
 
 
 def cached_method(method):

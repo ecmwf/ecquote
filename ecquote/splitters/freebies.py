@@ -9,8 +9,8 @@
 
 
 import logging
+from collections import defaultdict
 
-from ..request import Request
 from ..utils import progress
 from .free_sets import split_paid_free_set
 
@@ -18,8 +18,7 @@ LOG = logging.getLogger(__name__)
 
 
 def find_freebies(subset, freebies, requests):
-    paid = []
-    free = []
+    result = []
     for r in requests:
         p, f = split_paid_free_set(
             r,
@@ -27,46 +26,55 @@ def find_freebies(subset, freebies, requests):
             subset.name,
             ignore=["number", "leg", "dataset"],
         )
-        paid += p
-        free += f
+        result.append((r, p, f))
 
-    return paid, free
+    return result
 
 
 def splitter(requests):
-    requests = list(requests)
-    paid_requests = requests
+    requests = list(progress(requests, "Split"))
+    paid_requests = []
     free_requests = []
 
-    for r in progress(requests):
-        subset = r.subset
-        freebies = []
+    matches = defaultdict(list)
+    for r in requests:
+        matches[r.freebie_matching()].append(r)
 
-        freebies = []
-        for f in subset.free_data:
-            freebies.append(Request(r, f))
+    n = 0
+    for k, v in progress(matches.items(), "Freebies"):
+        more = True
+        n += 1
+        while more:
+            more = False
+            for r in tuple(v):
+                subset = r.subset
+                freebies = r.freebies()
 
-        if freebies:
+                if freebies:
+                    result = find_freebies(subset, freebies, v)
+                    for r, p, f in result:
+                        if f:
+                            v.remove(r)
+                            v += p
+                            free_requests += f
 
-            if LOG.isEnabledFor(logging.DEBUG):
-                LOG.debug("freebies for %s", r.summary())
-                for i, f in enumerate(freebies):
-                    LOG.debug("freebie %s: %s", i, f.summary())
+                            if p:
+                                more = True
+                                # print("more", n, len(v))
 
-            pp = r.postproc
-            user = r.user
+    for k, v in matches.items():
+        paid_requests += v
 
-            matching = [(p.user == user and p.postproc == pp, p) for p in paid_requests]
-            test = [m[1] for m in matching if m[0]]
-            rest = [m[1] for m in matching if not m[0]]
-
-            if LOG.isEnabledFor(logging.DEBUG):
-                for p in test:
-                    LOG.debug("possible freebie  %s", p.summary())
-
-            p, f = find_freebies(subset, freebies, test)
-            paid_requests = p + rest
-            free_requests += f
+    if False:
+        assert sum(r.number_of_fields() for r in requests) == sum(
+            r.number_of_fields() for r in paid_requests
+        ) + sum(r.number_of_fields() for r in free_requests), (
+            sum(r.number_of_fields() for r in requests),
+            sum(r.number_of_fields() for r in paid_requests)
+            + sum(r.number_of_fields() for r in free_requests),
+            sum(r.number_of_fields() for r in paid_requests),
+            sum(r.number_of_fields() for r in free_requests),
+        )
 
     yield from (
         x.annotate("split", "freebies", override="append", only_if=free_requests)

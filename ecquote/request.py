@@ -581,3 +581,15 @@ class Request:
 
     def full_dump(self):
         return f"{self._groups} @ {self._attributes}"
+
+    # Used by freebie
+    @cached_method
+    def freebie_matching(self):
+        return (tuple((k, v) for k, v in sorted(self.postproc.items())), self.user)
+
+    @cached_method
+    def freebies(self):
+        freebies = []
+        for f in self.subset.free_data:
+            freebies.append(Request(self, f))
+        return freebies

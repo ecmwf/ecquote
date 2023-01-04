@@ -15,7 +15,7 @@ from collections import defaultdict
 
 from . import __version__
 from .resources import config, resource
-from .utils import bytes, capture_warnings, log_warning_once, roman
+from .utils import bytes, capture_warnings, log_warning_once, progress, roman
 
 LOG = logging.getLogger(__name__)
 
@@ -96,7 +96,7 @@ class Coster:
         self.experimental = config("experimental")
 
     def add(self, *requests):
-        for r in requests:
+        for r in progress(requests, "Volumes"):
             with capture_warnings(r):
                 self.yearly_volume += r.estimated_volume() * r.frequency()
                 self.yearly_fields += r.number_of_fields() * r.frequency()
@@ -178,11 +178,9 @@ class EPUBased(Coster):
 
     def add(self, *requests):
         super().add(*requests)
-        for r in requests:
+        for r in progress(requests, "Costing"):
             D, E, M = self.factors(r)
             self.epus += self.compute_epus(r, D, E, M)
-
-        for r in requests:
             self.items += r.number_of_chargeable_items()
 
     def factors(self, request):
@@ -352,7 +350,7 @@ class Costing:
         self.per_category = defaultdict(coster_class)
         self.per_user = defaultdict(coster_class)
         self.per_destination = defaultdict(coster_class)
-        for r in requests:
+        for r in progress(requests, "Sub-totals"):
             self.per_target[r.tag].add(r)
             self.per_group[r.group].add(r)
             self.per_category[r.category].add(r)
