@@ -46,7 +46,6 @@ def list_of_tests():
 
 
 TESTS = list_of_tests()
-TESTS = []
 
 percent = 0.0
 
