@@ -621,7 +621,6 @@ class Costing:
                 )
 
                 if filter_commercial is not None:
-                    print(filter_commercial, r.get("commercial"))
                     if r.get("commercial") is not filter_commercial:
                         continue
 
