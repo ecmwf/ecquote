@@ -25,7 +25,6 @@ def split_paid_free_set_request(
     depth,
     *keys,
 ):
-
     if len(keys) == 0:
         LOG.debug(
             "%ssplit_paid_free_set_request (%s) all_free=%s request=%s",
@@ -58,7 +57,6 @@ def split_paid_free_set_request(
         rule_values.update(values)
 
     if LOG.isEnabledFor(logging.DEBUG):
-
         LOG.debug(
             "%ssplit_paid_free_set_request (%s) request=%s",
             " " * depth,
@@ -172,7 +170,6 @@ class PreserveUserDictOrder:
 
 
 def _add_non_field(request, requests, free_set_name=None):
-
     sorter = PreserveUserDictOrder(request.fields)
     for r in requests:
         s = {}
@@ -227,7 +224,6 @@ def split_paid_free_set(request, free_set, free_set_name, ignore=[]):
     # _check(request.fields)
     rules = []
     for r in free_set:
-
         # _check(r.fields)
         if set(r.fields.keys()) - ignore != all_keys:
             LOG.debug(
@@ -279,7 +275,6 @@ def coarser(g1, g2):
 
 
 def match(r, free_grid):
-
     grid = r.postproc.get("grid")
     if grid is None or len(grid) != 2:
         return False
@@ -301,7 +296,6 @@ def match(r, free_grid):
 
 
 def splitter(requests, free_set_name):
-
     from ..cart import Cart
 
     debug = LOG.isEnabledFor(logging.DEBUG)
@@ -341,7 +335,6 @@ def splitter(requests, free_set_name):
             LOG.debug("%s: public_sets %s", free_grid, k)
 
     for r in requests:
-
         LOG.debug("%s: postproc %s and %s", free_set_name, free_grid, r.postproc)
 
         if not match(r, free_grid):

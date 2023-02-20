@@ -20,7 +20,6 @@ LOG = logging.getLogger(__name__)
 
 
 def error(request):
-
     if not os.path.exists("tests/representations"):
         return
 

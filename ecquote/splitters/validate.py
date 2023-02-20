@@ -18,7 +18,6 @@ OFF = ("off",)
 
 
 def validate(r):
-
     # if r.levtype == 'sfc':
     #     if 'levelist' in r.fields:
     #         del r.fields['levelist']
@@ -27,6 +26,5 @@ def validate(r):
 
 
 def splitter(requests):
-
     for r in requests:
         yield validate(r)

@@ -31,7 +31,6 @@ LOG = logging.getLogger(__name__)
 
 
 def first_splitters(requests, categories=None, category=None, **kwargs):
-
     s = requests
 
     s = canonical_splitter(s)
@@ -51,7 +50,6 @@ def first_splitters(requests, categories=None, category=None, **kwargs):
 
 
 def second_splitters(requests, group_by=None, **kwargs):
-
     s = requests
 
     if group_by or config("group-by"):
