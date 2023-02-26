@@ -18,9 +18,7 @@ LOG = logging.getLogger(__name__)
 def splitter(requests):
     # need_leg = config("need_leg")
     for r in requests:
-
         if r.stream in ("enfo", "waef", "efov") and r.type in ("pf", "cf"):
-
             use = r.use.get("use", [])
             if "monday" in use or "thursday" in use:
                 yield Request(r, leg=(2,))

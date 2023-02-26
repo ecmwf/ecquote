@@ -74,7 +74,6 @@ def test_references(req):
         raise pytest.skip(cost["skip"])
 
     try:
-
         assert len(cost) <= 3
 
         cart = Cart.from_request_files(path, inherit=True)

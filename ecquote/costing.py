@@ -29,7 +29,6 @@ ECMWF/ACDP/8(07)A introduces M
 
 
 def band(volume):
-
     daily_gb = volume / 365 / 1024 / 1024 / 1024
     volume_bands = resource("volume-bands")
 
@@ -41,7 +40,6 @@ def band(volume):
 
 
 def data_values_band(data_values):
-
     daily_data_values_millions = data_values / 365 / 1000 / 1000
     data_values_band = resource("data-values-bands")
 
@@ -125,7 +123,6 @@ class Coster:
             result["volume_cost"] = euro
 
         if self.experimental:
-
             result["yearly_data_values"] = self.yearly_data_values
             result["average_daily_data_values"] = int(
                 self.yearly_data_values / 365 + 0.5
@@ -219,7 +216,6 @@ class EPUBased(Coster):
 
     @property
     def discounted_epus(self):
-
         N = self.epus
 
         if N <= 2000:
@@ -301,7 +297,6 @@ class CurrentCosting(EPUBased):
 
     def compute_epus(self, request, D, E, M):
         with capture_warnings(request):
-
             B = request.factor_B()
             V = 1
             number_of_items = request.number_of_chargeable_items()
@@ -341,7 +336,6 @@ class CurrentCosting(EPUBased):
 
 class Costing:
     def __init__(self, requests, coster_class=Coster):
-
         self.totals = coster_class()
         self.totals.add(*requests)
 
@@ -425,7 +419,6 @@ class Costing:
             minimum_area = config("minimum_area") / (360 * 180)
 
             for target, coster in sorted(self.per_target.items()):
-
                 print(target)
                 print()
 
@@ -491,7 +484,6 @@ class Costing:
                                 )
 
                         if wave and (r.factor_A() * r.land_sea_ratio() >= minimum_area):
-
                             print(
                                 "      explain EPUs:    ",
                                 r.factor_B(),

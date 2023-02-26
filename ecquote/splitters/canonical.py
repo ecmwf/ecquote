@@ -92,7 +92,6 @@ def canonical_param(param):
 def splitter(requests):
     # Cleanup requests
     for r in requests:
-
         r.fields.setdefault("class", ("od",))
         r.fields.setdefault("domain", ("g",))
         r.fields.setdefault("expver", ("0001",))

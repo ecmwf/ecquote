@@ -21,7 +21,6 @@ def compare(a, b):
 
 
 def dont_test_volumes():
-
     compare(
         Request("levtype=ml,param=q,stream=oper,type=an").estimated_volume(),
         13205780,

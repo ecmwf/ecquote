@@ -22,9 +22,7 @@ def splitter(requests):
     spherical_harmonics_levtype = set(spherical_harmonics["levtype"])
 
     for r in requests:
-
         if r.fields.get("levtype", ["off"])[0] in spherical_harmonics_levtype:
-
             sh = []
             gg = []
 

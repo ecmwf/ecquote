@@ -227,7 +227,6 @@ def grib_sections(
     bits_per_value,
     edition=2,
 ):
-
     return tuple(
         section(
             request,

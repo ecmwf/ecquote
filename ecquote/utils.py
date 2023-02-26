@@ -93,7 +93,6 @@ def log_warning_once(
 
 
 def as_dict(x):
-
     if hasattr(x, "as_dict"):
         return as_dict(x.as_dict())
 
@@ -107,7 +106,6 @@ def as_dict(x):
 
 
 def as_numbers(x):
-
     if isinstance(x, (list, tuple)):
         return [as_numbers(y) for y in x]
 
@@ -137,7 +135,6 @@ def as_resource(x):
 
 
 def as_string(x):
-
     if x is None:
         return x
 

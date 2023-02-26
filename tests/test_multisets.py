@@ -11,7 +11,6 @@ from ecquote.cart import Cart
 
 
 def test_efi():
-
     cart = Cart.from_strings(
         """
    stream=enfo,

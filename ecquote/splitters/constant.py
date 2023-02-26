@@ -21,12 +21,10 @@ def splitter(requests):
         match = False
         if r.type not in ("wp", "tf"):
             for rule in rules:
-
                 if not isinstance(rule["param"], (tuple, list)):
                     rule["param"] = [rule["param"]]
 
                 if r.fields.get("levtype", ["off"])[0] == rule["levtype"]:
-
                     constant = []
                     variable = []
 

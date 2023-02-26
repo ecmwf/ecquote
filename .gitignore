@@ -151,3 +151,4 @@ reqs/
 *.cache
 *.pickle
 *.prof
+overlay/
