@@ -232,3 +232,6 @@ class Cart:
             sorted(count.items(), key=lambda x: x[1], reverse=True)
         ):
             print(",".join(list(k) + [str(v)]))
+
+    def _repr_html_(self):
+        return self._costing().html()

@@ -235,7 +235,7 @@ class EPUBased(Coster):
 
     @property
     def euros(self):
-        P = 0.5
+        P = config("epu-price")
         return P * self.discounted_epus
 
     def as_dict(self):
@@ -675,6 +675,9 @@ class Costing:
             _("destination", self.per_destination, categories, default)
 
         return rows
+
+    def html(self):
+        pass
 
     def csv(
         self,
