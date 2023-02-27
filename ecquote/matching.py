@@ -17,7 +17,6 @@ LOG = logging.getLogger(__name__)
 
 
 def to_by(values):
-
     start = int(values[0])
     end = int(values[2])
     step = int(values[4])
@@ -56,7 +55,6 @@ def multiple(name, request, matches, callable):
         for r, s in matches:
             some = {k: v for k, v in r.fields.items() if k in SOME}
             for one in iterate_request(some):
-
                 f = tuple(sorted(one.items()))
                 allfields.discard(f)
 
@@ -102,7 +100,6 @@ class Matcher:
     @property
     def rules(self):
         if self._rules is None:
-
             if isinstance(self.what, str):
                 self._rules = resource(self.what)
             else:
@@ -172,7 +169,6 @@ class Matcher:
         self._keys = sorted(keys)
 
         if len(matches) == 0:
-
             if callable(self._default):
                 return self._default(request)
 
@@ -184,7 +180,6 @@ class Matcher:
                 # r = str(Request(r, target=(request.target,)))
                 r = str(Request(r))
                 if r not in self.seen:
-
                     if self._default is None:
                         LOG.error(
                             "No %s found for %s. %r.",
@@ -246,7 +241,6 @@ class Matcher:
         mars = rule["mars"]
         split = {}
         for k, v in mars.items():
-
             if not isinstance(v, list):
                 v = [v]
             v = set([str(x) if x is not None else x for x in v])

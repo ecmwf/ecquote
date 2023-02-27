@@ -94,7 +94,6 @@ class Modifier:
             self.rules = [Rule(r) for r in yaml.safe_load(f)]
 
     def __call__(self, r):
-
         save = r
 
         for rule in self.rules:

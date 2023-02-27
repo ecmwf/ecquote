@@ -28,7 +28,6 @@ def identity(x):
 
 class Cart:
     def __init__(self, requests, preprocessor=None, **kwargs):
-
         self._kwargs = kwargs
 
         if preprocessor is None:
@@ -95,7 +94,6 @@ class Cart:
 
     @cached_method
     def _costing(self):
-
         if not self._second_splitters:
             self.requests = RequestList(second_splitters(self.requests, **self._kwargs))
             self._second_splitters = True
@@ -189,7 +187,6 @@ class Cart:
 
         seen = set()
         for r in self.requests:
-
             for f in fields:
                 cnt = 0
                 for k, v in f.items():
@@ -217,7 +214,6 @@ class Cart:
         return f[0]
 
     def statistics(self):
-
         count = defaultdict(int)
         names = ("param", "step", "levelist", "stream", "type")
         for r in progress(self.requests):
@@ -232,3 +228,6 @@ class Cart:
             sorted(count.items(), key=lambda x: x[1], reverse=True)
         ):
             print(",".join(list(k) + [str(v)]))
+
+    def _repr_html_(self):
+        return self._costing().html()

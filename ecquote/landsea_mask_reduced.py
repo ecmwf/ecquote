@@ -18,7 +18,6 @@ LOG = logging.getLogger(__name__)
 
 class Mask:
     def __init__(self, mask):
-
         state = mask["start"]
         size = mask["size"]
         grid = mask["grid"]

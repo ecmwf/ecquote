@@ -401,7 +401,6 @@ class Repres:
         return result
 
     def bits_per_value(self):
-
         number_of_fields = self.request.number_of_fields()
         params = self.request.params
 
@@ -481,7 +480,6 @@ class Field(Repres):
         items = {"2dfd": 10}
         count = 0
         for p in request.fields["param"]:
-
             count += Request(
                 request,
                 param=(p,),
@@ -493,7 +491,6 @@ class Field(Repres):
         return count
 
     def explain_items(self, request):
-
         explain = []
 
         steps = request.fields.get("step", (0,))
@@ -558,7 +555,6 @@ class Area:
 
 
 class Gridded(Field):
-
     area = Area(90, 0, -90, 360)
     bitmap = None
     frame = None
@@ -573,7 +569,6 @@ class Gridded(Field):
 
     @cached_method
     def encoded_values(self):
-
         npoints = self.number_of_points()
         nmissing = 0
 
@@ -615,7 +610,6 @@ class Gridded(Field):
 
     @cached_method
     def factor_A(self):
-
         if self.is_global():
             return 1
 
@@ -647,7 +641,6 @@ class Gridded(Field):
 
 
 class LatLon(Gridded):
-
     name = "latlon"
 
     area = Area(90, 0, -90, 360)
@@ -681,7 +674,6 @@ class LatLon(Gridded):
         )
 
     def number_of_points(self):
-
         return latlon_number_of_points(
             *self.adjusted_area(),
             *self.grid,
@@ -768,7 +760,6 @@ class LatLon(Gridded):
 
 
 class Gaussian(Gridded):
-
     name = "gaussian"
 
     gaussian = None
@@ -777,7 +768,6 @@ class Gaussian(Gridded):
         return LatLon(self.request).set_grid(we, sn)
 
     def set_gaussian(self, gaussian):
-
         if gaussian[0].isdigit():
             log_warning_once(
                 LOG,
@@ -792,7 +782,6 @@ class Gaussian(Gridded):
         return self
 
     def adjust_area(self, north, west, south, east):
-
         # if east - west == 360:
         #     log_warning_once(
         #         LOG,
@@ -847,7 +836,6 @@ class Gaussian(Gridded):
 
 
 class Spectral(Field):
-
     name = "spectral"
 
     resol = None
@@ -908,7 +896,6 @@ class Spectral(Field):
 
 
 class ReducedLL(Gridded):
-
     name = "reduced_ll"
 
     def set_grid(self, we, sn):
@@ -1258,7 +1245,6 @@ REPRES = {
 
 
 def repres(request):
-
     repres = representation_matcher.get_match(request)
     type = repres["type"] if repres else "sh"
     if isinstance(type, (list, tuple)):

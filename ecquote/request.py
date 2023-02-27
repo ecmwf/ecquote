@@ -38,7 +38,6 @@ def paramid(name):
 
 
 def to_by(d):
-
     for k in ("step", "levelist", "number"):
         if k in d and len(d[k]) > 5:
             ok = True
@@ -256,7 +255,6 @@ class Request:
         return count
 
     def explain_fields(self):
-
         bits = []
         nice = dict(levelist="level")
 
@@ -563,7 +561,6 @@ class Request:
 
         t = []
         for k, v in s.items():
-
             if k in ("leg", "dataset"):
                 continue
 

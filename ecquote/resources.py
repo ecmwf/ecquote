@@ -10,6 +10,7 @@
 import json
 import logging
 import os
+import warnings
 from contextlib import contextmanager
 
 import yaml
@@ -19,15 +20,39 @@ from .utils import cached_function
 LOG = logging.getLogger(__name__)
 
 
-def resource_path(name):
-    full = os.path.join(os.path.dirname(__file__), "resources", name)
+OVERLAY = None
+
+
+def set_overlay(overlay):
+    global OVERLAY
+    OVERLAY = overlay
+    if not os.path.exists(OVERLAY):
+        warnings.warn(f"Overlay directoty does not exist: {OVERLAY}")
+
+
+def _resource_path(root, name):
+    full = os.path.join(root, name)
     if os.path.exists(full):
         return full
     for ext in (".yaml", ".json", ".diss"):
         if os.path.exists(full + ext):
             return full + ext
+    return None
 
-    raise ValueError("Resource not found: '%s'" % name)
+
+def resource_path(name):
+    if OVERLAY is not None:
+        path = _resource_path(OVERLAY, name)
+        if path is not None:
+            warnings.warn(f"Using overlay file {path}")
+            return path
+
+    path = _resource_path(os.path.join(os.path.dirname(__file__), "resources"), name)
+
+    if path is None:
+        raise ValueError("Resource not found: '%s'" % name)
+
+    return path
 
 
 @cached_function

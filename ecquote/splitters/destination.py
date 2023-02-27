@@ -13,7 +13,6 @@ LOG = logging.getLogger(__name__)
 
 
 def splitter(requests):
-
     for r in requests:
         d = r.tag.split(":")[0]
         yield r.annotate("destination", d)

@@ -21,13 +21,11 @@ def splitter(requests):
     high_frequency = set(str(s) for s in set(range(0, 91, 1)) - set(range(0, 91, 3)))
 
     for r in requests:
-
         if r.stream in high_frequency_streams:
             yield r.annotate("group", "high-frequency")
             continue
 
         if r.stream in ("enfo", "waef") and "time" in r.fields:
-
             highf = []
             other = []
 
@@ -58,7 +56,6 @@ def splitter(requests):
                 continue
 
         if "step" in r.fields:
-
             highf = []
             other = []
 

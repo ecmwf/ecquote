@@ -135,6 +135,7 @@ group-by: null
 
 max-charge-core: 100000
 max-charge-high-frequency: 108000
+epu-price: 0.5
 
 # Destination mode, look for XXX:XX
 destinations: False

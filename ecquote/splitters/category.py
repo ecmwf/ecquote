@@ -14,7 +14,6 @@ LOG = logging.getLogger(__name__)
 
 
 def splitter(requests, path, only_category):
-
     categories = {}
     with open(path) as csvfile:
         cats = set()
@@ -23,7 +22,6 @@ def splitter(requests, path, only_category):
             cats.add(row[1])
 
     if only_category is not None:
-
         if only_category not in cats:
             print(f"Invalid category [{only_category}]")
             print("Values are:")

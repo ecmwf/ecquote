@@ -14,7 +14,7 @@ import os
 
 from .cart import Cart
 from .modify import preprocessor
-from .resources import config
+from .resources import config, set_overlay
 from .utils import as_resource
 
 
@@ -108,6 +108,8 @@ def main():
     parser.add_argument("--modify", metavar="PATH-TO-MODIFY-YAML")
     parser.add_argument("--category", metavar="CATEGORY")
 
+    parser.add_argument("--overlay", metavar="DIRECTORY")
+
     parser.add_argument("--max-charge-core", type=int)
     parser.add_argument("--max-charge-high-frequency", type=int)
 
@@ -136,6 +138,9 @@ def main():
         level=level,
         datefmt="%Y-%m-%d %H:%M:%S",
     )
+
+    if ARGS.overlay:
+        set_overlay(ARGS.overlay)
 
     if ARGS.no_free:
         config("free-open-data", False)

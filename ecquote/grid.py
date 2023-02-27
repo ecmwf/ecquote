@@ -154,7 +154,6 @@ def gaussian_number_of_values(name, north, west, south, east):
 
 
 def latlon_width_heigth(north, west, south, east, we, sn, title):
-
     a = grid_rounding((north - south) / sn)
     if int(a) != a:
         raise ValueError(
@@ -200,7 +199,6 @@ def latlon_number_of_points(north, west, south, east, we, sn, title):
 
 
 def latlon_adjust_area(north, west, south, east, we, sn, title):
-
     # MIR considers the bottom-left point as the reference of the area
 
     old = east

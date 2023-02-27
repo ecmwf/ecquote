@@ -47,7 +47,6 @@ class Parser:
             return f"Parser[{self.path}:{self.line+1}]"
 
     def read(self):
-
         if self.eof:
             return ""
 
@@ -59,7 +58,6 @@ class Parser:
 
     def peek(self, spaces=False):
         while True:
-
             c = self.reader.peek()
 
             if self.comments and c == "#":
@@ -81,7 +79,6 @@ class Parser:
                     self.line += 1
 
     def next(self, spaces=False):
-
         while True:
             c = self.read()
             if c == "":
