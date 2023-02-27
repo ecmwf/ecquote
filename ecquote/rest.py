@@ -65,7 +65,7 @@ def costing():
 
 @application.route("/sizes", methods=["POST"])
 def sizes():
-    config("strict-mode", True)
+    config("strict-mode", False)
     try:
         cart = Cart.from_json(request.get_json(force=True), group_by="stream-type")
         return jsonify(cart.costing())
