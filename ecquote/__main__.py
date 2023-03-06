@@ -102,6 +102,8 @@ def main():
     parser.add_argument("-C", "--categories", metavar="PATH-TO-CSV-FILE")
     parser.add_argument("--disable-inheritance", action="store_true")
 
+    parser.add_argument("--free-grid")
+
     parser.add_argument("--free-data", metavar="PATH-TO-DISS-FILE", action="append")
     parser.add_argument("--group-by", metavar="KEY1,KEY2,...")
 
@@ -157,6 +159,9 @@ def main():
 
     if ARGS.experimental:
         config("experimental", ARGS.experimental)
+
+    if ARGS.free_grid:
+        config("free-grid", ARGS.free_grid)
 
     if ARGS.config:
         for c in ARGS.config:
