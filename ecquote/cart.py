@@ -8,6 +8,7 @@
 # nor does it submit to any jurisdiction.
 
 import itertools
+import json
 import logging
 import os
 from collections import defaultdict
@@ -201,6 +202,29 @@ class Cart:
         for r in self.requests:
             r.dump(all_keys, **kwargs)
             print(**kwargs)  # An extra line for the perl
+
+    def unique(self, **kwargs):
+        seen = set()
+        for r in self.requests:
+            for s in r.unique(
+                ignore=(
+                    "class",
+                    "leg",
+                    "time",
+                    # "stream",
+                    # "type",
+                    "expver",
+                    "number",
+                    "domain",
+                    "direction",
+                    "frequency",
+                    "step",
+                    "use",
+                )
+            ):
+                if s not in seen:
+                    print(json.dumps(s))
+                    seen.add(s)
 
     def frequency(self):
         f = list(set(r.frequency() for r in self.requests))

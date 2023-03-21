@@ -8,6 +8,7 @@
 # nor does it submit to any jurisdiction.
 
 import datetime
+import itertools
 import logging
 from collections import defaultdict
 
@@ -568,6 +569,17 @@ class Request:
             t.append(f"{k}={v}")
         print(",\n".join(t), **kwargs)
         print(**kwargs)
+
+    def unique(self, ignore=()):
+        s = dict(self.fields)
+        s.pop("dataset", None)
+        for i in ignore:
+            s.pop(i, None)
+
+        keys, values = zip(*s.items())
+        for p in (dict(zip(keys, v)) for v in itertools.product(*values)):
+            p.update(self.postproc)
+            yield tuple(p.items())
 
     def __eq__(self, other):
         return self._groups == other._groups
