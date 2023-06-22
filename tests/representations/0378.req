@@ -1,0 +1,10 @@
+class=od,
+domain=g,
+expver=0078,
+levelist=925/850/700/500,
+levtype=pl,
+param=t/z/r/u/v,
+step=0,
+stream=oper,
+time=0000/1200,
+type=an

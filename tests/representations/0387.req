@@ -1,0 +1,10 @@
+class=od,
+domain=g,
+expver=0078,
+levelist=1000/925/900/850/800/700/600/500/400/300/250/200/150/100,
+levtype=pl,
+param=gh/u/v/t/r/w/d,
+step=0,
+stream=scda,
+time=0600/1800,
+type=an

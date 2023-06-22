@@ -1,0 +1,9 @@
+class=od,
+domain=g,
+expver=0078,
+levtype=sfc,
+param=swvl2/hcc/swvl4/swvl1/swvl3/lcc/sd/2t/2d/rsn,
+step=0,
+stream=oper,
+time=0000/0600/1200/1800,
+type=an
