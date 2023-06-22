@@ -111,6 +111,7 @@ class Matcher:
 
             for rule in self._rules.values():
                 mars = rule["mars"]
+                print("MARS", mars)
                 for k, v in mars.items():
                     if isinstance(v, (list, tuple)):
                         if len(v) == 5 and v[1] == "to" and v[3] == "by":

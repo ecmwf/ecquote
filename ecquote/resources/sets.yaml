@@ -138,14 +138,11 @@ III-i-a-cf:
   subset: III-i
   free_with: III-i-a
   frequency: 365
-III-i-a-hf:  #hindcast supplied twice per week to 15 days with the enfo now
+III-i-a-hf: #hindcast supplied twice per week to 15 days with the enfo now
   mars:
-    - stream: enfh
-      type: cf
-      levtype: sfc
-    - stream: enfh
-      type: pf
-      levtype: sfc
+    stream: enfh
+    type: [cf, pf]
+    levtype: sfc
   description: Free set with III-i-a
   set: III
   subset: III-i
@@ -160,15 +157,15 @@ III-i-b:
   set: III
   subset: III-i
   free_data:
-    - stream: enfo
-      type: cf
-      levtype: pl
-    - stream: enfh
-      type: pf
-      levtype: pl
-    - stream: enfh
-      type: cf
-      levtype: pl
+  - stream: enfo
+    type: cf
+    levtype: pl
+  - stream: enfh
+    type: pf
+    levtype: pl
+  - stream: enfh
+    type: cf
+    levtype: pl
   frequency: 365
 III-i-b-cf:
   mars:
@@ -180,13 +177,10 @@ III-i-b-cf:
   subset: III-i
   free_with: III-i-b
   frequency: 365
-III-i-b-hf:  #hindcast supplied twice per week to 15 days with the enfo now
+III-i-b-hf: #hindcast supplied twice per week to 15 days with the enfo now
   mars:
-    - stream: enfh
-    type: cf
-    levtype: pl
-    - stream: enfh
-    type: pf
+    stream: enfh
+    type: [cf, pf]
     levtype: pl
   description: Free set with III-i-b
   set: III
@@ -201,16 +195,13 @@ III-i-c:
     levtype: ml
   set: III
   subset: III-i
-      free_data:
-      - stream: enfo
-        type: cf
-        levtype: ml
-      - stream: enfh
-        type: pf
-        levtype: ml
-      - stream: enfh
-        type: cf
-        levtype: ml
+  free_data:
+  - stream: enfo
+    type: cf
+    levtype: ml
+  - stream: enfh
+    type: pf
+    levtype: ml
   frequency: 365
 III-i-c-cf:
   mars:
@@ -222,14 +213,11 @@ III-i-c-cf:
   subset: III-i
   free_with: III-i-c
   frequency: 365
-III-i-c-hf:  #hindcast supplied twice per week to 15 days with the enfo now
+III-i-c-hf: #hindcast supplied twice per week to 15 days with the enfo now
   mars:
-  - stream: enfh
-    type: cf
+    stream: enfh
+    type: [cf, pf]
     levtype: ml
-    -   stream: enfh
-      type: pf
-      levtype: ml
   description: Free set with III-i-c
   set: III
   subset: III-i
@@ -256,16 +244,16 @@ III-i-d:
     levtype:
     - pv
     - pt
-    - stream: enfh
-      type: pf
-      - levtype:
-          - pv
-          - pt
-    - stream: enfh
-      type: cf
-        - levtype:
-          - pv
-          - pt
+  - stream: enfh
+    type: pf
+    levtype:
+    - pv
+    - pt
+  - stream: enfh
+    type: cf
+    levtype:
+    - pv
+    - pt
   frequency: 365
 III-i-d-cf:
   mars:
@@ -279,18 +267,13 @@ III-i-d-cf:
   subset: III-i
   free_with: III-i-d
   frequency: 365
-III-i-d-hf:  #hindcast supplied twice per week to 15 days with the enfo now
+III-i-d-hf: #hindcast supplied twice per week to 15 days with the enfo now
   mars:
-  - stream: enfh
-    type: cf
+    stream: enfh
+    type: [cf, pf]
     levtype:
-      - pt
-      - pv
-    -   stream: enfh
-        type: pf
-        levtype:
-          - pt
-          - pv
+    - pt
+    - pv
   description: Free set with III-i-d
   set: III
   subset: III-i
@@ -1155,13 +1138,13 @@ VI-ii-a:
   set: VI
   subset: VI-ii
   frequency: 104
-    free_data:
-    - stream: eehs
-      type: taem
-      levtype: sfc
-    - stream: eehs
-      type: em
-      levtype: sfc
+  free_data:
+  - stream: eehs
+    type: taem
+    levtype: sfc
+  - stream: eehs
+    type: em
+    levtype: sfc
 VI-ii-b:
   description: Weekly mean anomalies of ensemble means - Pressure levels
   mars:
@@ -1179,13 +1162,13 @@ VI-ii-b:
   set: VI
   subset: VI-ii
   frequency: 104
-    free_data:
-    - stream: eehs
-      type: taem
-      levtype: pl
-    - stream: eehs
-      type: em
-      levtype: pl
+  free_data:
+  - stream: eehs
+    type: taem
+    levtype: pl
+  - stream: eehs
+    type: em
+    levtype: pl
 VI-iii-a:
   description: Weekly means of individual ensemble members - Single level
   mars:
