@@ -62,7 +62,7 @@ def canonical_area(area):
 
 def canonical_time(time):
     time = [int(x) for x in time]
-    return tuple("%02d00" % (x / 100 if x > 100 else x) for x in time)
+    return tuple("%02d00" % (x / 100 if x >= 100 else x) for x in time)
 
 
 def canonical_grid(grid):

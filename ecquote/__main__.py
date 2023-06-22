@@ -120,6 +120,10 @@ def main():
     parser.add_argument("--non-commercial", action="store_false", dest="commercial")
     parser.set_defaults(commercial=None)
 
+    parser.add_argument(
+        "--unique", action="store_true", help="Generate unique mars requests"
+    )
+
     parser.add_argument("-r", "--request")
     parser.add_argument("files", metavar="FILES-OR-DIRECTORIES", type=str, nargs="*")
     ARGS = parser.parse_args()
@@ -247,6 +251,10 @@ def main():
 
     if ARGS.requests:
         cart.dump_requests()
+        exit(0)
+
+    if ARGS.unique:
+        cart.unique()
         exit(0)
 
     if ARGS.statistics:
