@@ -20,7 +20,6 @@ from .free_sets import splitter as free_splitter
 from .freebies import splitter as freebies_splitter
 from .group_by import splitter as group_by_splitter
 from .high_frequency import splitter as high_frequency_splitter
-from .leg import splitter as leg_splitter
 from .repres import splitter as repres_splitter
 from .shgg import splitter as shgg_splitter
 from .subset import splitter as subset_splitter
@@ -36,7 +35,6 @@ def first_splitters(requests, categories=None, category=None, **kwargs):
 
     s = canonical_splitter(s)
     s = validate_splitter(s)
-    s = leg_splitter(s)
     s = shgg_splitter(s)
     s = subset_splitter(s)
     s = repres_splitter(s)
