@@ -1,10 +1,9 @@
 class=od,
 domain=g,
-expver=0001,
-leg=2,
+expver=0078,
 levtype=sfc,
-param=tp,
-step=372/396/420/444/468/492/516/540/564/588/612/636/660/684/708/732/756/780/804/828/852/876/900/924/948/972/996/1020/1044/1068/1092,
-stream=enfo,
-time=0000,
-type=cf
+param=msl,
+step=0,
+stream=oper,
+time=0000/1200,
+type=an

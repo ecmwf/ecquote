@@ -1,9 +1,9 @@
 class=od,
 domain=g,
-expver=0001,
+expver=0078,
 levtype=sfc,
-param=tpara/2ta,
-step=96-264/264-432/432-600/600-768/768-936/936-1104,
-stream=enfo,
-time=0000,
-type=taem
+param=hmax/mdts/mdww/mpts/mpww/mwd/mwp/mp2/p2ps/tmax/shts/shww/swh,
+step=0,
+stream=wave,
+time=0000/0600/1200/1800,
+type=an

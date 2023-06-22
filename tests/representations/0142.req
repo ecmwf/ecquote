@@ -1,10 +1,9 @@
 class=od,
 domain=g,
-expver=0001,
+expver=0078,
 levtype=sfc,
-number=10,
-param=mn2ti/mx2ti/2ti,
-step=0-24/24-48/48-72/72-96/96-120/120-144/144-168,
-stream=enfo,
-time=0000,
-type=sot
+param=z/lsm/slt,
+step=0,
+stream=oper,
+time=1200,
+type=an

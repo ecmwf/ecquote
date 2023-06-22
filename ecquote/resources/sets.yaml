@@ -52,20 +52,6 @@ I-i-d:
   set: I
   subset: I-i
   frequency: 365
-I-i-e:
-  description: Snow depth levels
-  mars:
-    stream:
-    - oper
-    - scda
-    type:
-    - fc
-    - an
-    levtype:
-    - sol
-  set: I
-  subset: I-i
-  frequency: 365
 I-ii:
   description: Time series of weather parameters
   mars:
@@ -121,11 +107,8 @@ III-i-a:
   - stream: enfo
     type: cf
     levtype: sfc
-  - stream: enfh
-    type: pf
-    levtype: sfc
-  - stream: enfh
-    type: cf
+  - stream: oper
+    type: fc
     levtype: sfc
   frequency: 365
 III-i-a-cf:
@@ -138,16 +121,6 @@ III-i-a-cf:
   subset: III-i
   free_with: III-i-a
   frequency: 365
-III-i-a-hf: #hindcast supplied twice per week to 15 days with the enfo now
-  mars:
-    stream: enfh
-    type: [cf, pf]
-    levtype: sfc
-  description: Free set with III-i-a
-  set: III
-  subset: III-i
-  free_with: III-i-a
-  frequency: 104
 III-i-b:
   description: Atmospheric fields - Pressure levels
   mars:
@@ -160,11 +133,8 @@ III-i-b:
   - stream: enfo
     type: cf
     levtype: pl
-  - stream: enfh
-    type: pf
-    levtype: pl
-  - stream: enfh
-    type: cf
+  - stream: oper
+    type: fc
     levtype: pl
   frequency: 365
 III-i-b-cf:
@@ -177,16 +147,6 @@ III-i-b-cf:
   subset: III-i
   free_with: III-i-b
   frequency: 365
-III-i-b-hf: #hindcast supplied twice per week to 15 days with the enfo now
-  mars:
-    stream: enfh
-    type: [cf, pf]
-    levtype: pl
-  description: Free set with III-i-b
-  set: III
-  subset: III-i
-  free_with: III-i-b
-  frequency: 104
 III-i-c:
   description: Atmospheric fields - Model levels
   mars:
@@ -199,8 +159,8 @@ III-i-c:
   - stream: enfo
     type: cf
     levtype: ml
-  - stream: enfh
-    type: pf
+  - stream: oper
+    type: fc
     levtype: ml
   frequency: 365
 III-i-c-cf:
@@ -213,16 +173,6 @@ III-i-c-cf:
   subset: III-i
   free_with: III-i-c
   frequency: 365
-III-i-c-hf: #hindcast supplied twice per week to 15 days with the enfo now
-  mars:
-    stream: enfh
-    type: [cf, pf]
-    levtype: ml
-  description: Free set with III-i-c
-  set: III
-  subset: III-i
-  free_with: III-i-c
-  frequency: 104
 III-i-d:
   description: Atmospheric fields - Potential vorticity levels
   mars:
@@ -244,16 +194,6 @@ III-i-d:
     levtype:
     - pv
     - pt
-  - stream: enfh
-    type: pf
-    levtype:
-    - pv
-    - pt
-  - stream: enfh
-    type: cf
-    levtype:
-    - pv
-    - pt
   frequency: 365
 III-i-d-cf:
   mars:
@@ -267,18 +207,6 @@ III-i-d-cf:
   subset: III-i
   free_with: III-i-d
   frequency: 365
-III-i-d-hf: #hindcast supplied twice per week to 15 days with the enfo now
-  mars:
-    stream: enfh
-    type: [cf, pf]
-    levtype:
-    - pt
-    - pv
-  description: Free set with III-i-d
-  set: III
-  subset: III-i
-  free_with: III-i-d
-  frequency: 104
 III-ii:
   description: Clusters
   mars:
@@ -636,7 +564,7 @@ III-viii:
   subset: III-viii
   frequency: 365
 IV-i:
-  description: Ensemble Wave fields
+  description: Wave fields
   mars:
     stream: waef
     type: pf
@@ -647,11 +575,8 @@ IV-i:
   - stream: waef
     type: cf
     levtype: sfc
-  - stream: enwh
-    type: cf
-    levtype: sfc
-  - stream: enwh
-    type: pf
+  - stream: wave
+    type: fc
     levtype: sfc
   frequency: 365
 IV-i-cf:
@@ -1138,13 +1063,6 @@ VI-ii-a:
   set: VI
   subset: VI-ii
   frequency: 104
-  free_data:
-  - stream: eehs
-    type: taem
-    levtype: sfc
-  - stream: eehs
-    type: em
-    levtype: sfc
 VI-ii-b:
   description: Weekly mean anomalies of ensemble means - Pressure levels
   mars:
@@ -1162,13 +1080,6 @@ VI-ii-b:
   set: VI
   subset: VI-ii
   frequency: 104
-  free_data:
-  - stream: eehs
-    type: taem
-    levtype: pl
-  - stream: eehs
-    type: em
-    levtype: pl
 VI-iii-a:
   description: Weekly means of individual ensemble members - Single level
   mars:
@@ -1249,10 +1160,6 @@ VI-iv-a:
     - za
   set: VI
   subset: VI-iv
-  free_data:
-    stream: eefh
-    type: fcmean
-    levtype: sfc
   frequency: 104
 VI-iv-b:
   description: Weekly mean anomalies of individual ensemble members - Pressure levels
@@ -1271,10 +1178,6 @@ VI-iv-b:
     - za
   set: VI
   subset: VI-iv
-  free_data:
-    stream: eefh
-    type: fcmean
-    levtype: pl
   frequency: 104
 VI-v-a:
   description: Individual forecast runs - 6-hourly - Single level

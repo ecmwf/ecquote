@@ -1,10 +1,9 @@
 class=od,
 domain=g,
-expver=0001,
-levelist=122/124/126/128/129/131/133/134/136/137,
-levtype=ml,
-param=t/u/v/w,
-step=0,
-stream=scda,
-time=0600/1800,
-type=an
+expver=0078,
+levtype=sfc,
+param=msla,
+step=0-168/168-336/336-504/504-672/672-840/840-1008,
+stream=eefo,
+time=0000,
+type=taem

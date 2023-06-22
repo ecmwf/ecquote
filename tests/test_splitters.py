@@ -14,7 +14,6 @@ from ecquote.request import Request
 from ecquote.splitters.canonical import splitter as canonical_splitter
 from ecquote.splitters.constant import splitter as constant_splitter
 from ecquote.splitters.high_frequency import splitter as high_frequency_splitter
-from ecquote.splitters.leg import splitter as leg_splitter
 from ecquote.splitters.shgg import splitter as shgg_splitter
 from ecquote.splitters.subset import splitter as subset_splitter
 
@@ -24,12 +23,6 @@ LOG = logging.getLogger(__name__)
 def test_shgg_splitter():
     r = Request("type=an,stream=oper,levtype=ml,param=t/q")
     splitted = list(shgg_splitter([r]))
-    assert len(splitted) == 2
-
-
-def test_leg_splitter():
-    r = Request("type=cf,stream=enfo,levtype=sfc,step=360/366")
-    splitted = list(leg_splitter([r]))
     assert len(splitted) == 2
 
 

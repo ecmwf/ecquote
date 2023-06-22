@@ -209,7 +209,6 @@ class Cart:
             for s in r.unique(
                 ignore=(
                     "class",
-                    "leg",
                     "time",
                     # "stream",
                     # "type",

@@ -1,10 +1,9 @@
 class=od,
 domain=g,
-expver=0001,
+expver=0078,
 levtype=sfc,
-number=90,
-param=tpi/sfi/mx2ti/mn2ti/2ti/10wsi/10fgi/capei/capesi,
-step=0-24/24-48/48-72/72-96/96-120/120-144/144-168,
-stream=enfo,
-time=0000,
-type=sot
+param=2t,
+step=0,
+stream=oper,
+time=0600/1800/1200/0000,
+type=an

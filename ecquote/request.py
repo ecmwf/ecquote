@@ -407,7 +407,6 @@ class Request:
             # Seasonal run on the first
             date = datetime.date(date.year, date.month, 1)
 
-        r.pop("leg", None)
         assert "use" not in r, r["use"]
 
         if r["stream"] in ("enfh", "enwh"):  # TODO: add to config

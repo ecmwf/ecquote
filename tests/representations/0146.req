@@ -1,10 +1,10 @@
 class=od,
 domain=g,
-expver=0001,
-levelist=850,
+expver=0078,
+levelist=1000,
 levtype=pl,
-param=tag2,
-step=120-168/120-240/168-240,
-stream=enfo,
+param=t,
+step=6/9/12/15/18/21,
+stream=oper,
 time=0000/1200,
-type=ep
+type=fc

@@ -1,9 +1,10 @@
 class=od,
 domain=g,
-expver=0001,
-levtype=sfc,
-param=2tag0/2talm1/2tag2/2talm2/2tag1,
-step=96-264/264-432/432-600/600-768,
-stream=enfo,
+expver=0078,
+levelist=137/136/134/133/131/129/128/127/126/123/121/119/117/115/114/111/109/108/106/104/103/102/101/100/99/97/96/95/94/93/92/90/89/87/86/84/83/80/79/76/75/71/70/64/63,
+levtype=ml,
+param=t/u/v,
+step=0/3/6/9/12/15/18/21/24,
+stream=oper,
 time=0000,
-type=ep
+type=fc

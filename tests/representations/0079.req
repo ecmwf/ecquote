@@ -1,9 +1,9 @@
 class=od,
 domain=g,
-expver=0001,
+expver=0078,
 levtype=sfc,
-param=mdts/mdww/mpts/mpww/mwd/mwp/wmb/shts/shww/swh/ust/vst,
-step=0,
-stream=scwv,
-time=0600/1800,
-type=an
+param=swhg6/swhg4/swhg8/swhg2/mwpg8/mwpg10/mwpg12/mwpg15,
+step=12/24/36/48/60/72/84/96/108/120/132/144/156/168/180/192/204/216/228/240,
+stream=waef,
+time=0000/1200,
+type=ep

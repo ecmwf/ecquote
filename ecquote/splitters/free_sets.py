@@ -197,7 +197,6 @@ KEYS = (
     "time",
     "step",
     "fcmonth",
-    "leg",
     "param",
     "levelist",
     "number",

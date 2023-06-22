@@ -1,10 +1,9 @@
 class=od,
 domain=g,
-expver=0001,
+expver=0078,
 levtype=sfc,
-number=1/2/3/4/5/6/7/8/9/10,
-param=tcc/tp/ssr/ssrd/2t/2d/10u/100u/100v/200v,
-step=360,
-stream=enfh,
-time=0000,
-type=pf
+param=10u/10v/2d/2t/hcc/lcc/msl/mcc/ci/sst/skt/sd/stl1/stl2/stl3/stl4/sp/tcc/tco3/tcwv/swvl1/swvl2/swvl3/swvl4/al/lsm/z/100u/100v/cvh/cvl,
+step=0,
+stream=oper,
+time=0000/1200,
+type=an
