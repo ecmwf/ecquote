@@ -1,9 +1,12 @@
 class=od,
 domain=g,
 expver=0078,
+fcmonth=1/2/3,
 levtype=sfc,
-param=hmax/mdts/mdww/mpts/mpww/mwd/mwd1/mwd2/mwp/mwp1/mwp2/mp2/p2ps/p2ww/pp1d/tmax/shts/shww/swh/swh1/swh2/ust/vst,
-step=0/3/6/9/12/15/18/21/24/27/30/33/36/39/42/45/48/51/54/57/60/63/66/69/72/75/78/81/84/87/90/93/96/99/102/105/108/111/114/117/120/123/126/129/132/135/138/141/144,
-stream=wave,
-time=0000/1200,
-type=fc
+method=1,
+origin=ecmf,
+param=mn2t24a/mx2t24a/tpara/tcca/2ta/2da/10sia,
+stream=mmsa,
+system=5,
+time=0000,
+type=em

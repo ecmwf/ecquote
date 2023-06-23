@@ -1,9 +1,0 @@
-class=od,
-domain=g,
-expver=0078,
-levtype=sfc,
-param=z/10u/10v/msl/lsm/2t/2d/sp/skt/ci/sst/sd/stl1/stl2/stl3/stl4/swvl1/swvl2/swvl3/swvl4/lcc/rsn,
-step=0,
-stream=oper,
-time=0000/1200,
-type=an

@@ -1,9 +1,10 @@
 class=od,
 domain=g,
 expver=0078,
-levtype=sfc,
-param=2t,
-step=0,
-stream=oper,
-time=0600/1800/1200/0000,
-type=an
+levelist=1500,
+levtype=pv,
+param=z,
+step=0/6/12/18/24/30/36/42/48/54/60,
+stream=scda,
+time=0600/1800,
+type=fc

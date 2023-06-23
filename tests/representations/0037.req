@@ -1,9 +1,10 @@
 class=od,
 domain=g,
-expver=0078,
-levtype=sfc,
-param=10u/10v/msl,
-step=0,
-stream=oper,
+expver=0001,
+levelist=500,
+levtype=pl,
+param=gh,
+step=0/24/48/72/96/120/144/168/192/216/240,
+stream=enfo,
 time=0000/1200,
-type=an
+type=es

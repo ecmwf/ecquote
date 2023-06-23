@@ -1,9 +1,0 @@
-class=od,
-domain=g,
-expver=0078,
-levtype=sfc,
-param=z/lsm,
-step=0,
-stream=eefo,
-time=0000,
-type=cf

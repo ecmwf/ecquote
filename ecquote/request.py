@@ -397,7 +397,7 @@ class Request:
             "efov",
             "efhs",
             "enfh",
-            "enwh",
+            "enwh",'eefh'
         ):
             while date.weekday() not in (0, 3):
                 date = date - datetime.timedelta(days=1)

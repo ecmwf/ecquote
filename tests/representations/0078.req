@@ -1,9 +1,10 @@
 class=od,
 domain=g,
 expver=0078,
-levtype=sfc,
-param=bfi/cdww/dwi/dwps/dwww/hmax/mdts/mdww/mp1/mp2/mpts/mpww/msqs/mwd/mwd1/mwd2/mwd3/mwp/mwp1/mwp2/mwp3/p1ps/p1ww/p2ps/p2ww/phiaw/phioc/pp1d/rhoao/shts/shww/sh10/swh/swh1/swh2/swh3/tauoc/tmax/ust/vst/wdw/wind/wmb/wsk/wsp/wss/wstar,
-step=0/3/6/9/12/15/18/21/24/27/30/33/36/39/42/45/48/51/54/57/60/63/66/69/72/75/78/81/84/87/90/93/96/99/102/105/108/111/114/117/120/123/126/129/132/135/138/141/144,
-stream=wave,
-time=0000/1200,
-type=fc
+levelist=300/315/330/350/370,
+levtype=pt,
+param=d/vo/u/v,
+step=0,
+stream=scda,
+time=0600/1800,
+type=an

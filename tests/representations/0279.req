@@ -1,9 +1,0 @@
-class=od,
-domain=g,
-expver=0078,
-levtype=sfc,
-param=10u/10v/2d/2t/msl/tcc/z,
-step=0,
-stream=oper,
-time=0000/1200,
-type=an

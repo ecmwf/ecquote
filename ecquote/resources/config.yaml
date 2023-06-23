@@ -76,7 +76,7 @@ spherical_harmonics:
   levtype: [ml, pl, pt, pv]
 ##############################################################################
 
-hindcast_streams: [enfh, enwh]
+hindcast_streams: [enfh, enwh, eehs, weeh]
 hindcast_dates: 20
 
 high_frequency_streams: [scda, scwv]
@@ -90,13 +90,9 @@ wave_streams:
 - swmm
 - enwh
 - wasf
+- weef
+- weeh
 
-need_leg:
-- enfo
-- waef
-- efov
-# - enfh
-# - enwh
 
 constant_fields:
 - levtype: sfc

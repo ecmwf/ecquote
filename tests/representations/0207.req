@@ -1,9 +1,0 @@
-class=od,
-domain=g,
-expver=0078,
-levtype=sfc,
-param=swh/cdww/mwp/mwd,
-step=0,
-stream=wave,
-time=0000/1200,
-type=an

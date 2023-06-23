@@ -1,9 +1,12 @@
 class=od,
 domain=g,
 expver=0078,
+fcmonth=1/2/3/4/5/6/7,
 levtype=sfc,
-param=msl,
-step=0,
-stream=oper,
-time=1200,
-type=an
+method=1,
+origin=ecmf,
+param=2ta/2da/tpara,
+stream=mmsa,
+system=5,
+time=0000,
+type=em
