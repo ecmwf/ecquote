@@ -1,12 +1,10 @@
 class=od,
 domain=g,
 expver=0078,
-fcmonth=1/2/3/4/5/6/7,
 levtype=sfc,
-method=1,
-origin=ecmf,
-param=msla/ssrara/tpara/2ta/10sia,
-stream=mmsa,
-system=5,
+number=90,
+param=10fgi/tpi,
+step=0-24/24-48/48-72/72-96/96-120/120-144,
+stream=enfo,
 time=0000,
-type=em
+type=sot

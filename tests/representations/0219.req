@@ -1,0 +1,10 @@
+class=od,
+domain=g,
+expver=0078,
+levtype=sfc,
+param=tpara/2ta,
+quantile=1:10/1:3/1:5/2:3/2:5/3:5/4:5/9:10,
+step=0-168/168-336/336-504/504-672,
+stream=eefo,
+time=0000,
+type=pb

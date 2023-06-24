@@ -1,9 +1,10 @@
 class=od,
 domain=g,
 expver=0078,
-levtype=sfc,
-param=swhg6/swhg4/mwpg10/swhg2/mwpg12/swhg8/mwpg15/mwpg8,
-step=12/24/36/48/60/72/84/96/108/120/132/144/156/168/180/192/204/216/228/240/252/264/276/288/300/312/324/336/348/360,
-stream=waef,
-time=0000/1200,
-type=ep
+levelist=1000/950/925/900/850/800/700/600/500/400/300/250/200/150/100/70/50/30/20/10/7/5/3/2/1,
+levtype=pl,
+param=gh/w/r/t/u/v,
+step=0,
+stream=oper,
+time=0000/0600/1200/1800,
+type=an

@@ -23,17 +23,27 @@ def error(request):
     if not os.path.exists("tests/representations"):
         return
 
+    patch = False
+
     r = []
     for k, v in sorted(request.fields.items()):
         if k == "dataset":
             continue
         v = "/".join(str(x) for x in v)
+
+        if k == "stream" and v in ('mmsf', 'msmm', 'mmsa', 'wasf'):
+            patch = True
+
         r.append(f"{k}={v}")
     text = ",\n".join(r) + "\n"
+
+    if patch:
+        text = text.replace("0078", "0001")
 
     for p in glob.glob("tests/representations/????.req"):
         with open(p) as f:
             if text == f.read():
+                raise ValueError(f"Duplicate request: {text}")
                 return
 
     n = len(glob.glob("tests/representations/????.req"))

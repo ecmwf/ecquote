@@ -1,0 +1,13 @@
+class=od,
+domain=g,
+expver=0001,
+fcmonth=1/2/3/4/5/6/7,
+levelist=500,
+levtype=pl,
+method=1,
+origin=ecmf,
+param=gh,
+stream=msmm,
+system=5,
+time=0000,
+type=em

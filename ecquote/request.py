@@ -11,6 +11,7 @@ import datetime
 import itertools
 import logging
 from collections import defaultdict
+import sys
 
 from .landsea import land_sea_ratio
 from .matching import Matcher
@@ -225,7 +226,8 @@ class Request:
             ("bc",): daily,
             ("monday", "thursday"): byweekly,
             ("monday",): weekly,
-            ("thursday",): weekly,
+            ("tuesday",): weekly,("wednesday",): weekly,
+            ("thursday",): weekly,("friday",): weekly,("saturday",): weekly,("sunday",): weekly,
             ("monthly",): monthly,
         }[use]()
 
@@ -362,6 +364,18 @@ class Request:
         date = datetime.datetime.utcnow() - datetime.timedelta(days=1)
         date = date.date()
 
+        # https://confluence.ecmwf.int/display/PGEN/ENS-extended+weekly+means+in+48r1#ENSextendedweeklymeansin48r1-MondaytoSunday
+
+        DOW = [
+            ("0-168", "168-336", "336-504", "504-672", "672-840", " 840-1008"),
+            ("144-312", "312-480", "480-648", "648-816", "816-984"),
+            ("120-288", "288-456", "456-624", "624-792", "792-960"),
+            ("96-264", "264-432", "432-600", "600-768", "768-936", "936-1104 "),
+            ("72-240", "240-408," "408-576", "576-744", "744-912", "912-1080"),
+            ("48-216", "216-384", "384-552", "552-720", "720-888", "888-1056"),
+            ("24-192", "192-360", "360-528", "528-696", "696-864", "864-1032"),
+        ]
+
         r = {k: v[0] for k, v in self.fields.items()}
         r.update(self.use)
         r.setdefault("levtype", "off")
@@ -393,15 +407,26 @@ class Request:
         if r.get("use") == "bc":
             del r["use"]
 
-        if r.get("use") in ("monday", "thursday", "monthly") or r.get("stream") in (
-            "efov",
+        if r.get("use")  or r.get("stream") in (
             "efhs",
             "enfh",
-            "enwh",'eefh'
+            "enwh",
+            "eefh",
+            "eefo",
         ):
-            while date.weekday() not in (0, 3):
+
+            dow = 0 # Monday
+            if r.get("stream") == 'eefo':
+                s = r.get('step').split('/')[0]
+                for i, d in enumerate(DOW):
+                    if s in d:
+                        dow = i
+
+            while date.weekday() not in (dow,):
                 date = date - datetime.timedelta(days=1)
             r.pop("use", None)
+
+        # print('========= DATE =====', date,date.weekday(), file=sys.stderr)
 
         if r.get("system"):
             # Seasonal run on the first
@@ -409,7 +434,7 @@ class Request:
 
         assert "use" not in r, r["use"]
 
-        if r["stream"] in ("enfh", "enwh"):  # TODO: add to config
+        if r["stream"] in ("enfh", "enwh", "eefh", "weeh"):  # TODO: add to config
             hdate = datetime.date(date.year - 5, date.month, date.day)
             r["hdate"] = hdate.isoformat()
             r["levtype"] = "sfc"

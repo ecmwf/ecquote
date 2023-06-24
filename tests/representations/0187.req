@@ -1,0 +1,10 @@
+class=od,
+domain=g,
+expver=0078,
+levelist=300/315/330/350/370,
+levtype=pt,
+param=d/vo/u/v,
+step=3/6/9/12/15/18/21/24/27/30/33/36,
+stream=scda,
+time=0600/1800,
+type=fc

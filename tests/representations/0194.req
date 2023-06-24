@@ -1,0 +1,9 @@
+class=od,
+domain=g,
+expver=0078,
+levtype=sfc,
+param=swh/mwd/mwp/wmb/ust/vst,
+step=0,
+stream=scwv,
+time=0600/1800,
+type=an

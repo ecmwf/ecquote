@@ -1,10 +1,10 @@
 class=od,
 domain=g,
 expver=0078,
-levelist=200,
+levelist=500/850,
 levtype=pl,
-param=strf/vp,
-step=0/12/24/36/48/60/72/84/96/108/120/132/144/156/168/180/192/204/216/228/240/252/264/276/288/300/312/324/336/348/360,
+param=gh/t,
+step=96-264/264-432/432-600/600-768/768-936/936-1104,
 stream=eefo,
 time=0000,
-type=cf
+type=taem

@@ -4,14 +4,14 @@
 - mars:
     levtype: sfc
     stream: oper
-    type: an
+    type: fc
   repres:
     gaussian: O1280
     type: reduced_gg
 - mars:
     levtype: sfc
     stream: oper
-    type: fc
+    type: an
   repres:
     gaussian: O1280
     type: reduced_gg
@@ -41,8 +41,8 @@
     - sh
 - mars:
     levtype: pl
-    stream: scda
-    type: fc
+    stream: oper
+    type: an
   repres:
     gaussian: O1280
     resol: 1279
@@ -51,8 +51,8 @@
     - sh
 - mars:
     levtype: pl
-    stream: oper
-    type: an
+    stream: scda
+    type: fc
   repres:
     gaussian: O1280
     resol: 1279
@@ -72,7 +72,7 @@
 - mars:
     levtype: ml
     stream: oper
-    type: an
+    type: fc
   model_levels: 137
   repres:
     gaussian: O1280
@@ -83,7 +83,7 @@
 - mars:
     levtype: ml
     stream: oper
-    type: fc
+    type: an
   model_levels: 137
   repres:
     gaussian: O1280
@@ -116,16 +116,6 @@
 - mars:
     levtype: pv
     stream: oper
-    type: an
-  repres:
-    gaussian: O1280
-    resol: 1279
-    type:
-    - reduced_gg
-    - sh
-- mars:
-    levtype: pv
-    stream: oper
     type: fc
   repres:
     gaussian: O1280
@@ -137,6 +127,26 @@
     levtype: pv
     stream: scda
     type: fc
+  repres:
+    gaussian: O1280
+    resol: 1279
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    levtype: pv
+    stream: oper
+    type: an
+  repres:
+    gaussian: O1280
+    resol: 1279
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    levtype: pv
+    stream: scda
+    type: an
   repres:
     gaussian: O1280
     resol: 1279
@@ -154,28 +164,18 @@
     - reduced_gg
     - sh
 - mars:
-    levtype: pv
-    stream: scda
-    type: an
-  repres:
-    gaussian: O1280
-    resol: 1279
-    type:
-    - reduced_gg
-    - sh
-- mars:
-    levtype: pt
-    stream: scda
-    type: an
-  repres:
-    gaussian: O1280
-    resol: 1279
-    type:
-    - reduced_gg
-    - sh
-- mars:
     levtype: pt
     stream: oper
+    type: an
+  repres:
+    gaussian: O1280
+    resol: 1279
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    levtype: pt
+    stream: scda
     type: an
   repres:
     gaussian: O1280
@@ -208,15 +208,15 @@
     type: reduced_ll
 - mars:
     levtype: sfc
-    stream: scwv
-    type: fc
+    stream: wave
+    type: an
   repres:
     reduced_ll: 0.125
     type: reduced_ll
 - mars:
     levtype: sfc
-    stream: wave
-    type: an
+    stream: scwv
+    type: fc
   repres:
     reduced_ll: 0.125
     type: reduced_ll
@@ -347,14 +347,14 @@
     - 1.5
     type: regular_ll
 - mars:
-    levtype: pl
+    levtype: sfc
     stream: enfo
     type: ep
   repres:
     gaussian: O1280
     type: reduced_gg
 - mars:
-    levtype: sfc
+    levtype: pl
     stream: enfo
     type: ep
   repres:
@@ -458,7 +458,47 @@
   repres:
     gaussian: O320
     type: reduced_gg
-
+- mars:
+    levtype: pl
+    stream: msmm
+    type: em
+  repres:
+    gaussian: O320
+    resol: 319
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    levtype: pv
+    stream: msmm
+    type: em
+  repres:
+    resol: 319
+    type: sh
+- mars:
+    levtype: pt
+    stream: msmm
+    type: em
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
+    levtype: sfc
+    stream: mmsa
+    type: em
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
+    levtype: pl
+    stream: mmsa
+    type: em
+  repres:
+    gaussian: O320
+    resol: 319
+    type:
+    - reduced_gg
+    - sh
 - mars:
     levtype: sfc
     stream: msmm
@@ -466,7 +506,30 @@
   repres:
     gaussian: O320
     type: reduced_gg
-
+- mars:
+    levtype: pv
+    stream: msmm
+    type: fcmean
+  repres:
+    resol: 319
+    type: sh
+- mars:
+    levtype: pl
+    stream: msmm
+    type: fcmean
+  repres:
+    gaussian: O320
+    resol: 319
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    levtype: pt
+    stream: msmm
+    type: fcmean
+  repres:
+    gaussian: O320
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: swmm
@@ -474,7 +537,58 @@
   repres:
     reduced_ll: 0.5
     type: reduced_ll
-
+- mars:
+    levtype: sfc
+    stream: mmsa
+    type: fcmean
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
+    levtype: pl
+    stream: mmsa
+    type: fcmean
+  repres:
+    gaussian: O320
+    resol: 319
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    levtype: pt
+    stream: mmsa
+    type: fcmean
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
+    levtype: sfc
+    stream: mmsf
+    type: fc
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
+    levtype: pl
+    stream: mmsf
+    type: fc
+  repres:
+    gaussian: O320
+    resol: 319
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    levtype: ml
+    stream: mmsf
+    type: fc
+  model_levels: 91
+  repres:
+    gaussian: O320
+    resol: 319
+    type:
+    - reduced_gg
+    - sh
 - mars:
     levtype: sfc
     stream: wasf
@@ -499,7 +613,32 @@
     type:
     - reduced_gg
     - sh
-
+- mars:
+    levtype: sfc
+    stream: eefo
+    type: fcmean
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
+    dataset: VI-iii-b
+    levtype: pl
+    stream: eefo
+    type: fcmean
+  repres:
+    resol: 319
+    type: sh
+- mars:
+    dataset: VI-iv-b
+    levtype: pl
+    stream: eefo
+    type: fcmean
+  repres:
+    gaussian: O320
+    resol: 319
+    type:
+    - reduced_gg
+    - sh
 - mars:
     levtype: sfc
     stream: eefo
@@ -555,7 +694,6 @@
   repres:
     gaussian: O320
     type: reduced_gg
-
 - mars:
     levtype: pl
     stream: eefo
@@ -563,7 +701,20 @@
   repres:
     gaussian: O160
     type: reduced_gg
-
+- mars:
+    levtype: sfc
+    stream: eefo
+    type: pd
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
+    levtype: sfc
+    stream: eefo
+    type: pb
+  repres:
+    gaussian: O320
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: eefo
@@ -668,3 +819,4 @@
     type: tf
   repres:
     type: tf
+

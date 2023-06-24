@@ -1,0 +1,11 @@
+class=od,
+domain=h,
+expver=0078,
+levelist=500,
+levtype=pl,
+number=1/2/3/4/5/6,
+param=gh,
+step=72/84/96/120/132/144/156/168/192/204/216/228/240/264/276/288/300/312/324/336/348/360,
+stream=enfo,
+time=0000/1200,
+type=cr

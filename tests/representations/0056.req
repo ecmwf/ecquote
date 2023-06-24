@@ -1,11 +1,10 @@
 class=od,
 domain=g,
 expver=0078,
-levelist=200/300/400/500/700/850/925/1000,
+levelist=850,
 levtype=pl,
-number=1/2/3/4/5/6/7/8/9/10,
-param=gh/t/u/v,
-step=0/12/24/36/48/60/72/84/96/108/120/132/144/156/168/180/192/204/216/228/240/252/264/276/288/300/312/324/336/348/360,
-stream=eefh,
-time=0000,
-type=pf
+param=talm8/talm4/tag4/tag8,
+step=24/48/96/120/144/168,
+stream=enfo,
+time=0000/1200,
+type=ep

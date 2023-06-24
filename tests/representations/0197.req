@@ -1,0 +1,10 @@
+class=od,
+domain=g,
+expver=0078,
+levtype=sfc,
+number=90,
+param=maxswhi,
+step=12-36/36-60/60-84/84-108/108-132/132-156/156-180,
+stream=waef,
+time=1200,
+type=sot

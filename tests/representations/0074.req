@@ -1,10 +1,9 @@
 class=od,
 domain=g,
 expver=0078,
-levelist=200/500/700/850/925,
-levtype=pl,
-param=gh/t/u/v,
-step=0-168/168-336/336-504/504-672,
-stream=eehs,
+levtype=sfc,
+param=2tag0/2talm1/2tag2/2talm2/2tag1,
+step=96-264/264-432/432-600/600-768,
+stream=eefo,
 time=0000,
-type=taem
+type=ep

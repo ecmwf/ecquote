@@ -1,9 +1,11 @@
 class=od,
 domain=g,
 expver=0078,
-levtype=sfc,
-param=ci/sst/sp/tcwv/msl/tcc/10u/10v/2t/2d/lcc/mcc/hcc/tco3/skt/tsn/swvl1/swvl2/swvl3/swvl4/stl1/stl2/stl3/stl4/tp/lsp/cp,
-step=3/9,
-stream=oper,
-time=0000/1200,
-type=fc
+levelist=500,
+levtype=pl,
+param=zp,
+quantile=1:3/2:3/3:3,
+step=96-264/264-432/432-600/600-768/768-936/936-1104,
+stream=eefo,
+time=0000,
+type=pd
