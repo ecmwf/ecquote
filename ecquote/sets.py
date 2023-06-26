@@ -28,6 +28,7 @@ class ProductSet:
         free_data=[],
         free_with=[],
         frequency=365,
+        comment=None
     ):
         self.name = name
         self.description = description

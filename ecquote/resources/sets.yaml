@@ -568,6 +568,7 @@ III-v-c:
   set: III
   subset: III-v
 III-v-d:
+  comment: 240-360 and 0-360 are not in the catalogue
   description: Shift of Tails (SOT) 3, 5 and 10-day ranges
   frequency: 365
   mars:
@@ -576,6 +577,7 @@ III-v-d:
     - 0-72
     - 0-120
     - 0-240
+    - 0-360
     - 12-84
     - 12-132
     - 24-96
@@ -598,6 +600,7 @@ III-v-d:
     - 132-204
     - 144-216
     - 156-228
+    - 240-360
     stream: enfo
     type: sot
   set: III
