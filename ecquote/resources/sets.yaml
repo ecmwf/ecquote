@@ -1,73 +1,74 @@
 I-i-a:
   description: Single level
+  frequency: 365
   mars:
+    levtype: sfc
     stream:
     - oper
     - scda
     type:
     - an
     - fc
-    levtype: sfc
   set: I
   subset: I-i
-  frequency: 365
 I-i-b:
   description: Pressure levels
+  frequency: 365
   mars:
+    levtype: pl
     stream:
     - oper
     - scda
     type:
     - an
     - fc
-    levtype: pl
   set: I
   subset: I-i
-  frequency: 365
 I-i-c:
   description: Model levels
+  frequency: 365
   mars:
+    levtype: ml
     stream:
     - oper
     - scda
     type:
     - an
     - fc
-    levtype: ml
   set: I
   subset: I-i
-  frequency: 365
 I-i-d:
   description: Potential vorticity levels
+  frequency: 365
   mars:
+    levtype:
+    - pt
+    - pv
     stream:
     - oper
     - scda
     type:
     - an
     - fc
-    levtype:
-    - pv
-    - pt
   set: I
   subset: I-i
-  frequency: 365
 I-i-e:
   description: Snow depth levels
+  frequency: 365
   mars:
+    levtype:
+    - sol
     stream:
     - oper
     - scda
     type:
-    - fc
     - an
-    levtype:
-    - sol
+    - fc
   set: I
   subset: I-i
-  frequency: 365
 I-ii:
   description: Time series of weather parameters
+  frequency: 365
   mars:
     stream:
     - oper
@@ -75,9 +76,9 @@ I-ii:
     type: wp
   set: I
   subset: I-ii
-  frequency: 365
 I-iii:
   description: Tropical cyclone tracks
+  frequency: 365
   mars:
     stream:
     - oper
@@ -85,9 +86,9 @@ I-iii:
     type: tf
   set: I
   subset: I-iii
-  frequency: 365
 I-iv:
   description: Simulated Satellite Images
+  frequency: 365
   mars:
     stream:
     - oper
@@ -95,207 +96,217 @@ I-iv:
     type: ssd
   set: I
   subset: I-iv
-  frequency: 365
 II-i:
   description: High RESolution WAve Model (HRES-WAM)
+  frequency: 365
   mars:
+    levtype: sfc
     stream:
-    - wave
     - scwv
+    - wave
     type:
     - an
     - fc
-    levtype: sfc
   set: II
   subset: II-i
-  frequency: 365
 III-i-a:
   description: Atmospheric fields - Single level
-  mars:
-    stream: enfo
-    type: pf
-    levtype: sfc
-  set: III
-  subset: III-i
   free_data:
-  - stream: enfo
-    type: cf
-    levtype: sfc
-  - stream: enfh
-    type: pf
-    levtype: sfc
-  - stream: enfh
-    type: cf
-    levtype: sfc
-  frequency: 365
-III-i-a-cf:
-  mars:
+  - levtype: sfc
     stream: enfo
     type: cf
+  - levtype: sfc
+    stream: enfh
+    type: pf
+  - levtype: sfc
+    stream: enfh
+    type: cf
+  frequency: 365
+  mars:
     levtype: sfc
-  description: Free set with III-i-a
+    stream: enfo
+    type: pf
   set: III
   subset: III-i
+III-i-a-cf:
+  description: Free set with III-i-a
   free_with: III-i-a
   frequency: 365
-III-i-a-hf: #hindcast supplied twice per week to 15 days with the enfo now
   mars:
-    stream: enfh
-    type: [cf, pf]
     levtype: sfc
-  description: Free set with III-i-a
+    stream: enfo
+    type: cf
   set: III
   subset: III-i
+III-i-a-hf:
+  description: Free set with III-i-a
   free_with: III-i-a
   frequency: 104
+  mars:
+    levtype: sfc
+    stream: enfh
+    type:
+    - cf
+    - pf
+  set: III
+  subset: III-i
 III-i-b:
   description: Atmospheric fields - Pressure levels
-  mars:
-    stream: enfo
-    type: pf
-    levtype: pl
-  set: III
-  subset: III-i
   free_data:
-  - stream: enfo
-    type: cf
-    levtype: pl
-  - stream: enfh
-    type: pf
-    levtype: pl
-  - stream: enfh
-    type: cf
-    levtype: pl
-  frequency: 365
-III-i-b-cf:
-  mars:
+  - levtype: pl
     stream: enfo
     type: cf
+  - levtype: pl
+    stream: enfh
+    type: pf
+  - levtype: pl
+    stream: enfh
+    type: cf
+  frequency: 365
+  mars:
     levtype: pl
-  description: Free set with III-i-b
+    stream: enfo
+    type: pf
   set: III
   subset: III-i
+III-i-b-cf:
+  description: Free set with III-i-b
   free_with: III-i-b
   frequency: 365
-III-i-b-hf: #hindcast supplied twice per week to 15 days with the enfo now
   mars:
-    stream: enfh
-    type: [cf, pf]
     levtype: pl
-  description: Free set with III-i-b
+    stream: enfo
+    type: cf
   set: III
   subset: III-i
+III-i-b-hf:
+  description: Free set with III-i-b
   free_with: III-i-b
   frequency: 104
+  mars:
+    levtype: pl
+    stream: enfh
+    type:
+    - cf
+    - pf
+  set: III
+  subset: III-i
 III-i-c:
   description: Atmospheric fields - Model levels
-  mars:
-    stream: enfo
-    type: pf
-    levtype: ml
-  set: III
-  subset: III-i
   free_data:
-  - stream: enfo
-    type: cf
-    levtype: ml
-  - stream: enfh
-    type: pf
-    levtype: ml
-  frequency: 365
-III-i-c-cf:
-  mars:
+  - levtype: ml
     stream: enfo
     type: cf
+  - levtype: ml
+    stream: enfh
+    type: pf
+  frequency: 365
+  mars:
     levtype: ml
-  description: Free set with III-i-c
+    stream: enfo
+    type: pf
   set: III
   subset: III-i
+III-i-c-cf:
+  description: Free set with III-i-c
   free_with: III-i-c
   frequency: 365
-III-i-c-hf: #hindcast supplied twice per week to 15 days with the enfo now
   mars:
-    stream: enfh
-    type: [cf, pf]
     levtype: ml
-  description: Free set with III-i-c
+    stream: enfo
+    type: cf
   set: III
   subset: III-i
+III-i-c-hf:
+  description: Free set with III-i-c
   free_with: III-i-c
   frequency: 104
+  mars:
+    levtype: ml
+    stream: enfh
+    type:
+    - cf
+    - pf
+  set: III
+  subset: III-i
 III-i-d:
   description: Atmospheric fields - Potential vorticity levels
-  mars:
-    stream: enfo
-    type: pf
-    levtype:
-    - pv
-    - pt
-  set: III
-  subset: III-i
   free_data:
-  - stream: enfo
-    type: cf
-    levtype:
+  - levtype:
     - pv
     - pt
-  - stream: oper
-    type: fc
-    levtype:
-    - pv
-    - pt
-  - stream: enfh
-    type: pf
-    levtype:
-    - pv
-    - pt
-  - stream: enfh
-    type: cf
-    levtype:
-    - pv
-    - pt
-  frequency: 365
-III-i-d-cf:
-  mars:
     stream: enfo
     type: cf
-    levtype:
+  - levtype:
     - pv
     - pt
-  description: Free set with III-i-d
+    stream: oper
+    type: fc
+  - levtype:
+    - pv
+    - pt
+    stream: enfh
+    type: pf
+  - levtype:
+    - pv
+    - pt
+    stream: enfh
+    type: cf
+  frequency: 365
+  mars:
+    levtype:
+    - pt
+    - pv
+    stream: enfo
+    type: pf
   set: III
   subset: III-i
+III-i-d-cf:
+  description: Free set with III-i-d
   free_with: III-i-d
   frequency: 365
-III-i-d-hf: #hindcast supplied twice per week to 15 days with the enfo now
   mars:
-    stream: enfh
-    type: [cf, pf]
     levtype:
     - pt
     - pv
-  description: Free set with III-i-d
+    stream: enfo
+    type: cf
   set: III
   subset: III-i
+III-i-d-hf:
+  description: Free set with III-i-d
   free_with: III-i-d
   frequency: 104
+  mars:
+    levtype:
+    - pt
+    - pv
+    stream: enfh
+    type:
+    - cf
+    - pf
+  set: III
+  subset: III-i
 III-ii:
   description: Clusters
+  frequency: 365
   mars:
+    levtype: pl
     stream: enfo
     type:
     - cm
     - cr
-    levtype: pl
   set: III
   subset: III-ii
-  frequency: 365
 III-iii-a:
   description: Probabilities - Instantaneous weather events - Single level
+  frequency: 365
   mars:
-    stream: enfo
-    type: ep
     levtype: sfc
+    param:
+    - 10spg10
+    - 10spg15
+    - 2tl273
     step:
     - 12
     - 24
@@ -327,38 +338,34 @@ III-iii-a:
     - 336
     - 348
     - 360
-    param:
-    - 10spg10
-    - 10spg15
-    - 2tl273
-  set: III
-  subset: III-iii
-  frequency: 365
-III-iii-b:
-  description: Probabilities - Averaged  weather events - Single level
-  mars:
     stream: enfo
     type: ep
+  set: III
+  subset: III-iii
+III-iii-b:
+  description: Probabilities - Averaged  weather events - Single level
+  frequency: 365
+  mars:
     levtype: sfc
-    step:
-    - 120-168
-    - 120-240
-    - 168-240
-    - 240-360
     param:
     - 2tl273
     - tpl01
     - tprg3
     - tprg5
     - tprl1
-  set: III
-  subset: III-iii
-  frequency: 365
-III-iii-c:
-  description: Probabilities - Instantaneous weather events - Pressure levels
-  mars:
+    step:
+    - 120-168
+    - 120-240
+    - 168-240
+    - 240-360
     stream: enfo
     type: ep
+  set: III
+  subset: III-iii
+III-iii-c:
+  description: Probabilities - Instantaneous weather events - Pressure levels
+  frequency: 365
+  mars:
     levtype: pl
     param:
     - ptsa_gt_1p5stdev
@@ -371,57 +378,27 @@ III-iii-c:
     - tag8
     - talm4
     - talm8
-  set: III
-  subset: III-iii
-  frequency: 365
-III-iii-d:
-  description: Probabilities - Averaged  weather events - Pressure levels
-  mars:
     stream: enfo
     type: ep
+  set: III
+  subset: III-iii
+III-iii-d:
+  description: Probabilities - Averaged  weather events - Pressure levels
+  frequency: 365
+  mars:
     levtype: pl
     param:
     - tag2
     - talm2
-  set: III
-  subset: III-iii
-  frequency: 365
-III-iii-e:
-  description: Probabilities - Daily weather events - Single level
-  mars:
     stream: enfo
     type: ep
+  set: III
+  subset: III-iii
+III-iii-e:
+  description: Probabilities - Daily weather events - Single level
+  frequency: 365
+  mars:
     levtype: sfc
-    step:
-    - 0-24
-    - 108-132
-    - 120-144
-    - 12-36
-    - 132-156
-    - 144-168
-    - 156-180
-    - 168-192
-    - 180-204
-    - 192-216
-    - 204-228
-    - 216-240
-    - 228-252
-    - 240-264
-    - 24-48
-    - 252-276
-    - 264-288
-    - 276-300
-    - 288-312
-    - 300-324
-    - 312-336
-    - 324-348
-    - 336-360
-    - 36-60
-    - 48-72
-    - 60-84
-    - 72-96
-    - 84-108
-    - 96-120
     param:
     - 10fgg10
     - 10fgg15
@@ -434,57 +411,80 @@ III-iii-e:
     - tpg25
     - tpg5
     - tpg50
-  set: III
-  subset: III-iii
-  frequency: 365
-III-iii-f:
-  description: Probabilities - Tropical cyclone probabilities
-  mars:
+    step:
+    - 0-24
+    - 12-36
+    - 24-48
+    - 36-60
+    - 48-72
+    - 60-84
+    - 72-96
+    - 84-108
+    - 96-120
+    - 108-132
+    - 120-144
+    - 132-156
+    - 144-168
+    - 156-180
+    - 168-192
+    - 180-204
+    - 192-216
+    - 204-228
+    - 216-240
+    - 228-252
+    - 240-264
+    - 252-276
+    - 264-288
+    - 276-300
+    - 288-312
+    - 300-324
+    - 312-336
+    - 324-348
+    - 336-360
     stream: enfo
     type: ep
+  set: III
+  subset: III-iii
+III-iii-f:
+  description: Probabilities - Tropical cyclone probabilities
+  frequency: 365
+  mars:
     levtype: sfc
+    param:
+    - ph
+    - ptd
+    - pts
     step:
+    - 24-72
+    - 48-96
+    - 72-120
+    - 96-144
     - 120-168
     - 144-192
     - 168-216
     - 192-240
     - 216-264
-    - 24-72
     - 240-288
-    - 48-96
-    - 72-120
-    - 96-144
-    param:
-    - ph
-    - ptd
-    - pts
+    stream: enfo
+    type: ep
   set: III
   subset: III-iii
-  frequency: 365
 III-iv:
   description: Time series of weather parameters
+  frequency: 365
   mars:
     stream: enfo
     type: wp
   set: III
   subset: III-iv
-  frequency: 365
 III-v-a:
   description: Extreme Forecast Index (EFI) 1-day ranges
+  frequency: 365
   mars:
-    stream: enfo
-    type:
-    - efi
-    - efic
     levtype: sfc
     step:
     - 0-24
-    - 108-132
-    - 120-144
     - 12-36
-    - 132-156
-    - 144-168
-    - 156-180
     - 24-48
     - 36-60
     - 48-72
@@ -492,63 +492,65 @@ III-v-a:
     - 72-96
     - 84-108
     - 96-120
-  set: III
-  subset: III-v
-  frequency: 365
-III-v-b:
-  description: Extreme Forecast Index (EFI) 3, 5 and 10-day ranges
-  comment: 240-360 and 0-360 are not in the catalogue
-  mars:
+    - 108-132
+    - 120-144
+    - 132-156
+    - 144-168
+    - 156-180
     stream: enfo
     type:
     - efi
     - efic
+  set: III
+  subset: III-v
+III-v-b:
+  comment: 240-360 and 0-360 are not in the catalogue
+  description: Extreme Forecast Index (EFI) 3, 5 and 10-day ranges
+  frequency: 365
+  mars:
     levtype: sfc
     step:
+    - 0-72
     - 0-120
     - 0-240
     - 0-360
-    - 0-72
+    - 12-84
+    - 12-132
+    - 24-96
+    - 24-144
+    - 36-108
+    - 36-156
+    - 48-120
+    - 48-168
+    - 60-132
+    - 60-180
+    - 72-144
+    - 72-192
+    - 84-156
+    - 84-204
+    - 96-168
+    - 96-216
     - 108-180
     - 108-228
     - 120-192
-    - 12-132
-    - 12-84
     - 132-204
     - 144-216
     - 156-228
     - 240-360
-    - 24-144
-    - 24-96
-    - 36-108
-    - 36-156
-    - 48-120
-    - 48-168
-    - 60-132
-    - 60-180
-    - 72-144
-    - 72-192
-    - 84-156
-    - 84-204
-    - 96-168
-    - 96-216
+    stream: enfo
+    type:
+    - efi
+    - efic
   set: III
   subset: III-v
-  frequency: 365
 III-v-c:
   description: Shift of Tails (SOT) 1-day ranges
+  frequency: 365
   mars:
-    stream: enfo
-    type: sot
     levtype: sfc
     step:
     - 0-24
-    - 108-132
     - 12-36
-    - 120-144
-    - 132-156
-    - 144-168
-    - 156-180
     - 24-48
     - 36-60
     - 48-72
@@ -556,29 +558,28 @@ III-v-c:
     - 72-96
     - 84-108
     - 96-120
-  set: III
-  subset: III-v
-  frequency: 365
-III-v-d:
-  description: Shift of Tails (SOT) 3, 5 and 10-day ranges
-  mars:
+    - 108-132
+    - 120-144
+    - 132-156
+    - 144-168
+    - 156-180
     stream: enfo
     type: sot
+  set: III
+  subset: III-v
+III-v-d:
+  description: Shift of Tails (SOT) 3, 5 and 10-day ranges
+  frequency: 365
+  mars:
     levtype: sfc
     step:
+    - 0-72
     - 0-120
     - 0-240
-    - 0-72
-    - 108-180
-    - 108-228
-    - 12-132
     - 12-84
-    - 120-192
-    - 132-204
-    - 144-216
-    - 156-228
-    - 24-144
+    - 12-132
     - 24-96
+    - 24-144
     - 36-108
     - 36-156
     - 48-120
@@ -591,87 +592,93 @@ III-v-d:
     - 84-204
     - 96-168
     - 96-216
+    - 108-180
+    - 108-228
+    - 120-192
+    - 132-204
+    - 144-216
+    - 156-228
+    stream: enfo
+    type: sot
   set: III
   subset: III-v
-  frequency: 365
 III-vi-a:
   description: Ensemble means - Single level
+  frequency: 365
   mars:
+    levtype: sfc
     stream: enfo
     type: em
-    levtype: sfc
   set: III
   subset: III-vi
-  frequency: 365
 III-vi-b:
   description: Ensemble means - Pressure levels
+  frequency: 365
   mars:
+    levtype: pl
     stream: enfo
     type: em
-    levtype: pl
   set: III
   subset: III-vi
-  frequency: 365
 III-vii-a:
   description: Ensemble standard deviations - Single level
+  frequency: 365
   mars:
+    levtype: sfc
     stream: enfo
     type: es
-    levtype: sfc
   set: III
   subset: III-vii
-  frequency: 365
 III-vii-b:
   description: Ensemble standard deviations - Pressure levels
+  frequency: 365
   mars:
+    levtype: pl
     stream: enfo
     type: es
-    levtype: pl
   set: III
   subset: III-vii
-  frequency: 365
 III-viii:
   description: Tropical Cyclone tracks
+  frequency: 365
   mars:
     stream: enfo
     type: tf
   set: III
   subset: III-viii
-  frequency: 365
 IV-i:
   description: Ensemble Wave fields
-  mars:
-    stream: waef
-    type: pf
-    levtype: sfc
-  set: IV
-  subset: IV-i
   free_data:
-  - stream: waef
-    type: cf
-    levtype: sfc
-  - stream: enwh
-    type: cf
-    levtype: sfc
-  - stream: enwh
-    type: pf
-    levtype: sfc
-  frequency: 365
-IV-i-cf:
-  mars:
+  - levtype: sfc
     stream: waef
     type: cf
+  - levtype: sfc
+    stream: enwh
+    type: cf
+  - levtype: sfc
+    stream: enwh
+    type: pf
+  frequency: 365
+  mars:
     levtype: sfc
-  description: Free set with IV-i
+    stream: waef
+    type: pf
   set: IV
   subset: IV-i
+IV-i-cf:
+  description: Free set with IV-i
   free_with: IV-i
   frequency: 365
+  mars:
+    levtype: sfc
+    stream: waef
+    type: cf
+  set: IV
+  subset: IV-i
 IV-ii-a:
   description: Probabilities - Instantaneous weather events
+  frequency: 365
   mars:
-    stream: waef
-    type: ep
     levtype: sfc
     step:
     - 12
@@ -704,200 +711,199 @@ IV-ii-a:
     - 336
     - 348
     - 360
-  set: IV
-  subset: IV-ii
-  frequency: 365
-IV-ii-b:
-  description: Probabilities - Averaged  weather events
-  mars:
     stream: waef
     type: ep
+  set: IV
+  subset: IV-ii
+IV-ii-b:
+  description: Probabilities - Averaged  weather events
+  frequency: 365
+  mars:
     levtype: sfc
     step:
     - 120-168
     - 120-240
     - 168-240
     - 240-360
+    stream: waef
+    type: ep
   set: IV
   subset: IV-ii
-  frequency: 365
 IV-iii-a:
   description: Extreme Forecast Index (EFI) 1-day ranges
+  frequency: 365
   mars:
+    levtype: sfc
     stream: waef
     type:
     - efi
     - efic
-    levtype: sfc
   set: IV
   subset: IV-iii
-  frequency: 365
 IV-iii-b:
   description: Shift of Tails (SOT) 1-day ranges
+  frequency: 365
   mars:
+    levtype: sfc
     stream: waef
     type: sot
-    levtype: sfc
   set: IV
   subset: IV-iii
-  frequency: 365
 V-i-a:
   description: Monthly means of ensemble means - Single level
+  frequency: 12
   mars:
-    stream: msmm
-    type: em
     levtype: sfc
-    system: 5
     method: 1
     origin: ecmf
+    stream: msmm
+    system: 5
+    type: em
   set: V
   subset: V-i
-  frequency: 12
 V-i-b:
   description: Monthly means of ensemble means - Pressure levels
+  frequency: 12
   mars:
-    stream: msmm
-    type: em
     levtype:
     - pl
-    - pv
     - pt
-    system: 5
+    - pv
     method: 1
     origin: ecmf
+    stream: msmm
+    system: 5
+    type: em
   set: V
   subset: V-i
-  frequency: 12
 V-ii-a:
   description: Monthly mean anomalies of ensemble means - Single level
+  frequency: 12
   mars:
-    stream: mmsa
-    type: em
     levtype: sfc
-    system: 5
     method: 1
     origin: ecmf
+    stream: mmsa
+    system: 5
+    type: em
   set: V
   subset: V-ii
-  frequency: 12
 V-ii-b:
   description: Monthly mean anomalies of ensemble means - Pressure levels
+  frequency: 12
   mars:
-    stream: mmsa
-    type: em
     levtype:
     - pl
     - pt
-    system: 5
     method: 1
     origin: ecmf
+    stream: mmsa
+    system: 5
+    type: em
   set: V
   subset: V-ii
-  frequency: 12
 V-iii-a:
   description: Monthly means of individual ensemble members - Single level
-  mars:
-    stream: msmm
-    type: fcmean
+  free_data:
     levtype: sfc
-    system: 5
     method: 1
     origin: ecmf
+    stream: msmm
+    system: 5
+    type: em
+  frequency: 12
+  mars:
+    levtype: sfc
+    method: 1
+    origin: ecmf
+    stream: msmm
+    system: 5
+    type: fcmean
   set: V
   subset: V-iii
-  free_data:
-    stream: msmm
-    type: em
-    levtype: sfc
-    system: 5
-    method: 1
-    origin: ecmf
-  frequency: 12
 V-iii-b:
   description: Monthly means of individual ensemble members - Pressure levels
-  mars:
-    stream: msmm
-    type: fcmean
+  free_data:
     levtype:
     - pl
     - pv
     - pt
-    system: 5
     method: 1
     origin: ecmf
+    stream: msmm
+    system: 5
+    type: em
+  frequency: 12
+  mars:
+    levtype:
+    - pl
+    - pt
+    - pv
+    method: 1
+    origin: ecmf
+    stream: msmm
+    system: 5
+    type: fcmean
   set: V
   subset: V-iii
-  free_data:
-    stream: msmm
-    type: em
-    levtype:
-    - pl
-    - pv
-    - pt
-    system: 5
-    method: 1
-    origin: ecmf
-  frequency: 12
 V-iii-c:
   description: Seasonal forecast wave monthly means
+  frequency: 12
   mars:
-    stream: swmm
-    type: fcmean
     levtype: sfc
-    system: 5
     method: 1
+    stream: swmm
+    system: 5
+    type: fcmean
   set: V
   subset: V-iii
-  frequency: 12
 V-iv-a:
   description: Monthly mean anomalies of individual ensemble members - Single level
-  mars:
-    stream: mmsa
-    type: fcmean
+  free_data:
     levtype: sfc
-    system: 5
     method: 1
     origin: ecmf
+    stream: mmsa
+    system: 5
+    type: em
+  frequency: 12
+  mars:
+    levtype: sfc
+    method: 1
+    origin: ecmf
+    stream: mmsa
+    system: 5
+    type: fcmean
   set: V
   subset: V-iv
-  free_data:
-    stream: mmsa
-    type: em
-    levtype: sfc
-    system: 5
-    method: 1
-    origin: ecmf
-  frequency: 12
 V-iv-b:
   description: Monthly mean anomalies of individual ensemble members - Pressure levels
-  mars:
-    stream: mmsa
-    type: fcmean
+  free_data:
     levtype:
     - pl
     - pt
-    system: 5
     method: 1
     origin: ecmf
+    stream: mmsa
+    system: 5
+    type: em
+  frequency: 12
+  mars:
+    levtype:
+    - pl
+    - pt
+    method: 1
+    origin: ecmf
+    stream: mmsa
+    system: 5
+    type: fcmean
   set: V
   subset: V-iv
-  free_data:
-    stream: mmsa
-    type: em
-    levtype:
-    - pl
-    - pt
-    system: 5
-    method: 1
-    origin: ecmf
-  frequency: 12
 V-v-a:
   description: Individual forecast runs - 6-hourly - Single level
+  frequency: 12
   mars:
-    stream: mmsf
-    type: fc
     levtype: sfc
-    system: 5
     method: 1
     origin: ecmf
     param:
@@ -915,16 +921,16 @@ V-v-a:
     - strd
     - tcc
     - tp
+    stream: mmsf
+    system: 5
+    type: fc
   set: V
   subset: V-v
-  frequency: 12
 V-v-b:
   description: Individual forecast runs - 24-hourly - Single level
+  frequency: 12
   mars:
-    stream: mmsf
-    type: fc
     levtype: sfc
-    system: 5
     method: 1
     origin: ecmf
     param:
@@ -970,91 +976,58 @@ V-v-b:
     - tsr
     - ttr
     - z
+    stream: mmsf
+    system: 5
+    type: fc
   set: V
   subset: V-v
-  frequency: 12
 V-v-c:
   description: Individual forecast runs - 12-hourly - Pressure levels
+  frequency: 12
   mars:
-    stream: mmsf
-    type: fc
     levtype: pl
-    system: 5
     method: 1
     origin: ecmf
+    stream: mmsf
+    system: 5
+    type: fc
   set: V
   subset: V-v
-  frequency: 12
 V-v-d:
   description: Individual forecast runs - 12-hourly - Model levels
+  frequency: 12
   mars:
-    stream: mmsf
-    type: fc
     levtype: ml
-    system: 5
     method: 1
     origin: ecmf
+    stream: mmsf
+    system: 5
+    type: fc
   set: V
   subset: V-v
-  frequency: 12
 V-v-e:
   description: Wave seasonal forecast - 24-hourly
+  frequency: 12
   mars:
-    stream: wasf
-    type: fc
     levtype: sfc
-    system: 5
     method: 1
+    stream: wasf
+    system: 5
+    type: fc
   set: V
   subset: V-v
-  frequency: 12
 VI-i-a:
   description: Weekly means of ensemble means - Single level
-  mars:
-    stream: eefo
+  free_data:
+  - levtype: sfc
+    stream: eehs
     type: taem
+  - levtype: sfc
+    stream: eehs
+    type: em
+  frequency: 104
+  mars:
     levtype: sfc
-    step:
-    - 0-168
-    - 120-288
-    - 144-312
-    - 168-336
-    - 192-360
-    - 216-384
-    - 240-408
-    - 24-192
-    - 264-432
-    - 288-456
-    - 312-480
-    - 336-504
-    - 360-528
-    - 384-552
-    - 408-576
-    - 432-600
-    - 456-624
-    - 480-648
-    - 48-216
-    - 504-672
-    - 528-696
-    - 552-720
-    - 576-744
-    - 600-768
-    - 624-792
-    - 648-816
-    - 672-840
-    - 696-864
-    - 720-888
-    - 72-240
-    - 744-912
-    - 768-936
-    - 792-960
-    - 816-984
-    - 840-1008
-    - 864-1032
-    - 888-1056
-    - 912-1080
-    - 936-1104
-    - 96-264
     param:
     - 100u
     - 100v
@@ -1087,21 +1060,62 @@ VI-i-a:
     - tprate
     - tps
     - z
-  set: VI
-  subset: VI-i
-  free_data:
-  - stream: eehs
-    type: taem
-    levtype: sfc
-  - stream: eehs
-    type: em
-    levtype: sfc
-  frequency: 104
-VI-i-b:
-  description: Weekly means of ensemble means - Pressure levels
-  mars:
+    step:
+    - 0-168
+    - 24-192
+    - 48-216
+    - 72-240
+    - 96-264
+    - 120-288
+    - 144-312
+    - 168-336
+    - 192-360
+    - 216-384
+    - 240-408
+    - 264-432
+    - 288-456
+    - 312-480
+    - 336-504
+    - 360-528
+    - 384-552
+    - 408-576
+    - 432-600
+    - 456-624
+    - 480-648
+    - 504-672
+    - 528-696
+    - 552-720
+    - 576-744
+    - 600-768
+    - 624-792
+    - 648-816
+    - 672-840
+    - 696-864
+    - 720-888
+    - 744-912
+    - 768-936
+    - 792-960
+    - 816-984
+    - 840-1008
+    - 864-1032
+    - 888-1056
+    - 912-1080
+    - 936-1104
     stream: eefo
     type: taem
+  set: VI
+  subset: VI-i
+VI-i-b:
+  description: Weekly means of ensemble means - Pressure levels
+  free_data:
+  - levtype: pl
+    stream: eehs
+    type: taem
+  - levtype: pl
+    stream: eehs
+    type: em
+  frequency: 104
+  mars:
     levtype: pl
     param:
     - gh
@@ -1112,69 +1126,22 @@ VI-i-b:
     - v
     - vp
     - z
-  set: VI
-  subset: VI-i
-  free_data:
-  - stream: eehs
-    type: taem
-    levtype: pl
-  - stream: eehs
-    type: em
-    levtype: pl
-  frequency: 104
-VI-ii-a:
-  description: Weekly mean anomalies of ensemble means - Single level
-  mars:
     stream: eefo
     type: taem
+  set: VI
+  subset: VI-i
+VI-ii-a:
+  description: Weekly mean anomalies of ensemble means - Single level
+  free_data:
+  - levtype: sfc
+    stream: eehs
+    type: taem
+  - levtype: sfc
+    stream: eehs
+    type: em
+  frequency: 104
+  mars:
     levtype: sfc
-    step:
-    - 24-192
-    - 192-360
-    - 360-528
-    - 528-696
-    - 696-864
-    - 864-1032
-    - 48-216
-    - 216-384
-    - 384-552
-    - 552-720
-    - 720-888
-    - 888-1056
-    - 72-240
-    - 240-408
-    - 408-576
-    - 576-744
-    - 744-912
-    - 912-1080
-    - 120-288
-    - 288-456
-    - 456-624
-    - 624-792
-    - 792-960
-    - 144-312
-    - 312-480
-    - 480-648
-    - 648-816
-    - 816-984
-    - 0-168
-    - 168-336
-    - 264-432
-    - 336-504
-    - 432-600
-    - 504-672
-    - 600-768
-    - 672-840
-    - 768-936
-    - 840-1008
-    - 936-1104
-    - 96-264
-    - 0-168
-    - 168-336
-    - 336-504
-    - 504-672
-    - 672-840
-    - 840-1008
     param:
     - 100ua
     - 100va
@@ -1200,21 +1167,62 @@ VI-ii-a:
     - tcwa
     - tcwva
     - tpara
-  set: VI
-  subset: VI-ii
-  frequency: 104
-  free_data:
-  - stream: eehs
-    type: taem
-    levtype: sfc
-  - stream: eehs
-    type: em
-    levtype: sfc
-VI-ii-b:
-  description: Weekly mean anomalies of ensemble means - Pressure levels
-  mars:
+    step:
+    - 0-168
+    - 24-192
+    - 48-216
+    - 72-240
+    - 96-264
+    - 120-288
+    - 144-312
+    - 168-336
+    - 192-360
+    - 216-384
+    - 240-408
+    - 264-432
+    - 288-456
+    - 312-480
+    - 336-504
+    - 360-528
+    - 384-552
+    - 408-576
+    - 432-600
+    - 456-624
+    - 480-648
+    - 504-672
+    - 528-696
+    - 552-720
+    - 576-744
+    - 600-768
+    - 624-792
+    - 648-816
+    - 672-840
+    - 696-864
+    - 720-888
+    - 744-912
+    - 768-936
+    - 792-960
+    - 816-984
+    - 840-1008
+    - 864-1032
+    - 888-1056
+    - 912-1080
+    - 936-1104
     stream: eefo
     type: taem
+  set: VI
+  subset: VI-ii
+VI-ii-b:
+  description: Weekly mean anomalies of ensemble means - Pressure levels
+  free_data:
+  - levtype: pl
+    stream: eehs
+    type: taem
+  - levtype: pl
+    stream: eehs
+    type: em
+  frequency: 104
+  mars:
     levtype: pl
     param:
     - gha
@@ -1224,21 +1232,18 @@ VI-ii-b:
     - va
     - vpota
     - za
+    stream: eefo
+    type: taem
   set: VI
   subset: VI-ii
-  frequency: 104
-  free_data:
-  - stream: eehs
-    type: taem
-    levtype: pl
-  - stream: eehs
-    type: em
-    levtype: pl
 VI-iii-a:
   description: Weekly means of individual ensemble members - Single level
-  mars:
-    stream: eefo
+  free_data:
+    levtype: sfc
+    stream: eefh
     type: fcmean
+  frequency: 104
+  mars:
     levtype: sfc
     param:
     - 100u
@@ -1259,18 +1264,18 @@ VI-iii-a:
     - tcc
     - tprate
     - z
-  set: VI
-  subset: VI-iii
-  free_data:
-    stream: eefh
-    type: fcmean
-    levtype: sfc
-  frequency: 104
-VI-iii-b:
-  description: Weekly means of individual ensemble members - Pressure levels
-  mars:
     stream: eefo
     type: fcmean
+  set: VI
+  subset: VI-iii
+VI-iii-b:
+  description: Weekly means of individual ensemble members - Pressure levels
+  free_data:
+    levtype: pl
+    stream: eefh
+    type: fcmean
+  frequency: 104
+  mars:
     levtype: pl
     param:
     - gh
@@ -1280,18 +1285,18 @@ VI-iii-b:
     - v
     - vp
     - z
-  set: VI
-  subset: VI-iii
-  free_data:
-    stream: eefh
-    type: fcmean
-    levtype: pl
-  frequency: 104
-VI-iv-a:
-  description: Weekly mean anomalies of individual ensemble members - Single level
-  mars:
     stream: eefo
     type: fcmean
+  set: VI
+  subset: VI-iii
+VI-iv-a:
+  description: Weekly mean anomalies of individual ensemble members - Single level
+  free_data:
+    levtype: sfc
+    stream: eefh
+    type: fcmean
+  frequency: 104
+  mars:
     levtype: sfc
     param:
     - 100ua
@@ -1312,18 +1317,18 @@ VI-iv-a:
     - tcca
     - tpara
     - za
-  set: VI
-  subset: VI-iv
-  free_data:
-    stream: eefh
-    type: fcmean
-    levtype: sfc
-  frequency: 104
-VI-iv-b:
-  description: Weekly mean anomalies of individual ensemble members - Pressure levels
-  mars:
     stream: eefo
     type: fcmean
+  set: VI
+  subset: VI-iv
+VI-iv-b:
+  description: Weekly mean anomalies of individual ensemble members - Pressure levels
+  free_data:
+    levtype: pl
+    stream: eefh
+    type: fcmean
+  frequency: 104
+  mars:
     levtype: pl
     param:
     - gha
@@ -1334,176 +1339,131 @@ VI-iv-b:
     - va
     - vpota
     - za
+    stream: eefo
+    type: fcmean
   set: VI
   subset: VI-iv
-  free_data:
-    stream: eefh
-    type: fcmean
-    levtype: pl
-  frequency: 104
 VI-v-a:
   description: Individual forecast runs - 6-hourly - Single level
-  mars:
-    stream: eefo
-    type: pf
-    levtype: sfc
-  set: VI
-  subset: VI-v
   free_data:
-  - stream: eefo
-    type: cf
-    levtype: sfc
-  - stream: eefh
-    type: pf
-    levtype: sfc
-  - stream: eefh
-    type: cf
-    levtype: sfc
-  frequency: 104
-VI-v-a-cf:
-  mars:
+  - levtype: sfc
     stream: eefo
     type: cf
+  - levtype: sfc
+    stream: eefh
+    type: pf
+  - levtype: sfc
+    stream: eefh
+    type: cf
+  frequency: 104
+  mars:
     levtype: sfc
-  description: Free set with VI-v-a
+    stream: eefo
+    type: pf
   set: VI
   subset: VI-v
+VI-v-a-cf:
+  description: Free set with VI-v-a
   free_with: VI-v-a
   frequency: 104
+  mars:
+    levtype: sfc
+    stream: eefo
+    type: cf
+  set: VI
+  subset: VI-v
 VI-v-b:
   description: Individual forecast runs - 12-hourly - Pressure levels
-  mars:
-    stream: eefo
-    type: pf
-    levtype: pl
-  set: VI
-  subset: VI-v
   free_data:
-  - stream: eefh
+  - levtype: pl
+    stream: eefh
     type: cf
-    levtype: pl
-  - stream: eefh
+  - levtype: pl
+    stream: eefh
     type: pf
-    levtype: pl
-  - stream: eefo
-    type: cf
-    levtype: pl
-  frequency: 104
-VI-v-b-cf:
-  mars:
+  - levtype: pl
     stream: eefo
     type: cf
+  frequency: 104
+  mars:
     levtype: pl
-  description: Free set with VI-v-b
+    stream: eefo
+    type: pf
   set: VI
   subset: VI-v
+VI-v-b-cf:
+  description: Free set with VI-v-b
   free_with: VI-v-b
   frequency: 104
+  mars:
+    levtype: pl
+    stream: eefo
+    type: cf
+  set: VI
+  subset: VI-v
 VI-v-c:
   description: Individual forecast runs - 6-hourly - wave
-  mars:
-    stream: weef
-    type: pf
-    levtype: sfc
-  set: VI
-  subset: VI-v
   free_data:
-  - stream: weeh
+  - levtype: sfc
+    stream: weeh
     type: cf
-    levtype: sfc
-  - stream: weeh
+  - levtype: sfc
+    stream: weeh
     type: pf
-    levtype: sfc
-  - stream: weef
-    type: cf
-    levtype: sfc
-  frequency: 104
-VI-v-c-cf:
-  mars:
+  - levtype: sfc
     stream: weef
     type: cf
+  frequency: 104
+  mars:
     levtype: sfc
-  description: Free set with VI-v-c
+    stream: weef
+    type: pf
   set: VI
   subset: VI-v
+VI-v-c-cf:
+  description: Free set with VI-v-c
   free_with: VI-v-c
   frequency: 104
+  mars:
+    levtype: sfc
+    stream: weef
+    type: cf
+  set: VI
+  subset: VI-v
 VI-v-d:
   description: Individual forecast runs - 12-hourly - potential vorticity levels
+  free_data:
+  - levtype:
+    - pv
+    - pt
+    stream: eefo
+    type: cf
+  frequency: 104
   mars:
+    levtype:
+    - pt
+    - pv
     stream: eefo
     type: pf
-    levtype:
-    - pv
-    - pt
   set: VI
   subset: VI-v
-  free_data:
-  - stream: eefo
-    type: cf
-    levtype:
-    - pv
-    - pt
-  frequency: 104
 VI-v-d-cf:
-  mars:
-    stream: eefo
-    type: cf
-    levtype:
-    - pv
-    - pt
   description: Free set with VI-v-d
-  set: VI
-  subset: VI-v
   free_with: VI-v-d
   frequency: 104
+  mars:
+    levtype:
+    - pt
+    - pv
+    stream: eefo
+    type: cf
+  set: VI
+  subset: VI-v
 VI-vi-a:
   description: Probabilities - Weekly averaged
+  frequency: 104
   mars:
-    stream: eefo
-    type: ep
     levtype: sfc
-    step:
-    - 0-168
-    - 168-336
-    - 264-432
-    - 336-504
-    - 432-600
-    - 504-672
-    - 600-768
-    - 672-840
-    - 768-936
-    - 840-1008
-    - 936-1104
-    - 96-264
-    - 144-312
-    - 312-480
-    - 480-648
-    - 648-816
-    - 816-984
-    - 120-288
-    - 288-456
-    - 456-624
-    - 624-792
-    - 792-960
-    - 72-240
-    - 240-408
-    - 408-576
-    - 576-744
-    - 744-912
-    - 912-1080
-    - 48-216
-    - 216-384
-    - 384-552
-    - 552-720
-    - 720-888
-    - 888-1056
-    - 24-192
-    - 192-360
-    - 360-528
-    - 528-696
-    - 696-864
-    - 864-1032
     param:
     - 2tag0
     - 2tag1
@@ -1512,120 +1472,162 @@ VI-vi-a:
     - 2talm2
     - mslag0
     - stag0
-  set: VI
-  subset: VI-vi
-  frequency: 104
-VI-vi-b:
-  description: Probabilities - Weekly accumulated
-  mars:
-    stream: eefo
-    type: ep
-    levtype: sfc
     step:
     - 0-168
-    - 168-336
-    - 264-432
-    - 336-504
-    - 432-600
-    - 504-672
-    - 600-768
-    - 672-840
-    - 768-936
-    - 840-1008
-    - 936-1104
-    - 96-264
-    - 144-312
-    - 312-480
-    - 480-648
-    - 648-816
-    - 816-984
-    - 120-288
-    - 288-456
-    - 456-624
-    - 624-792
-    - 792-960
-    - 72-240
-    - 240-408
-    - 408-576
-    - 576-744
-    - 744-912
-    - 912-1080
-    - 48-216
-    - 216-384
-    - 384-552
-    - 552-720
-    - 720-888
-    - 888-1056
     - 24-192
+    - 48-216
+    - 72-240
+    - 96-264
+    - 120-288
+    - 144-312
+    - 168-336
     - 192-360
+    - 216-384
+    - 240-408
+    - 264-432
+    - 288-456
+    - 312-480
+    - 336-504
     - 360-528
+    - 384-552
+    - 408-576
+    - 432-600
+    - 456-624
+    - 480-648
+    - 504-672
     - 528-696
+    - 552-720
+    - 576-744
+    - 600-768
+    - 624-792
+    - 648-816
+    - 672-840
     - 696-864
+    - 720-888
+    - 744-912
+    - 768-936
+    - 792-960
+    - 816-984
+    - 840-1008
     - 864-1032
+    - 888-1056
+    - 912-1080
+    - 936-1104
+    stream: eefo
+    type: ep
+  set: VI
+  subset: VI-vi
+VI-vi-b:
+  description: Probabilities - Weekly accumulated
+  frequency: 104
+  mars:
+    levtype: sfc
     param:
     - tpag0
     - tpag10
     - tpag20
+    step:
+    - 0-168
+    - 24-192
+    - 48-216
+    - 72-240
+    - 96-264
+    - 120-288
+    - 144-312
+    - 168-336
+    - 192-360
+    - 216-384
+    - 240-408
+    - 264-432
+    - 288-456
+    - 312-480
+    - 336-504
+    - 360-528
+    - 384-552
+    - 408-576
+    - 432-600
+    - 456-624
+    - 480-648
+    - 504-672
+    - 528-696
+    - 552-720
+    - 576-744
+    - 600-768
+    - 624-792
+    - 648-816
+    - 672-840
+    - 696-864
+    - 720-888
+    - 744-912
+    - 768-936
+    - 792-960
+    - 816-984
+    - 840-1008
+    - 864-1032
+    - 888-1056
+    - 912-1080
+    - 936-1104
+    stream: eefo
+    type: ep
   set: VI
   subset: VI-vi
-  frequency: 104
 VI-vi-c:
   description: Probabilities - Probability distributions
+  frequency: 104
   mars:
+    levtype:
+    - pl
+    - sfc
     stream: eefo
     type: pd
-    levtype:
-    - sfc
-    - pl
   set: VI
   subset: VI-vi
-  frequency: 104
 VI-vi-d:
   description: Probabilities - Probability boundaries
+  frequency: 104
   mars:
+    levtype:
+    - pl
+    - sfc
     stream: eefo
     type: pb
-    levtype:
-    - sfc
-    - pl
   set: VI
   subset: VI-vi
-  frequency: 104
 VI-vii-a:
   description: Extreme Forecast Index (EFI)
+  frequency: 104
   mars:
+    levtype: sfc
+    step:
+    - 0-168
+    - 0-360
+    - 96-264
+    - 168-336
+    - 240-360
+    - 264-432
+    - 336-504
+    - 432-600
+    - 504-672
+    - 600-768
+    - 672-840
+    - 768-936
+    - 840-1008
+    - 936-1104
     stream: eefo
     type:
     - efi
     - efic
-    levtype: sfc
-    step:
-    - 0-168
-    - 0-360
-    - 168-336
-    - 240-360
-    - 264-432
-    - 336-504
-    - 432-600
-    - 504-672
-    - 600-768
-    - 672-840
-    - 768-936
-    - 840-1008
-    - 936-1104
-    - 96-264
   set: VI
   subset: VI-vii
-  frequency: 104
 VI-vii-b:
   description: Shift of Tails (SOT)
+  frequency: 104
   mars:
-    stream: eefo
-    type: sot
     levtype: sfc
     step:
     - 0-168
     - 0-360
+    - 96-264
     - 168-336
     - 240-360
     - 264-432
@@ -1637,127 +1639,128 @@ VI-vii-b:
     - 768-936
     - 840-1008
     - 936-1104
-    - 96-264
+    stream: eefo
+    type: sot
   set: VI
   subset: VI-vii
-  frequency: 104
 X-x-a:
+  description: Free set with VI-i-a
+  free_with: VI-i-a
+  frequency: 104
   mars:
     levtype: sfc
     stream: eehs
     type: taem
-  description: Free set with VI-i-a
   set: X
   subset: X-x
-  free_with: VI-i-a
-  frequency: 104
 X-x-b:
+  description: Free set with VI-i-a
+  free_with: VI-i-a
+  frequency: 104
   mars:
     levtype: sfc
     stream: eehs
     type: em
-  description: Free set with VI-i-a
   set: X
   subset: X-x
-  free_with: VI-i-a
-  frequency: 104
 X-x-c:
+  description: Free set with VI-i-b
+  free_with: VI-i-b
+  frequency: 104
   mars:
     levtype: pl
     stream: eehs
     type: taem
-  description: Free set with VI-i-b
   set: X
   subset: X-x
+X-x-d:
+  description: Free set with VI-i-b
   free_with: VI-i-b
   frequency: 104
-X-x-d:
   mars:
     levtype: pl
     stream: eehs
     type: em
-  description: Free set with VI-i-b
   set: X
   subset: X-x
-  free_with: VI-i-b
-  frequency: 104
 X-x-e:
-  mars:
-    levtype: sfc
-    stream: eefh
-    type: fcmean
   description: Free set with VI-iii-a
-  set: X
-  subset: X-x
   free_with: VI-iii-a
   frequency: 104
+  mars:
+    levtype: sfc
+    stream: eefh
+    type: fcmean
+  set: X
+  subset: X-x
 X-x-f:
+  description: Free set with VI-iii-b
+  free_with: VI-iii-b
+  frequency: 104
   mars:
     levtype: pl
     stream: eefh
     type: fcmean
-  description: Free set with VI-iii-b
   set: X
   subset: X-x
-  free_with: VI-iii-b
-  frequency: 104
 X-x-i:
+  description: Free set with VI-v-a
+  free_with: VI-v-a
+  frequency: 104
   mars:
     levtype: sfc
     stream: eefh
     type: pf
-  description: Free set with VI-v-a
   set: X
   subset: X-x
-  free_with: VI-v-a
-  frequency: 104
 X-x-j:
-  mars:
-    levtype: sfc
-    stream: eefh
-    type: cf
   description: Free set with VI-v-a
-  set: X
-  subset: X-x
   free_with: VI-v-a
   frequency: 104
+  mars:
+    levtype: sfc
+    stream: eefh
+    type: cf
+  set: X
+  subset: X-x
 X-x-k:
+  description: Free set with VI-v-b
+  free_with: VI-v-b
+  frequency: 104
   mars:
     levtype: pl
     stream: eefh
     type: cf
-  description: Free set with VI-v-b
   set: X
   subset: X-x
-  free_with: VI-v-b
-  frequency: 104
 X-x-l:
+  description: Free set with VI-v-b
+  free_with: VI-v-b
+  frequency: 104
   mars:
     levtype: pl
     stream: eefh
     type: pf
-  description: Free set with VI-v-b
   set: X
   subset: X-x
-  free_with: VI-v-b
-  frequency: 104
 X-x-o:
+  description: Free set with VI-v-c
+  free_with: VI-v-c
+  frequency: 104
   mars:
     levtype: sfc
     stream: weeh
     type: cf
-  description: Free set with VI-v-c
   set: X
   subset: X-x
+X-x-p:
+  description: Free set with VI-v-c
   free_with: VI-v-c
   frequency: 104
-X-x-p:
   mars:
     levtype: sfc
     stream: weeh
     type: pf
-  description: Free set with VI-v-c
   set: X
   subset: X-x
-  free_with: VI-v-c
-  frequency: 104
+
