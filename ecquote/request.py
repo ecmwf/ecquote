@@ -392,8 +392,8 @@ class Request:
         elif (r["stream"], r["type"], r["levtype"]) in (
             ("enfo", "cf", "ml"),
             ("enfo", "pf", "ml"),
-            ("efov", "cf", "ml"),
-            ("efov", "pf", "ml"),
+            ("eefo", "cf", "ml"),
+            ("eefo", "pf", "ml"),
         ):
             # Not in MARS
             r["param"] = "q/z"

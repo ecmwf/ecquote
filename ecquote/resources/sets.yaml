@@ -1211,6 +1211,11 @@ VI-ii-a:
     - 888-1056
     - 912-1080
     - 936-1104
+    - 456-624
+    - 120-288
+    - 624-792
+    - 288-456
+    - 792-960
     stream: eefo
     type: taem
   set: VI
@@ -1315,7 +1320,7 @@ VI-iv-a:
     - rsna
     - sda
     - sfara
-    - stal1a
+    - stal1
     - sundara
     - tcca
     - tpara
@@ -1766,4 +1771,22 @@ X-x-p:
     type: pf
   set: X
   subset: X-x
-
+VI-v-e:
+  description: unsupported
+  frequency: 104
+  mars:
+    levtype: ml
+    stream: eefo
+    type: pf
+  set: V
+  subset: VI-v
+VI-v-e-cf:
+  description: Free set with VI-v-e
+  free_with: VI-v-e
+  frequency: 104
+  mars:
+    levtype: ml
+    stream: eefo
+    type: cf
+  set: V
+  subset: VI-v

@@ -812,6 +812,22 @@
     reduced_ll: 0.5
     type: reduced_ll
 - mars:
+    levtype: ml
+    stream: eefo
+    type: pf
+  model_levels: 137
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
+    levtype: ml
+    stream: eefo
+    type: cf
+  model_levels: 137
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
     type: wp
   repres:
     type: wp
