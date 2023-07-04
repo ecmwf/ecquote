@@ -14,6 +14,9 @@ from ecquote.splitters import prepare_request
 
 FREQUENCIES = (
     ("type=an,levtype=sfc,stream=oper", 365, 365),
+    ("type=fc,levtype=sfc,stream=oper", 365, 365),
+    ("type=an,levtype=sfc,stream=scda", 365, 365),
+    ("type=fc,levtype=sfc,stream=scda", 365, 365),
     ("type=cf,levtype=sfc,stream=enfo,step=24", 365, 365),
     ("type=cf,levtype=sfc,stream=eefo,step=24,use=monday", 52, 52),
     ("type=cf,levtype=sfc,stream=eefo,step=24,use=thursday", 52, 52),
@@ -21,17 +24,22 @@ FREQUENCIES = (
     ("type=cf,levtype=sfc,stream=eefo,step=24,use=wednesday/sunday", 104, 104),
     ("type=cf,levtype=sfc,stream=eefo,step=24,use=monday/wednesday/sunday", 156, 104),
     ("type=pf,levtype=sfc,stream=enfo,step=24", 365, 365),
+    ("type=pf,levtype=sfc,stream=eefo,step=24", 365, 365),
     ("type=pf,levtype=sfc,stream=eefo,step=24,use=monday", 52, 52),
     ("type=pf,levtype=sfc,stream=eefo,step=24,use=thursday", 52, 52),
     ("type=pf,levtype=sfc,stream=eefo,step=24,use=monday/thursday", 104, 104),
     ("type=pf,levtype=sfc,stream=eefo,step=24,use=wednesday/sunday", 104, 104),
     ("type=pf,levtype=sfc,stream=eefo,step=24,use=monday/wednesday/sunday", 156, 104),
-    ("type=taem,param=2t,levtype=sfc,stream=eefo,step=0-168", 365, 104),
+    ("type=pf,levtype=sfc,stream=eefo,step=24,use=tuesday/friday/sunday", 156, 104),
+    #("type=taem,param=2t,levtype=sfc,stream=eefo,step=0-168", 365, 104), any step ranges must have a use=day-of-the-week with it
     ("type=taem,param=2t,levtype=sfc,stream=eefo,step=0-168,use=monday", 52, 52),
     ("type=taem,param=2t,levtype=sfc,stream=eefo,step=0-168,use=thursday", 52, 52),
     ("type=taem,param=2t,levtype=sfc,stream=eefo,step=0-168,use=monday/thursday", 104, 104),
     ("type=taem,param=2t,levtype=sfc,stream=eefo,step=0-168,use=wednesday/sunday", 104, 104),
     ("type=taem,param=2t,levtype=sfc,stream=eefo,step=0-168,use=monday/wednesday/sunday", 156, 104),
+    ("type=fcmean,param=sda,levtype=sfc,stream=eefo,step=0-168,use=monday", 52, 52),
+    ("type=fcmean,param=sda,levtype=sfc,stream=eefo,step=0-168,use=monday/thursday", 104, 104),
+    ("type=fcmean,param=sda,levtype=sfc,stream=eefo,step=0-168,use=monday/wednesday/thursday", 156, 104),
 )
 
 
