@@ -24,7 +24,7 @@ FREQUENCIES = (
     ("type=cf,levtype=sfc,stream=eefo,step=24,use=wednesday/sunday", 104, 104),
     ("type=cf,levtype=sfc,stream=eefo,step=24,use=monday/wednesday/sunday", 156, 104),
     ("type=pf,levtype=sfc,stream=enfo,step=24", 365, 365),
-    ("type=pf,levtype=sfc,stream=eefo,step=24", 365, 365),
+    ("type=pf,levtype=sfc,stream=eefo,step=24", 365, 104),
     ("type=pf,levtype=sfc,stream=eefo,step=24,use=monday", 52, 52),
     ("type=pf,levtype=sfc,stream=eefo,step=24,use=thursday", 52, 52),
     ("type=pf,levtype=sfc,stream=eefo,step=24,use=monday/thursday", 104, 104),
