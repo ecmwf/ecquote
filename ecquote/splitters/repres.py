@@ -43,7 +43,7 @@ def error(request):
     for p in glob.glob("tests/representations/????.req"):
         with open(p) as f:
             if text == f.read():
-                raise ValueError(f"Duplicate request: {text}")
+                raise ValueError(f"Duplicate request: {text} {p}")
                 return
 
     n = len(glob.glob("tests/representations/????.req"))

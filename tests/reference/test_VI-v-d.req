@@ -14,7 +14,7 @@ expver=0001,
 use=monday
 
 
-number=1/to/50,
+number=1/to/50
 time=0000,
 stream=eefo,
 step=0/to/360/by/12,
