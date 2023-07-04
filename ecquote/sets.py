@@ -28,7 +28,8 @@ class ProductSet:
         free_data=[],
         free_with=[],
         frequency=365,
-        comment=None
+        ic_frequency=None,
+        comment=None,
     ):
         self.name = name
         self.description = description
@@ -38,6 +39,7 @@ class ProductSet:
         self.subset = subset
         self.free_with = free_with
         self.frequency = frequency
+        self.ic_frequency = ic_frequency
 
         if isinstance(free_data, dict):
             free_data = [free_data]

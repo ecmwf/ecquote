@@ -307,7 +307,7 @@ class CurrentCosting(EPUBased):
                 landsea = 1
 
             R = request.factor_R(self.reference_grid)
-            frequency = request.frequency()
+            frequency = request.chargeable_frequency()
             LOG.debug("EPUs for %s", request)
             LOG.debug(
                 "B=%s D=%s E=%s A=%s R=%s V=%s M=%s number_of_chargeable_items=%s frequency=%s landsea=%s free=%s",

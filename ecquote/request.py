@@ -11,13 +11,12 @@ import datetime
 import itertools
 import logging
 from collections import defaultdict
-import sys
 
 from .landsea import land_sea_ratio
 from .matching import Matcher
 from .repres import repres
 from .resources import config, resource
-from .utils import cached_method, log_warning_once, plural
+from .utils import cached_method, plural
 
 LOG = logging.getLogger(__name__)
 
@@ -168,68 +167,32 @@ class Request:
     def frequency(self):
         use = tuple(sorted(self.use.get("use", [])))
 
-        def default():
+        if len(use) == 0:
             return self.subset.frequency
 
-        def daily():
-            # assert self.subset.frequency == 365, (self.subset, self.subset.frequency)
-
-            if self.subset.frequency != 365:
-                log_warning_once(
-                    LOG,
-                    "Expecting frequency 365 for subset %s, got %s (%s)",
-                    self.subset.name,
-                    self.subset.frequency,
-                    self,
-                )
-
+        if "bc" in use:
+            assert len(use) == 1, use
             return self.subset.frequency
 
-        def weekly():
-            if self.subset.frequency != 104:
-                log_warning_once(
-                    LOG,
-                    "Keyword use=%s is ignored for subset %s %s (%s)",
-                    "/".join(use),
-                    self.subset.name,
-                    self.subset.frequency,
-                    self,
-                )
-                return self.subset.frequency
-            return 52
+        for day in use:
+            assert day in (
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday",
+                "saturday",
+                "sunday",
+            ), use
 
-        def byweekly():
-            if self.subset.frequency != 104:
-                log_warning_once(
-                    LOG,
-                    "Keyword use=%s is ignored for subset %s %s (%s)",
-                    "/".join(use),
-                    self.subset.name,
-                    self.subset.frequency,
-                    self,
-                )
-                return self.subset.frequency
-            return 104
+        return 52 * len(use)
 
-        def monthly():
-            # Here so we can test legacy requests
-            log_warning_once(
-                LOG,
-                "Keyword use=monthly is ignored for subset %s (%s)",
-                self.subset.name,
-                self,
-            )
-            return self.subset.frequency
-
-        return {
-            tuple(): default,
-            ("bc",): daily,
-            ("monday", "thursday"): byweekly,
-            ("monday",): weekly,
-            ("tuesday",): weekly,("wednesday",): weekly,
-            ("thursday",): weekly,("friday",): weekly,("saturday",): weekly,("sunday",): weekly,
-            ("monthly",): monthly,
-        }[use]()
+    @cached_method
+    def chargeable_frequency(self):
+        frequency = self.frequency()
+        if self.subset.ic_frequency is not None:
+            frequency = min(frequency, self.subset.ic_frequency)
+        return frequency
 
     @cached_method
     def number_of_fields(self):
@@ -407,17 +370,16 @@ class Request:
         if r.get("use") == "bc":
             del r["use"]
 
-        if r.get("use")  or r.get("stream") in (
+        if r.get("use") or r.get("stream") in (
             "efhs",
             "enfh",
             "enwh",
             "eefh",
             "eefo",
         ):
-
-            dow = 0 # Monday
-            if r.get("stream") == 'eefo':
-                s = r.get('step').split('/')[0]
+            dow = 0  # Monday
+            if r.get("stream") == "eefo":
+                s = r.get("step").split("/")[0]
                 for i, d in enumerate(DOW):
                     if s in d:
                         dow = i

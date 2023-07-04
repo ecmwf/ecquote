@@ -31,7 +31,7 @@ def error(request):
             continue
         v = "/".join(str(x) for x in v)
 
-        if k == "stream" and v in ('mmsf', 'msmm', 'mmsa', 'wasf'):
+        if k == "stream" and v in ("mmsf", "msmm", "mmsa", "wasf"):
             patch = True
 
         r.append(f"{k}={v}")

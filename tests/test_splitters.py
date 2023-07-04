@@ -84,19 +84,6 @@ def test_subset_splitter_1():
     assert r.subset.name == "V-v-a", r.subset.name
 
 
-def test_subset_splitter_2():
-    r = Request("stream=enfo,type=pf,levtype=sfc,step=0")
-    splitted = list(subset_splitter(leg_splitter([r])))
-    assert len(splitted) == 1, (splitted, [r.subset for r in splitted])
-
-    assert splitted[0].subset.name == "III-i-a", splitted[0].subset.name
-
-    r = Request("stream=enfo,type=pf,levtype=sfc,step=0,use=monday")
-    splitted = list(subset_splitter(leg_splitter([r])))
-    assert len(splitted) == 1, (splitted, [r.subset for r in splitted])
-    assert splitted[0].subset.name == "VI-v-a", splitted[0].subset.name
-
-
 def test_high_frequency_splitter():
     steps = "/".join(str(i) for i in range(0, 91))
     r = Request(f"type=fc,stream=oper,levtype=sfc,param=2t,step={steps}")

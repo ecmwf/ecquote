@@ -1028,7 +1028,8 @@ VI-i-a:
   - levtype: sfc
     stream: eehs
     type: em
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: sfc
     param:
@@ -1117,7 +1118,8 @@ VI-i-b:
   - levtype: pl
     stream: eehs
     type: em
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: pl
     param:
@@ -1142,7 +1144,8 @@ VI-ii-a:
   - levtype: sfc
     stream: eehs
     type: em
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: sfc
     param:
@@ -1229,7 +1232,8 @@ VI-ii-b:
   - levtype: pl
     stream: eehs
     type: em
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: pl
     param:
@@ -1250,7 +1254,8 @@ VI-iii-a:
     levtype: sfc
     stream: eefh
     type: fcmean
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: sfc
     param:
@@ -1282,7 +1287,8 @@ VI-iii-b:
     levtype: pl
     stream: eefh
     type: fcmean
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: pl
     param:
@@ -1303,7 +1309,8 @@ VI-iv-a:
     levtype: sfc
     stream: eefh
     type: fcmean
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: sfc
     param:
@@ -1335,7 +1342,8 @@ VI-iv-b:
     levtype: pl
     stream: eefh
     type: fcmean
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: pl
     param:
@@ -1363,7 +1371,8 @@ VI-v-a:
   - levtype: sfc
     stream: eefh
     type: cf
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: sfc
     stream: eefo
@@ -1373,7 +1382,8 @@ VI-v-a:
 VI-v-a-cf:
   description: Free set with VI-v-a
   free_with: VI-v-a
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: sfc
     stream: eefo
@@ -1392,7 +1402,8 @@ VI-v-b:
   - levtype: pl
     stream: eefo
     type: cf
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: pl
     stream: eefo
@@ -1402,7 +1413,8 @@ VI-v-b:
 VI-v-b-cf:
   description: Free set with VI-v-b
   free_with: VI-v-b
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: pl
     stream: eefo
@@ -1421,7 +1433,8 @@ VI-v-c:
   - levtype: sfc
     stream: weef
     type: cf
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: sfc
     stream: weef
@@ -1431,7 +1444,8 @@ VI-v-c:
 VI-v-c-cf:
   description: Free set with VI-v-c
   free_with: VI-v-c
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: sfc
     stream: weef
@@ -1446,7 +1460,8 @@ VI-v-d:
     - pt
     stream: eefo
     type: cf
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype:
     - pt
@@ -1458,7 +1473,8 @@ VI-v-d:
 VI-v-d-cf:
   description: Free set with VI-v-d
   free_with: VI-v-d
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype:
     - pt
@@ -1467,9 +1483,32 @@ VI-v-d-cf:
     type: cf
   set: VI
   subset: VI-v
+VI-v-e:
+  comment: Not a real subset
+  description: unsupported
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    levtype: ml
+    stream: eefo
+    type: pf
+  set: V
+  subset: VI-v
+VI-v-e-cf:
+  description: Free set with VI-v-e
+  free_with: VI-v-e
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    levtype: ml
+    stream: eefo
+    type: cf
+  set: VI
+  subset: VI-v
 VI-vi-a:
   description: Probabilities - Weekly averaged
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: sfc
     param:
@@ -1527,7 +1566,8 @@ VI-vi-a:
   subset: VI-vi
 VI-vi-b:
   description: Probabilities - Weekly accumulated
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: sfc
     param:
@@ -1581,7 +1621,8 @@ VI-vi-b:
   subset: VI-vi
 VI-vi-c:
   description: Probabilities - Probability distributions
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype:
     - pl
@@ -1592,7 +1633,8 @@ VI-vi-c:
   subset: VI-vi
 VI-vi-d:
   description: Probabilities - Probability boundaries
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype:
     - pl
@@ -1603,7 +1645,8 @@ VI-vi-d:
   subset: VI-vi
 VI-vii-a:
   description: Extreme Forecast Index (EFI)
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: sfc
     step:
@@ -1629,7 +1672,8 @@ VI-vii-a:
   subset: VI-vii
 VI-vii-b:
   description: Shift of Tails (SOT)
-  frequency: 104
+  frequency: 365
+  ic_frequency: 104
   mars:
     levtype: sfc
     step:
@@ -1711,7 +1755,7 @@ X-x-f:
     type: fcmean
   set: X
   subset: X-x
-X-x-i:
+X-x-j:
   description: Free set with VI-v-a
   free_with: VI-v-a
   frequency: 104
@@ -1721,7 +1765,7 @@ X-x-i:
     type: pf
   set: X
   subset: X-x
-X-x-j:
+X-x-k:
   description: Free set with VI-v-a
   free_with: VI-v-a
   frequency: 104
@@ -1731,7 +1775,7 @@ X-x-j:
     type: cf
   set: X
   subset: X-x
-X-x-k:
+X-x-l:
   description: Free set with VI-v-b
   free_with: VI-v-b
   frequency: 104
@@ -1741,7 +1785,7 @@ X-x-k:
     type: cf
   set: X
   subset: X-x
-X-x-l:
+X-x-m:
   description: Free set with VI-v-b
   free_with: VI-v-b
   frequency: 104
@@ -1771,22 +1815,3 @@ X-x-p:
     type: pf
   set: X
   subset: X-x
-VI-v-e:
-  description: unsupported
-  frequency: 104
-  mars:
-    levtype: ml
-    stream: eefo
-    type: pf
-  set: V
-  subset: VI-v
-VI-v-e-cf:
-  description: Free set with VI-v-e
-  free_with: VI-v-e
-  frequency: 104
-  mars:
-    levtype: ml
-    stream: eefo
-    type: cf
-  set: V
-  subset: VI-v

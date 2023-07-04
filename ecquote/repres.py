@@ -9,7 +9,6 @@
 
 import logging
 import re
-import sys
 
 from .grib import grib_sections, grib_size
 from .grid import (
@@ -1253,11 +1252,7 @@ def repres(request):
         if len(type) == 1:
             type = type[0]
 
-    try:
-        repres = REPRES[type](request, **repres)
-    except KeyError:
-        print("REPRES", request, type, repres, file=sys.stderr)
-        raise
+    repres = REPRES[type](request, **repres)
 
     use = request.use
 
