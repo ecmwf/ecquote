@@ -1815,3 +1815,23 @@ X-x-p:
     type: pf
   set: X
   subset: X-x
+X-x-q:
+  description: Free set with VI-v-a
+  free_with: VI-v-a
+  frequency: 104
+  mars:
+    levtype: sfc
+    stream: eefh
+    type: taem
+  set: X
+  subset: X-x
+X-x-r:
+  description: Free set with VI-v-b
+  free_with: VI-v-b
+  frequency: 104
+  mars:
+    levtype: pl
+    stream: eefh
+    type: taem
+  set: X
+  subset: X-x

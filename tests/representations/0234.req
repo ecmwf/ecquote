@@ -1,0 +1,10 @@
+class=od,
+domain=g,
+expver=0001,
+levelist=100/300,
+levtype=pl,
+param=gh,
+step=0-168/168-336/336-504/504-672/672-840/840-1008,
+stream=eefh,
+time=0000,
+type=taem
