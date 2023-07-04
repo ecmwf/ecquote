@@ -1,7 +1,7 @@
 # subset=VI-i-b
 
 time=0000,
-stream=enfo,
+stream=eefo,
 step=0-168/168-336/336-504/504-672/672-840/840-1008,
 levtype=pl,
 type=taem,
@@ -14,7 +14,7 @@ use=monday
 
 
 time=0000,
-stream=efhs,
+stream=eefh,
 step=0-168/168-336/336-504/504-672/672-840/840-1008,
 levtype=pl,
 type=taem,
@@ -27,7 +27,7 @@ use=monday
 
 
 time=0000,
-stream=enfo,
+stream=eefo,
 step=96-264/264-432/432-600/600-768/768-936/936-1104,
 levtype=pl,
 type=taem,
@@ -40,7 +40,7 @@ use=thursday
 
 
 time=0000,
-stream=efhs,
+stream=eefh,
 step=96-264/264-432/432-600/600-768/768-936/936-1104,
 levtype=pl,
 type=taem,
@@ -50,5 +50,3 @@ levelist=100/300,
 domain=g,
 expver=0001,
 use=thursday
-
-

@@ -2,7 +2,7 @@
 
 number=1/to/50,
 time=0000,
-stream=enfo,
+stream=eefo,
 step=0/to/360/by/6,
 levtype=sfc,
 type=pf,
@@ -15,7 +15,7 @@ use=monday
 
 number=1/to/50,
 time=0000,
-stream=enfo,
+stream=eefo,
 step=0/to/360/by/6,
 levtype=sfc,
 type=cf,
@@ -28,7 +28,7 @@ use=monday
 
 number=1/to/10,
 time=0000,
-stream=enfh,
+stream=eefh,
 step=0/to/360/by/6,
 levtype=sfc,
 type=pf,
@@ -41,7 +41,7 @@ use=monday
 
 number=1/to/10,
 time=0000,
-stream=enfh,
+stream=eefh,
 step=0/to/360/by/6,
 levtype=sfc,
 type=cf,
@@ -54,7 +54,7 @@ use=monday
 
 number=1/to/50,
 time=0000,
-stream=enfo,
+stream=eefo,
 step=366/to/1104/by/6,
 levtype=sfc,
 type=pf,
@@ -67,7 +67,7 @@ use=monday
 
 number=1/to/50,
 time=0000,
-stream=enfo,
+stream=eefo,
 step=366/to/1104/by/6,
 levtype=sfc,
 type=cf,
@@ -80,7 +80,7 @@ use=monday
 
 number=1/to/10,
 time=0000,
-stream=enfh,
+stream=eefh,
 step=366/to/1104/by/6,
 levtype=sfc,
 type=pf,
@@ -93,7 +93,7 @@ use=monday
 
 number=1/to/10,
 time=0000,
-stream=enfh,
+stream=eefh,
 step=366/to/1104/by/6,
 levtype=sfc,
 type=cf,
@@ -102,5 +102,3 @@ param=100v,
 domain=g,
 expver=0001,
 use=monday
-
-

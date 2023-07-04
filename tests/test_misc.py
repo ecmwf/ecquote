@@ -15,19 +15,13 @@ from ecquote.splitters import prepare_request
 FREQUENCIES = (
     ("type=an,levtype=sfc,stream=oper", 365),
     ("type=cf,levtype=sfc,stream=enfo,step=24", 365),
-    ("type=cf,levtype=sfc,stream=enfo,step=384", 104),
-    ("type=cf,levtype=sfc,stream=enfo,step=24,use=monday", 52),
-    ("type=cf,levtype=sfc,stream=enfo,step=384,use=monday", 52),
-    ("type=cf,levtype=sfc,stream=enfo,step=24,use=thursday", 52),
-    ("type=cf,levtype=sfc,stream=enfo,step=384,use=thursday", 52),
-    ("type=cf,levtype=sfc,stream=enfo,step=24,use=monday/thursday", 104),
-    ("type=cf,levtype=sfc,stream=enfo,step=384,use=monday/thursday", 104),
-    ("type=efi,levtype=sfc,stream=enfo,step=0-24", 365),
-    ("type=sot,levtype=sfc,stream=enfo,step=0-24", 365),
-    ("type=efi,levtype=sfc,stream=enfo,step=0-24", 365),
-    ("type=efi,levtype=sfc,stream=enfo,step=840-1008", 104),
-    ("type=sot,levtype=sfc,stream=enfo,step=0-24", 365),
-    ("type=sot,levtype=sfc,stream=enfo,step=840-1008", 104),
+    ("type=cf,levtype=sfc,stream=enfo,step=384", 365),
+    ("type=cf,levtype=sfc,stream=eefo,step=24,use=monday", 52),
+    ("type=cf,levtype=sfc,stream=eefo,step=384,use=monday", 52),
+    ("type=cf,levtype=sfc,stream=eefo,step=24,use=thursday", 52),
+    ("type=cf,levtype=sfc,stream=eefo,step=384,use=thursday", 52),
+    ("type=cf,levtype=sfc,stream=eefo,step=24,use=monday/thursday", 104),
+    ("type=cf,levtype=sfc,stream=eefo,step=384,use=monday/thursday", 104),
 )
 
 

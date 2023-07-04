@@ -66,7 +66,7 @@ def test_canonical_splitter():
 
 def test_subset_splitter_1():
     r = Request(
-        "stream=enfo,type=ep,levtype=sfc,param=2tag0/2talm1/2tag2/2talm2/2tag1/tpag10/tpag20,"
+        "stream=eefo,type=ep,levtype=sfc,param=2tag0/2talm1/2tag2/2talm2/2tag1/tpag10/tpag20,"
         "time=0000,step=96-264/264-432/432-600/600-768"
     )
     splitted = list(subset_splitter([r]))

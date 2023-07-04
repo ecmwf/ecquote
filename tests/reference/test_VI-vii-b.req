@@ -1,6 +1,6 @@
 # subset=VI-vii-b
 
-stream=enfo,
+stream=eefo,
 quantile=10:100,
 step=0-168/168-336/336-504/504-672/672-840/840-1008,
 levtype=sfc,
@@ -13,7 +13,7 @@ expver=0001,
 use=monday
 
 
-stream=enfo,
+stream=eefo,
 quantile=90:100,
 step=0-168/168-336/336-504/504-672/672-840/840-1008,
 levtype=sfc,
@@ -26,7 +26,7 @@ expver=0001,
 use=monday
 
 
-stream=enfo,
+stream=eefo,
 quantile=10:100,
 step=96-264/264-432/432-600/600-768/768-936/936-1104,
 levtype=sfc,
@@ -39,7 +39,7 @@ expver=0001,
 use=thursday
 
 
-stream=enfo,
+stream=eefo,
 quantile=90:100,
 step=96-264/264-432/432-600/600-768/768-936/936-1104,
 levtype=sfc,
@@ -50,5 +50,3 @@ param=tpi/2ti,
 domain=g,
 expver=0001,
 use=thursday
-
-

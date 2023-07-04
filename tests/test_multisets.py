@@ -13,7 +13,7 @@ from ecquote.cart import Cart
 def test_efi():
     cart = Cart.from_strings(
         """
-   stream=enfo,
+   stream=eefo,
    type=efi,
    param=2ti,
    time=0000,

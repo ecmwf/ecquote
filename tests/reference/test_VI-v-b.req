@@ -2,7 +2,7 @@
 
 number=1/to/50,
 time=0000,
-stream=enfo,
+stream=eefo,
 step=0/to/360/by/12,
 levtype=pl,
 type=pf,
@@ -16,7 +16,7 @@ use=monday
 
 number=1/to/50,
 time=0000,
-stream=enfo,
+stream=eefo,
 step=0/to/360/by/12,
 levtype=pl,
 type=cf,
@@ -30,7 +30,7 @@ use=monday
 
 number=1/to/10,
 time=0000,
-stream=enfh,
+stream=eefh,
 step=0/to/360/by/12,
 levtype=pl,
 type=pf,
@@ -44,7 +44,7 @@ use=monday
 
 number=1/to/10,
 time=0000,
-stream=enfh,
+stream=eefh,
 step=0/to/360/by/12,
 levtype=pl,
 type=cf,
@@ -58,7 +58,7 @@ use=monday
 
 number=1/to/50,
 time=0000,
-stream=enfo,
+stream=eefo,
 step=0/to/360/by/12,
 levtype=pl,
 type=pf,
@@ -72,7 +72,7 @@ use=monday
 
 number=1/to/50,
 time=0000,
-stream=enfo,
+stream=eefo,
 step=0/to/360/by/12,
 levtype=pl,
 type=cf,
@@ -86,7 +86,7 @@ use=monday
 
 number=1/to/10,
 time=0000,
-stream=enfh,
+stream=eefh,
 step=0/to/360/by/12,
 levtype=pl,
 type=pf,
@@ -100,7 +100,7 @@ use=monday
 
 number=1/to/10,
 time=0000,
-stream=enfh,
+stream=eefh,
 step=0/to/360/by/12,
 levtype=pl,
 type=cf,
@@ -114,7 +114,7 @@ use=monday
 
 number=1/to/50,
 time=0000,
-stream=enfo,
+stream=eefo,
 step=372/to/1104/by/12,
 levtype=pl,
 type=pf,
@@ -128,7 +128,7 @@ use=monday
 
 number=1/to/50,
 time=0000,
-stream=enfo,
+stream=eefo,
 step=372/to/1104/by/12,
 levtype=pl,
 type=cf,
@@ -142,7 +142,7 @@ use=monday
 
 number=1/to/10,
 time=0000,
-stream=enfh,
+stream=eefh,
 step=372/to/1104/by/12,
 levtype=pl,
 type=pf,
@@ -156,7 +156,7 @@ use=monday
 
 number=1/to/10,
 time=0000,
-stream=enfh,
+stream=eefh,
 step=372/to/1104/by/12,
 levtype=pl,
 type=cf,
@@ -170,7 +170,7 @@ use=monday
 
 number=1/to/50,
 time=0000,
-stream=enfo,
+stream=eefo,
 step=372/to/1104/by/12,
 levtype=pl,
 type=pf,
@@ -184,7 +184,7 @@ use=monday
 
 number=1/to/50,
 time=0000,
-stream=enfo,
+stream=eefo,
 step=372/to/1104/by/12,
 levtype=pl,
 type=cf,
@@ -198,7 +198,7 @@ use=monday
 
 number=1/to/10,
 time=0000,
-stream=enfh,
+stream=eefh,
 step=372/to/1104/by/12,
 levtype=pl,
 type=pf,
@@ -212,7 +212,7 @@ use=monday
 
 number=1/to/10,
 time=0000,
-stream=enfh,
+stream=eefh,
 step=372/to/1104/by/12,
 levtype=pl,
 type=cf,
@@ -222,5 +222,3 @@ levelist=50,
 domain=g,
 expver=0001,
 use=monday
-
-

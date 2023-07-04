@@ -1,6 +1,6 @@
 # subset=VI-iii-a
 
-stream=enfo,
+stream=eefo,
 step=0,
 levtype=sfc,
 type=fcmean,
@@ -12,7 +12,7 @@ expver=0001,
 use=monday
 
 
-stream=enfo,
+stream=eefo,
 step=0,
 levtype=sfc,
 type=fcmean,

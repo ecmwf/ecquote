@@ -2,7 +2,7 @@
 
 number=0/to/50,
 time=0000,
-stream=enfo,
+stream=eefo,
 step=0-168/168-336/336-504/504-672,
 levtype=pl,
 type=fcmean,
@@ -16,7 +16,7 @@ use=monday
 
 number=0/to/10,
 time=0000,
-stream=enfh,
+stream=eefh,
 step=0-168/168-336/336-504/504-672,
 levtype=pl,
 type=fcmean,
@@ -30,7 +30,7 @@ use=monday
 
 number=0/to/50,
 time=0000,
-stream=enfo,
+stream=eefo,
 step=96-264/264-432/432-600/600-768,
 levtype=pl,
 type=fcmean,
@@ -44,7 +44,7 @@ use=thursday
 
 number=0/to/10,
 time=0000,
-stream=enfh,
+stream=eefh,
 step=96-264/264-432/432-600/600-768,
 levtype=pl,
 type=fcmean,
@@ -54,5 +54,3 @@ levelist=10/50/100/200/300/400/500/700/850/925/1000,
 domain=g,
 expver=0001,
 use=thursday
-
-

@@ -2,7 +2,7 @@
 
 number=1/to/50,
 time=0000,
-stream=waef,
+stream=weef,
 step=0/to/240/by/6,
 levtype=sfc,
 type=pf,
@@ -15,7 +15,7 @@ use=monday
 
 number=1/to/50,
 time=0000,
-stream=waef,
+stream=weef,
 step=0/to/240/by/6,
 levtype=sfc,
 type=cf,
@@ -28,7 +28,7 @@ use=monday
 
 number=1/to/10,
 time=0000,
-stream=enwh,
+stream=weeh,
 step=0/to/240/by/6,
 levtype=sfc,
 type=pf,
@@ -41,7 +41,7 @@ use=monday
 
 number=1/to/10,
 time=0000,
-stream=enwh,
+stream=weeh,
 step=0/to/240/by/6,
 levtype=sfc,
 type=cf,
@@ -50,5 +50,3 @@ param=hmax,
 domain=g,
 expver=0001,
 use=monday
-
-
