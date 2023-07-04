@@ -13,23 +13,34 @@ from ecquote.request import Request
 from ecquote.splitters import prepare_request
 
 FREQUENCIES = (
-    ("type=an,levtype=sfc,stream=oper", 365),
-    ("type=cf,levtype=sfc,stream=enfo,step=24", 365),
-    ("type=cf,levtype=sfc,stream=enfo,step=384", 365),
-    ("type=cf,levtype=sfc,stream=eefo,step=24,use=monday", 52),
-    ("type=cf,levtype=sfc,stream=eefo,step=384,use=monday", 52),
-    ("type=cf,levtype=sfc,stream=eefo,step=24,use=thursday", 52),
-    ("type=cf,levtype=sfc,stream=eefo,step=384,use=thursday", 52),
-    ("type=cf,levtype=sfc,stream=eefo,step=24,use=monday/thursday", 104),
-    ("type=cf,levtype=sfc,stream=eefo,step=384,use=monday/thursday", 104),
+    ("type=an,levtype=sfc,stream=oper", 365, 365),
+    ("type=cf,levtype=sfc,stream=enfo,step=24", 365, 365),
+    ("type=cf,levtype=sfc,stream=eefo,step=24,use=monday", 52, 52),
+    ("type=cf,levtype=sfc,stream=eefo,step=24,use=thursday", 52, 52),
+    ("type=cf,levtype=sfc,stream=eefo,step=24,use=monday/thursday", 104, 104),
+    ("type=cf,levtype=sfc,stream=eefo,step=24,use=wednesday/sunday", 104, 104),
+    ("type=cf,levtype=sfc,stream=eefo,step=24,use=monday/wednesday/sunday", 156, 104),
+    ("type=pf,levtype=sfc,stream=enfo,step=24", 365, 365),
+    ("type=pf,levtype=sfc,stream=eefo,step=24,use=monday", 52, 52),
+    ("type=pf,levtype=sfc,stream=eefo,step=24,use=thursday", 52, 52),
+    ("type=pf,levtype=sfc,stream=eefo,step=24,use=monday/thursday", 104, 104),
+    ("type=pf,levtype=sfc,stream=eefo,step=24,use=wednesday/sunday", 104, 104),
+    ("type=pf,levtype=sfc,stream=eefo,step=24,use=monday/wednesday/sunday", 156, 104),
+    ("type=taem,param=2t,levtype=sfc,stream=eefo,step=0-168", 365, 104),
+    ("type=taem,param=2t,levtype=sfc,stream=eefo,step=0-168,use=monday", 52, 52),
+    ("type=taem,param=2t,levtype=sfc,stream=eefo,step=0-168,use=thursday", 52, 52),
+    ("type=taem,param=2t,levtype=sfc,stream=eefo,step=0-168,use=monday/thursday", 104, 104),
+    ("type=taem,param=2t,levtype=sfc,stream=eefo,step=0-168,use=wednesday/sunday", 104, 104),
+    ("type=taem,param=2t,levtype=sfc,stream=eefo,step=0-168,use=monday/wednesday/sunday", 156, 104),
 )
 
 
 @pytest.mark.parametrize("test", FREQUENCIES)
 def test_frequency(test):
-    req, value = test
+    req, f, g = test
     r = prepare_request(Request(req))
-    assert r.frequency() == value
+    assert r.frequency() == f
+    assert r.chargeable_frequency() == g
 
 
 BITS_PER_VALUE = (("type=an,levtype=sfc,stream=oper,param=2t", [12]),)
