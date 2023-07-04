@@ -159,6 +159,22 @@ class Coster:
             print("   Volume band:     ", bytes(band * 1024 * 1024 * 1024))
             print("   Volume cost:     ", "EUR {:,}".format(euro))
 
+        if self.experimental:
+            print("   Yearly values:   ", "{:,}".format(self.yearly_data_values))
+
+            band, euro, error, _ = self.data_values_band()
+
+            if error:
+                print("   Values band:     ", error)
+            else:
+                print("   Values band:     ", "{:,}".format(band))
+                print("   Values cost:     ", "EUR {:,}".format(euro))
+
+            print(
+                "   Values ratio:    ",
+                "{:.2f}".format(self.yearly_volume / self.yearly_data_values),
+            )
+
     def band(self):
         return band(self.yearly_volume)
 
