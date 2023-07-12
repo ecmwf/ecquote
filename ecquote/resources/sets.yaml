@@ -240,7 +240,7 @@ III-i-d:
   - levtype:
     - pv
     - pt
-    stream: oper
+    stream: enfo
     type: fc
   - levtype:
     - pv
@@ -281,6 +281,47 @@ III-i-d-hf:
     levtype:
     - pt
     - pv
+    stream: enfh
+    type:
+    - cf
+    - pf
+  set: III
+  subset: III-i
+III-i-e:
+  description: Atmospheric fields - Other surface levels
+  free_data:
+  - levtype: sol
+    stream: enfo
+    type: cf
+  - levtype: sol
+    stream: enfh
+    type: pf
+  - levtype: sol
+    stream: enfh
+    type: cf
+  frequency: 365
+  mars:
+    levtype: sol
+    stream: enfo
+    type: pf
+  set: III
+  subset: III-i
+III-i-e-cf:
+  description: Free set with III-i-e
+  free_with: III-i-e
+  frequency: 365
+  mars:
+    levtype: sol
+    stream: enfo
+    type: cf
+  set: III
+  subset: III-i
+III-i-e-hf:
+  description: Free set with III-i-e
+  free_with: III-i-e
+  frequency: 104
+  mars:
+    levtype: sol
     stream: enfh
     type:
     - cf
@@ -1595,3 +1636,4 @@ X-x-r:
     type: taem
   set: X
   subset: X-x
+

@@ -155,3 +155,6 @@ overlay/
 0078/
 ok/
 0001/
+*.tar
+*.gz
+*.tgz

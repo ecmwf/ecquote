@@ -1,0 +1,49 @@
+# subset=III-i-e
+
+disseminate,
+class     =     od,
+stream    =     enfo,
+type      =     pf,
+time      =     00/12,
+levtype   =     sol,
+number    =     1/to/50,
+step      =     0/to/144/by/3,
+param     =     rsn,
+levelist  =     1/2/3/4/5
+
+
+
+disseminate,
+class     =     od,
+stream    =     enfo,
+type      =     pf,
+time      =     00/12,
+levtype   =     sol,
+number    =     1/to/50,
+step      =     150/to/360/by/6,
+param     =     rsn,
+levelist  =     1/2/3/4/5
+
+
+
+disseminate,
+class       =     od,
+stream      =     enfo,
+type        =     cf,
+time        =     00/12,
+levtype     =     sol,
+step        =     0/to/144/by/3,
+param       =     rsn,
+levelist    =     1/2/3/4/5
+
+
+
+disseminate,
+class       =     od,
+stream      =     enfo,
+type        =     cf,
+time        =     00/12,
+levtype     =     sol,
+step        =     150/to/360/by/6,
+param       =     rsn,
+levelist    =     1/2/3/4/5

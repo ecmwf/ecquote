@@ -194,6 +194,13 @@
     - reduced_gg
     - sh
 - mars:
+    levtype: sol
+    stream: oper
+    type: fc
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
     stream: oper
     type: ssd
   repres:
@@ -328,6 +335,20 @@
     type:
     - reduced_gg
     - sh
+- mars:
+    levtype: sol
+    stream: enfo
+    type: pf
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
+    levtype: sol
+    stream: enfo
+    type: cf
+  repres:
+    gaussian: O1280
+    type: reduced_gg
 - mars:
     levtype: pl
     stream: enfo

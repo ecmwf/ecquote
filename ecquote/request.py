@@ -416,6 +416,7 @@ class Request:
         # Just in case
         r["frequency"] = r["direction"] = 1
         r["date"] = date.isoformat()
+
         return ",".join(f"{k}={v}" for k, v in r.items())
 
     def factor_B(self):
