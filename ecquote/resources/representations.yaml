@@ -201,6 +201,13 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    levtype: sol
+    stream: scda
+    type: fc
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
     stream: oper
     type: ssd
   repres:
