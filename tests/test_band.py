@@ -28,8 +28,8 @@ def test_band():
     assert band(501) == 110000
     assert band(1000) == 110000
     assert band(1001) == 130000
-    assert band(1500) == 130000
-    assert band(1501) is None
+    assert band(3000) == 130000
+    assert band(3001) is None
 
 
 if __name__ == "__main__":
