@@ -1,0 +1,10 @@
+class=aifs,
+domain=g,
+expver=0001,
+levelist=500,
+levtype=pl,
+param=z,
+step=240,
+stream=oper,
+time=1200,
+type=fc

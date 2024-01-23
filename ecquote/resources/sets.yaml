@@ -2,6 +2,7 @@ I-i-a:
   description: Single level
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     stream:
     - oper
@@ -15,6 +16,7 @@ I-i-b:
   description: Pressure levels
   frequency: 365
   mars:
+    class: od
     levtype: pl
     stream:
     - oper
@@ -28,6 +30,7 @@ I-i-c:
   description: Model levels
   frequency: 365
   mars:
+    class: od
     levtype: ml
     stream:
     - oper
@@ -41,6 +44,7 @@ I-i-d:
   description: Potential vorticity levels
   frequency: 365
   mars:
+    class: od
     levtype:
     - pt
     - pv
@@ -56,6 +60,7 @@ I-i-e:
   description: Snow depth levels
   frequency: 365
   mars:
+    class: od
     levtype:
     - sol
     stream:
@@ -70,6 +75,7 @@ I-ii:
   description: Time series of weather parameters
   frequency: 365
   mars:
+    class: od
     stream:
     - oper
     - scda
@@ -80,6 +86,7 @@ I-iii:
   description: Tropical cyclone tracks
   frequency: 365
   mars:
+    class: od
     stream:
     - oper
     - scda
@@ -90,6 +97,7 @@ I-iv:
   description: Simulated Satellite Images
   frequency: 365
   mars:
+    class: od
     stream:
     - oper
     - scda
@@ -100,6 +108,7 @@ II-i:
   description: High RESolution WAve Model (HRES-WAM)
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     stream:
     - scwv
@@ -123,6 +132,7 @@ III-i-a:
     type: cf
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     stream: enfo
     type: pf
@@ -133,6 +143,7 @@ III-i-a-cf:
   free_with: III-i-a
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     stream: enfo
     type: cf
@@ -143,6 +154,7 @@ III-i-a-hf:
   free_with: III-i-a
   frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: enfh
     type:
@@ -164,6 +176,7 @@ III-i-b:
     type: cf
   frequency: 365
   mars:
+    class: od
     levtype: pl
     stream: enfo
     type: pf
@@ -174,6 +187,7 @@ III-i-b-cf:
   free_with: III-i-b
   frequency: 365
   mars:
+    class: od
     levtype: pl
     stream: enfo
     type: cf
@@ -184,6 +198,7 @@ III-i-b-hf:
   free_with: III-i-b
   frequency: 104
   mars:
+    class: od
     levtype: pl
     stream: enfh
     type:
@@ -202,6 +217,7 @@ III-i-c:
     type: pf
   frequency: 365
   mars:
+    class: od
     levtype: ml
     stream: enfo
     type: pf
@@ -212,6 +228,7 @@ III-i-c-cf:
   free_with: III-i-c
   frequency: 365
   mars:
+    class: od
     levtype: ml
     stream: enfo
     type: cf
@@ -222,6 +239,7 @@ III-i-c-hf:
   free_with: III-i-c
   frequency: 104
   mars:
+    class: od
     levtype: ml
     stream: enfh
     type:
@@ -254,6 +272,7 @@ III-i-d:
     type: cf
   frequency: 365
   mars:
+    class: od
     levtype:
     - pt
     - pv
@@ -266,6 +285,7 @@ III-i-d-cf:
   free_with: III-i-d
   frequency: 365
   mars:
+    class: od
     levtype:
     - pt
     - pv
@@ -278,6 +298,7 @@ III-i-d-hf:
   free_with: III-i-d
   frequency: 104
   mars:
+    class: od
     levtype:
     - pt
     - pv
@@ -301,6 +322,7 @@ III-i-e:
     type: cf
   frequency: 365
   mars:
+    class: od
     levtype: sol
     stream: enfo
     type: pf
@@ -311,6 +333,7 @@ III-i-e-cf:
   free_with: III-i-e
   frequency: 365
   mars:
+    class: od
     levtype: sol
     stream: enfo
     type: cf
@@ -321,6 +344,7 @@ III-i-e-hf:
   free_with: III-i-e
   frequency: 104
   mars:
+    class: od
     levtype: sol
     stream: enfh
     type:
@@ -332,6 +356,7 @@ III-ii:
   description: Clusters
   frequency: 365
   mars:
+    class: od
     levtype: pl
     stream: enfo
     type:
@@ -343,6 +368,7 @@ III-iii-a:
   description: Probabilities - Instantaneous weather events - Single level
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     param:
     - 10spg10
@@ -387,6 +413,7 @@ III-iii-b:
   description: Probabilities - Averaged  weather events - Single level
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     param:
     - 2tl273
@@ -407,6 +434,7 @@ III-iii-c:
   description: Probabilities - Instantaneous weather events - Pressure levels
   frequency: 365
   mars:
+    class: od
     levtype: pl
     param:
     - ptsa_gt_1p5stdev
@@ -427,6 +455,7 @@ III-iii-d:
   description: Probabilities - Averaged  weather events - Pressure levels
   frequency: 365
   mars:
+    class: od
     levtype: pl
     param:
     - tag2
@@ -439,6 +468,7 @@ III-iii-e:
   description: Probabilities - Daily weather events - Single level
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     param:
     - 10fgg10
@@ -460,6 +490,7 @@ III-iii-f:
   description: Probabilities - Tropical cyclone probabilities
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     param:
     - ph
@@ -473,6 +504,7 @@ III-iv:
   description: Time series of weather parameters
   frequency: 365
   mars:
+    class: od
     stream: enfo
     type: wp
   set: III
@@ -481,6 +513,7 @@ III-v-a:
   description: Extreme Forecast Index (EFI) 1-day ranges
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     step:
     - 0-24
@@ -508,6 +541,7 @@ III-v-b:
   description: Extreme Forecast Index (EFI) 3, 5 and 10-day ranges
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     step:
     - 0-72
@@ -547,6 +581,7 @@ III-v-c:
   description: Shift of Tails (SOT) 1-day ranges
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     step:
     - 0-24
@@ -572,6 +607,7 @@ III-v-d:
   description: Shift of Tails (SOT) 3, 5 and 10-day ranges
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     step:
     - 0-72
@@ -609,6 +645,7 @@ III-vi-a:
   description: Ensemble means - Single level
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     stream: enfo
     type: em
@@ -618,6 +655,7 @@ III-vi-b:
   description: Ensemble means - Pressure levels
   frequency: 365
   mars:
+    class: od
     levtype: pl
     stream: enfo
     type: em
@@ -627,6 +665,7 @@ III-vii-a:
   description: Ensemble standard deviations - Single level
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     stream: enfo
     type: es
@@ -636,6 +675,7 @@ III-vii-b:
   description: Ensemble standard deviations - Pressure levels
   frequency: 365
   mars:
+    class: od
     levtype: pl
     stream: enfo
     type: es
@@ -645,6 +685,7 @@ III-viii:
   description: Tropical Cyclone tracks
   frequency: 365
   mars:
+    class: od
     stream: enfo
     type: tf
   set: III
@@ -663,6 +704,7 @@ IV-i:
     type: pf
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     stream: waef
     type: pf
@@ -673,6 +715,7 @@ IV-i-cf:
   free_with: IV-i
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     stream: waef
     type: cf
@@ -682,6 +725,7 @@ IV-ii-a:
   description: Probabilities - Instantaneous weather events
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     step:
     - 12
@@ -722,6 +766,7 @@ IV-ii-b:
   description: Probabilities - Averaged  weather events
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     step:
     - 120-168
@@ -736,6 +781,7 @@ IV-iii-a:
   description: Extreme Forecast Index (EFI) 1-day ranges
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     stream: waef
     type:
@@ -747,6 +793,7 @@ IV-iii-b:
   description: Shift of Tails (SOT) 1-day ranges
   frequency: 365
   mars:
+    class: od
     levtype: sfc
     stream: waef
     type: sot
@@ -756,6 +803,7 @@ V-i-a:
   description: Monthly means of ensemble means - Single level
   frequency: 12
   mars:
+    class: od
     levtype: sfc
     method: 1
     origin: ecmf
@@ -768,6 +816,7 @@ V-i-b:
   description: Monthly means of ensemble means - Pressure levels
   frequency: 12
   mars:
+    class: od
     levtype:
     - pl
     - pt
@@ -783,6 +832,7 @@ V-ii-a:
   description: Monthly mean anomalies of ensemble means - Single level
   frequency: 12
   mars:
+    class: od
     levtype: sfc
     method: 1
     origin: ecmf
@@ -795,6 +845,7 @@ V-ii-b:
   description: Monthly mean anomalies of ensemble means - Pressure levels
   frequency: 12
   mars:
+    class: od
     levtype:
     - pl
     - pt
@@ -816,6 +867,7 @@ V-iii-a:
     type: em
   frequency: 12
   mars:
+    class: od
     levtype: sfc
     method: 1
     origin: ecmf
@@ -838,6 +890,7 @@ V-iii-b:
     type: em
   frequency: 12
   mars:
+    class: od
     levtype:
     - pl
     - pt
@@ -853,6 +906,7 @@ V-iii-c:
   description: Seasonal forecast wave monthly means
   frequency: 12
   mars:
+    class: od
     levtype: sfc
     method: 1
     stream: swmm
@@ -871,6 +925,7 @@ V-iv-a:
     type: em
   frequency: 12
   mars:
+    class: od
     levtype: sfc
     method: 1
     origin: ecmf
@@ -892,6 +947,7 @@ V-iv-b:
     type: em
   frequency: 12
   mars:
+    class: od
     levtype:
     - pl
     - pt
@@ -906,6 +962,7 @@ V-v-a:
   description: Individual forecast runs - 6-hourly - Single level
   frequency: 12
   mars:
+    class: od
     levtype: sfc
     method: 1
     origin: ecmf
@@ -933,6 +990,7 @@ V-v-b:
   description: Individual forecast runs - 24-hourly - Single level
   frequency: 12
   mars:
+    class: od
     levtype: sfc
     method: 1
     origin: ecmf
@@ -988,6 +1046,7 @@ V-v-c:
   description: Individual forecast runs - 12-hourly - Pressure levels
   frequency: 12
   mars:
+    class: od
     levtype: pl
     method: 1
     origin: ecmf
@@ -1000,6 +1059,7 @@ V-v-d:
   description: Individual forecast runs - 12-hourly - Model levels
   frequency: 12
   mars:
+    class: od
     levtype: ml
     method: 1
     origin: ecmf
@@ -1012,6 +1072,7 @@ V-v-e:
   description: Wave seasonal forecast - 24-hourly
   frequency: 12
   mars:
+    class: od
     levtype: sfc
     method: 1
     stream: wasf
@@ -1031,6 +1092,7 @@ VI-i-a:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: sfc
     param:
     - 100u
@@ -1080,6 +1142,7 @@ VI-i-b:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: pl
     param:
     - gh
@@ -1106,6 +1169,7 @@ VI-ii-a:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: sfc
     param:
     - 100ua
@@ -1148,6 +1212,7 @@ VI-ii-b:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: pl
     param:
     - gha
@@ -1170,6 +1235,7 @@ VI-iii-a:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: sfc
     param:
     - 100u
@@ -1203,6 +1269,7 @@ VI-iii-b:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: pl
     param:
     - gh
@@ -1225,6 +1292,7 @@ VI-iv-a:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: sfc
     param:
     - 100ua
@@ -1258,6 +1326,7 @@ VI-iv-b:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: pl
     param:
     - gha
@@ -1287,6 +1356,7 @@ VI-v-a:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: eefo
     type: pf
@@ -1298,6 +1368,7 @@ VI-v-a-cf:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: eefo
     type: cf
@@ -1318,6 +1389,7 @@ VI-v-b:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: pl
     stream: eefo
     type: pf
@@ -1329,6 +1401,7 @@ VI-v-b-cf:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: pl
     stream: eefo
     type: cf
@@ -1349,6 +1422,7 @@ VI-v-c:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: weef
     type: pf
@@ -1360,6 +1434,7 @@ VI-v-c-cf:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: weef
     type: cf
@@ -1376,6 +1451,7 @@ VI-v-d:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype:
     - pt
     - pv
@@ -1389,6 +1465,7 @@ VI-v-d-cf:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype:
     - pt
     - pv
@@ -1402,6 +1479,7 @@ VI-v-e:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: ml
     stream: eefo
     type: pf
@@ -1413,6 +1491,7 @@ VI-v-e-cf:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: ml
     stream: eefo
     type: cf
@@ -1423,6 +1502,7 @@ VI-vi-a:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: sfc
     param:
     - 2tag0
@@ -1441,6 +1521,7 @@ VI-vi-b:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: sfc
     param:
     - tpag0
@@ -1455,6 +1536,7 @@ VI-vi-c:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype:
     - pl
     - sfc
@@ -1467,6 +1549,7 @@ VI-vi-d:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype:
     - pl
     - sfc
@@ -1479,6 +1562,7 @@ VI-vii-a:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: eefo
     type:
@@ -1491,16 +1575,34 @@ VI-vii-b:
   frequency: 365
   ic_frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: eefo
     type: sot
   set: VI
   subset: VI-vii
+IX-i-a:
+  description: AIFS
+  frequency: 365
+  mars:
+    class: aifs
+    levtype: sfc
+  set: IX
+  subset: IX-i
+IX-i-b:
+  description: AIFS
+  frequency: 365
+  mars:
+    class: aifs
+    levtype: pl
+  set: IX
+  subset: IX-i
 X-x-a:
   description: Free set with VI-i-a
   free_with: VI-i-a
   frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: eehs
     type: taem
@@ -1511,6 +1613,7 @@ X-x-b:
   free_with: VI-i-a
   frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: eehs
     type: em
@@ -1521,6 +1624,7 @@ X-x-c:
   free_with: VI-i-b
   frequency: 104
   mars:
+    class: od
     levtype: pl
     stream: eehs
     type: taem
@@ -1531,6 +1635,7 @@ X-x-d:
   free_with: VI-i-b
   frequency: 104
   mars:
+    class: od
     levtype: pl
     stream: eehs
     type: em
@@ -1541,6 +1646,7 @@ X-x-e:
   free_with: VI-iii-a
   frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: eefh
     type: fcmean
@@ -1551,6 +1657,7 @@ X-x-f:
   free_with: VI-iii-b
   frequency: 104
   mars:
+    class: od
     levtype: pl
     stream: eefh
     type: fcmean
@@ -1561,6 +1668,7 @@ X-x-j:
   free_with: VI-v-a
   frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: eefh
     type: pf
@@ -1571,6 +1679,7 @@ X-x-k:
   free_with: VI-v-a
   frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: eefh
     type: cf
@@ -1581,6 +1690,7 @@ X-x-l:
   free_with: VI-v-b
   frequency: 104
   mars:
+    class: od
     levtype: pl
     stream: eefh
     type: cf
@@ -1591,6 +1701,7 @@ X-x-m:
   free_with: VI-v-b
   frequency: 104
   mars:
+    class: od
     levtype: pl
     stream: eefh
     type: pf
@@ -1601,6 +1712,7 @@ X-x-o:
   free_with: VI-v-c
   frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: weeh
     type: cf
@@ -1611,6 +1723,7 @@ X-x-p:
   free_with: VI-v-c
   frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: weeh
     type: pf
@@ -1621,6 +1734,7 @@ X-x-q:
   free_with: VI-v-a
   frequency: 104
   mars:
+    class: od
     levtype: sfc
     stream: eefh
     type: taem
@@ -1631,9 +1745,9 @@ X-x-r:
   free_with: VI-v-b
   frequency: 104
   mars:
+    class: od
     levtype: pl
     stream: eefh
     type: taem
   set: X
   subset: X-x
-
