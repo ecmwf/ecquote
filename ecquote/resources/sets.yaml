@@ -1585,7 +1585,7 @@ IX-i-a:
   description: AIFS
   frequency: 365
   mars:
-    class: aifs
+    class: ai
     levtype: sfc
   set: IX
   subset: IX-i
@@ -1593,7 +1593,7 @@ IX-i-b:
   description: AIFS
   frequency: 365
   mars:
-    class: aifs
+    class: ai
     levtype: pl
   set: IX
   subset: IX-i

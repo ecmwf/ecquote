@@ -1,26 +1,29 @@
-# CREATED AT: 2022-01-18 12:00:59.976075+00:00
-# MODIFIED AT: 2022-04-11 13:23:01.282792+00:00
 #####  OPEN DATA SET REQUIREMENTS #######
 #i)
 # surface
-disseminate,target=EGS:EE,option=normal/opendata,
+disseminate,
   class               = od,
   stream              = oper,
   expver              = 0001,
   domain              = g,
   type                = fc,
   levtype             = sfc,
-  param               = 10u/10v/2t/msl/ro/tp/skt/sp/stl1/tcwv,
+  param               = 10u/10v/2t/msl/ro/tp/skt/sp/stl1/stl2/stl3/stl4/tcwv/lsm/swvl1/swvl2/swvl3/swvl4/cape/asn/ttr/str/ssr/ssrd/strd/100u/100v/2d/mn2t3/mx2t3,
   time                = 0000/1200,
   step                = 0/to/144/by/3,
-  area                = 90/-180/-90/179.6,
-  grid                = .4/.4
+  area                = 90/-180/-90/179.75,
+  grid                = .25/.25,
+  packing             = simple
 
 disseminate,
   step                = 150/to/240/by/6
 
 disseminate,
+  param               = mx2t6/mn2t6
+
+disseminate,
   stream              = scda,
+  param               = 10u/10v/2t/msl/ro/tp/skt/sp/stl1/stl2/stl3/stl4/tcwv/lsm/swvl1/swvl2/swvl3/swvl4/cape/asn/ttr/str/ssr/ssrd/strd/100u/100v/2d/mn2t3/mx2t3,
   time                = 0600/1800,
   step                = 0/to/90/by/3
 
@@ -28,8 +31,8 @@ disseminate,
 disseminate,
   stream              = oper,
   levtype             = pl,
-  param               = d/gh/q/r/t/u/v/vo,
-  levelist            = 1000/925/850/700/500/300/250/200/50,
+  param               = w/d/gh/q/r/t/u/v/vo,
+  levelist            = 1000/925/850/700/600/500/400/300/250/200/150/100/50,
   time                = 0000/1200,
   step                = 0/to/144/by/3
 
@@ -58,13 +61,10 @@ disseminate,
   time                = 0600/1800,
   step                = 0/to/90/by/3
 
-#iii
-#Based on ENS
-#Perturbed
 disseminate,
   stream              = enfo,
   type                = pf,
-  param               = 10u/10v/2t/msl/ro/tp/skt/sp/stl1/tcwv,
+  param               = 10u/10v/2t/msl/ro/tp/skt/sp/stl1/stl2/stl3/stl4/tcwv/lsm/swvl1/swvl2/swvl3/swvl4/cape/asn/ttr/str/ssr/ssrd/strd/100u/100v/2d/mn2t3/mx2t3,
   time                = 0000/1200,
   step                = 0/to/144/by/3,
   number              = 1/to/50
@@ -98,7 +98,7 @@ disseminate,
 disseminate,
   type                = pf,
   levtype             = pl,
-  param               = d/gh/q/r/t/u/v/vo,
+  param               = w/d/gh/q/r/t/u/v/vo,
   levelist            = 1000/925/850/700/500/300/250/200/50,
   time                = 0000/1200,
   use                 = off,
@@ -277,3 +277,36 @@ disseminate,
   time                = 0600/1800,
   step                = 144,
   use                 = bc
+
+
+
+
+  disseminate,
+  class               = ai,
+  stream              = oper,
+  expver              = 0001,
+  domain              = g,
+  type                = fc,
+  levtype             = pl,
+  param               = z/t/q/w/u/v,
+  levelist            = 50/100/150/200/250/300/400/500/600/700/850/925/1000,
+  time                = 0000/0600/1200/1800,
+  step                = 0/to/360/by/6,
+  area                = 90/-180/-90/179.75,
+  grid                = .25/.25
+
+disseminate,
+  levtype             = sfc,
+  param               = sp/tcw/cp/msl/10u/10v/2t/2d/tp/skt,
+  levelist            = off
+
+disseminate,
+  param               = z/lsm,
+  step                = 0
+
+disseminate,
+  type                = tf,
+  param               = off,
+  time                = 0000/1200,
+  step                = 240,
+  grid                = off
