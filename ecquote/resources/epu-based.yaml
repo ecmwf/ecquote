@@ -14,6 +14,10 @@ I-i-d:
   E: 1
   D: 1
   M: 1
+I-i-e:
+  E: 1
+  D: 1
+  M: 1
 I-ii:
   E: 1
   D: 1
@@ -43,6 +47,10 @@ III-i-c:
   D: 1
   M: 1
 III-i-d:
+  E: 1.4
+  D: 1
+  M: 1
+III-i-e:
   E: 1.4
   D: 1
   M: 1
@@ -265,4 +273,12 @@ VI-vii-a:
 VI-vii-b:
   E: 1
   D: 15
+  M: 1
+IX-i-a:
+  E: 1
+  D: 0
+  M: 1
+IX-i-b:
+  E: 1
+  D: 0
   M: 1

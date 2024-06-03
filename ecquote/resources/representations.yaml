@@ -30,6 +30,7 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    dataset: I-i-b
     levtype: pl
     stream: oper
     type: fc
@@ -193,6 +194,20 @@
     type:
     - reduced_gg
     - sh
+- mars:
+    levtype: sol
+    stream: oper
+    type: fc
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
+    levtype: sol
+    stream: scda
+    type: fc
+  repres:
+    gaussian: O1280
+    type: reduced_gg
 - mars:
     stream: oper
     type: ssd
@@ -328,6 +343,20 @@
     type:
     - reduced_gg
     - sh
+- mars:
+    levtype: sol
+    stream: enfo
+    type: pf
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
+    levtype: sol
+    stream: enfo
+    type: cf
+  repres:
+    gaussian: O1280
+    type: reduced_gg
 - mars:
     levtype: pl
     stream: enfo
@@ -764,6 +793,14 @@
     type: sot
   repres:
     gaussian: O320
+    type: reduced_gg
+- mars:
+    dataset: IX-i-b
+    levtype: pl
+    stream: oper
+    type: fc
+  repres:
+    gaussian: N320
     type: reduced_gg
 - mars:
     levtype: sfc
