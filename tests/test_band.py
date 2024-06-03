@@ -15,21 +15,21 @@ def band(x):
 
 
 def test_band():
-    assert band(0) == 200
-    assert band(1) == 200
-    assert band(2) == 1800
-    assert band(10) == 1800
-    assert band(11) == 9000
-    assert band(50) == 9000
-    assert band(51) == 15000
-    assert band(100) == 15000
-    assert band(101) == 66000
-    assert band(500) == 66000
-    assert band(501) == 110000
-    assert band(1000) == 110000
-    assert band(1001) == 130000
-    assert band(3000) == 130000
-    assert band(3001) is None
+    assert band(0) == 0
+    assert band(1) == 0
+    assert band(2) == 1000
+    assert band(10) == 1000
+    assert band(11) == 7000
+    assert band(50) == 7000
+    assert band(51) == 7000
+    assert band(100) == 7000
+    assert band(101) == 33000
+    assert band(500) == 33000
+    assert band(501) == 60000
+    assert band(1000) == 60000
+    assert band(1001) == 90000
+    assert band(4000) == 90000
+    assert band(4001) is None
 
 
 if __name__ == "__main__":
