@@ -131,9 +131,9 @@ modify: null
 # Group-by option
 group-by: null
 
-max-charge-core: 70000
-max-charge-high-frequency: 78000
-epu-price: 0.25
+max-charge-core: 47500
+max-charge-high-frequency: 55500
+epu-price: 0.15
 
 # Destination mode, look for XXX:XX
 destinations: False
@@ -141,4 +141,4 @@ destinations: False
 experimental: False
 commercial: null
 
-free-grid: null
+free-grid: 0.4
