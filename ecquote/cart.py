@@ -238,7 +238,7 @@ class Cart:
 
     def statistics(self):
         count = defaultdict(int)
-        names = ("param", "step", "levelist", "stream", "type")
+        names = ("param", "step", "levelist", 'levtype', "stream", "type", "class")
         for r in progress(self.requests):
             if r.type == "wp":
                 continue

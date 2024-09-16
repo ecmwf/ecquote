@@ -13,7 +13,7 @@ import re
 from contextlib import contextmanager
 
 
-def progress(x, title, delay=2):
+def progress(x, title='progress', delay=2):
     try:
         from tqdm import tqdm
     except ImportError:
