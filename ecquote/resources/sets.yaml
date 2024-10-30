@@ -57,12 +57,27 @@ I-i-d:
   set: I
   subset: I-i
 I-i-e:
-  description: Snow depth levels
+  description: Soil depth levels
   frequency: 365
   mars:
     class: od
     levtype:
     - sol
+    stream:
+    - oper
+    - scda
+    type:
+    - an
+    - fc
+  set: I
+  subset: I-i
+  I-i-f:
+  description: Thermofeel Products
+  frequency: 365
+  mars:
+    class: od
+    levtype:
+    - sfc
     stream:
     - oper
     - scda
@@ -346,6 +361,50 @@ III-i-e-hf:
   mars:
     class: od
     levtype: sol
+    stream: enfh
+    type:
+    - cf
+    - pf
+  set: III
+  subset: III-i
+  III-i-f:
+  description: Atmospheric fields - Thermofeel Products
+  free_data:
+  - levtype: sfc
+    stream: enfo
+    type: cf
+  - levtype: sfc
+    stream: enfh
+    type: pf
+  - levtype: sfc
+    stream: enfh
+    type: cf
+  frequency: 365
+  mars:
+    class: od
+    levtype: sfc
+    stream: enfo
+    type: pf
+  set: III
+  subset: III-i
+III-i-f-cf:
+  description: Free set with III-i-e
+  free_with: III-i-e
+  frequency: 365
+  mars:
+    class: od
+    levtype: sfc
+    stream: enfo
+    type: cf
+  set: III
+  subset: III-i
+III-i-f-hf:
+  description: Free set with III-i-e
+  free_with: III-i-e
+  frequency: 104
+  mars:
+    class: od
+    levtype: sfc
     stream: enfh
     type:
     - cf
