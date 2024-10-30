@@ -219,28 +219,28 @@
     stream: wave
     type: fc
   repres:
-    reduced_ll: 0.125
+    reduced_ll: 0.1
     type: reduced_ll
 - mars:
     levtype: sfc
     stream: wave
     type: an
   repres:
-    reduced_ll: 0.125
+    reduced_ll: 0.1
     type: reduced_ll
 - mars:
     levtype: sfc
     stream: scwv
     type: fc
   repres:
-    reduced_ll: 0.125
+    reduced_ll: 0.1
     type: reduced_ll
 - mars:
     levtype: sfc
     stream: scwv
     type: an
   repres:
-    reduced_ll: 0.125
+    reduced_ll: 0.1
     type: reduced_ll
 - mars:
     levtype: sfc
@@ -443,42 +443,42 @@
     stream: waef
     type: pf
   repres:
-    reduced_ll: 0.125
+    reduced_ll: 0.1
     type: reduced_ll
 - mars:
     levtype: sfc
     stream: waef
     type: cf
   repres:
-    reduced_ll: 0.125
+    reduced_ll: 0.1
     type: reduced_ll
 - mars:
     levtype: sfc
     stream: waef
     type: ep
   repres:
-    reduced_ll: 0.125
+    reduced_ll: 0.1
     type: reduced_ll
 - mars:
     levtype: sfc
     stream: waef
     type: efi
   repres:
-    reduced_ll: 0.125
+    reduced_ll: 0.1
     type: reduced_ll
 - mars:
     levtype: sfc
     stream: waef
     type: efic
   repres:
-    reduced_ll: 0.125
+    reduced_ll: 0.1
     type: reduced_ll
 - mars:
     levtype: sfc
     stream: waef
     type: sot
   repres:
-    reduced_ll: 0.125
+    reduced_ll: 0.1
     type: reduced_ll
 - mars:
     levtype: sfc
