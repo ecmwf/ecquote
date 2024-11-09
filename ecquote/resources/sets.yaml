@@ -71,7 +71,8 @@ I-i-e:
     - fc
   set: I
   subset: I-i
-I-i-f: # costed by I-i-a as same pricing/type/stream
+I-i-f:
+  # costed by I-i-a as same pricing/type/stream
   description: Thermofeel Products
   frequency: 365
   mars:
@@ -378,55 +379,55 @@ III-i-e-hf:
     - pf
   set: III
   subset: III-i
-III-i-f (costed with III-i-a as same composition):
- description: Atmospheric fields - Thermofeel Products
- free_data:
- - levtype: sfc
-   stream: enfo
-   type: cf
- frequency: 365
- mars:
-   class: od
-   levtype: sfc
-   stream: enfo
-   type: pf
-   param:
-   - 2r
-   - utci
-   - mrt
-   - heatx
-   - wcf
-   - aptmp
-   - hmdx
-   - nefft
-   - gt
-   - wbgt
-   - wpbt
- set: III
- subset: III-i
+III-i-f: # costed with III-i-a as same composition
+  description: Atmospheric fields - Thermofeel Products
+  free_data:
+  - levtype: sfc
+    stream: enfo
+    type: cf
+  frequency: 365
+  mars:
+    class: od
+    levtype: sfc
+    stream: enfo
+    type: pf
+    param:
+    - 2r
+    - utci
+    - mrt
+    - heatx
+    - wcf
+    - aptmp
+    - hmdx
+    - nefft
+    - gt
+    - wbgt
+    - wpbt
+  set: III
+  subset: III-i
 III-i-f-cf:
- description: Free set with III-i-f
- free_with: III-i-e
- frequency: 365
- mars:
-   class: od
-   levtype: sfc
-   stream: enfo
-   type: cf
-   param:
-   - 2r
-   - utci
-   - mrt
-   - heatx
-   - wcf
-   - aptmp
-   - hmdx
-   - nefft
-   - gt
-   - wbgt
-   - wpbt
- set: III
- subset: III-i
+  description: Free set with III-i-f
+  free_with: III-i-e
+  frequency: 365
+  mars:
+    class: od
+    levtype: sfc
+    stream: enfo
+    type: cf
+    param:
+    - 2r
+    - utci
+    - mrt
+    - heatx
+    - wcf
+    - aptmp
+    - hmdx
+    - nefft
+    - gt
+    - wbgt
+    - wpbt
+  set: III
+  subset: III-i
 III-ii:
   description: Clusters
   frequency: 365

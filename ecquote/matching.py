@@ -11,7 +11,7 @@ import logging
 from collections import defaultdict
 
 from .resources import resource
-from .utils import iterate_request, log_warning_once
+from .utils import check_subset_name, iterate_request, log_warning_once
 
 LOG = logging.getLogger(__name__)
 
@@ -116,6 +116,10 @@ class Matcher:
                         if len(v) == 5 and v[1] == "to" and v[3] == "by":
                             mars[k] = to_by(v)
 
+            if self.what == 'sets':
+                for k in self._rules.keys():
+                    check_subset_name(k)
+
         return self._rules
 
     def get_match(self, request):
@@ -137,7 +141,7 @@ class Matcher:
         keys = set()
         best = defaultdict(list)
 
-        best_cnt = 0
+        partial = defaultdict(dict)
 
         for i, (name, s) in enumerate(self.rules.items()):
             s["order"] = i
@@ -157,8 +161,13 @@ class Matcher:
                 v = set(str(x) if x is not None else None for x in v)
 
                 if k in request.fields:
-                    if set(request.fields[k]).intersection(v):
+                    fields = set(request.fields[k])
+                    if fields.intersection(v):
                         cnt += 1
+                        if not fields <= v:
+                            # This is a partial match, for example not all `param` in request match `param` in rule
+                            assert k not in partial[name]
+                            partial[name][k] = (fields - v, fields&v)
                 else:
                     if None in v:
                         cnt += 1
@@ -166,9 +175,6 @@ class Matcher:
             best[cnt].append(name)
 
             if cnt == len(mars):
-                if cnt > best_cnt:
-                    best_cnt = cnt
-                    matches = []
                 matches.append(name)
 
         self._keys = sorted(keys)
@@ -213,7 +219,7 @@ class Matcher:
 
             if self.multiple:
                 return multiple(
-                    name, request, self.split_request(request, matches), self.multiple
+                    name, request, self.split_request(request, matches, partial), self.multiple
                 )
 
             r = {k: request.fields[k] for k in keys if k in request.fields}
@@ -233,26 +239,71 @@ class Matcher:
             LOG.error("%s: %s", name, e)
             raise
 
-    def split_request(self, request, matches):
+    def split_request(self, request, matches, partial):
+
+        partial_split = {}
+
+        if partial:
+            # Key the matches to the partial
+            partial = {k: v for k, v in partial.items() if k in matches}
+            # For now
+            assert len(partial) == 1, (len(partial), partial.keys())
+            # We only support one partial match between two rules
+            assert len(matches) == 2, (len(matches), matches)
+
+            # k is the rule that that matched
+            match, partial = list(partial.items())[0]
+
+
+            for m in matches:
+                if m  == match:
+                    partial_split[m] = {k:v[1] for k,v in partial.items()} # Part that matched
+                else:
+                    partial_split[m] = {k:v[0] for k,v in partial.items()} # Part that did not match
+
+
         result = []
-        for m in matches:
-            result.append(self.split_one(request, m))
+        for match in matches:
+            result.append(self.split_one(request, match, partial_split.get(match) ))
+
         return result
 
-    def split_one(self, request, name):
+    def split_one(self, request, name, partial):
         from .request import Request
 
+        match = None
+
+        if partial:
+            # For now
+            assert len(partial) == 1, partial
+            match, partial = list(partial.items())[0]
+            assert match in self._keys, (match, self._keys)
+
+
         rule = self.rules[name]
-        mars = rule["mars"]
+        mars = rule["mars"].copy()
         split = {}
+
+        if match:
+            if match not in mars:
+                mars[match] = list(partial)
+
         for k, v in mars.items():
             if not isinstance(v, list):
                 v = [v]
+
             v = set([str(x) if x is not None else x for x in v])
+
+
+
             assert None not in v, v
+
             if k in self._keys:
+                # print("K", k, request.fields[k], v, match, partial)
                 split[k] = tuple(
                     [x for x in request.fields[k] if x in v]
                 )  # Preserve order
                 assert split[k], (k, v)
+
+
         return Request(request, split), self.callable(name, **dict(**rule))

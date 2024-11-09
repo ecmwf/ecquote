@@ -9,9 +9,11 @@
 
 import functools
 import itertools
+import logging
 import re
 from contextlib import contextmanager
 
+LOG = logging.getLogger(__name__)
 
 def progress(x, title, delay=2):
     try:
@@ -181,3 +183,14 @@ def plural(n, what):
     if what.endswith("y"):
         return plural(n, what[:-1] + "ie")
     return f"{n} {what}s"
+
+
+def check_subset_name(name):
+
+    if not re.match(r"^[IVX]+-[ivx]+(-[a-z]+)*$", name):
+        log_warning_once(
+            LOG,
+            "Invalid subset name %s.",
+            name,
+            raise_exception=ValueError,
+        )

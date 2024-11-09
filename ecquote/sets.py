@@ -11,9 +11,10 @@ import logging
 import re
 
 from .resources import resource
-from .utils import iterate_request, log_warning_once
+from .utils import check_subset_name, iterate_request, log_warning_once
 
 LOG = logging.getLogger(__name__)
+
 
 
 class ProductSet:
@@ -33,13 +34,8 @@ class ProductSet:
         comment=None,
     ):
 
-        if not re.match(r"^[IVX]+-[ivx]+(-[a-z]+)*$", name):
-            log_warning_once(
-                LOG,
-                "Invalid subset name %s.",
-                name,
-                raise_exception=ValueError,
-            )
+        check_subset_name(name)
+        check_subset_name(subset)
 
         self.name = name
         self.description = description
