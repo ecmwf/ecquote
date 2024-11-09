@@ -83,6 +83,18 @@ I-i-e:
 #    - scda
 #    type:
 #    - fc
+#    param:
+#    - 2r
+#    - utci
+#    - mrt
+#    - heatx
+#    - wcf
+#    - aptmp
+#    - hmdx
+#    - nefft
+#    - gt
+#    - wbgt
+#    - wpbt
 #  set: I
 #  subset: I-i
 I-ii:
@@ -378,6 +390,18 @@ III-i-e-hf:
 #    levtype: sfc
 #    stream: enfo
 #    type: pf
+#    param:
+#    - 2r
+#    - utci
+#    - mrt
+#    - heatx
+#    - wcf
+#    - aptmp
+#    - hmdx
+#    - nefft
+#    - gt
+#    - wbgt
+#    - wpbt
 #  set: III
 #  subset: III-i
 #III-i-f-cf:
@@ -389,19 +413,20 @@ III-i-e-hf:
 #    levtype: sfc
 #    stream: enfo
 #    type: cf
+#    param:
+#    - 2r
+#    - utci
+#    - mrt
+#    - heatx
+#    - wcf
+#    - aptmp
+#    - hmdx
+#    - nefft
+#    - gt
+#    - wbgt
+#    - wpbt
 #  set: III
 #  subset: III-i
-#III-i-f-hf:
-#  description: Free set with III-i-e
-#  free_with: III-i-e
-#  frequency: 104
-#  mars:
-#    class: od
-#    levtype: sfc
-#    stream: enfh
-#    type:
-#    - cf
-#    - pf
 set: III
 subset: III-i
 III-ii:
