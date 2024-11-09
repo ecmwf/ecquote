@@ -77,7 +77,7 @@ spherical_harmonics:
 ##############################################################################
 
 hindcast_streams: [enfh, enwh, eehs, weeh, eefh, efhs, wees, wehs]
-hindcast_dates: 20
+hindcast_dates: 1
 
 high_frequency_streams: [scda, scwv]
 

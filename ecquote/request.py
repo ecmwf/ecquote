@@ -185,7 +185,7 @@ class Request:
                 "sunday",
             ), use
 
-        return 52 * len(use)
+        return self.subset.frequency * len(use)
 
     @cached_method
     def chargeable_frequency(self):

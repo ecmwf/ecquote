@@ -71,21 +71,21 @@ I-i-e:
     - fc
   set: I
   subset: I-i
-  I-i-f:
-  description: Thermofeel Products
-  frequency: 365
-  mars:
-    class: od
-    levtype:
-    - sfc
-    stream:
-    - oper
-    - scda
-    type:
-    - an
-    - fc
-  set: I
-  subset: I-i
+# I-i-f:
+#   description: Thermofeel Products
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype:
+#     - sfc
+#     stream:
+#     - oper
+#     - scda
+#     type:
+#     - an
+#     - fc
+#   set: I
+#   subset: I-i
 I-ii:
   description: Time series of weather parameters
   frequency: 365
@@ -367,50 +367,50 @@ III-i-e-hf:
     - pf
   set: III
   subset: III-i
-  III-i-f:
-  description: Atmospheric fields - Thermofeel Products
-  free_data:
-  - levtype: sfc
-    stream: enfo
-    type: cf
-  - levtype: sfc
-    stream: enfh
-    type: pf
-  - levtype: sfc
-    stream: enfh
-    type: cf
-  frequency: 365
-  mars:
-    class: od
-    levtype: sfc
-    stream: enfo
-    type: pf
-  set: III
-  subset: III-i
-III-i-f-cf:
-  description: Free set with III-i-e
-  free_with: III-i-e
-  frequency: 365
-  mars:
-    class: od
-    levtype: sfc
-    stream: enfo
-    type: cf
-  set: III
-  subset: III-i
-III-i-f-hf:
-  description: Free set with III-i-e
-  free_with: III-i-e
-  frequency: 104
-  mars:
-    class: od
-    levtype: sfc
-    stream: enfh
-    type:
-    - cf
-    - pf
-  set: III
-  subset: III-i
+# III-i-f:
+#   description: Atmospheric fields - Thermofeel Products
+#   free_data:
+#   - levtype: sfc
+#     stream: enfo
+#     type: cf
+#   - levtype: sfc
+#     stream: enfh
+#     type: pf
+#   - levtype: sfc
+#     stream: enfh
+#     type: cf
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype: sfc
+#     stream: enfo
+#     type: pf
+#   set: III
+#   subset: III-i
+# III-i-f-cf:
+#   description: Free set with III-i-e
+#   free_with: III-i-e
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype: sfc
+#     stream: enfo
+#     type: cf
+#   set: III
+#   subset: III-i
+# III-i-f-hf:
+#   description: Free set with III-i-e
+#   free_with: III-i-e
+#   frequency: 104
+#   mars:
+#     class: od
+#     levtype: sfc
+#     stream: enfh
+#     type:
+#     - cf
+#     - pf
+#   set: III
+#   subset: III-i
 III-ii:
   description: Clusters
   frequency: 365
@@ -1660,7 +1660,7 @@ IX-i-b:
 X-x-a:
   description: Free set with VI-i-a
   free_with: VI-i-a
-  frequency: 104
+  frequency: 25
   mars:
     class: od
     levtype: sfc
@@ -1671,7 +1671,7 @@ X-x-a:
 X-x-b:
   description: Free set with VI-i-a
   free_with: VI-i-a
-  frequency: 104
+  frequency: 25
   mars:
     class: od
     levtype: sfc
@@ -1682,7 +1682,7 @@ X-x-b:
 X-x-c:
   description: Free set with VI-i-b
   free_with: VI-i-b
-  frequency: 104
+  frequency: 25
   mars:
     class: od
     levtype: pl
@@ -1693,7 +1693,7 @@ X-x-c:
 X-x-d:
   description: Free set with VI-i-b
   free_with: VI-i-b
-  frequency: 104
+  frequency: 25
   mars:
     class: od
     levtype: pl
@@ -1704,7 +1704,7 @@ X-x-d:
 X-x-e:
   description: Free set with VI-iii-a
   free_with: VI-iii-a
-  frequency: 104
+  frequency: 25
   mars:
     class: od
     levtype: sfc
@@ -1715,7 +1715,7 @@ X-x-e:
 X-x-f:
   description: Free set with VI-iii-b
   free_with: VI-iii-b
-  frequency: 104
+  frequency: 25
   mars:
     class: od
     levtype: pl
@@ -1726,7 +1726,7 @@ X-x-f:
 X-x-j:
   description: Free set with VI-v-a
   free_with: VI-v-a
-  frequency: 104
+  frequency: 25
   mars:
     class: od
     levtype: sfc
@@ -1737,7 +1737,7 @@ X-x-j:
 X-x-k:
   description: Free set with VI-v-a
   free_with: VI-v-a
-  frequency: 104
+  frequency: 25
   mars:
     class: od
     levtype: sfc
@@ -1748,7 +1748,7 @@ X-x-k:
 X-x-l:
   description: Free set with VI-v-b
   free_with: VI-v-b
-  frequency: 104
+  frequency: 25
   mars:
     class: od
     levtype: pl
@@ -1759,7 +1759,7 @@ X-x-l:
 X-x-m:
   description: Free set with VI-v-b
   free_with: VI-v-b
-  frequency: 104
+  frequency: 25
   mars:
     class: od
     levtype: pl
@@ -1770,7 +1770,7 @@ X-x-m:
 X-x-o:
   description: Free set with VI-v-c
   free_with: VI-v-c
-  frequency: 104
+  frequency: 25
   mars:
     class: od
     levtype: sfc
@@ -1781,7 +1781,7 @@ X-x-o:
 X-x-p:
   description: Free set with VI-v-c
   free_with: VI-v-c
-  frequency: 104
+  frequency: 25
   mars:
     class: od
     levtype: sfc
@@ -1792,7 +1792,7 @@ X-x-p:
 X-x-q:
   description: Free set with VI-v-a
   free_with: VI-v-a
-  frequency: 104
+  frequency: 25
   mars:
     class: od
     levtype: sfc
@@ -1803,7 +1803,7 @@ X-x-q:
 X-x-r:
   description: Free set with VI-v-b
   free_with: VI-v-b
-  frequency: 104
+  frequency: 25
   mars:
     class: od
     levtype: pl
