@@ -8,9 +8,10 @@
 # nor does it submit to any jurisdiction.
 
 import logging
+import re
 
 from .resources import resource
-from .utils import iterate_request
+from .utils import iterate_request, log_warning_once
 
 LOG = logging.getLogger(__name__)
 
@@ -31,6 +32,15 @@ class ProductSet:
         ic_frequency=None,
         comment=None,
     ):
+
+        if not re.match(r"^[IVX]+-[ivx]+(-[a-z]+)*$", name):
+            log_warning_once(
+                LOG,
+                "Invalid subset name %s.",
+                name,
+                raise_exception=ValueError,
+            )
+
         self.name = name
         self.description = description
         self.mars = mars

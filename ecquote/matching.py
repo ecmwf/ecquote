@@ -137,6 +137,8 @@ class Matcher:
         keys = set()
         best = defaultdict(list)
 
+        best_cnt = 0
+
         for i, (name, s) in enumerate(self.rules.items()):
             s["order"] = i
             if s.get("default", False):
@@ -164,6 +166,9 @@ class Matcher:
             best[cnt].append(name)
 
             if cnt == len(mars):
+                if cnt > best_cnt:
+                    best_cnt = cnt
+                    matches = []
                 matches.append(name)
 
         self._keys = sorted(keys)
