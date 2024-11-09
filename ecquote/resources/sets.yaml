@@ -82,7 +82,6 @@ I-i-e:
     - oper
     - scda
     type:
-    - an
     - fc
   set: I
   subset: I-i
@@ -373,12 +372,6 @@ III-i-e-hf:
   - levtype: sfc
     stream: enfo
     type: cf
-  - levtype: sfc
-    stream: enfh
-    type: pf
-  - levtype: sfc
-    stream: enfh
-    type: cf
   frequency: 365
   mars:
     class: od
@@ -388,7 +381,7 @@ III-i-e-hf:
   set: III
   subset: III-i
 III-i-f-cf:
-  description: Free set with III-i-e
+  description: Free set with III-i-f
   free_with: III-i-e
   frequency: 365
   mars:
