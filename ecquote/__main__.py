@@ -124,6 +124,8 @@ def main():
         "--unique", action="store_true", help="Generate unique mars requests"
     )
 
+    parser.add_argument("--validate", action="store_true", help="Check the configuration")
+
     parser.add_argument("-r", "--request")
     parser.add_argument("files", metavar="FILES-OR-DIRECTORIES", type=str, nargs="*")
     ARGS = parser.parse_args()
@@ -144,6 +146,12 @@ def main():
         level=level,
         datefmt="%Y-%m-%d %H:%M:%S",
     )
+
+    if ARGS.validate:
+        from .checks import validate
+
+        validate()
+        exit(0)
 
     if ARGS.overlay:
         set_overlay(ARGS.overlay)

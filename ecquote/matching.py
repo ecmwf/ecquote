@@ -246,20 +246,18 @@ class Matcher:
         if partial:
             # Key the matches to the partial
             partial = {k: v for k, v in partial.items() if k in matches}
-            # For now
-            assert len(partial) == 1, (len(partial), partial.keys())
-            # We only support one partial match between two rules
-            assert len(matches) == 2, (len(matches), matches)
+            # This means that a param is split into two sets, one that lists params
+            # and the other that does not
+            if len(partial) == 1:
+                assert len(matches) == 2, (len(matches), matches)
+                # k is the rule that that matched
+                match, partial = list(partial.items())[0]
 
-            # k is the rule that that matched
-            match, partial = list(partial.items())[0]
-
-
-            for m in matches:
-                if m  == match:
-                    partial_split[m] = {k:v[1] for k,v in partial.items()} # Part that matched
-                else:
-                    partial_split[m] = {k:v[0] for k,v in partial.items()} # Part that did not match
+                for m in matches:
+                    if m  == match:
+                        partial_split[m] = {k:v[1] for k,v in partial.items()} # Part that matched
+                    else:
+                        partial_split[m] = {k:v[0] for k,v in partial.items()} # Part that did not match
 
 
         result = []

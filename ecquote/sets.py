@@ -31,7 +31,7 @@ class ProductSet:
         free_with=[],
         frequency=365,
         ic_frequency=None,
-        deliveries_per_dow=None,
+        deliveries_per_dow=52,
         comment=None,
     ):
 
@@ -50,11 +50,13 @@ class ProductSet:
         self.deliveries_per_dow = deliveries_per_dow
 
         if deliveries_per_dow is not None:
-            if deliveries_per_dow * 7 != frequency:
+            diff = abs(deliveries_per_dow * 7 - frequency)
+            if diff > 1:
                 log_warning_once(
                     LOG,
-                    f"Product set {name} has {deliveries_per_dow} deliveries" " per day of week but frequency {frequency}"
-                    f" ({deliveries_per_dow} x 7 = {deliveries_per_dow * 7})",
+                    f"Product set {name} has {deliveries_per_dow} deliveries"
+                    f" per day of week but frequency {frequency}"
+                    f" ({deliveries_per_dow} x 7 = {deliveries_per_dow * 7}), diff={diff}",
                     raise_exception=ValueError,
                 )
 
