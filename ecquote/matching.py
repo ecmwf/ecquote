@@ -46,11 +46,11 @@ def multiple(name, request, matches, callable):
         for r, s in matches:
             LOG.error("%s: %s %s %s", name, s, r.number_of_fields(), r)
 
-        allfields = set()
+        all_fields = set()
         some = {k: v for k, v in request.fields.items() if k in SOME}
         for one in iterate_request(some):
             f = tuple(sorted(one.items()))
-            allfields.add(f)
+            all_fields.add(f)
 
         seen = {}
 
@@ -58,19 +58,21 @@ def multiple(name, request, matches, callable):
             some = {k: v for k, v in r.fields.items() if k in SOME}
             for one in iterate_request(some):
                 f = tuple(sorted(one.items()))
-                allfields.discard(f)
+                all_fields.discard(f)
 
                 if f in seen:
                     LOG.error("Duplicated field in %s and %s: %s", s, seen[f], f)
                 else:
                     seen[f] = s
 
-        if allfields:
-            for a in allfields:
+        if all_fields:
+            for a in all_fields:
                 c = Request({k: (v,) for k, v in a})
                 LOG.error("Fields not covered: %s", c)
 
+        print("MULTIPLE", name, request, matches, callable)
         raise ValueError("Request matches many %s %s %s" % (name, [s for _, s in matches], request))
+
     return callable(matches)
 
 
@@ -141,14 +143,13 @@ class Matcher:
         keys = set()
         best = defaultdict(list)
 
-        partial = defaultdict(dict)
-
         for i, (name, s) in enumerate(self.rules.items()):
             s["order"] = i
             if s.get("default", False):
                 self._default = name
                 self.issue_warning = s.get("warning", True)
                 continue
+
             mars = s["mars"]
             cnt = 0
 
@@ -164,10 +165,7 @@ class Matcher:
                     fields = set(request.fields[k])
                     if fields.intersection(v):
                         cnt += 1
-                        if not fields <= v:
-                            # This is a partial match, for example not all `param` in request match `param` in rule
-                            assert k not in partial[name]
-                            partial[name][k] = (fields - v, fields & v)
+
                 else:
                     if None in v:
                         cnt += 1
@@ -221,7 +219,7 @@ class Matcher:
                 return multiple(
                     name,
                     request,
-                    self.split_request(request, matches, partial),
+                    self.split_request(request, matches),
                     self.multiple,
                 )
 
@@ -242,50 +240,20 @@ class Matcher:
             LOG.error("%s: %s", name, e)
             raise
 
-    def split_request(self, request, matches, partial):
-
-        partial_split = {}
-
-        if partial:
-            # Key the matches to the partial
-            partial = {k: v for k, v in partial.items() if k in matches}
-            # This means that a param is split into two sets, one that lists params
-            # and the other that does not
-            if len(partial) == 1:
-                assert len(matches) == 2, (len(matches), matches)
-                # k is the rule that that matched
-                match, partial = list(partial.items())[0]
-
-                for m in matches:
-                    if m == match:
-                        partial_split[m] = {k: v[1] for k, v in partial.items()}  # Part that matched
-                    else:
-                        partial_split[m] = {k: v[0] for k, v in partial.items()}  # Part that did not match
+    def split_request(self, request, matches):
 
         result = []
         for match in matches:
-            result.append(self.split_one(request, match, partial_split.get(match)))
+            result.append(self.split_one(request, match))
 
         return result
 
-    def split_one(self, request, name, partial):
+    def split_one(self, request, name):
         from .request import Request
 
-        match = None
-
-        if partial:
-            # For now
-            assert len(partial) == 1, partial
-            match, partial = list(partial.items())[0]
-            assert match in self._keys, (match, self._keys)
-
         rule = self.rules[name]
-        mars = rule["mars"].copy()
+        mars = rule["mars"]
         split = {}
-
-        if match:
-            if match not in mars:
-                mars[match] = list(partial)
 
         for k, v in mars.items():
             if not isinstance(v, list):

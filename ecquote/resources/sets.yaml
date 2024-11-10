@@ -84,6 +84,7 @@ I-i-f:
     - scda
     type:
     - fc
+    foo: bar
     param:
     - 2r
     - utci
@@ -396,6 +397,7 @@ III-i-f: # costed with III-i-a as same composition
     levtype: sfc
     stream: enfo
     type: pf
+    foo: bar
     param:
     - 2r
     - utci
@@ -419,6 +421,7 @@ III-i-f-cf:
     levtype: sfc
     stream: enfo
     type: cf
+    foo: bar
     param:
     - 2r
     - utci
