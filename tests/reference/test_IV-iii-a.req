@@ -20,5 +20,3 @@ type=efi,
 class=od,
 param=maxswhi,
 expver=0001
-
-

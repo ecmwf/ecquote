@@ -47,7 +47,7 @@ To get a description of how the cost is determined, rerun the command with the o
 
 # Conditions of use
 
-This tool is provided for evaluation and review purchases only.  Only quotes submitted via the Product Requirements Catalogue will be reviewed/considered/approved:  https://apps.ecmwf.int/shopping-cart/ 
+This tool is provided for evaluation and review purchases only.  Only quotes submitted via the Product Requirements Catalogue will be reviewed/considered/approved:  https://apps.ecmwf.int/shopping-cart/
 
 # Licence
 

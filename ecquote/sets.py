@@ -8,13 +8,13 @@
 # nor does it submit to any jurisdiction.
 
 import logging
-import re
 
 from .resources import resource
-from .utils import check_subset_name, iterate_request, log_warning_once
+from .utils import check_subset_name
+from .utils import iterate_request
+from .utils import log_warning_once
 
 LOG = logging.getLogger(__name__)
-
 
 
 class ProductSet:

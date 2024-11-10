@@ -25,5 +25,3 @@ type=efi,
 param=2ti/10fgi,
 domain=g,
 expver=0001
-
-

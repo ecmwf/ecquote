@@ -38,7 +38,7 @@ def error(request):
     text = ",\n".join(r) + "\n"
 
     if patch:
-        text = text.replace("0078", "0001")
+        text = text.replace("0079", "0001")
 
     for p in glob.glob("tests/representations/????.req"):
         with open(p) as f:

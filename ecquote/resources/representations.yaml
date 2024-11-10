@@ -219,29 +219,29 @@
     stream: wave
     type: fc
   repres:
-    reduced_ll: 0.1
-    type: reduced_ll
+    gaussian: O1280
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: wave
     type: an
   repres:
-    reduced_ll: 0.1
-    type: reduced_ll
+    gaussian: O1280
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: scwv
     type: fc
   repres:
-    reduced_ll: 0.1
-    type: reduced_ll
+    gaussian: O1280
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: scwv
     type: an
   repres:
-    reduced_ll: 0.1
-    type: reduced_ll
+    gaussian: O1280
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: enfo
@@ -311,7 +311,10 @@
   model_levels: 137
   repres:
     gaussian: O1280
-    type: reduced_gg
+    resol: 1279
+    type:
+    - reduced_gg
+    - sh
 - mars:
     levtype: ml
     stream: enfo
@@ -319,10 +322,7 @@
   model_levels: 137
   repres:
     gaussian: O1280
-    resol: 1279
-    type:
-    - reduced_gg
-    - sh
+    type: reduced_gg
 - mars:
     levtype: pv
     stream: enfo
@@ -443,43 +443,43 @@
     stream: waef
     type: pf
   repres:
-    reduced_ll: 0.1
-    type: reduced_ll
+    gaussian: O1280
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: waef
     type: cf
   repres:
-    reduced_ll: 0.1
-    type: reduced_ll
+    gaussian: O1280
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: waef
     type: ep
   repres:
-    reduced_ll: 0.1
-    type: reduced_ll
+    gaussian: O1280
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: waef
     type: efi
   repres:
-    reduced_ll: 0.1
-    type: reduced_ll
+    gaussian: O1280
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: waef
     type: efic
   repres:
-    reduced_ll: 0.1
-    type: reduced_ll
+    gaussian: O1280
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: waef
     type: sot
   repres:
-    reduced_ll: 0.1
-    type: reduced_ll
+    gaussian: O1280
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: msmm
@@ -707,15 +707,15 @@
     stream: weef
     type: pf
   repres:
-    reduced_ll: 0.5
-    type: reduced_ll
+    gaussian: O320
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: weef
     type: cf
   repres:
-    reduced_ll: 0.5
-    type: reduced_ll
+    gaussian: O320
+    type: reduced_gg
 - mars:
     levtype: pv
     stream: eefo
@@ -832,10 +832,7 @@
     type: fcmean
   repres:
     gaussian: O320
-    resol: 319
-    type:
-    - reduced_gg
-    - sh
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: eefh
@@ -869,15 +866,15 @@
     stream: weeh
     type: cf
   repres:
-    reduced_ll: 0.5
-    type: reduced_ll
+    gaussian: O320
+    type: reduced_gg
 - mars:
     levtype: sfc
     stream: weeh
     type: pf
   repres:
-    reduced_ll: 0.5
-    type: reduced_ll
+    gaussian: O320
+    type: reduced_gg
 - mars:
     type: wp
   repres:
@@ -886,4 +883,3 @@
     type: tf
   repres:
     type: tf
-

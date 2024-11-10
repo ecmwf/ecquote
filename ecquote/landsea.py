@@ -48,7 +48,5 @@ def land_sea_ratio(north, west, south, east, method=None):
         mask_regular=land_sea_ratio_mask_regular,
     )[method](north, west, south, east)
 
-    LOG.debug(
-        "landsea ratio %s %s/%s/%s/%s %s", result, north, west, south, east, method
-    )
+    LOG.debug("landsea ratio %s %s/%s/%s/%s %s", result, north, west, south, east, method)
     return result

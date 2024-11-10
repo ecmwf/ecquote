@@ -15,6 +15,7 @@ from contextlib import contextmanager
 
 LOG = logging.getLogger(__name__)
 
+
 def progress(x, title, delay=2):
     try:
         from tqdm import tqdm
@@ -162,9 +163,7 @@ ROMAN = dict(i=1, ii=2, iii=3, iv=4, v=5, vi=6, vii=7, viii=8, ix=9, x=10)
 
 
 def roman(s):
-    return tuple(
-        ROMAN.get(x, x) if i < 2 else x for i, x in enumerate(s.lower().split("-"))
-    )
+    return tuple(ROMAN.get(x, x) if i < 2 else x for i, x in enumerate(s.lower().split("-")))
 
 
 def iterate_request(r):
@@ -180,7 +179,7 @@ def iterate_request(r):
 def plural(n, what):
     if n == 1:
         return f"{n} {what}"
-    if what.endswith("y"):
+    if what.endswith("y") and what != "day":
         return plural(n, what[:-1] + "ie")
     return f"{n} {what}s"
 

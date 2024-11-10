@@ -153,9 +153,7 @@ def grib2_section7(
         unpacked_values = (20 + 1) * (20 + 2)
 
         packed_values = number_of_values - unpacked_values
-        bytes_values = (
-            round_up(unpacked_values * 32 + packed_values * bits_per_value, 8) // 8
-        )
+        bytes_values = round_up(unpacked_values * 32 + packed_values * bits_per_value, 8) // 8
         return 5 + bytes_values
 
     return dict(spectral=complex).get(request.repres.name, simple)()

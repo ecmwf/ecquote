@@ -35,9 +35,7 @@ def splitter(requests):
                             variable.append(p)
 
                     if constant:
-                        yield Request(r, param=tuple(constant)).annotate(
-                            "free", "constant"
-                        ).annotate(
+                        yield Request(r, param=tuple(constant)).annotate("free", "constant").annotate(
                             "split",
                             "constant",
                             override="append",

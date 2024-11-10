@@ -61,7 +61,7 @@ class Parser:
             c = self.reader.peek()
 
             if self.comments and c == "#":
-                while c != "\n" and c != 0:
+                while c != "\n" and c != "":
                     c = self.read()
                     if c == "\n":
                         self.line += 1

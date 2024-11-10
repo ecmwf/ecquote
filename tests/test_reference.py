@@ -91,9 +91,7 @@ def test_references(req):
             for r in cart.requests:
                 if not r.subset.name.startswith("X-"):
                     subset = r.subset.name.replace("-cf", "")
-                    assert (subset == cost["subset"]) or (
-                        isinstance(cost["subset"], list) and subset in cost["subset"]
-                    )
+                    assert (subset == cost["subset"]) or (isinstance(cost["subset"], list) and subset in cost["subset"])
 
         if "group" in cost:
             ok = True

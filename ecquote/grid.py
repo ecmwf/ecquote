@@ -11,7 +11,8 @@ import json
 import logging
 
 from .resources import resource_path
-from .utils import cached_function, log_warning_once
+from .utils import cached_function
+from .utils import log_warning_once
 
 LOG = logging.getLogger(__name__)
 
@@ -40,12 +41,8 @@ def _latitudes_and_pls(name):
 
 @cached_function
 def number_of_pl(name, north, south):
-    latitudes, pl = _latitudes_and_pls(name)
-    idx = [
-        i
-        for (i, lat) in enumerate(latitudes)
-        if less_or_equal(lat, north) and less_or_equal(south, lat)
-    ]
+    latitudes, _ = _latitudes_and_pls(name)
+    idx = [i for (i, lat) in enumerate(latitudes) if less_or_equal(lat, north) and less_or_equal(south, lat)]
     return len(idx)
 
 
@@ -64,11 +61,7 @@ def _reduced_longitudes(name, north, west, south, east):
 
     latitudes, pl = _latitudes_and_pls(name)
 
-    idx = [
-        i
-        for (i, lat) in enumerate(latitudes)
-        if less_or_equal(lat, north) and less_or_equal(south, lat)
-    ]
+    idx = [i for (i, lat) in enumerate(latitudes) if less_or_equal(lat, north) and less_or_equal(south, lat)]
 
     if LOG.isEnabledFor(logging.DEBUG):
         LOG.debug("North/south %s %s", latitudes[idx[0]], latitudes[idx[-1]])

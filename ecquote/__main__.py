@@ -14,7 +14,8 @@ import os
 
 from .cart import Cart
 from .modify import preprocessor
-from .resources import config, set_overlay
+from .resources import config
+from .resources import set_overlay
 from .utils import as_resource
 
 
@@ -26,9 +27,7 @@ class Multiple(argparse.Action):
         for v in values:
             if v not in self.const:
                 choices = ", ".join(f"'{x}'" for x in self.const)
-                parser.error(
-                    f"argument {self.dest}: invalid choice: '{v}' (choose from {choices})"
-                )
+                parser.error(f"argument {self.dest}: invalid choice: '{v}' (choose from {choices})")
 
         setattr(args, self.dest, values)
 
@@ -120,9 +119,7 @@ def main():
     parser.add_argument("--non-commercial", action="store_false", dest="commercial")
     parser.set_defaults(commercial=None)
 
-    parser.add_argument(
-        "--unique", action="store_true", help="Generate unique mars requests"
-    )
+    parser.add_argument("--unique", action="store_true", help="Generate unique mars requests")
 
     parser.add_argument("--validate", action="store_true", help="Check the configuration")
 

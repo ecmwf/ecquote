@@ -36,9 +36,7 @@ def splitter(requests):
                     other.append(p)
 
             if highf:
-                yield Request(r, time=tuple(highf)).annotate(
-                    "group", "high-frequency"
-                ).annotate(
+                yield Request(r, time=tuple(highf)).annotate("group", "high-frequency").annotate(
                     "split",
                     "frequency",
                     override="append",
@@ -66,9 +64,7 @@ def splitter(requests):
                     other.append(p)
 
             if highf:
-                yield Request(r, step=tuple(highf)).annotate(
-                    "group", "high-frequency"
-                ).annotate(
+                yield Request(r, step=tuple(highf)).annotate("group", "high-frequency").annotate(
                     "split",
                     "frequency",
                     override="append",

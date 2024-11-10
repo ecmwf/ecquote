@@ -10,19 +10,21 @@
 import logging
 import re
 
-from .grib import grib_sections, grib_size
-from .grid import (
-    gaussian_number_of_values,
-    latlon_adjust_area,
-    latlon_number_of_points,
-    latlon_width_heigth,
-    less_or_equal,
-    number_of_pl,
-    reduced_latlon_number_of_points,
-)
+from .grib import grib_sections
+from .grib import grib_size
+from .grid import gaussian_number_of_values
+from .grid import latlon_adjust_area
+from .grid import latlon_number_of_points
+from .grid import latlon_width_heigth
+from .grid import less_or_equal
+from .grid import number_of_pl
+from .grid import reduced_latlon_number_of_points
 from .matching import Matcher
 from .resources import config
-from .utils import bytes, cached_method, log_warning_once, plural
+from .utils import bytes
+from .utils import cached_method
+from .utils import log_warning_once
+from .utils import plural
 
 LOG = logging.getLogger(__name__)
 
@@ -409,9 +411,7 @@ class Repres:
 
         result = []
         for param in params:
-            result += [
-                self.accuracy.bits(param, self.request)
-            ] * number_of_fields_per_param
+            result += [self.accuracy.bits(param, self.request)] * number_of_fields_per_param
 
         return result
 
@@ -682,14 +682,14 @@ class LatLon(Gridded):
 
     def is_global(self):
         north, west, south, east = self.adjusted_area()
-        we, sn = self.grid
+        we, _ = self.grid
         return north == 90 and south == -90 and less_or_equal(360, east - west + we)
 
     def factor_R(self, reference):
         we, sn = self.grid
         grid = min(we, sn)
 
-        model_grid, model_gaussian, model_resol = reference
+        model_grid, _, _ = reference
         LOG.debug("factor_R grid=%s reference=%s", grid, reference)
 
         return model_grid / grid
@@ -698,7 +698,7 @@ class LatLon(Gridded):
         we, sn = self.grid
         grid = min(we, sn)
 
-        model_grid, model_gaussian, model_resol = reference
+        model_grid, _, _ = reference
 
         return f"{model_grid} / {grid}"
 
@@ -814,12 +814,12 @@ class Gaussian(Gridded):
         return number_of_points == global_points
 
     def factor_R(self, reference):
-        model_grid, model_gaussian, model_resol = reference
+        _, model_gaussian, _ = reference
         LOG.debug("factor_R gaussian=%s reference=%s", self.gaussian, reference)
         return self.N / model_gaussian
 
     def explain_R(self, reference):
-        model_grid, model_gaussian, model_resol = reference
+        _, model_gaussian, _ = reference
         return f"{self.N} / {model_gaussian}"
 
     def reference_grid(self, reference):
@@ -828,7 +828,7 @@ class Gaussian(Gridded):
     def number_of_pl(self):
         if self.gaussian.startswith("F"):  # No PL in full gaussians
             return 0
-        north, west, south, east = self.adjusted_area()
+        north, _, south, _ = self.adjusted_area()
         return number_of_pl(self.gaussian, north, south)
 
     def details(self):
@@ -873,13 +873,13 @@ class Spectral(Field):
     def factor_R(self, reference):
         assert self.resol, self.request
 
-        model_grid, model_gaussian, model_resol = reference
+        _, _, model_resol = reference
         LOG.debug("factor_R resol=%s reference=%s", self.resol, reference)
 
         return (self.resol + 1) / (model_resol + 1)
 
     def explain_R(self, reference):
-        model_grid, model_gaussian, model_resol = reference
+        _, _, model_resol = reference
         return f"({self.resol} + 1) / ({model_resol} + 1)"
 
     def reference_grid(self, reference):
@@ -925,7 +925,7 @@ class ReducedLL(Gridded):
     def factor_R(self, reference):
         grid = self.reduced_ll
 
-        model_grid, model_gaussian, model_resol = reference
+        model_grid, _, _ = reference
         LOG.debug("factor_R reduced_grid=%s reference=%s", grid, reference)
 
         return model_grid / grid
@@ -933,7 +933,7 @@ class ReducedLL(Gridded):
     def explain_R(self, reference):
         grid = self.reduced_ll
 
-        model_grid, model_gaussian, model_resol = reference
+        model_grid, _, _ = reference
 
         return f"{model_grid} / {grid}"
 
@@ -978,12 +978,8 @@ class Mixed(Field):
             gg = params.difference(sh)
 
             if sh and gg:
-                self._sh = _copy_attributes(
-                    Spectral(Request(self.request, param=tuple(sh)), **self.kwargs)
-                )
-                self._gg = _copy_attributes(
-                    Gaussian(Request(self.request, param=tuple(gg)), **self.kwargs)
-                )
+                self._sh = _copy_attributes(Spectral(Request(self.request, param=tuple(sh)), **self.kwargs))
+                self._gg = _copy_attributes(Gaussian(Request(self.request, param=tuple(gg)), **self.kwargs))
             elif sh:
                 self._sh = _copy_attributes(Spectral(self.request, **self.kwargs))
             else:
@@ -1039,9 +1035,7 @@ class Mixed(Field):
 
     def factor_A(self):
         sh, gg = self.split()
-        assert (sh is not None and gg is None) or (
-            sh is None and gg is not None
-        ), self.request
+        assert (sh is not None and gg is None) or (sh is None and gg is not None), self.request
         if sh is not None:
             return sh.factor_A()
         else:
@@ -1165,10 +1159,7 @@ class WP(Repres):
         steps = len(request.fields["step"])
         times = len(request.fields["time"])
         locations = self.locations
-        return (
-            f"(always 8 parameters) * ({times} times) * ({steps} steps)"
-            f" * ({locations} locations)"
-        )
+        return f"(always 8 parameters) * ({times} times) * ({steps} steps)" f" * ({locations} locations)"
 
     def explain_A(self):
         minimum_area = config("minimum_area")

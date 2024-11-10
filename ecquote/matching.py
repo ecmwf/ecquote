@@ -11,7 +11,9 @@ import logging
 from collections import defaultdict
 
 from .resources import resource
-from .utils import check_subset_name, iterate_request, log_warning_once
+from .utils import check_subset_name
+from .utils import iterate_request
+from .utils import log_warning_once
 
 LOG = logging.getLogger(__name__)
 
@@ -68,9 +70,7 @@ def multiple(name, request, matches, callable):
                 c = Request({k: (v,) for k, v in a})
                 LOG.error("Fields not covered: %s", c)
 
-        raise ValueError(
-            "Request matches many %s %s %s" % (name, [s for _, s in matches], request)
-        )
+        raise ValueError("Request matches many %s %s %s" % (name, [s for _, s in matches], request))
     return callable(matches)
 
 
@@ -116,7 +116,7 @@ class Matcher:
                         if len(v) == 5 and v[1] == "to" and v[3] == "by":
                             mars[k] = to_by(v)
 
-            if self.what == 'sets':
+            if self.what == "sets":
                 for k in self._rules.keys():
                     check_subset_name(k)
 
@@ -167,7 +167,7 @@ class Matcher:
                         if not fields <= v:
                             # This is a partial match, for example not all `param` in request match `param` in rule
                             assert k not in partial[name]
-                            partial[name][k] = (fields - v, fields&v)
+                            partial[name][k] = (fields - v, fields & v)
                 else:
                     if None in v:
                         cnt += 1
@@ -219,7 +219,10 @@ class Matcher:
 
             if self.multiple:
                 return multiple(
-                    name, request, self.split_request(request, matches, partial), self.multiple
+                    name,
+                    request,
+                    self.split_request(request, matches, partial),
+                    self.multiple,
                 )
 
             r = {k: request.fields[k] for k in keys if k in request.fields}
@@ -254,15 +257,14 @@ class Matcher:
                 match, partial = list(partial.items())[0]
 
                 for m in matches:
-                    if m  == match:
-                        partial_split[m] = {k:v[1] for k,v in partial.items()} # Part that matched
+                    if m == match:
+                        partial_split[m] = {k: v[1] for k, v in partial.items()}  # Part that matched
                     else:
-                        partial_split[m] = {k:v[0] for k,v in partial.items()} # Part that did not match
-
+                        partial_split[m] = {k: v[0] for k, v in partial.items()}  # Part that did not match
 
         result = []
         for match in matches:
-            result.append(self.split_one(request, match, partial_split.get(match) ))
+            result.append(self.split_one(request, match, partial_split.get(match)))
 
         return result
 
@@ -276,7 +278,6 @@ class Matcher:
             assert len(partial) == 1, partial
             match, partial = list(partial.items())[0]
             assert match in self._keys, (match, self._keys)
-
 
         rule = self.rules[name]
         mars = rule["mars"].copy()
@@ -295,10 +296,7 @@ class Matcher:
             assert None not in v, v
 
             if k in self._keys:
-                split[k] = tuple(
-                    [x for x in request.fields[k] if x in v]
-                )  # Preserve order
+                split[k] = tuple([x for x in request.fields[k] if x in v])  # Preserve order
                 assert split[k], (k, v)
-
 
         return Request(request, split), self.callable(name, **dict(**rule))

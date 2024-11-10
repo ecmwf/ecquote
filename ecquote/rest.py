@@ -8,7 +8,9 @@
 # nor does it submit to any jurisdiction.
 import traceback
 
-from flask import Flask, jsonify, request
+from flask import Flask
+from flask import jsonify
+from flask import request
 
 from . import __version__
 from .cart import Cart
