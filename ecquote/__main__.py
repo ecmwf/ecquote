@@ -132,10 +132,10 @@ def main():
 
     level = logging.ERROR
 
-    if ARGS.warnings:
+    if ARGS.warnings or ARGS.validate:
         level = logging.WARNING
 
-    if ARGS.verbose:
+    if ARGS.verbose or ARGS.validate:
         level = logging.INFO
 
     if ARGS.debug:
