@@ -31,6 +31,7 @@ class ProductSet:
         free_with=[],
         frequency=365,
         ic_frequency=None,
+        deliveries_per_dow=None,
         comment=None,
     ):
 
@@ -46,6 +47,16 @@ class ProductSet:
         self.free_with = free_with
         self.frequency = frequency
         self.ic_frequency = ic_frequency
+        self.deliveries_per_dow = deliveries_per_dow
+
+        if deliveries_per_dow is not None:
+            if deliveries_per_dow * 7 != frequency:
+                log_warning_once(
+                    LOG,
+                    f"Product set {name} has {deliveries_per_dow} deliveries" " per day of week but frequency {frequency}"
+                    f" ({deliveries_per_dow} x 7 = {deliveries_per_dow * 7})",
+                    raise_exception=ValueError,
+                )
 
         if isinstance(free_data, dict):
             free_data = [free_data]

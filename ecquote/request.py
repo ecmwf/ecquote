@@ -16,7 +16,7 @@ from .landsea import land_sea_ratio
 from .matching import Matcher
 from .repres import repres
 from .resources import config, resource
-from .utils import cached_method, plural
+from .utils import cached_method, log_warning_once, plural
 
 LOG = logging.getLogger(__name__)
 
@@ -185,7 +185,14 @@ class Request:
                 "sunday",
             ), use
 
-        return self.subset.frequency * len(use)
+        if self.subset.deliveries_per_dow is None:
+            log_warning_once(
+                LOG,
+                f"Product set {self.subset.name} cannot be used with 'use={'/'.join(use)}'",
+                raise_exception=ValueError,
+            )
+
+        return self.subset.deliveries_per_dow * len(use)
 
     @cached_method
     def chargeable_frequency(self):

@@ -294,12 +294,9 @@ class Matcher:
 
             v = set([str(x) if x is not None else x for x in v])
 
-
-
             assert None not in v, v
 
             if k in self._keys:
-                # print("K", k, request.fields[k], v, match, partial)
                 split[k] = tuple(
                     [x for x in request.fields[k] if x in v]
                 )  # Preserve order

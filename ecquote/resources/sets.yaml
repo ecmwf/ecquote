@@ -179,7 +179,8 @@ III-i-a-cf:
 III-i-a-hf:
   description: Free set with III-i-a
   free_with: III-i-a
-  frequency: 104
+  frequency: 84
+  deliveries_per_dow: 12
   mars:
     class: od
     levtype: sfc
@@ -223,7 +224,8 @@ III-i-b-cf:
 III-i-b-hf:
   description: Free set with III-i-b
   free_with: III-i-b
-  frequency: 104
+  frequency: 84
+  deliveries_per_dow: 12
   mars:
     class: od
     levtype: pl
@@ -264,7 +266,8 @@ III-i-c-cf:
 III-i-c-hf:
   description: Free set with III-i-c
   free_with: III-i-c
-  frequency: 104
+  frequency: 84
+  deliveries_per_dow: 12
   mars:
     class: od
     levtype: ml
@@ -323,7 +326,8 @@ III-i-d-cf:
 III-i-d-hf:
   description: Free set with III-i-d
   free_with: III-i-d
-  frequency: 104
+  frequency: 84
+  deliveries_per_dow: 12
   mars:
     class: od
     levtype:
@@ -369,7 +373,8 @@ III-i-e-cf:
 III-i-e-hf:
   description: Free set with III-i-e
   free_with: III-i-e
-  frequency: 104
+  frequency: 84
+  deliveries_per_dow: 12
   mars:
     class: od
     levtype: sol
