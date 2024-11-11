@@ -84,7 +84,7 @@ I-i-f:
     - scda
     type:
     - fc
-    foo: bar
+    never: match # never match with any request
     param:
     - 2r
     - utci
@@ -385,7 +385,8 @@ III-i-e-hf:
     - pf
   set: III
   subset: III-i
-III-i-f: # costed with III-i-a as same composition
+III-i-f:
+  # costed with III-i-a as same composition
   description: Atmospheric fields - Thermofeel Products
   free_data:
   - levtype: sfc
@@ -397,7 +398,7 @@ III-i-f: # costed with III-i-a as same composition
     levtype: sfc
     stream: enfo
     type: pf
-    foo: bar
+    never: match # never match with any request
     param:
     - 2r
     - utci
@@ -421,7 +422,7 @@ III-i-f-cf:
     levtype: sfc
     stream: enfo
     type: cf
-    foo: bar
+    never: match # never match with any request
     param:
     - 2r
     - utci
