@@ -38,6 +38,9 @@ class Mask:
         self.name = mask["name"]
         self.size = size
 
+        # cnt, size = self._land_sea_ratio(90, 0, -90, 360)
+        # assert size == self.size, (size, self.size, size - self.size)
+
     def _land_sea_ratio(self, north, west, south, east):
         LOG.debug("Landsea %s/%s/%s/%s", north, west, south, east)
         idx = reduced_grid_indices(self.name, north, west, south, east)
@@ -61,5 +64,5 @@ MASK = None
 def land_sea_ratio(north, west, south, east):
     global MASK
     if MASK is None:
-        MASK = Mask(resource("wave-mask-regular"))
+        MASK = Mask(resource("wave-mask-gg"))
     return MASK.land_sea_ratio(north, west, south, east)

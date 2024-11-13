@@ -23,6 +23,13 @@ def land_sea_ratio_mask_reduced(north, west, south, east):
 
 
 @cached_function
+def land_sea_ratio_mask_gg(north, west, south, east):
+    from .landsea_mask_gg import land_sea_ratio as ratio
+
+    return ratio(north, west, south, east)
+
+
+@cached_function
 def land_sea_ratio_mask_regular(north, west, south, east):
     from .landsea_mask_regular import land_sea_ratio as ratio
 
@@ -46,6 +53,7 @@ def land_sea_ratio(north, west, south, east, method=None):
         mask=land_sea_ratio_mask_reduced,
         mask_reduced=land_sea_ratio_mask_reduced,
         mask_regular=land_sea_ratio_mask_regular,
+        mask_gg=land_sea_ratio_mask_gg,
     )[method](north, west, south, east)
 
     LOG.debug("landsea ratio %s %s/%s/%s/%s %s", result, north, west, south, east, method)

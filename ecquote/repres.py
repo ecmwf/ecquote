@@ -312,14 +312,7 @@ class Repres:
         return 0
 
     def wave_missing_values_ratio(self):
-        log_warning_once(
-            LOG,
-            "Ignoring wave_missing_values_ratio calculation for type %s. (%s)",
-            self.__class__.__name__,
-            self.request,
-            raise_exception=ValueError,
-        )
-        return 1
+        return self.request.land_sea_ratio("mask_regular")
 
     def finalise(self):
         return self
