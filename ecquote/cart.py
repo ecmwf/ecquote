@@ -14,11 +14,18 @@ import os
 from collections import defaultdict
 
 from .costing import costing
-from .parser import parse_request_file, parse_request_string
-from .request import Request, RequestList
+from .parser import parse_request_file
+from .parser import parse_request_string
+from .request import Request
+from .request import RequestList
 from .resources import config
-from .splitters import first_splitters, second_splitters
-from .utils import as_dict, as_numbers, cached_method, iterate_request, progress
+from .splitters import first_splitters
+from .splitters import second_splitters
+from .utils import as_dict
+from .utils import as_numbers
+from .utils import cached_method
+from .utils import iterate_request
+from .utils import progress
 
 LOG = logging.getLogger(__name__)
 
@@ -182,9 +189,7 @@ class Cart:
             return as_numbers(r)
 
         request = r2dict(Request(request.lower()))
-        fields = [
-            dict(zip(request.keys(), x)) for x in itertools.product(*request.values())
-        ]
+        fields = [dict(zip(request.keys(), x)) for x in itertools.product(*request.values())]
 
         seen = set()
         for r in self.requests:
@@ -247,9 +252,7 @@ class Cart:
                 count[k] += 1
 
         print(",".join(list(names) + ["count"]))
-        for i, (k, v) in enumerate(
-            sorted(count.items(), key=lambda x: x[1], reverse=True)
-        ):
+        for i, (k, v) in enumerate(sorted(count.items(), key=lambda x: x[1], reverse=True)):
             print(",".join(list(k) + [str(v)]))
 
     def _repr_html_(self):

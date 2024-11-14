@@ -14,8 +14,14 @@ import sys
 from collections import defaultdict
 
 from . import __version__
-from .resources import config, resource
-from .utils import bytes, capture_warnings, log_warning_once, progress, roman
+from .resources import config
+from .resources import resource
+from .utils import bytes
+from .utils import capture_warnings
+from .utils import log_warning_once
+from .utils import plural
+from .utils import progress
+from .utils import roman
 
 LOG = logging.getLogger(__name__)
 
@@ -124,9 +130,7 @@ class Coster:
 
         if self.experimental:
             result["yearly_data_values"] = self.yearly_data_values
-            result["average_daily_data_values"] = int(
-                self.yearly_data_values / 365 + 0.5
-            )
+            result["average_daily_data_values"] = int(self.yearly_data_values / 365 + 0.5)
 
             band, euro, error, ref = self.data_values_band()
 
@@ -341,9 +345,7 @@ class CurrentCosting(EPUBased):
             )
 
             if A * landsea < self.minimum_area:
-                log_warning_once(
-                    LOG, "Using minimum area %s. %s", config("minimum_area"), request
-                )
+                log_warning_once(LOG, "Using minimum area %s. %s", config("minimum_area"), request)
                 A = self.minimum_area
                 landsea = 1
 
@@ -441,6 +443,7 @@ class Costing:
                 for r in coster.requests:
                     wave = r.is_wave()
                     with capture_warnings(r):
+                        frequency, use = r.explain_frequency()
                         print("   ", r.summary())
                         print("      subset:          ", r.subset)
                         print(
@@ -452,7 +455,17 @@ class Costing:
                             r.reference_grid(coster.reference_grid),
                         )
                         print("      estimated volume:", bytes(r.estimated_volume()))
-                        print("      frequency:       ", r.frequency())
+                        if use is None:
+                            print("      frequency:       ", r.frequency())
+                        else:
+                            print(
+                                "      frequency:       ",
+                                r.frequency(),
+                                "=",
+                                frequency,
+                                "*",
+                                plural(use, "day"),
+                            )
                         print(
                             "      fields:          ",
                             "{:,}".format(r.number_of_fields()),
@@ -461,6 +474,27 @@ class Costing:
                             "      explain fields:  ",
                             r.explain_fields(),
                         )
+
+                        if use is None:
+                            print(
+                                "      yearly fields:   ",
+                                "{:,}".format(r.number_of_fields() * r.frequency()),
+                                "=",
+                                "{:,}".format(r.number_of_fields()),
+                                "*",
+                                r.frequency(),
+                            )
+                        else:
+                            print(
+                                "      yearly fields:   ",
+                                "{:,}".format(r.number_of_fields() * r.frequency()),
+                                "=",
+                                "{:,}".format(r.number_of_fields()),
+                                "*",
+                                frequency,
+                                "*",
+                                plural(use, "day"),
+                            )
                         print(
                             "      items:           ",
                             "{:,}".format(r.number_of_chargeable_items()),
@@ -469,7 +503,7 @@ class Costing:
                             "      explain items:   ",
                             r.explain_items(),
                         )
-                        D, E, M = coster.factors(r)
+                        D, E, _ = coster.factors(r)
                         print(
                             "      factors:         ",
                             f"B={r.factor_B()}",
@@ -623,9 +657,7 @@ class Costing:
                 r["max_charge_limit"] = self.max_charge_limit
                 r["max_charge"] = coster.euros >= self.max_charge_limit
                 r["actual_charge"] = (
-                    self.max_charge_limit
-                    if coster.euros >= self.max_charge_limit
-                    else int(coster.euros)
+                    self.max_charge_limit if coster.euros >= self.max_charge_limit else int(coster.euros)
                 )
 
                 if filter_commercial is not None:

@@ -10,7 +10,9 @@
 import logging
 
 from .resources import resource
+from .utils import check_subset_name
 from .utils import iterate_request
+from .utils import log_warning_once
 
 LOG = logging.getLogger(__name__)
 
@@ -29,8 +31,13 @@ class ProductSet:
         free_with=[],
         frequency=365,
         ic_frequency=None,
+        deliveries_per_dow=52,
         comment=None,
     ):
+
+        check_subset_name(name)
+        check_subset_name(subset)
+
         self.name = name
         self.description = description
         self.mars = mars
@@ -40,6 +47,18 @@ class ProductSet:
         self.free_with = free_with
         self.frequency = frequency
         self.ic_frequency = ic_frequency
+        self.deliveries_per_dow = deliveries_per_dow
+
+        if deliveries_per_dow is not None:
+            diff = abs(deliveries_per_dow * 7 - frequency)
+            if diff > 1:
+                log_warning_once(
+                    LOG,
+                    f"Product set {name} has {deliveries_per_dow} deliveries"
+                    f" per day of week but frequency {frequency}"
+                    f" ({deliveries_per_dow} x 7 = {deliveries_per_dow * 7}), diff={diff}",
+                    raise_exception=ValueError,
+                )
 
         if isinstance(free_data, dict):
             free_data = [free_data]

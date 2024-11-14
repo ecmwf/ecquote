@@ -52,9 +52,7 @@ def dont_test_volumes():
     )
 
     compare(
-        Request(
-            "levtype=sfc,param=2t,stream=oper,type=an,grid=1/1,area=50/0/0/50"
-        ).estimated_volume(),
+        Request("levtype=sfc,param=2t,stream=oper,type=an,grid=1/1,area=50/0/0/50").estimated_volume(),
         5398,
     )
 

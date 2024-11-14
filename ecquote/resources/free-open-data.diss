@@ -1,14 +1,13 @@
-#####  OPEN DATA SET REQUIREMENTS #######
-#i)
-# surface
+#Open Data Requirements gathered on 30/10/2024
+
 disseminate,
   class               = od,
   stream              = oper,
-  expver              = 0001,
+  expver              = 001,
   domain              = g,
   type                = fc,
   levtype             = sfc,
-  param               = 10u/10v/2t/msl/ro/tp/skt/sp/stl1/stl2/stl3/stl4/tcwv/lsm/swvl1/swvl2/swvl3/swvl4/cape/asn/ttr/str/ssr/ssrd/strd/100u/100v/2d/mn2t3/mx2t3,
+  param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/msl/mucape/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
   time                = 0000/1200,
   step                = 0/to/144/by/3,
   area                = 90/-180/-90/179.75,
@@ -16,98 +15,118 @@ disseminate,
   packing             = simple
 
 disseminate,
-  step                = 150/to/240/by/6
+  param               = mn2t3/mx2t3,
+  step                = 3/to/144/by/3
 
 disseminate,
-  param               = mx2t6/mn2t6
+  param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/mn2t6/msl/mucape/mx2t6/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
+  step                = 150/to/360/by/6
 
 disseminate,
   stream              = scda,
-  param               = 10u/10v/2t/msl/ro/tp/skt/sp/stl1/stl2/stl3/stl4/tcwv/lsm/swvl1/swvl2/swvl3/swvl4/cape/asn/ttr/str/ssr/ssrd/strd/100u/100v/2d/mn2t3/mx2t3,
+  param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/msl/mucape/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
   time                = 0600/1800,
-  step                = 0/to/90/by/3
+  step                = 0/to/144/by/3
 
-# pressure levels
+disseminate,
+  param               = mn2t3/mx2t3,
+  step                = 3/to/144/by/3
+
 disseminate,
   stream              = oper,
   levtype             = pl,
-  param               = w/d/gh/q/r/t/u/v/vo,
+  param               = d/gh/q/r/t/u/v/vo/w,
   levelist            = 1000/925/850/700/600/500/400/300/250/200/150/100/50,
   time                = 0000/1200,
   step                = 0/to/144/by/3
 
 disseminate,
-  step                = 150/to/240/by/6
+  step                = 150/to/360/by/6
 
 disseminate,
   stream              = scda,
   time                = 0600/1800,
-  step                = 0/to/90/by/3
-
-#00&12
-disseminate,
-  stream              = wave,
-  levtype             = sfc,
-  param               = swh/mwp/mwd/pp1d/mp2,
-  levelist            = off,
-  time                = 0000/1200,
   step                = 0/to/144/by/3
 
 disseminate,
-  step                = 150/to/240/by/6
+  stream              = wave,
+  levtype             = sfc,
+  param               = mp2/mwd/mwp/pp1d/swh,
+  levelist            = off,
+  time                = 0000/1200
+
+disseminate,
+  step                = 150/to/360/by/6
 
 disseminate,
   stream              = scwv,
   time                = 0600/1800,
-  step                = 0/to/90/by/3
+  step                = 0/to/144/by/3
 
 disseminate,
   stream              = enfo,
   type                = pf,
-  param               = 10u/10v/2t/msl/ro/tp/skt/sp/stl1/stl2/stl3/stl4/tcwv/lsm/swvl1/swvl2/swvl3/swvl4/cape/asn/ttr/str/ssr/ssrd/strd/100u/100v/2d/mn2t3/mx2t3,
+  param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/msl/mucape/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
   time                = 0000/1200,
-  step                = 0/to/144/by/3,
   number              = 1/to/50
 
 disseminate,
+  param               = mn2t3/mx2t3,
+  step                = 3/to/144/by/3
+
+disseminate,
+  param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/mn2t6/msl/mucape/mx2t6/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
   step                = 150/to/360/by/6
 
-#Control
 disseminate,
   type                = cf,
+  param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/msl/mucape/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
   step                = 0/to/144/by/3,
   number              = off
 
 disseminate,
+  param               = mn2t3/mx2t3,
+  step                = 3/to/144/by/3
+
+disseminate,
+  param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/mn2t6/msl/mucape/mx2t6/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
   step                = 150/to/360/by/6
 
 disseminate,
   type                = pf,
+  param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/msl/mucape/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
   time                = 0600/1800,
   step                = 0/to/144/by/3,
   use                 = bc,
   number              = 1/to/50
 
-#Control
+disseminate,
+  param               = mn2t3/mx2t3,
+  step                = 3/to/144/by/3
+
 disseminate,
   type                = cf,
+  param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/msl/mucape/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
+  step                = 0/to/144/by/3,
   number              = off
 
-#pressure levels
-# pressure levels
+disseminate,
+  param               = mn2t3/mx2t3,
+  step                = 3/to/144/by/3
+
 disseminate,
   type                = pf,
   levtype             = pl,
-  param               = w/d/gh/q/r/t/u/v/vo,
+  param               = d/gh/q/r/t/u/v/vo/w,
   levelist            = 1000/925/850/700/500/300/250/200/50,
   time                = 0000/1200,
+  step                = 0/to/144/by/3,
   use                 = off,
   number              = 1/to/50
 
 disseminate,
   step                = 150/to/360/by/6
 
-#Control
 disseminate,
   type                = cf,
   step                = 0/to/144/by/3,
@@ -123,7 +142,6 @@ disseminate,
   use                 = bc,
   number              = 1/to/50
 
-#Control
 disseminate,
   type                = cf,
   number              = off
@@ -132,7 +150,7 @@ disseminate,
   stream              = waef,
   type                = pf,
   levtype             = sfc,
-  param               = swh/mwp/mwd/pp1d/mp2,
+  param               = mp2/mwd/mwp/pp1d/swh,
   levelist            = off,
   time                = 0000/1200,
   use                 = off,
@@ -160,8 +178,6 @@ disseminate,
   type                = cf,
   number              = off
 
-#v) EM and ES
-#EM
 disseminate,
   stream              = enfo,
   type                = em,
@@ -197,7 +213,6 @@ disseminate,
 disseminate,
   step                = 150/to/360/by/6
 
-#ES
 disseminate,
   type                = es,
   levtype             = sfc,
@@ -233,29 +248,25 @@ disseminate,
 disseminate,
   step                = 150/to/360/by/6
 
-#vi) probabilities daily
 disseminate,
   type                = ep,
   levtype             = sfc,
-  param               = tpg1/tpg5/tpg10/tpg20/tpg25/tpg50/tpg100/10fgg10/10fgg15/10fgg25,
+  param               = 10fgg10/10fgg15/10fgg25/tpg1/tpg10/tpg100/tpg20/tpg25/tpg5/tpg50,
   levelist            = off,
   step                = 0-24/12-36/24-48/36-60/48-72/60-84/72-96/84-108/96-120/108-132/120-144/132-156/144-168/156-180/168-192/180-204/192-216/204-228/216-240/228-252/240-264/252-276/264-288/276-300/288-312/300-324/312-336/324-348/336-360
 
-#vii) probabilities instantaneous
 disseminate,
   levtype             = pl,
-  param               = ptsa_gt_1stdev/ptsa_gt_1p5stdev/ptsa_gt_2stdev/ptsa_lt_1stdev/ptsa_lt_1p5stdev/ptsa_lt_2stdev,
+  param               = ptsa_gt_1p5stdev/ptsa_gt_1stdev/ptsa_gt_2stdev/ptsa_lt_1p5stdev/ptsa_lt_1stdev/ptsa_lt_2stdev,
   levelist            = 850,
   step                = 12/to/360/by/12
 
-#viii) probabilities wave
 disseminate,
   stream              = waef,
   levtype             = sfc,
   param               = swhg2/swhg4/swhg6/swhg8,
   levelist            = off
 
-# trajectory forecast
 disseminate,
   stream              = oper,
   type                = tf,
@@ -279,9 +290,9 @@ disseminate,
   use                 = bc
 
 
+# AIFS
 
-
-  disseminate,
+disseminate,
   class               = ai,
   stream              = oper,
   expver              = 0001,
@@ -310,3 +321,33 @@ disseminate,
   time                = 0000/1200,
   step                = 240,
   grid                = off
+
+
+# TC Tracks IFS
+
+disseminate,
+  class               = od,
+  stream              = oper,
+  expver              = 0001,
+  domain              = g,
+  type                = tf,
+  levtype             = sfc,
+  time                = 0000/1200,
+  step                = 240,
+  area                = 90/-180/-90/179.75,
+  packing             = simple
+
+disseminate,
+  stream              = scda,
+  time                = 0600/1800,
+  step                = 90
+
+disseminate,
+  stream              = enfo,
+  time                = 0000/1200,
+  step                = 240
+
+disseminate,
+  time                = 0600/1800,
+  step                = 144,
+  use                 = bc

@@ -14,7 +14,8 @@ import os
 
 from .cart import Cart
 from .modify import preprocessor
-from .resources import config, set_overlay
+from .resources import config
+from .resources import set_overlay
 from .utils import as_resource
 
 
@@ -26,9 +27,7 @@ class Multiple(argparse.Action):
         for v in values:
             if v not in self.const:
                 choices = ", ".join(f"'{x}'" for x in self.const)
-                parser.error(
-                    f"argument {self.dest}: invalid choice: '{v}' (choose from {choices})"
-                )
+                parser.error(f"argument {self.dest}: invalid choice: '{v}' (choose from {choices})")
 
         setattr(args, self.dest, values)
 
@@ -120,9 +119,9 @@ def main():
     parser.add_argument("--non-commercial", action="store_false", dest="commercial")
     parser.set_defaults(commercial=None)
 
-    parser.add_argument(
-        "--unique", action="store_true", help="Generate unique mars requests"
-    )
+    parser.add_argument("--unique", action="store_true", help="Generate unique mars requests")
+
+    parser.add_argument("--validate", action="store_true", help="Check the configuration")
 
     parser.add_argument("-r", "--request")
     parser.add_argument("files", metavar="FILES-OR-DIRECTORIES", type=str, nargs="*")
@@ -130,10 +129,10 @@ def main():
 
     level = logging.ERROR
 
-    if ARGS.warnings:
+    if ARGS.warnings or ARGS.validate:
         level = logging.WARNING
 
-    if ARGS.verbose:
+    if ARGS.verbose or ARGS.validate:
         level = logging.INFO
 
     if ARGS.debug:
@@ -144,6 +143,12 @@ def main():
         level=level,
         datefmt="%Y-%m-%d %H:%M:%S",
     )
+
+    if ARGS.validate:
+        from .checks import validate
+
+        validate()
+        exit(0)
 
     if ARGS.overlay:
         set_overlay(ARGS.overlay)

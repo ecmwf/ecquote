@@ -11,7 +11,9 @@ import logging
 from collections import defaultdict
 
 from .resources import resource
-from .utils import iterate_request, log_warning_once
+from .utils import check_subset_name
+from .utils import iterate_request
+from .utils import log_warning_once
 
 LOG = logging.getLogger(__name__)
 
@@ -44,11 +46,11 @@ def multiple(name, request, matches, callable):
         for r, s in matches:
             LOG.error("%s: %s %s %s", name, s, r.number_of_fields(), r)
 
-        allfields = set()
+        all_fields = set()
         some = {k: v for k, v in request.fields.items() if k in SOME}
         for one in iterate_request(some):
             f = tuple(sorted(one.items()))
-            allfields.add(f)
+            all_fields.add(f)
 
         seen = {}
 
@@ -56,21 +58,21 @@ def multiple(name, request, matches, callable):
             some = {k: v for k, v in r.fields.items() if k in SOME}
             for one in iterate_request(some):
                 f = tuple(sorted(one.items()))
-                allfields.discard(f)
+                all_fields.discard(f)
 
                 if f in seen:
                     LOG.error("Duplicated field in %s and %s: %s", s, seen[f], f)
                 else:
                     seen[f] = s
 
-        if allfields:
-            for a in allfields:
+        if all_fields:
+            for a in all_fields:
                 c = Request({k: (v,) for k, v in a})
                 LOG.error("Fields not covered: %s", c)
 
-        raise ValueError(
-            "Request matches many %s %s %s" % (name, [s for _, s in matches], request)
-        )
+        print("MULTIPLE", name, request, matches, callable)
+        raise ValueError("Request matches many %s %s %s" % (name, [s for _, s in matches], request))
+
     return callable(matches)
 
 
@@ -116,6 +118,10 @@ class Matcher:
                         if len(v) == 5 and v[1] == "to" and v[3] == "by":
                             mars[k] = to_by(v)
 
+            if self.what == "sets":
+                for k in self._rules.keys():
+                    check_subset_name(k)
+
         return self._rules
 
     def get_match(self, request):
@@ -143,6 +149,7 @@ class Matcher:
                 self._default = name
                 self.issue_warning = s.get("warning", True)
                 continue
+
             mars = s["mars"]
             cnt = 0
 
@@ -155,8 +162,10 @@ class Matcher:
                 v = set(str(x) if x is not None else None for x in v)
 
                 if k in request.fields:
-                    if set(request.fields[k]).intersection(v):
+                    fields = set(request.fields[k])
+                    if fields.intersection(v):
                         cnt += 1
+
                 else:
                     if None in v:
                         cnt += 1
@@ -208,7 +217,10 @@ class Matcher:
 
             if self.multiple:
                 return multiple(
-                    name, request, self.split_request(request, matches), self.multiple
+                    name,
+                    request,
+                    self.split_request(request, matches),
+                    self.multiple,
                 )
 
             r = {k: request.fields[k] for k in keys if k in request.fields}
@@ -229,9 +241,11 @@ class Matcher:
             raise
 
     def split_request(self, request, matches):
+
         result = []
-        for m in matches:
-            result.append(self.split_one(request, m))
+        for match in matches:
+            result.append(self.split_one(request, match))
+
         return result
 
     def split_one(self, request, name):
@@ -240,14 +254,17 @@ class Matcher:
         rule = self.rules[name]
         mars = rule["mars"]
         split = {}
+
         for k, v in mars.items():
             if not isinstance(v, list):
                 v = [v]
+
             v = set([str(x) if x is not None else x for x in v])
+
             assert None not in v, v
+
             if k in self._keys:
-                split[k] = tuple(
-                    [x for x in request.fields[k] if x in v]
-                )  # Preserve order
+                split[k] = tuple([x for x in request.fields[k] if x in v])  # Preserve order
                 assert split[k], (k, v)
+
         return Request(request, split), self.callable(name, **dict(**rule))

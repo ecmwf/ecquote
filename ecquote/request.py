@@ -15,8 +15,11 @@ from collections import defaultdict
 from .landsea import land_sea_ratio
 from .matching import Matcher
 from .repres import repres
-from .resources import config, resource
-from .utils import cached_method, plural
+from .resources import config
+from .resources import resource
+from .utils import cached_method
+from .utils import log_warning_once
+from .utils import plural
 
 LOG = logging.getLogger(__name__)
 
@@ -185,7 +188,26 @@ class Request:
                 "sunday",
             ), use
 
-        return 52 * len(use)
+        if self.subset.deliveries_per_dow is None:
+            log_warning_once(
+                LOG,
+                f"Product set {self.subset.name} cannot be used with 'use={'/'.join(use)}'",
+                raise_exception=ValueError,
+            )
+
+        return self.subset.deliveries_per_dow * len(use)
+
+    def explain_frequency(self):
+        use = tuple(sorted(self.use.get("use", [])))
+
+        if len(use) == 0:
+            return (self.subset.frequency, None)
+
+        if "bc" in use:
+            assert len(use) == 1, use
+            return (self.subset.frequency, None)
+
+        return (self.subset.deliveries_per_dow, len(use))
 
     @cached_method
     def chargeable_frequency(self):
@@ -324,7 +346,7 @@ class Request:
             s.update(r)
 
     def sample_mars_request(self):
-        date = datetime.datetime.utcnow() - datetime.timedelta(days=1)
+        date = datetime.datetime.utcnow() - datetime.timedelta(days=2)
         date = date.date()
 
         # https://confluence.ecmwf.int/display/PGEN/ENS-extended+weekly+means+in+48r1#ENSextendedweeklymeansin48r1-MondaytoSunday
@@ -515,9 +537,7 @@ class Request:
     @property
     def lineno(self):
         if "line" in self._attributes:
-            return "{}:{}".format(
-                self._attributes["path"][0], self._attributes["line"][0]
-            )
+            return "{}:{}".format(self._attributes["path"][0], self._attributes["line"][0])
 
     @property
     def group(self):

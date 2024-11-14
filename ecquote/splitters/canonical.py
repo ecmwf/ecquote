@@ -122,7 +122,16 @@ def splitter(requests):
                     assert isinstance(x, str), (g, k, x)
 
         for k, v in r.fields.items():
-            assert len(set(v)) == len(v), (k, v)
+            try:
+                assert len(set(v)) == len(v), (k, v)
+            except AssertionError:
+                log_warning_once(
+                    LOG,
+                    "Duplicate values for '%s' in %s",
+                    k,
+                    r,
+                    raise_if_strict_mode=True,
+                )
 
         # Some sanity checks
         off = ("off",)

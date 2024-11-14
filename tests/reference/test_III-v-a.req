@@ -21,5 +21,3 @@ levtype=sfc,
 step=12-36/36-60/60-84/84-108/108-132/132-156/156-180,
 param=sfi/capesi/tpi/capei/mn2ti/mx2ti/2ti/10wsi/10fgi/wvfi,
 domain=g
-
-

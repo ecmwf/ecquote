@@ -57,7 +57,7 @@ I-i-d:
   set: I
   subset: I-i
 I-i-e:
-  description: Snow depth levels
+  description: Soil depth levels
   frequency: 365
   mars:
     class: od
@@ -69,6 +69,34 @@ I-i-e:
     type:
     - an
     - fc
+  set: I
+  subset: I-i
+I-i-f:
+  # costed by I-i-a as same pricing/type/stream
+  description: Thermofeel Products
+  frequency: 365
+  mars:
+    class: od
+    levtype:
+    - sfc
+    stream:
+    - oper
+    - scda
+    type:
+    - fc
+    never: match # never match with any request
+    param:
+    - 2r
+    - utci
+    - mrt
+    - heatx
+    - wcf
+    - aptmp
+    - hmdx
+    - nefft
+    - gt
+    - wbgt
+    - wpbt
   set: I
   subset: I-i
 I-ii:
@@ -152,7 +180,8 @@ III-i-a-cf:
 III-i-a-hf:
   description: Free set with III-i-a
   free_with: III-i-a
-  frequency: 104
+  frequency: 84
+  deliveries_per_dow: 12
   mars:
     class: od
     levtype: sfc
@@ -196,7 +225,8 @@ III-i-b-cf:
 III-i-b-hf:
   description: Free set with III-i-b
   free_with: III-i-b
-  frequency: 104
+  frequency: 84
+  deliveries_per_dow: 12
   mars:
     class: od
     levtype: pl
@@ -237,7 +267,8 @@ III-i-c-cf:
 III-i-c-hf:
   description: Free set with III-i-c
   free_with: III-i-c
-  frequency: 104
+  frequency: 84
+  deliveries_per_dow: 12
   mars:
     class: od
     levtype: ml
@@ -296,7 +327,8 @@ III-i-d-cf:
 III-i-d-hf:
   description: Free set with III-i-d
   free_with: III-i-d
-  frequency: 104
+  frequency: 84
+  deliveries_per_dow: 12
   mars:
     class: od
     levtype:
@@ -342,7 +374,8 @@ III-i-e-cf:
 III-i-e-hf:
   description: Free set with III-i-e
   free_with: III-i-e
-  frequency: 104
+  frequency: 84
+  deliveries_per_dow: 12
   mars:
     class: od
     levtype: sol
@@ -350,6 +383,58 @@ III-i-e-hf:
     type:
     - cf
     - pf
+  set: III
+  subset: III-i
+III-i-f:
+  # costed with III-i-a as same composition
+  description: Atmospheric fields - Thermofeel Products
+  free_data:
+  - levtype: sfc
+    stream: enfo
+    type: cf
+  frequency: 365
+  mars:
+    class: od
+    levtype: sfc
+    stream: enfo
+    type: pf
+    never: match # never match with any request
+    param:
+    - 2r
+    - utci
+    - mrt
+    - heatx
+    - wcf
+    - aptmp
+    - hmdx
+    - nefft
+    - gt
+    - wbgt
+    - wpbt
+  set: III
+  subset: III-i
+III-i-f-cf:
+  description: Free set with III-i-f
+  free_with: III-i-e
+  frequency: 365
+  mars:
+    class: od
+    levtype: sfc
+    stream: enfo
+    type: cf
+    never: match # never match with any request
+    param:
+    - 2r
+    - utci
+    - mrt
+    - heatx
+    - wcf
+    - aptmp
+    - hmdx
+    - nefft
+    - gt
+    - wbgt
+    - wpbt
   set: III
   subset: III-i
 III-ii:
@@ -802,6 +887,7 @@ IV-iii-b:
 V-i-a:
   description: Monthly means of ensemble means - Single level
   frequency: 12
+  deliveries_per_dow: null
   mars:
     class: od
     levtype: sfc
@@ -815,6 +901,7 @@ V-i-a:
 V-i-b:
   description: Monthly means of ensemble means - Pressure levels
   frequency: 12
+  deliveries_per_dow: null
   mars:
     class: od
     levtype:
@@ -831,6 +918,7 @@ V-i-b:
 V-ii-a:
   description: Monthly mean anomalies of ensemble means - Single level
   frequency: 12
+  deliveries_per_dow: null
   mars:
     class: od
     levtype: sfc
@@ -844,6 +932,7 @@ V-ii-a:
 V-ii-b:
   description: Monthly mean anomalies of ensemble means - Pressure levels
   frequency: 12
+  deliveries_per_dow: null
   mars:
     class: od
     levtype:
@@ -866,6 +955,7 @@ V-iii-a:
     system: 5
     type: em
   frequency: 12
+  deliveries_per_dow: null
   mars:
     class: od
     levtype: sfc
@@ -889,6 +979,7 @@ V-iii-b:
     system: 5
     type: em
   frequency: 12
+  deliveries_per_dow: null
   mars:
     class: od
     levtype:
@@ -905,6 +996,7 @@ V-iii-b:
 V-iii-c:
   description: Seasonal forecast wave monthly means
   frequency: 12
+  deliveries_per_dow: null
   mars:
     class: od
     levtype: sfc
@@ -924,6 +1016,7 @@ V-iv-a:
     system: 5
     type: em
   frequency: 12
+  deliveries_per_dow: null
   mars:
     class: od
     levtype: sfc
@@ -946,6 +1039,7 @@ V-iv-b:
     system: 5
     type: em
   frequency: 12
+  deliveries_per_dow: null
   mars:
     class: od
     levtype:
@@ -961,6 +1055,7 @@ V-iv-b:
 V-v-a:
   description: Individual forecast runs - 6-hourly - Single level
   frequency: 12
+  deliveries_per_dow: null
   mars:
     class: od
     levtype: sfc
@@ -990,6 +1085,7 @@ V-v-a:
 V-v-b:
   description: Individual forecast runs - 24-hourly - Single level
   frequency: 12
+  deliveries_per_dow: null
   mars:
     class: od
     levtype: sfc
@@ -1046,6 +1142,7 @@ V-v-b:
 V-v-c:
   description: Individual forecast runs - 12-hourly - Pressure levels
   frequency: 12
+  deliveries_per_dow: null
   mars:
     class: od
     levtype: pl
@@ -1059,6 +1156,7 @@ V-v-c:
 V-v-d:
   description: Individual forecast runs - 12-hourly - Model levels
   frequency: 12
+  deliveries_per_dow: null
   mars:
     class: od
     levtype: ml
@@ -1072,6 +1170,7 @@ V-v-d:
 V-v-e:
   description: Wave seasonal forecast - 24-hourly
   frequency: 12
+  deliveries_per_dow: null
   mars:
     class: od
     levtype: sfc
@@ -1601,7 +1700,8 @@ IX-i-b:
 X-x-a:
   description: Free set with VI-i-a
   free_with: VI-i-a
-  frequency: 104
+  frequency: 175
+  deliveries_per_dow: 25
   mars:
     class: od
     levtype: sfc
@@ -1612,7 +1712,8 @@ X-x-a:
 X-x-b:
   description: Free set with VI-i-a
   free_with: VI-i-a
-  frequency: 104
+  frequency: 175
+  deliveries_per_dow: 25
   mars:
     class: od
     levtype: sfc
@@ -1623,7 +1724,8 @@ X-x-b:
 X-x-c:
   description: Free set with VI-i-b
   free_with: VI-i-b
-  frequency: 104
+  frequency: 175
+  deliveries_per_dow: 25
   mars:
     class: od
     levtype: pl
@@ -1634,7 +1736,8 @@ X-x-c:
 X-x-d:
   description: Free set with VI-i-b
   free_with: VI-i-b
-  frequency: 104
+  frequency: 175
+  deliveries_per_dow: 25
   mars:
     class: od
     levtype: pl
@@ -1645,7 +1748,8 @@ X-x-d:
 X-x-e:
   description: Free set with VI-iii-a
   free_with: VI-iii-a
-  frequency: 104
+  frequency: 175
+  deliveries_per_dow: 25
   mars:
     class: od
     levtype: sfc
@@ -1656,7 +1760,8 @@ X-x-e:
 X-x-f:
   description: Free set with VI-iii-b
   free_with: VI-iii-b
-  frequency: 104
+  frequency: 175
+  deliveries_per_dow: 25
   mars:
     class: od
     levtype: pl
@@ -1667,7 +1772,8 @@ X-x-f:
 X-x-j:
   description: Free set with VI-v-a
   free_with: VI-v-a
-  frequency: 104
+  frequency: 175
+  deliveries_per_dow: 25
   mars:
     class: od
     levtype: sfc
@@ -1678,7 +1784,8 @@ X-x-j:
 X-x-k:
   description: Free set with VI-v-a
   free_with: VI-v-a
-  frequency: 104
+  frequency: 175
+  deliveries_per_dow: 25
   mars:
     class: od
     levtype: sfc
@@ -1689,7 +1796,8 @@ X-x-k:
 X-x-l:
   description: Free set with VI-v-b
   free_with: VI-v-b
-  frequency: 104
+  frequency: 175
+  deliveries_per_dow: 25
   mars:
     class: od
     levtype: pl
@@ -1700,7 +1808,8 @@ X-x-l:
 X-x-m:
   description: Free set with VI-v-b
   free_with: VI-v-b
-  frequency: 104
+  frequency: 175
+  deliveries_per_dow: 25
   mars:
     class: od
     levtype: pl
@@ -1711,7 +1820,8 @@ X-x-m:
 X-x-o:
   description: Free set with VI-v-c
   free_with: VI-v-c
-  frequency: 104
+  frequency: 175
+  deliveries_per_dow: 25
   mars:
     class: od
     levtype: sfc
@@ -1722,7 +1832,8 @@ X-x-o:
 X-x-p:
   description: Free set with VI-v-c
   free_with: VI-v-c
-  frequency: 104
+  frequency: 175
+  deliveries_per_dow: 25
   mars:
     class: od
     levtype: sfc
@@ -1733,7 +1844,8 @@ X-x-p:
 X-x-q:
   description: Free set with VI-v-a
   free_with: VI-v-a
-  frequency: 104
+  frequency: 175
+  deliveries_per_dow: 25
   mars:
     class: od
     levtype: sfc
@@ -1744,7 +1856,8 @@ X-x-q:
 X-x-r:
   description: Free set with VI-v-b
   free_with: VI-v-b
-  frequency: 104
+  frequency: 175
+  deliveries_per_dow: 25
   mars:
     class: od
     levtype: pl

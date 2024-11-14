@@ -66,21 +66,14 @@ def splitter(requests):
         paid_requests += v
 
     if False:
-        assert sum(r.number_of_fields() for r in requests) == sum(
-            r.number_of_fields() for r in paid_requests
-        ) + sum(r.number_of_fields() for r in free_requests), (
+        assert sum(r.number_of_fields() for r in requests) == sum(r.number_of_fields() for r in paid_requests) + sum(
+            r.number_of_fields() for r in free_requests
+        ), (
             sum(r.number_of_fields() for r in requests),
-            sum(r.number_of_fields() for r in paid_requests)
-            + sum(r.number_of_fields() for r in free_requests),
+            sum(r.number_of_fields() for r in paid_requests) + sum(r.number_of_fields() for r in free_requests),
             sum(r.number_of_fields() for r in paid_requests),
             sum(r.number_of_fields() for r in free_requests),
         )
 
-    yield from (
-        x.annotate("split", "freebies", override="append", only_if=free_requests)
-        for x in paid_requests
-    )
-    yield from (
-        x.annotate("split", "freebies", override="append", only_if=paid_requests)
-        for x in free_requests
-    )
+    yield from (x.annotate("split", "freebies", override="append", only_if=free_requests) for x in paid_requests)
+    yield from (x.annotate("split", "freebies", override="append", only_if=paid_requests) for x in free_requests)

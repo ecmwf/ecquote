@@ -82,9 +82,7 @@ def split_paid_free_set_request(
 
     # All matching move on...
     if matching:
-        LOG.debug(
-            "%ssplit_paid_free_set_request (%s) move on %s", " " * depth, all_free, key
-        )
+        LOG.debug("%ssplit_paid_free_set_request (%s) move on %s", " " * depth, all_free, key)
         split_paid_free_set_request(
             request,
             rules,
@@ -225,9 +223,7 @@ def split_paid_free_set(request, free_set, free_set_name, ignore=[]):
     for r in free_set:
         # _check(r.fields)
         if set(r.fields.keys()) - ignore != all_keys:
-            LOG.debug(
-                "%s fields %s", free_set_name, sorted(set(r.fields.keys()) - ignore)
-            )
+            LOG.debug("%s fields %s", free_set_name, sorted(set(r.fields.keys()) - ignore))
             continue
 
         rules.append(r.fields)
@@ -252,9 +248,9 @@ def split_paid_free_set(request, free_set, free_set_name, ignore=[]):
         [request], []
 
     if True:
-        assert request.number_of_fields() == sum(
-            Request(p).number_of_fields() for p in paid
-        ) + sum(Request(f).number_of_fields() for f in free), (
+        assert request.number_of_fields() == sum(Request(p).number_of_fields() for p in paid) + sum(
+            Request(f).number_of_fields() for f in free
+        ), (
             request.number_of_fields(),
             sum(Request(p).number_of_fields() for p in paid),
             sum(Request(f).number_of_fields() for f in free),
@@ -299,9 +295,7 @@ def splitter(requests, free_set_name):
 
     debug = LOG.isEnabledFor(logging.DEBUG)
 
-    path = (
-        free_set_name if free_set_name.startswith("/") else resource_path(free_set_name)
-    )
+    path = free_set_name if free_set_name.startswith("/") else resource_path(free_set_name)
 
     free_cart = Cart.from_request_files(
         path,
@@ -352,11 +346,5 @@ def splitter(requests, free_set_name):
         LOG.debug("%s: paid %s", free_set_name, paid)
         LOG.debug("%s: free %s", free_set_name, free)
 
-        yield from (
-            x.annotate("split", free_set_name, override="append", only_if=free)
-            for x in paid
-        )
-        yield from (
-            x.annotate("split", free_set_name, override="append", only_if=paid)
-            for x in free
-        )
+        yield from (x.annotate("split", free_set_name, override="append", only_if=free) for x in paid)
+        yield from (x.annotate("split", free_set_name, override="append", only_if=paid) for x in free)

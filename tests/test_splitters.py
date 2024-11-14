@@ -55,9 +55,7 @@ def test_canonical_splitter():
 
     assert r.fields["time"] == ("0000", "0600", "1200", "1800")
     assert r.fields["param"] == ("2t", "2talm2")
-    assert r.fields["step"] == tuple(
-        "3/6/9/12/15/18/21/24/27/30/33/36/39/42/45/48".split("/")
-    )
+    assert r.fields["step"] == tuple("3/6/9/12/15/18/21/24/27/30/33/36/39/42/45/48".split("/"))
     assert r.fields["number"] == ("1", "2", "3", "4", "5")
     assert r.fields["class"] == ("od",)
     assert r.fields["domain"] == ("g",)
@@ -68,9 +66,7 @@ def test_canonical_splitter():
 
 # Disabled broken test following changes for the July 2024 service model we did not have
 # time to fix to the the release being urgent.
-@pytest.mark.skip(
-    reason="Broken test after the July 2024 service model changes, needs to be fixed."
-)
+@pytest.mark.skip(reason="Broken test after the July 2024 service model changes, needs to be fixed.")
 def test_subset_splitter_1():
     r = Request(
         "stream=eefo,type=ep,levtype=sfc,param=2tag0/2talm1/2tag2/2talm2/2tag1/tpag10/tpag20,"
@@ -83,9 +79,7 @@ def test_subset_splitter_1():
     assert splitted[0].subset.name == "VI-vi-a", splitted[0].subset.name
     assert splitted[1].subset.name == "VI-vi-b", splitted[1].subset.name
 
-    r = Request(
-        "stream=mmsf,origin=ecmf,system=5,method=1,type=fc,levtype=sfc,param=tp,time=0000,step=24"
-    )
+    r = Request("stream=mmsf,origin=ecmf,system=5,method=1,type=fc,levtype=sfc,param=tp,time=0000,step=24")
     splitted = list(subset_splitter([r]))
     assert len(splitted) == 1, (splitted, [r.subset for r in splitted])
     assert r.subset.name == "V-v-a", r.subset.name
