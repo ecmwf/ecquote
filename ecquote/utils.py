@@ -16,7 +16,7 @@ from contextlib import contextmanager
 LOG = logging.getLogger(__name__)
 
 
-def progress(x, title='progress', delay=2):
+def progress(x, title="progress", delay=2):
     try:
         from tqdm import tqdm
     except ImportError:
