@@ -42,9 +42,9 @@ class Parser:
 
     def __repr__(self):
         if self.text:
-            return f"Parser[{self.text}:{self.line+1}]"
+            return f"Parser[{self.text}:{self.line + 1}]"
         else:
-            return f"Parser[{self.path}:{self.line+1}]"
+            return f"Parser[{self.path}:{self.line + 1}]"
 
     def read(self):
         if self.eof:
