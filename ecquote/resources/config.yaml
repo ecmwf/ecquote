@@ -39,6 +39,7 @@ keywords:
   - repres
   - leg
   - dataset
+  - model
   use:
   - use
   - location
