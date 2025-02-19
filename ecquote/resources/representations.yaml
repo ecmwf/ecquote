@@ -197,7 +197,21 @@
 - mars:
     levtype: sol
     stream: oper
+    type: an
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
+    levtype: sol
+    stream: oper
     type: fc
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
+    levtype: sol
+    stream: scda
+    type: an
   repres:
     gaussian: O1280
     type: reduced_gg
