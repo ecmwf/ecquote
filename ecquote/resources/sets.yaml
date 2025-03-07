@@ -1697,6 +1697,14 @@ IX-i-b:
     levtype: pl
   set: IX
   subset: IX-i
+IX-i-c:
+  description: AIFS
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sol
+  set: IX
+  subset: IX-i
 X-x-a:
   description: Free set with VI-i-a
   free_with: VI-i-a
