@@ -809,8 +809,24 @@
     gaussian: O320
     type: reduced_gg
 - mars:
+    dataset: IX-i-a
+    levtype: sfc
+    stream: oper
+    type: fc
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
     dataset: IX-i-b
     levtype: pl
+    stream: oper
+    type: fc
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: IX-i-c
+    levtype: sol
     stream: oper
     type: fc
   repres:
