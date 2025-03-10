@@ -205,6 +205,7 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    dataset: I-i-e
     levtype: sol
     stream: oper
     type: fc
