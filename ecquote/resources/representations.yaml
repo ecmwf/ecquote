@@ -2,6 +2,9 @@
 # To recreate it, run scripts/create-representations-yaml.sh.
 
 - mars:
+    dataset:
+    - I-i-a
+    - I-i-f
     levtype: sfc
     stream: oper
     type: fc
