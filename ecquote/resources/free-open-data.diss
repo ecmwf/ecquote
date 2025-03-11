@@ -3,7 +3,7 @@
 disseminate,
   class               = od,
   stream              = oper,
-  expver              = 001,
+  expver              = 0001,
   domain              = g,
   type                = fc,
   levtype             = sfc,
