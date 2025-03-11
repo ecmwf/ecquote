@@ -7,4 +7,4 @@
 # granted to it by virtue of its status as an intergovernmental organisation
 # nor does it submit to any jurisdiction.
 
-__version__ = "1.7.3"
+__version__ = "1.7.4"
