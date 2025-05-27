@@ -62,7 +62,6 @@ REQUEST = []
 
 @contextmanager
 def capture_warnings(request):
-    global REQUEST
     REQUEST.append(request)
     try:
         yield request
