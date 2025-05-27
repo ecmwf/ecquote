@@ -345,6 +345,7 @@
     levtype: ml
     stream: enfh
     type: pf
+  model_levels: 137
   repres:
     gaussian: O1280
     type: reduced_gg
@@ -352,6 +353,7 @@
     levtype: ml
     stream: enfh
     type: cf
+  model_levels: 137
   repres:
     gaussian: O1280
     type: reduced_gg
