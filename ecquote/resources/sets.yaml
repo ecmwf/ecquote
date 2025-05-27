@@ -245,6 +245,9 @@ III-i-c:
   - levtype: ml
     stream: enfh
     type: pf
+  - levtype: ml
+    stream: enfh
+    type: cf
   frequency: 365
   mars:
     class: od
