@@ -1,0 +1,9 @@
+class=od,
+domain=g,
+expver=0001,
+levelist=1/2/3/4/5,
+levtype=sol,
+param=rsn,
+stream=oper,
+time=0000,
+type=an

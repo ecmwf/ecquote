@@ -1,0 +1,9 @@
+class=od,
+domain=g,
+expver=0001,
+levelist=1/2/3/4/5,
+levtype=sol,
+param=rsn/lwcs/sd,
+stream=scda,
+time=0600/1800,
+type=an
