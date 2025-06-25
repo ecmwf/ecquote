@@ -1685,30 +1685,120 @@ VI-vii-b:
   set: VI
   subset: VI-vii
 IX-i-a:
-  description: AIFS
+  description: AIFS Single
   frequency: 365
   mars:
     class: ai
     levtype: sfc
+    stream: oper
   set: IX
   subset: IX-i
 IX-i-b:
-  description: AIFS
+  description: AIFS Single
   frequency: 365
   mars:
     class: ai
     levtype: pl
+    stream: oper
   set: IX
   subset: IX-i
 IX-i-c:
+  description: AIFS Single
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sol
+    stream: oper
+  set: IX
+  subset: IX-i
+X-i-a:
+  description: AIFS CRPS
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: enfo
+  set: IX
+  subset: IX-i
+X-i-b:
+  description: AIFS CRPS
+  frequency: 365
+  mars:
+    class: ai
+    levtype: pl
+    stream: enfo
+  set: IX
+  subset: IX-i
+X-i-e:
   description: AIFS
   frequency: 365
   mars:
     class: ai
     levtype: sol
+    stream: enfo
   set: IX
   subset: IX-i
-X-x-a:
+X-iii-a:
+  description: Probabilities - Instantaneous weather events - Single level
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: enfo
+    type: ep
+  set: X
+  subset: X-iii
+X-iii-b:
+  description: Probabilities - Averaged  weather events - Single level
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: enfo
+    type: ep
+  set: X
+  subset: X-iii
+X-vi-a:
+  description: Ensemble means - Single level
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: enfo
+    type: em
+  set: X
+  subset: X-vi
+X-vi-b:
+  description: Ensemble means - Pressure levels
+  frequency: 365
+  mars:
+    class: ai
+    levtype: pl
+    stream: enfo
+    type: em
+  set: X
+  subset: X-vi
+X-vii-a:
+  description: Ensemble standard deviations - Single level
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: enfo
+    type: es
+  set: X
+  subset: X-vii
+X-vii-b:
+  description: Ensemble standard deviations - Pressure levels
+  frequency: 365
+  mars:
+    class: ai
+    levtype: pl
+    stream: enfo
+    type: es
+  set: X
+  subset: X-vii
+XX-x-a:
   description: Free set with VI-i-a
   free_with: VI-i-a
   frequency: 175
@@ -1720,7 +1810,7 @@ X-x-a:
     type: taem
   set: X
   subset: X-x
-X-x-b:
+XX-x-b:
   description: Free set with VI-i-a
   free_with: VI-i-a
   frequency: 175
@@ -1732,7 +1822,7 @@ X-x-b:
     type: em
   set: X
   subset: X-x
-X-x-c:
+XX-x-c:
   description: Free set with VI-i-b
   free_with: VI-i-b
   frequency: 175
@@ -1744,7 +1834,7 @@ X-x-c:
     type: taem
   set: X
   subset: X-x
-X-x-d:
+XX-x-d:
   description: Free set with VI-i-b
   free_with: VI-i-b
   frequency: 175
@@ -1756,7 +1846,7 @@ X-x-d:
     type: em
   set: X
   subset: X-x
-X-x-e:
+XX-x-e:
   description: Free set with VI-iii-a
   free_with: VI-iii-a
   frequency: 175
@@ -1768,7 +1858,7 @@ X-x-e:
     type: fcmean
   set: X
   subset: X-x
-X-x-f:
+XX-x-f:
   description: Free set with VI-iii-b
   free_with: VI-iii-b
   frequency: 175
@@ -1780,7 +1870,7 @@ X-x-f:
     type: fcmean
   set: X
   subset: X-x
-X-x-j:
+XX-x-j:
   description: Free set with VI-v-a
   free_with: VI-v-a
   frequency: 175
@@ -1792,7 +1882,7 @@ X-x-j:
     type: pf
   set: X
   subset: X-x
-X-x-k:
+XX-x-k:
   description: Free set with VI-v-a
   free_with: VI-v-a
   frequency: 175
@@ -1804,7 +1894,7 @@ X-x-k:
     type: cf
   set: X
   subset: X-x
-X-x-l:
+XX-x-l:
   description: Free set with VI-v-b
   free_with: VI-v-b
   frequency: 175
@@ -1816,7 +1906,7 @@ X-x-l:
     type: cf
   set: X
   subset: X-x
-X-x-m:
+XX-x-m:
   description: Free set with VI-v-b
   free_with: VI-v-b
   frequency: 175
@@ -1828,7 +1918,7 @@ X-x-m:
     type: pf
   set: X
   subset: X-x
-X-x-o:
+XX-x-o:
   description: Free set with VI-v-c
   free_with: VI-v-c
   frequency: 175
@@ -1840,7 +1930,7 @@ X-x-o:
     type: cf
   set: X
   subset: X-x
-X-x-p:
+XX-x-p:
   description: Free set with VI-v-c
   free_with: VI-v-c
   frequency: 175
@@ -1852,7 +1942,7 @@ X-x-p:
     type: pf
   set: X
   subset: X-x
-X-x-q:
+XX-x-q:
   description: Free set with VI-v-a
   free_with: VI-v-a
   frequency: 175
@@ -1864,7 +1954,7 @@ X-x-q:
     type: taem
   set: X
   subset: X-x
-X-x-r:
+XX-x-r:
   description: Free set with VI-v-b
   free_with: VI-v-b
   frequency: 175
