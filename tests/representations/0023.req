@@ -1,6 +1,6 @@
 class=od,
 domain=g,
-expver=0078,
+expver=0001,
 levtype=sfc,
 param=swh/mwd/pp1d/mwp/shww/mdww/mpww/shts/mdts/mpts/cdww/wind/sh10,
 step=0,

@@ -1,6 +1,6 @@
 class=od,
 domain=g,
-expver=0078,
+expver=0001,
 levtype=sfc,
 param=tpi,
 step=0-24/24-48/48-72,

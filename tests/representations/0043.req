@@ -1,6 +1,6 @@
 class=od,
 domain=g,
-expver=0078,
+expver=0001,
 levtype=sfc,
 param=10fgi/sfi/10wsi/2ti/mx2ti/mn2ti/tpi/capei/capesi,
 step=12-36/36-60/60-84/84-108/108-132/132-156/156-180,
