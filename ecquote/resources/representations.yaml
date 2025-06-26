@@ -424,11 +424,35 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    dataset: III-iii-b
+    levtype: sfc
+    stream: enfo
+    type: ep
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
     levtype: pl
     stream: enfo
     type: ep
   repres:
     gaussian: O1280
+    type: reduced_gg
+- mars:
+    dataset: III-iii-e
+    levtype: sfc
+    stream: enfo
+    type: ep
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
+    dataset: III-iii-f
+    levtype: sfc
+    stream: enfo
+    type: ep
+  repres:
+    gaussian: O640
     type: reduced_gg
 - mars:
     levtype: sfc
