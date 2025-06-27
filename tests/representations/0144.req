@@ -1,6 +1,6 @@
 class=od,
 domain=g,
-expver=0078,
+expver=0001,
 levtype=sfc,
 number=10,
 param=mn2ti/mx2ti/2ti,

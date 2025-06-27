@@ -89,7 +89,7 @@ def test_references(req):
         if "subset" in cost:
             ok = True
             for r in cart.requests:
-                if not r.subset.name.startswith("X-"):
+                if not r.subset.name.startswith("XX-"):
                     subset = r.subset.name.replace("-cf", "")
                     assert (subset == cost["subset"]) or (isinstance(cost["subset"], list) and subset in cost["subset"])
 

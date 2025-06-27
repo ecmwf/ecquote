@@ -198,6 +198,7 @@
     - reduced_gg
     - sh
 - mars:
+    dataset: I-i-e
     levtype: sol
     stream: oper
     type: fc
@@ -212,7 +213,6 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
-    dataset: I-i-e
     levtype: sol
     stream: oper
     type: an
@@ -261,6 +261,7 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    dataset: III-i-a
     levtype: sfc
     stream: enfo
     type: pf
@@ -268,6 +269,7 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    dataset: III-i-a-cf
     levtype: sfc
     stream: enfo
     type: cf
@@ -289,6 +291,7 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    dataset: III-i-b
     levtype: pl
     stream: enfo
     type: pf
@@ -299,6 +302,7 @@
     - reduced_gg
     - sh
 - mars:
+    dataset: III-i-b-cf
     levtype: pl
     stream: enfo
     type: cf
@@ -378,6 +382,7 @@
     - reduced_gg
     - sh
 - mars:
+    dataset: III-i-e
     levtype: sol
     stream: enfo
     type: pf
@@ -385,6 +390,7 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    dataset: III-i-e-cf
     levtype: sol
     stream: enfo
     type: cf
@@ -410,6 +416,15 @@
     - 1.5
     type: regular_ll
 - mars:
+    dataset: III-iii-a
+    levtype: sfc
+    stream: enfo
+    type: ep
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
+    dataset: III-iii-b
     levtype: sfc
     stream: enfo
     type: ep
@@ -422,6 +437,22 @@
     type: ep
   repres:
     gaussian: O1280
+    type: reduced_gg
+- mars:
+    dataset: III-iii-e
+    levtype: sfc
+    stream: enfo
+    type: ep
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
+    dataset: III-iii-f
+    levtype: sfc
+    stream: enfo
+    type: ep
+  repres:
+    gaussian: O640
     type: reduced_gg
 - mars:
     levtype: sfc
@@ -445,6 +476,7 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    dataset: III-vi-a
     levtype: sfc
     stream: enfo
     type: em
@@ -452,6 +484,7 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    dataset: III-vi-b
     levtype: pl
     stream: enfo
     type: em
@@ -459,6 +492,7 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    dataset: III-vii-a
     levtype: sfc
     stream: enfo
     type: es
@@ -466,6 +500,7 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    dataset: III-vii-b
     levtype: pl
     stream: enfo
     type: es
@@ -853,6 +888,110 @@
     gaussian: N320
     type: reduced_gg
 - mars:
+    dataset: X-i-a
+    levtype: sfc
+    stream: enfo
+    type: pf
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: X-i-a-cf
+    levtype: sfc
+    stream: enfo
+    type: cf
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: X-i-b
+    levtype: pl
+    stream: enfo
+    type: pf
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: X-i-b-cf
+    levtype: pl
+    stream: enfo
+    type: cf
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: X-i-e
+    levtype: sol
+    stream: enfo
+    type: pf
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: X-i-e-cf
+    levtype: sol
+    stream: enfo
+    type: cf
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: X-iii-a
+    levtype: sfc
+    stream: enfo
+    type: ep
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: X-iii-b
+    levtype: sfc
+    stream: enfo
+    type: ep
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: X-vi-a
+    levtype: sfc
+    stream: enfo
+    type: em
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: X-vi-b
+    levtype: pl
+    stream: enfo
+    type: em
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: X-vii-a
+    levtype: sfc
+    stream: enfo
+    type: es
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: X-vii-b
+    levtype: pl
+    stream: enfo
+    type: es
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    type: wp
+  repres:
+    type: wp
+- mars:
+    type: tf
+  repres:
+    type: tf
+- mars:
     levtype: sfc
     stream: eehs
     type: taem
@@ -925,12 +1064,4 @@
   repres:
     gaussian: O320
     type: reduced_gg
-- mars:
-    type: wp
-  repres:
-    type: wp
-- mars:
-    type: tf
-  repres:
-    type: tf
 
