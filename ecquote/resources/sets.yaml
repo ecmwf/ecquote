@@ -1685,30 +1685,253 @@ VI-vii-b:
   set: VI
   subset: VI-vii
 IX-i-a:
-  description: AIFS
+  description: AIFS Single
   frequency: 365
   mars:
     class: ai
     levtype: sfc
+    stream: oper
   set: IX
   subset: IX-i
 IX-i-b:
-  description: AIFS
+  description: AIFS Single
   frequency: 365
   mars:
     class: ai
     levtype: pl
+    stream: oper
   set: IX
   subset: IX-i
 IX-i-c:
-  description: AIFS
+  description: AIFS Single
   frequency: 365
   mars:
     class: ai
     levtype: sol
+    stream: oper
   set: IX
   subset: IX-i
-X-x-a:
+X-i-a:
+  description: AIFS CRPS
+  free_data:
+  - class: ai
+    levtype: sfc
+    stream: enfo
+    type: cf
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: enfo
+    type: pf
+  set: X
+  subset: X-i
+X-i-a-cf:
+  description: Free set with X-i-a
+  free_with: X-i-a
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: enfo
+    type: cf
+  set: X
+  subset: X-i
+X-i-b:
+  description: AIFS CRPS
+  free_data:
+  - class: ai
+    levtype: pl
+    stream: enfo
+    type: cf
+  frequency: 365
+  mars:
+    class: ai
+    levtype: pl
+    stream: enfo
+    type: pf
+  set: X
+  subset: X-i
+X-i-b-cf:
+  description: Free set with X-i-b
+  free_with: X-i-b
+  frequency: 365
+  mars:
+    class: ai
+    levtype: pl
+    stream: enfo
+    type: cf
+  set: X
+  subset: X-i
+X-i-e:
+  description: AIFS
+  free_data:
+  - class: ai
+    levtype: sol
+    stream: enfo
+    type: cf
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sol
+    stream: enfo
+    type: pf
+  set: X
+  subset: X-i
+X-i-e-cf:
+  description: Free set with X-i-e
+  free_with: X-i-e
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sol
+    stream: enfo
+    type: cf
+  set: X
+  subset: X-i
+X-iii-a:
+  description: Probabilities - Instantaneous weather events - Single level
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    param:
+    - 10spg10
+    - 10spg15
+    - 2tl273
+    step:
+    - 12
+    - 24
+    - 36
+    - 48
+    - 60
+    - 72
+    - 84
+    - 96
+    - 108
+    - 120
+    - 132
+    - 144
+    - 156
+    - 168
+    - 180
+    - 192
+    - 204
+    - 216
+    - 228
+    - 240
+    - 252
+    - 264
+    - 276
+    - 288
+    - 300
+    - 312
+    - 324
+    - 336
+    - 348
+    - 360
+    stream: enfo
+    type: ep
+  set: X
+  subset: X-iii
+X-iii-b:
+  description: Probabilities - Averaged  weather events - Single level
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    param:
+    - 2tl273
+    - tpg1
+    - tpg10
+    - tpg100
+    - tpg20
+    - tpg25
+    - tpg5
+    - tpg50
+    - tpl01
+    - tprg3
+    - tprg5
+    - tprl1
+    step:
+    - 0-24
+    - 12-36
+    - 24-48
+    - 36-60
+    - 48-72
+    - 60-84
+    - 72-96
+    - 84-108
+    - 96-120
+    - 108-132
+    - 120-144
+    - 120-168
+    - 120-240
+    - 132-156
+    - 144-168
+    - 156-180
+    - 168-192
+    - 168-240
+    - 180-204
+    - 192-216
+    - 204-228
+    - 216-240
+    - 228-252
+    - 240-264
+    - 240-360
+    - 252-276
+    - 264-288
+    - 276-300
+    - 288-312
+    - 300-324
+    - 312-336
+    - 324-348
+    - 336-360
+    stream: enfo
+    type: ep
+  set: X
+  subset: X-iii
+X-vi-a:
+  description: Ensemble means - Single level
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: enfo
+    type: em
+  set: X
+  subset: X-vi
+X-vi-b:
+  description: Ensemble means - Pressure levels
+  frequency: 365
+  mars:
+    class: ai
+    levtype: pl
+    stream: enfo
+    type: em
+  set: X
+  subset: X-vi
+X-vii-a:
+  description: Ensemble standard deviations - Single level
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: enfo
+    type: es
+  set: X
+  subset: X-vii
+X-vii-b:
+  description: Ensemble standard deviations - Pressure levels
+  frequency: 365
+  mars:
+    class: ai
+    levtype: pl
+    stream: enfo
+    type: es
+  set: X
+  subset: X-vii
+XX-x-a:
   description: Free set with VI-i-a
   free_with: VI-i-a
   frequency: 175
@@ -1718,9 +1941,9 @@ X-x-a:
     levtype: sfc
     stream: eehs
     type: taem
-  set: X
-  subset: X-x
-X-x-b:
+  set: XX
+  subset: XX-x
+XX-x-b:
   description: Free set with VI-i-a
   free_with: VI-i-a
   frequency: 175
@@ -1730,9 +1953,9 @@ X-x-b:
     levtype: sfc
     stream: eehs
     type: em
-  set: X
-  subset: X-x
-X-x-c:
+  set: XX
+  subset: XX-x
+XX-x-c:
   description: Free set with VI-i-b
   free_with: VI-i-b
   frequency: 175
@@ -1742,9 +1965,9 @@ X-x-c:
     levtype: pl
     stream: eehs
     type: taem
-  set: X
-  subset: X-x
-X-x-d:
+  set: XX
+  subset: XX-x
+XX-x-d:
   description: Free set with VI-i-b
   free_with: VI-i-b
   frequency: 175
@@ -1754,9 +1977,9 @@ X-x-d:
     levtype: pl
     stream: eehs
     type: em
-  set: X
-  subset: X-x
-X-x-e:
+  set: XX
+  subset: XX-x
+XX-x-e:
   description: Free set with VI-iii-a
   free_with: VI-iii-a
   frequency: 175
@@ -1766,9 +1989,9 @@ X-x-e:
     levtype: sfc
     stream: eefh
     type: fcmean
-  set: X
-  subset: X-x
-X-x-f:
+  set: XX
+  subset: XX-x
+XX-x-f:
   description: Free set with VI-iii-b
   free_with: VI-iii-b
   frequency: 175
@@ -1778,9 +2001,9 @@ X-x-f:
     levtype: pl
     stream: eefh
     type: fcmean
-  set: X
-  subset: X-x
-X-x-j:
+  set: XX
+  subset: XX-x
+XX-x-j:
   description: Free set with VI-v-a
   free_with: VI-v-a
   frequency: 175
@@ -1790,9 +2013,9 @@ X-x-j:
     levtype: sfc
     stream: eefh
     type: pf
-  set: X
-  subset: X-x
-X-x-k:
+  set: XX
+  subset: XX-x
+XX-x-k:
   description: Free set with VI-v-a
   free_with: VI-v-a
   frequency: 175
@@ -1802,9 +2025,9 @@ X-x-k:
     levtype: sfc
     stream: eefh
     type: cf
-  set: X
-  subset: X-x
-X-x-l:
+  set: XX
+  subset: XX-x
+XX-x-l:
   description: Free set with VI-v-b
   free_with: VI-v-b
   frequency: 175
@@ -1814,9 +2037,9 @@ X-x-l:
     levtype: pl
     stream: eefh
     type: cf
-  set: X
-  subset: X-x
-X-x-m:
+  set: XX
+  subset: XX-x
+XX-x-m:
   description: Free set with VI-v-b
   free_with: VI-v-b
   frequency: 175
@@ -1826,9 +2049,9 @@ X-x-m:
     levtype: pl
     stream: eefh
     type: pf
-  set: X
-  subset: X-x
-X-x-o:
+  set: XX
+  subset: XX-x
+XX-x-o:
   description: Free set with VI-v-c
   free_with: VI-v-c
   frequency: 175
@@ -1838,9 +2061,9 @@ X-x-o:
     levtype: sfc
     stream: weeh
     type: cf
-  set: X
-  subset: X-x
-X-x-p:
+  set: XX
+  subset: XX-x
+XX-x-p:
   description: Free set with VI-v-c
   free_with: VI-v-c
   frequency: 175
@@ -1850,9 +2073,9 @@ X-x-p:
     levtype: sfc
     stream: weeh
     type: pf
-  set: X
-  subset: X-x
-X-x-q:
+  set: XX
+  subset: XX-x
+XX-x-q:
   description: Free set with VI-v-a
   free_with: VI-v-a
   frequency: 175
@@ -1862,9 +2085,9 @@ X-x-q:
     levtype: sfc
     stream: eefh
     type: taem
-  set: X
-  subset: X-x
-X-x-r:
+  set: XX
+  subset: XX-x
+XX-x-r:
   description: Free set with VI-v-b
   free_with: VI-v-b
   frequency: 175
@@ -1874,5 +2097,5 @@ X-x-r:
     levtype: pl
     stream: eefh
     type: taem
-  set: X
-  subset: X-x
+  set: XX
+  subset: XX-x
