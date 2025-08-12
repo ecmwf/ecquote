@@ -1,6 +1,6 @@
 class=ai,
 domain=g,
-expver=0103,
+expver=0001,
 levelist=300/500/1000,
 levtype=pl,
 param=Z,

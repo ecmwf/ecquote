@@ -1,6 +1,6 @@
 class=ai,
 domain=g,
-expver=0103,
+expver=0001,
 levelist=1/2,
 levtype=sol,
 number=off,
