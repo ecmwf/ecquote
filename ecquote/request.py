@@ -361,6 +361,9 @@ class Request:
             ("24-192", "192-360", "360-528", "528-696", "696-864", "864-1032"),
         ]
 
+        MEDIUM_RANGE_HINDCAST_DAYS = list(range(1, 29 + 1, 4))
+        SUBSEASONAL_HINDCAST_DAYS = list(range(1, 31 + 1, 2))
+
         r = {k: v[0] for k, v in self.fields.items()}
         r.update(self.use)
         r.setdefault("levtype", "off")
@@ -392,22 +395,48 @@ class Request:
         if r.get("use") == "bc":
             del r["use"]
 
-        if r.get("use") or r.get("stream") in (
-            "efhs",
-            "enfh",
-            "enwh",
-            "eefh",
-            "eefo",
-        ):
-            dow = 0  # Monday
-            if r.get("stream") == "eefo":
-                s = r.get("step").split("/")[0]
-                for i, d in enumerate(DOW):
-                    if s in d:
-                        dow = i
+        # eefo runs daily since 48r1, but for statistics different steps are valid per
+        # day of the week
+        if r.get("stream") == "eefo":
+            dow = None
 
-            while date.weekday() not in (dow,):
+            s = r.get("step").split("/")[0]
+            for i, d in enumerate(DOW):
+                if s in d:
+                    dow = i
+                    break
+
+            if dow is not None:
+                while date.weekday() != dow:
+                    date = date - datetime.timedelta(days=1)
+
+            # Even though eefo runs daily, so no 'use' would be required, users are still
+            # allowed to use 'use' to select a specific day of the week only, which we
+            # discard here, if found, so it's not picked up by further logic handling the
+            # 'use' keyword
+            r.pop("use", None)
+
+        # Medium-range re-forecasts are produced every 4 days since 49r1, starting on the
+        # 1st of the month, where users need to provide a 'use' keyword, which we discard
+        # so it's not picked up by further logic handling the 'use' keyword.
+        if r.get("stream") in ("enfh", "efhs", "enwh", "wehs"):
+            while date.weekday() not in MEDIUM_RANGE_HINDCAST_DAYS:
                 date = date - datetime.timedelta(days=1)
+            r.pop("use", None)
+
+        # Seasonal re-forecasts are produced every 2 days since 49r1, starting on the 1st
+        # of the month, where users need to provide a 'use' keyword, which we discard so
+        # it's not picked up by further logic handling the 'use' keyword.
+        if r.get("stream") in ("eefh", "eehs", "weeh"):
+            while date.weekday() not in SUBSEASONAL_HINDCAST_DAYS:
+                date = date - datetime.timedelta(days=1)
+            r.pop("use", None)
+
+        # For any remaining cases where 'use' is provided, assume Monday / Thursday
+        if r.get("use"):
+            while date.weekday() not in (0, 3):
+                date = date - datetime.timedelta(days=1)
+
             r.pop("use", None)
 
         # print('========= DATE =====', date,date.weekday(), file=sys.stderr)
