@@ -1931,6 +1931,66 @@ X-vii-b:
     type: es
   set: X
   subset: X-vii
+XI-i-a-an:
+ description: CAMS Analysis - Surface
+ frequency: 365
+ mars:
+  class: mc
+  levtype: sfc
+  stream: oper
+  type: an
+ set: XI
+ subset: XI-i
+XI-i-a-fc:
+ description: CAMS Forecast - Surface
+ frequency: 365
+ mars:
+  class: mc
+  levtype: sfc
+  stream: oper
+  type: fc
+ set: XI
+ subset: XI-i
+XI-i-b-an:
+ description: CAMS Analysis - Pressure Levels
+ frequency: 365
+ mars:
+  class: mc
+  levtype: pl
+  stream: oper
+  type: an
+ set: XI
+ subset: XI-i
+XI-i-b-fc:
+ description: CAMS Forecast - Pressure Levels
+ frequency: 365
+ mars:
+  class: mc
+  levtype: pl
+  stream: oper
+  type: fc
+ set: XI
+ subset: XI-i
+XI-i-c-an:
+ description: CAMS Analysis - Model Levels
+ frequency: 365
+ mars:
+  class: mc
+  levtype: ml
+  stream: oper
+  type: an
+ set: XI
+ subset: XI-i
+XI-i-c-fc:
+ description: CAMS Forecast - Model Levels
+ frequency: 365
+ mars:
+  class: mc
+  levtype: ml
+  stream: oper
+  type: fc
+ set: XI
+ subset: XI-i
 XX-x-a:
   description: Free set with VI-i-a
   free_with: VI-i-a
