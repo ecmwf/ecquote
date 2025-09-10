@@ -51,7 +51,7 @@ def test_canonical_splitter():
     splitted = list(canonical_splitter([r]))
     assert len(splitted) == 1
     r = splitted[0]
-    print(splitted)
+    # No debug printing here; keep test output clean
 
     assert r.fields["time"] == ("0000", "0600", "1200", "1800")
     assert r.fields["param"] == ("2t", "2talm2")
@@ -88,9 +88,7 @@ def test_subset_splitter_1():
 def test_high_frequency_splitter():
     steps = "/".join(str(i) for i in range(0, 91))
     r = Request(f"type=fc,stream=oper,levtype=sfc,param=2t,step={steps}")
-    print(r)
     splitted = list(high_frequency_splitter([r]))
-    print(splitted)
     assert len(splitted) == 2, splitted
 
 
