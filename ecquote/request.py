@@ -346,7 +346,7 @@ class Request:
             s.update(r)
 
     def sample_mars_request(self):
-        date = datetime.datetime.utcnow() - datetime.timedelta(days=2)
+        date = datetime.datetime.now(datetime.UTC) - datetime.timedelta(days=2)
         date = date.date()
 
         # https://confluence.ecmwf.int/display/PGEN/ENS-extended+weekly+means+in+48r1#ENSextendedweeklymeansin48r1-MondaytoSunday
