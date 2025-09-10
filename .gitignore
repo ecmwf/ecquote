@@ -158,3 +158,6 @@ ok/
 *.tar
 *.gz
 *.tgz
+.DS_Store
+ecquote/.DS_Store
+tests/.DS_Store
