@@ -10,8 +10,6 @@
 
 import logging
 
-# pytest is not required here (no marks used)
-
 from ecquote.request import Request
 from ecquote.splitters.canonical import splitter as canonical_splitter
 from ecquote.splitters.constant import splitter as constant_splitter
