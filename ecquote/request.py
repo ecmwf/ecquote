@@ -12,6 +12,7 @@ import itertools
 import logging
 from collections import defaultdict
 
+from ._compat import UTC
 from .landsea import land_sea_ratio
 from .matching import Matcher
 from .repres import repres
@@ -22,7 +23,6 @@ from .utils import log_warning_once
 from .utils import plural
 
 LOG = logging.getLogger(__name__)
-from ._compat import UTC
 
 wave_streams = set(config("wave_streams"))
 ml_matcher = Matcher("representations", lambda _, model_levels, **kwargs: model_levels)

@@ -14,6 +14,7 @@ import sys
 from collections import defaultdict
 
 from . import __version__
+from ._compat import UTC
 from .resources import config
 from .resources import resource
 from .utils import bytes
@@ -24,7 +25,6 @@ from .utils import progress
 from .utils import roman
 
 LOG = logging.getLogger(__name__)
-from ._compat import UTC
 
 """
 https://www.ecmwf.int/en/forecasts/accessing-forecasts/payment-rules-and-options/tariffs-examples
