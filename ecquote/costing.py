@@ -24,6 +24,7 @@ from .utils import progress
 from .utils import roman
 
 LOG = logging.getLogger(__name__)
+from ._compat import UTC
 
 """
 https://www.ecmwf.int/en/forecasts/accessing-forecasts/payment-rules-and-options/tariffs-examples
@@ -372,7 +373,7 @@ class Costing:
     def as_dict(self):
         result = {
             "version": __version__,
-            "utc_date": datetime.datetime.now(datetime.UTC).isoformat().split(".")[0],
+            "utc_date": datetime.datetime.now(UTC).isoformat().split(".")[0],
         }
 
         if self.per_category:
@@ -431,7 +432,7 @@ class Costing:
         show_destinations=False,
     ):
         print("Version   :", __version__)
-        print("Date (UTC):", datetime.datetime.now(datetime.UTC).isoformat().split(".")[0])
+        print("Date (UTC):", datetime.datetime.now(UTC).isoformat().split(".")[0])
         print()
         if detailed:
             minimum_area = config("minimum_area") / (360 * 180)
