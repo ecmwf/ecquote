@@ -5,9 +5,7 @@ Currently provides:
 """
 
 try:  # Python 3.11+
-    from datetime import UTC  # type: ignore[attr-defined]
-except Exception:  # pragma: no cover - fallback for older Python
+    from datetime import UTC
+except ImportError:  # Python < 3.11
     from datetime import timezone as _timezone
-
-    UTC = _timezone.utc  # type: ignore[assignment]
-
+    UTC = _timezone.utc
