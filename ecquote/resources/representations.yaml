@@ -12,27 +12,6 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
-    dataset: XI-i-a-fc
-    levtype: sfc
-    stream: oper
-    type: fc
-  repres:
-    gaussian: O1280
-    type: reduced_gg
-- mars:
-    dataset: XI-i-b-fc
-    levtype: pl
-    stream: oper
-    type: fc
-  repres:
-    gaussian: O1280
-    resol: 1279
-    type:
-    - reduced_gg
-    - sh
-# CAMS surface forecast (XI-i-a-fc) uses same grid as oper sfc fc
-# (deduplicated; single entry kept above)
-- mars:
     levtype: sfc
     stream: oper
     type: an
