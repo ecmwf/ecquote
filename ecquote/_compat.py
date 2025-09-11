@@ -1,11 +1,9 @@
-"""Compatibility helpers for older Python versions.
+"""Compatibility helpers for Python versions.
 
-Currently provides:
-- UTC: timezone info compatible with Python < 3.11 (datetime.UTC).
+Exports:
+- `UTC`: timezone for UTC across Python versions.
 """
 
-try:  # Python 3.11+
-    from datetime import UTC
-except ImportError:  # Python < 3.11
-    from datetime import timezone as _timezone
-    UTC = _timezone.utc
+import datetime
+
+UTC = getattr(datetime, "UTC", datetime.timezone.utc)
