@@ -61,6 +61,7 @@ keywords:
   - priority
   - format
   ignore:
+  - day
   - date
   - hdate
   attributes:
