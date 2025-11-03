@@ -282,6 +282,58 @@ VI-vii-b:
   E: 1
   D: 15
   M: 1
+VII-i-a:
+  E: 1
+  D: 0
+  M: 1
+VII-i-b:
+  E: 1
+  D: 0
+  M: 1
+VII-ii-a:
+  E: 1
+  D: 0
+  M: 1
+VII-ii-b:
+  E: 1
+  D: 0
+  M: 1
+VII-ii-c:
+  E: 1
+  D: 0
+  M: 1
+VII-iii-a:
+  E: 1
+  D: 0
+  M: 1
+VII-iii-b:
+  E: 1
+  D: 0
+  M: 1
+VII-iii-c:
+  E: 1
+  D: 0
+  M: 1
+VII-iv-a:
+  E: 1
+  D: 0
+  M: 1
+VII-iv-a-fc:
+  E: 1
+  D: 0
+  M: 1
+VII-iv-b:
+  E: 1
+  D: 0
+  M: 1
+VII-v-c:
+  E: 1
+  D: 0
+  M: 1
+VII-v-e:
+  E: 1
+  D: 0
+  M: 1
 IX-i-a:
   E: 1
   D: 0
@@ -330,15 +382,15 @@ X-vii-b:
   E: 1
   D: 0
   M: 1
-XI-i-a:
+X-viii-a-tf:
   E: 1
   D: 0
   M: 1
-XI-i-b:
+XI-i-a-fc:
   E: 1
   D: 0
   M: 1
-XI-i-c:
+XI-i-a-an:
   E: 1
   D: 0
   M: 1

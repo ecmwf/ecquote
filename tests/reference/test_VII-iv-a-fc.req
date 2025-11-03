@@ -1,0 +1,15 @@
+# subset=VII-iv-a-fc
+
+disseminate, 		
+class 		= 	od,
+stream 		= 	mmsf,
+expver 		= 	0001,
+type 		= 	fc,
+time 		= 	00,
+levtype 	= 	sfc,
+step 		= 	0,
+system 		= 	5,
+number 		= 	0,
+origin 		= 	ecmf,
+method 		= 	3,
+param 		= 	LSM/Z

@@ -1064,3 +1064,54 @@
   repres:
     gaussian: O320
     type: reduced_gg
+- mars:
+    class: mc
+    stream: oper
+    levtype: sfc
+    type: fc
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
+    class: mc
+    stream: oper
+    levtype: pl
+    type: fc
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
+    levtype: pt
+    stream: mmsa
+    type: em
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
+    levtype: pv
+    stream: eefh
+    type: cf
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
+    levtype: pv
+    stream: eefh
+    type: pf
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
+    levtype: sfc
+    stream: enwh
+    type: cf
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
+    levtype: sfc
+    stream: enwh
+    type: pf
+  repres:
+    gaussian: O1280
+    type: reduced_gg
