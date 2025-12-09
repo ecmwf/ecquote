@@ -10,8 +10,6 @@
 
 import logging
 
-import pytest
-
 from ecquote.request import Request
 from ecquote.splitters.canonical import splitter as canonical_splitter
 from ecquote.splitters.constant import splitter as constant_splitter
@@ -51,7 +49,7 @@ def test_canonical_splitter():
     splitted = list(canonical_splitter([r]))
     assert len(splitted) == 1
     r = splitted[0]
-    print(splitted)
+    # No debug printing here; keep test output clean
 
     assert r.fields["time"] == ("0000", "0600", "1200", "1800")
     assert r.fields["param"] == ("2t", "2talm2")
@@ -64,12 +62,9 @@ def test_canonical_splitter():
     assert r.postproc["area"] == ("90.0", "0.0", "-90.0", "359.5")
 
 
-# Disabled broken test following changes for the July 2024 service model we did not have
-# time to fix to the the release being urgent.
-@pytest.mark.skip(reason="Broken test after the July 2024 service model changes, needs to be fixed.")
 def test_subset_splitter_1():
     r = Request(
-        "stream=eefo,type=ep,levtype=sfc,param=2tag0/2talm1/2tag2/2talm2/2tag1/tpag10/tpag20,"
+        "class=od,stream=eefo,type=ep,levtype=sfc,param=2tag0/2talm1/2tag2/2talm2/2tag1/tpag10/tpag20,"
         "time=0000,step=96-264/264-432/432-600/600-768"
     )
     splitted = list(subset_splitter([r]))
@@ -79,7 +74,7 @@ def test_subset_splitter_1():
     assert splitted[0].subset.name == "VI-vi-a", splitted[0].subset.name
     assert splitted[1].subset.name == "VI-vi-b", splitted[1].subset.name
 
-    r = Request("stream=mmsf,origin=ecmf,system=5,method=1,type=fc,levtype=sfc,param=tp,time=0000,step=24")
+    r = Request("class=od,stream=mmsf,origin=ecmf,system=5,method=1,type=fc,levtype=sfc,param=tp,time=0000,step=24")
     splitted = list(subset_splitter([r]))
     assert len(splitted) == 1, (splitted, [r.subset for r in splitted])
     assert r.subset.name == "V-v-a", r.subset.name
@@ -88,9 +83,7 @@ def test_subset_splitter_1():
 def test_high_frequency_splitter():
     steps = "/".join(str(i) for i in range(0, 91))
     r = Request(f"type=fc,stream=oper,levtype=sfc,param=2t,step={steps}")
-    print(r)
     splitted = list(high_frequency_splitter([r]))
-    print(splitted)
     assert len(splitted) == 2, splitted
 
 

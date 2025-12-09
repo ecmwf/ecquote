@@ -14,6 +14,7 @@ import sys
 from collections import defaultdict
 
 from . import __version__
+from ._compat import UTC
 from .resources import config
 from .resources import resource
 from .utils import bytes
@@ -372,7 +373,7 @@ class Costing:
     def as_dict(self):
         result = {
             "version": __version__,
-            "utc_date": datetime.datetime.utcnow().isoformat().split(".")[0],
+            "utc_date": datetime.datetime.now(UTC).isoformat().split(".")[0],
         }
 
         if self.per_category:
@@ -431,7 +432,7 @@ class Costing:
         show_destinations=False,
     ):
         print("Version   :", __version__)
-        print("Date (UTC):", datetime.datetime.utcnow().isoformat().split(".")[0])
+        print("Date (UTC):", datetime.datetime.now(UTC).isoformat().split(".")[0])
         print()
         if detailed:
             minimum_area = config("minimum_area") / (360 * 180)

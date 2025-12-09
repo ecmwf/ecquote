@@ -1,0 +1,18 @@
+# subset=VII-iv-a
+
+disseminate, 		
+class 		= 	od,
+stream 		= 	mmsa,
+expver 		= 	0001,
+type 		= 	fcmean,
+time 		= 	00,
+levtype 	= 	sfc,
+fcmonth 	= 	1/2/3/4/5/6/7/8/9/10/11/12/13,
+system 		= 	5,
+number 		= 	0/1/2/3/4/5/6/7/8/9/10/11/12/13/14,
+origin 		= 	ecmf,
+method 		= 	3,
+param 		= 	STAL3/MSSRORA/ROARA/SDA/TCLWA/SSRDARA/MX2T24A/TCIWA/FALA/SSTA/IEWSA/SLHFARA/MSLA/
+				LMLTA/RSNA/STAL2/SWVAL3/LCCA/LICDA/STRDA/LSPA/SICA/SOIARA/SWVAL1/SUNDARA/TCWVA/
+				CPA/MN2T24A/SWVAL2/STRA/TCCA/TSRA/STAL4/TPARA/SWVAL4/EWSSARA/TTRA/TCO3A/INSSA/
+				SFARA/NSSSARA/SSRA/MSRORA/STAL1/EA/SSHFARA/2DA/2TA/10SIA/10FGA/10UA/10VA

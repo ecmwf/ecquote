@@ -12,6 +12,7 @@ import itertools
 import logging
 from collections import defaultdict
 
+from ._compat import UTC
 from .landsea import land_sea_ratio
 from .matching import Matcher
 from .repres import repres
@@ -346,7 +347,7 @@ class Request:
             s.update(r)
 
     def sample_mars_request(self):
-        date = datetime.datetime.utcnow() - datetime.timedelta(days=2)
+        date = datetime.datetime.now(UTC) - datetime.timedelta(days=2)
         date = date.date()
 
         # https://confluence.ecmwf.int/display/PGEN/ENS-extended+weekly+means+in+48r1#ENSextendedweeklymeansin48r1-MondaytoSunday

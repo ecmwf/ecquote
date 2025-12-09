@@ -45,15 +45,16 @@ I-i-d:
   frequency: 365
   mars:
     class: od
-    levtype:
-    - pt
-    - pv
-    stream:
+    levtype: pv
+    stream: 
     - oper
     - scda
-    type:
+    type: 
     - an
     - fc
+    levelist:
+    - 1500
+    - 2000
   set: I
   subset: I-i
 I-i-e:
@@ -1229,6 +1230,7 @@ VI-i-a:
     - tprate
     - tps
     - z
+    - avg_mucape
     stream: eefo
     type: taem
   set: VI
@@ -1558,7 +1560,9 @@ VI-v-d:
     levtype:
     - pt
     - pv
-    stream: eefo
+    stream: 
+    - eefo
+    - eefh
     type: pf
   set: VI
   subset: VI-v
@@ -1572,7 +1576,9 @@ VI-v-d-cf:
     levtype:
     - pt
     - pv
-    stream: eefo
+    stream: 
+    - eefo
+    - eefh
     type: cf
   set: VI
   subset: VI-v
@@ -1684,6 +1690,177 @@ VI-vii-b:
     type: sot
   set: VI
   subset: VI-vii
+VII-i-a:
+  description: Seasonal forecast
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: sfc
+    stream: msmm
+    type: 
+    - em
+    - fc
+    method: 3
+  set: VII
+  subset: VII-i
+VII-i-b:
+  description: Seasonal forecast
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: pl
+    stream: msmm
+    type: em
+    method: 3
+  set: VII
+  subset: VII-i
+VII-ii-a:
+  description: Seasonal forecast
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: sfc
+    stream: mmsa
+    type: 
+    - em
+    - fc
+    method: 3
+  set: VII
+  subset: VII-ii
+VII-ii-b:
+  description: Seasonal forecast
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: pl
+    stream: mmsa
+    type: em
+    method: 3
+  set: VII
+  subset: VII-ii
+VII-ii-c:
+  description: Seasonal forecast
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: pt
+    stream: mmsa
+    type: 
+    - em
+    - fcmean
+    method: 3
+  set: VII
+  subset: VII-ii
+VII-iii-a:
+  description: Seasonal forecast
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: sfc
+    stream: msmm
+    type: 
+    - fcmean
+    - fc
+    method: 3
+  set: VII
+  subset: VII-iii
+VII-iii-b:
+  description: Seasonal forecast
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: pl
+    stream: msmm
+    type: fcmean
+    method: 3
+  set: VII
+  subset: VII-iii
+VII-iii-c:
+  description: Seasonal forecast
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: sfc
+    stream: swmm
+    type: fcmean
+    method: 3
+  set: VII
+  subset: VII-iii
+VII-iv-a:
+  description: Seasonal forecast
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: sfc
+    stream: mmsa
+    type: fcmean
+    method: 3
+  set: VII
+  subset: VII-iv
+VII-iv-a-fc:
+  description: Seasonal forecast
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: sfc
+    stream: mmsf
+    type: fc
+    method: 3
+  set: VII
+  subset: VII-iv
+VII-iv-b:
+  description: Seasonal forecast
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: pl
+    stream: mmsa
+    type: fcmean
+    method: 3
+  set: VII
+  subset: VII-iv
+VII-v-c:
+  description: Seasonal data
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: pl
+    stream: mmsf
+    type: fc
+    method: 3
+    param:
+    - d
+    - gh
+    - t
+    - u
+    - vo
+    - z
+  set: VII
+  subset: VII-v
+VII-v-e:
+  description: Seasonal data
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: sfc
+    stream: wasf
+    type: fc
+    method: 3
+  set: VII
+  subset: VII-v
 IX-i-a:
   description: AIFS Single
   frequency: 365
@@ -1931,6 +2108,34 @@ X-vii-b:
     type: es
   set: X
   subset: X-vii
+X-viii-a-tf:
+  description: Ensemble means - Single level
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: enfo
+    type: tf
+  set: X
+  subset: X-viii
+XI-i-a-an:
+ description: CAMS Analysis - Surface
+ frequency: 365
+ mars:
+  class: mc
+  stream: oper
+  type: an
+ set: XI
+ subset: XI-i
+XI-i-a-fc:
+ description: CAMS Forecast - Surface
+ frequency: 365
+ mars:
+  class: mc
+  stream: oper
+  type: fc
+ set: XI
+ subset: XI-i
 XX-x-a:
   description: Free set with VI-i-a
   free_with: VI-i-a

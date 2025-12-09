@@ -1,0 +1,22 @@
+# subset=VII-iii-a
+
+disseminate, 		
+class 		= 	od,
+stream 		= 	msmm,
+expver 		=	0001,
+type 		= 	fcmean,
+time 		= 	00,
+levtype 	= 	sfc,
+fcmonth 	= 	1/2/3/4/5/6/7/8/9/10/11/12/13,
+system 		= 	5,
+number 		= 	0/1/2/3/4/5/6/7/8/9/10/11/12/13/14,
+origin 		= 	ecmf,
+method 		= 	3,
+#param 		= 	TCWV/TCO3/E/MX2T24/STL4/SWVL1/MN2T24/FAL/STRD/SD/STL3/
+#				TCIW/SSTK/LSP/SSHF/CP/SF/INSS/CI/SWVL3/TCC/SWVL2/
+#				STL1/SWVL4/SUND/IEWS/SLHF/NSSSRA/TP/TSR/STR/EWSSRA/STL2/TTR/
+#				MSL/RSN/SSR/TCLW/LCC/2D/2T/10SI/10U/10V/SOIRA/ssrd/ro/MSROR/MSSROR
+param 		= 	TCWV/TCO3/E/MX2T24/STL4/SWVL1/MN2T24/FAL/STRD/SD/STL3/TCIW/SSTK/
+				SOIRA/LSP/SSHF/CP/SF/INSS/CI/SWVL3/SSRD/TCC/SWVL2/STL1/SWVL4/
+				SUND/IEWS/LMLT/NSSSRA/SLHF/TPRATE/TSR/STR/EWSSRA/STL2/TTR/RO/MSL/
+				RSN/SSR/TCLW/LCC/LICD/2D/2T/10SI/10U/10V/10fg
