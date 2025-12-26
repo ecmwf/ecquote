@@ -45,16 +45,15 @@ I-i-d:
   frequency: 365
   mars:
     class: od
-    levtype: pv
-    stream: 
+    levtype:
+    - pv
+    - pt
+    stream:
     - oper
     - scda
     type: 
     - an
     - fc
-    levelist:
-    - 1500
-    - 2000
   set: I
   subset: I-i
 I-i-e:
