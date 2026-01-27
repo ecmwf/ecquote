@@ -39,13 +39,11 @@ def test_constant_splitter_2():
 
 
 def test_canonical_splitter():
-    r = Request(
-        """
+    r = Request("""
     type=an,stream=oper,levtype=sfc,param=2t/2TALM2,
     time=0/06/1200/18,grid=.5/5,area=90/0/-90/-.5,
     step=3/to/48/by/3,number=1/to/5
-    """
-    )
+    """)
     splitted = list(canonical_splitter([r]))
     assert len(splitted) == 1
     r = splitted[0]
