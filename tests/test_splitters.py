@@ -13,7 +13,6 @@ import logging
 from ecquote.request import Request
 from ecquote.splitters.canonical import splitter as canonical_splitter
 from ecquote.splitters.constant import splitter as constant_splitter
-# from ecquote.splitters.high_frequency import splitter as high_frequency_splitter
 from ecquote.splitters.shgg import splitter as shgg_splitter
 from ecquote.splitters.subset import splitter as subset_splitter
 
