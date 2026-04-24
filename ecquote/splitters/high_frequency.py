@@ -17,13 +17,13 @@ LOG = logging.getLogger(__name__)
 
 
 def splitter(requests):
-    # high_frequency_streams = config("high_frequency_streams")
-    # high_frequency = set(str(s) for s in set(range(0, 91, 1)) - set(range(0, 91, 3)))
+    high_frequency_streams = config("high_frequency_streams")
+    high_frequency = set(str(s) for s in set(range(0, 91, 1)) - set(range(0, 91, 3)))
 
     for r in requests:
-        # if r.stream in high_frequency_streams:
-        #     yield r.annotate("group", "high-frequency")
-        #     continue
+        if r.stream in high_frequency_streams:
+            yield r.annotate("group", "high-frequency")
+            continue
 
         if r.stream in ("enfo", "waef") and "time" in r.fields:
             highf = []
@@ -58,10 +58,10 @@ def splitter(requests):
             other = []
 
             for p in r.fields["step"]:
-                # if p in high_frequency:
-                #     highf.append(p)
-                # else:
-                other.append(p)
+                if p in high_frequency:
+                    highf.append(p)
+                else:
+                    other.append(p)
 
             if highf:
                 yield Request(r, step=tuple(highf)).annotate("group", "high-frequency").annotate(
