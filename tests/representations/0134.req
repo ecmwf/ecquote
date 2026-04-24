@@ -5,6 +5,6 @@ levelist=2000,
 levtype=pv,
 param=z,
 step=0,
-stream=scda,
+stream=oper,
 time=0600/1800,
 type=an

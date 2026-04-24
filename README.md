@@ -19,9 +19,8 @@ a series of [MARS requests](https://confluence.ecmwf.int/display/UDOC/MARS+comma
     type=fc,
     step=0/to/240/by/24
 
-    type=cf,
+    <!-- type=cf, -->
     stream=enfo
-
     type=pf,
     number=1/to/50
 

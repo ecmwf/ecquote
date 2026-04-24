@@ -4,9 +4,7 @@ I-i-a:
   mars:
     class: od
     levtype: sfc
-    stream:
-    - oper
-    - scda
+    stream: oper
     type:
     - an
     - fc
@@ -18,9 +16,7 @@ I-i-b:
   mars:
     class: od
     levtype: pl
-    stream:
-    - oper
-    - scda
+    stream: oper
     type:
     - an
     - fc
@@ -32,9 +28,7 @@ I-i-c:
   mars:
     class: od
     levtype: ml
-    stream:
-    - oper
-    - scda
+    stream: oper
     type:
     - an
     - fc
@@ -48,9 +42,7 @@ I-i-d:
     levtype:
     - pv
     - pt
-    stream:
-    - oper
-    - scda
+    stream: oper
     type: 
     - an
     - fc
@@ -63,9 +55,7 @@ I-i-e:
     class: od
     levtype:
     - sol
-    stream:
-    - oper
-    - scda
+    stream: oper
     type:
     - an
     - fc
@@ -79,9 +69,7 @@ I-i-f:
     class: od
     levtype:
     - sfc
-    stream:
-    - oper
-    - scda
+    stream: oper
     type:
     - fc
     never: match # never match with any request
@@ -104,9 +92,7 @@ I-ii:
   frequency: 365
   mars:
     class: od
-    stream:
-    - oper
-    - scda
+    stream: oper
     type: wp
   set: I
   subset: I-ii
@@ -115,9 +101,7 @@ I-iii:
   frequency: 365
   mars:
     class: od
-    stream:
-    - oper
-    - scda
+    stream: oper
     type: tf
   set: I
   subset: I-iii
@@ -126,9 +110,7 @@ I-iv:
   frequency: 365
   mars:
     class: od
-    stream:
-    - oper
-    - scda
+    stream: oper
     type: ssd
   set: I
   subset: I-iv
@@ -138,9 +120,7 @@ II-i:
   mars:
     class: od
     levtype: sfc
-    stream:
-    - scwv
-    - wave
+    stream: wave
     type:
     - an
     - fc
@@ -149,9 +129,9 @@ II-i:
 III-i-a:
   description: Atmospheric fields - Single level
   free_data:
-  - levtype: sfc
-    stream: enfo
-    type: cf
+  # - levtype: sfc
+  #   stream: enfo
+  #   type: cf
   - levtype: sfc
     stream: enfh
     type: pf
@@ -166,17 +146,17 @@ III-i-a:
     type: pf
   set: III
   subset: III-i
-III-i-a-cf:
-  description: Free set with III-i-a
-  free_with: III-i-a
-  frequency: 365
-  mars:
-    class: od
-    levtype: sfc
-    stream: enfo
-    type: cf
-  set: III
-  subset: III-i
+# III-i-a-cf:
+#   description: Free set with III-i-a
+#   free_with: III-i-a
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype: sfc
+#     stream: enfo
+#     type: cf
+#   set: III
+#   subset: III-i
 III-i-a-hf:
   description: Free set with III-i-a
   free_with: III-i-a
@@ -194,9 +174,9 @@ III-i-a-hf:
 III-i-b:
   description: Atmospheric fields - Pressure levels
   free_data:
-  - levtype: pl
-    stream: enfo
-    type: cf
+  # - levtype: pl
+    # stream: enfo
+    # type: cf
   - levtype: pl
     stream: enfh
     type: pf
@@ -211,17 +191,17 @@ III-i-b:
     type: pf
   set: III
   subset: III-i
-III-i-b-cf:
-  description: Free set with III-i-b
-  free_with: III-i-b
-  frequency: 365
-  mars:
-    class: od
-    levtype: pl
-    stream: enfo
-    type: cf
-  set: III
-  subset: III-i
+# III-i-b-cf:
+#   description: Free set with III-i-b
+#   free_with: III-i-b
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype: pl
+#     stream: enfo
+#     type: cf
+#   set: III
+#   subset: III-i
 III-i-b-hf:
   description: Free set with III-i-b
   free_with: III-i-b
@@ -239,9 +219,9 @@ III-i-b-hf:
 III-i-c:
   description: Atmospheric fields - Model levels
   free_data:
-  - levtype: ml
-    stream: enfo
-    type: cf
+  # - levtype: ml
+    # stream: enfo
+    # type: cf
   - levtype: ml
     stream: enfh
     type: pf
@@ -256,17 +236,17 @@ III-i-c:
     type: pf
   set: III
   subset: III-i
-III-i-c-cf:
-  description: Free set with III-i-c
-  free_with: III-i-c
-  frequency: 365
-  mars:
-    class: od
-    levtype: ml
-    stream: enfo
-    type: cf
-  set: III
-  subset: III-i
+# III-i-c-cf:
+#   description: Free set with III-i-c
+#   free_with: III-i-c
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype: ml
+#     stream: enfo
+#     type: cf
+#   set: III
+#   subset: III-i
 III-i-c-hf:
   description: Free set with III-i-c
   free_with: III-i-c
@@ -284,11 +264,11 @@ III-i-c-hf:
 III-i-d:
   description: Atmospheric fields - Potential vorticity levels
   free_data:
-  - levtype:
-    - pv
-    - pt
-    stream: enfo
-    type: cf
+  # - levtype:
+  #   - pv
+  #   - pt
+  #   stream: enfo
+  #   type: cf
   - levtype:
     - pv
     - pt
@@ -314,19 +294,19 @@ III-i-d:
     type: pf
   set: III
   subset: III-i
-III-i-d-cf:
-  description: Free set with III-i-d
-  free_with: III-i-d
-  frequency: 365
-  mars:
-    class: od
-    levtype:
-    - pt
-    - pv
-    stream: enfo
-    type: cf
-  set: III
-  subset: III-i
+# III-i-d-cf:
+#   description: Free set with III-i-d
+#   free_with: III-i-d
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype:
+#     - pt
+#     - pv
+#     stream: enfo
+#     type: cf
+#   set: III
+#   subset: III-i
 III-i-d-hf:
   description: Free set with III-i-d
   free_with: III-i-d
@@ -346,9 +326,9 @@ III-i-d-hf:
 III-i-e:
   description: Atmospheric fields - Other surface levels
   free_data:
-  - levtype: sol
-    stream: enfo
-    type: cf
+  # - levtype: sol
+  #   stream: enfo
+  #   type: cf
   - levtype: sol
     stream: enfh
     type: pf
@@ -363,17 +343,17 @@ III-i-e:
     type: pf
   set: III
   subset: III-i
-III-i-e-cf:
-  description: Free set with III-i-e
-  free_with: III-i-e
-  frequency: 365
-  mars:
-    class: od
-    levtype: sol
-    stream: enfo
-    type: cf
-  set: III
-  subset: III-i
+# III-i-e-cf:
+#   description: Free set with III-i-e
+#   free_with: III-i-e
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype: sol
+#     stream: enfo
+#     type: cf
+#   set: III
+#   subset: III-i
 III-i-e-hf:
   description: Free set with III-i-e
   free_with: III-i-e
@@ -392,9 +372,9 @@ III-i-f:
   # costed with III-i-a as same composition
   description: Atmospheric fields - Thermofeel Products
   free_data:
-  - levtype: sfc
-    stream: enfo
-    type: cf
+  # - levtype: sfc
+  #   stream: enfo
+  #   type: cf
   frequency: 365
   mars:
     class: od
@@ -416,30 +396,30 @@ III-i-f:
     - wpbt
   set: III
   subset: III-i
-III-i-f-cf:
-  description: Free set with III-i-f
-  free_with: III-i-e
-  frequency: 365
-  mars:
-    class: od
-    levtype: sfc
-    stream: enfo
-    type: cf
-    never: match # never match with any request
-    param:
-    - 2r
-    - utci
-    - mrt
-    - heatx
-    - wcf
-    - aptmp
-    - hmdx
-    - nefft
-    - gt
-    - wbgt
-    - wpbt
-  set: III
-  subset: III-i
+# III-i-f-cf:
+#   description: Free set with III-i-f
+#   free_with: III-i-e
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype: sfc
+#     stream: enfo
+#     type: cf
+#     never: match # never match with any request
+#     param:
+#     - 2r
+#     - utci
+#     - mrt
+#     - heatx
+#     - wcf
+#     - aptmp
+#     - hmdx
+#     - nefft
+#     - gt
+#     - wbgt
+#     - wpbt
+#   set: III
+#   subset: III-i
 III-ii:
   description: Clusters
   frequency: 365
@@ -781,9 +761,9 @@ III-viii:
 IV-i:
   description: Ensemble Wave fields
   free_data:
-  - levtype: sfc
-    stream: waef
-    type: cf
+  # - levtype: sfc
+  #   stream: waef
+  #   type: cf
   - levtype: sfc
     stream: enwh
     type: cf
@@ -798,17 +778,17 @@ IV-i:
     type: pf
   set: IV
   subset: IV-i
-IV-i-cf:
-  description: Free set with IV-i
-  free_with: IV-i
-  frequency: 365
-  mars:
-    class: od
-    levtype: sfc
-    stream: waef
-    type: cf
-  set: IV
-  subset: IV-i
+# IV-i-cf:
+#   description: Free set with IV-i
+#   free_with: IV-i
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype: sfc
+#     stream: waef
+#     type: cf
+#   set: IV
+#   subset: IV-i
 IV-ii-a:
   description: Probabilities - Instantaneous weather events
   frequency: 365
