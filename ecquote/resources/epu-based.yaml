@@ -326,6 +326,14 @@ VII-iv-b:
   E: 1
   D: 0
   M: 1
+VII-v-a:
+  E: 1
+  D: 0
+  M: 1
+VII-v-b:
+  E: 1
+  D: 0
+  M: 1
 VII-v-c:
   E: 1
   D: 0
@@ -391,6 +399,22 @@ XI-i-a-fc:
   D: 0
   M: 1
 XI-i-a-an:
+  E: 1
+  D: 0
+  M: 1
+XII-i-a-fc:
+  E: 1
+  D: 0
+  M: 1
+XIII-i-a:
+  E: 1
+  D: 0
+  M: 1
+XII-iii-a:
+  E: 1
+  D: 0
+  M: 1
+XII-iii-b:
   E: 1
   D: 0
   M: 1

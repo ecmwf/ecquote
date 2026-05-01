@@ -1809,6 +1809,34 @@ VII-iv-b:
     method: 3
   set: VII
   subset: VII-iv
+VII-v-a:
+  description: Seasonal data
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: sfc
+    stream: mmsf
+    type: fc
+    method: 3
+    param:
+    - 10u
+    - 10v
+    - msl
+  set: VII
+  subset: VII-v
+VII-v-b:
+  description: Seasonal data
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: sfc
+    stream: mmsf
+    type: fc
+    method: 3
+  set: VII
+  subset: VII-v
 VII-v-c:
   description: Seasonal data
   frequency: 365
@@ -2115,6 +2143,85 @@ XI-i-a-fc:
   type: fc
  set: XI
  subset: XI-i
+XII-i-a-fc:
+ description: AIFS WAVE data
+ frequency: 365
+ mars:
+  class: ai
+  stream: wave
+  type: fc
+ set: XII
+ subset: XII-i
+XIII-i-a:
+  description: AIFS ENS 
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: waef
+    type: 
+     - cf
+     - pf
+  set: XIII
+  subset: XIII-i
+XIII-iii-a:
+  description: AIFS ENS
+  free_with: XIII-i-a  
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: waef
+    type: ep
+    step:
+    - 12
+    - 24
+    - 36
+    - 48
+    - 60
+    - 72
+    - 84
+    - 96
+    - 108
+    - 120
+    - 132
+    - 144
+    - 156
+    - 168
+    - 180
+    - 192
+    - 204
+    - 216
+    - 228
+    - 240
+    - 252
+    - 264
+    - 276
+    - 288
+    - 300
+    - 312
+    - 324
+    - 336
+    - 348
+    - 360
+  set: XIII
+  subset: XIII-iii
+XIII-iii-b:
+  description: AIFS ENS
+  free_with: XIII-i-a  
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: waef
+    type: ep
+    step:
+    - 120-240
+    - 120-168
+    - 168-240
+    - 240-360
+  set: XIII
+  subset: XIII-iii
 XX-x-a:
   description: Free set with VI-i-a
   free_with: VI-i-a
