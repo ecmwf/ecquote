@@ -369,13 +369,6 @@ class Request:
         r.update(self.use)
         r.setdefault("levtype", "off")
 
-        if (r["stream"], r["type"], r["levtype"]) in (
-            ("scda", "an", "pv"),
-            ("scda", "an", "pt"),
-        ):
-            # Not in MARS
-            r["stream"] = "oper"
-
         if (r["stream"], r["type"], r["levtype"]) in (("enfo", "cs", "pl"),):
             pass
         elif (r["stream"], r["type"], r["levtype"]) in (
