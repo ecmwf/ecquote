@@ -484,7 +484,6 @@ III-iii-b:
     class: od
     levtype: sfc
     param:
-    - 2tl273
     - tpl01
     - tprg3
     - tprg5
@@ -585,15 +584,25 @@ III-v-a:
     levtype: sfc
     step:
     - 0-24
+    - 6-30/
     - 12-36
+    - 18-42
     - 24-48
+    - 30-54
     - 36-60
+    - 42-66
     - 48-72
+    - 54-78
     - 60-84
+    - 66-90
     - 72-96
+    - 78-102
     - 84-108
+    - 90-114
     - 96-120
+    - 102-126
     - 108-132
+    - 114-138
     - 120-144
     - 132-156
     - 144-168
@@ -653,15 +662,25 @@ III-v-c:
     levtype: sfc
     step:
     - 0-24
+    - 6-30/
     - 12-36
+    - 18-42
     - 24-48
+    - 30-54
     - 36-60
+    - 42-66
     - 48-72
+    - 54-78
     - 60-84
+    - 66-90
     - 72-96
+    - 78-102
     - 84-108
+    - 90-114
     - 96-120
+    - 102-126
     - 108-132
+    - 114-138
     - 120-144
     - 132-156
     - 144-168
@@ -1315,7 +1334,26 @@ VI-iii-a:
   free_data:
     levtype: sfc
     stream: eefh
-    type: fcmean
+    type: 
+    - fcmean
+    - fcmax
+    param:
+    - tcc
+    - stl1
+    - msdr
+    - tprate
+    - sd
+    - mn2t6
+    - mx2t6
+    - msl
+    - rsn
+    - sf
+    - 2t
+    - 2d
+    - 10v
+    - 10u
+    - 100u
+    - 100v
   frequency: 365
   ic_frequency: 104
   mars:
@@ -1340,8 +1378,12 @@ VI-iii-a:
     - tcc
     - tprate
     - z
+    - avg_mucape
+    - sf
     stream: eefo
-    type: fcmean
+    type: 
+    - fcmean
+    - fcmax
   set: VI
   subset: VI-iii
 VI-iii-b:
@@ -1679,7 +1721,6 @@ VII-i-a:
     stream: msmm
     type: 
     - em
-    - fc
     method: 3
   set: VII
   subset: VII-i
@@ -1703,10 +1744,23 @@ VII-ii-a:
     class: od
     levtype: sfc
     stream: mmsa
-    type: 
-    - em
-    - fc
+    type: em
     method: 3
+  set: VII
+  subset: VII-ii
+VII-ii-a-fc:
+  description: Seasonal forecast
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    levtype: sfc
+    stream: mmsf
+    type: fc
+    method: 3
+    param:
+    - lsm
+    - z
   set: VII
   subset: VII-ii
 VII-ii-b:
@@ -1745,7 +1799,20 @@ VII-iii-a:
     stream: msmm
     type: 
     - fcmean
-    - fc
+    fcmonth:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
     method: 3
   set: VII
   subset: VII-iii
@@ -1757,8 +1824,23 @@ VII-iii-b:
     class: od
     levtype: pl
     stream: msmm
-    type: fcmean
+    type: 
+    - fcmean
     method: 3
+    fcmonth:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
   set: VII
   subset: VII-iii
 VII-iii-c:
@@ -1815,85 +1897,59 @@ VII-iv-b:
   set: VII
   subset: VII-iv
 VII-v-a:
-  description: Seasonal data
+  description: Seasonal data - 12-hourly
   frequency: 365
   ic_frequency: 104
   mars:
     class: od
-    levtype: sfc
     stream: mmsf
     type: fc
     method: 3
-    param:
-    - 10u
-    - 10v
-    - msl
-  set: VII
-  subset: VII-v
-VII-v-b:
-  description: Seasonal data
-  frequency: 365
-  ic_frequency: 104
-  mars:
-    class: od
+    system: 5
+    origin: ecmf
     levtype: sfc
-    stream: mmsf
-    type: fc
-    method: 3
-    step: 0
-    number: 
-     - 0
-     - 1
-     - 2
-     - 3
-     - 4
-     - 5
-     - 6
-     - 7
-     - 8
-     - 9
-     - 10
-     - 11
-     - 12
-     - 13
-     - 14
-    param:
-      - gh
-      - cl
-      - dl
-      - z
-      - lsm
   set: VII
   subset: VII-v
+# VII-v-b:
+#   description: Seasonal data - 24-hourly
+#   frequency: 365
+#   ic_frequency: 104
+#   mars:
+#     class: od
+#     stream: mmsf
+#     type: fc
+#     method: 3
+#     system: 5
+#     origin: ecmf
+#     levtype: sfc
+#   set: VII
+#   subset: VII-v
 VII-v-c:
   description: Seasonal data
   frequency: 365
   ic_frequency: 104
   mars:
     class: od
-    levtype: pl
     stream: mmsf
     type: fc
     method: 3
-    param:
-    - d
-    - gh
-    - t
-    - u
-    - vo
-    - z
+    system: 5
+    origin: ecmf
+    levtype: pl
   set: VII
   subset: VII-v
 VII-v-e:
-  description: Seasonal data
+  mars:
+  description: Seasonal forecast - wave (wasf)
   frequency: 365
   ic_frequency: 104
   mars:
     class: od
-    levtype: sfc
     stream: wasf
     type: fc
     method: 3
+    system: 5
+    levtype: sfc
   set: VII
   subset: VII-v
 IX-i-a:
@@ -2011,37 +2067,6 @@ X-iii-a:
     - 10spg10
     - 10spg15
     - 2tl273
-    step:
-    - 12
-    - 24
-    - 36
-    - 48
-    - 60
-    - 72
-    - 84
-    - 96
-    - 108
-    - 120
-    - 132
-    - 144
-    - 156
-    - 168
-    - 180
-    - 192
-    - 204
-    - 216
-    - 228
-    - 240
-    - 252
-    - 264
-    - 276
-    - 288
-    - 300
-    - 312
-    - 324
-    - 336
-    - 348
-    - 360
     stream: enfo
     type: ep
   set: X
@@ -2053,52 +2078,17 @@ X-iii-b:
     class: ai
     levtype: sfc
     param:
-    - 2tl273
     - tpg1
+    - tpg5
     - tpg10
-    - tpg100
     - tpg20
     - tpg25
-    - tpg5
     - tpg50
+    - tpg100
     - tpl01
+    - tprl1
     - tprg3
     - tprg5
-    - tprl1
-    step:
-    - 0-24
-    - 12-36
-    - 24-48
-    - 36-60
-    - 48-72
-    - 60-84
-    - 72-96
-    - 84-108
-    - 96-120
-    - 108-132
-    - 120-144
-    - 120-168
-    - 120-240
-    - 132-156
-    - 144-168
-    - 156-180
-    - 168-192
-    - 168-240
-    - 180-204
-    - 192-216
-    - 204-228
-    - 216-240
-    - 228-252
-    - 240-264
-    - 240-360
-    - 252-276
-    - 264-288
-    - 276-300
-    - 288-312
-    - 300-324
-    - 312-336
-    - 324-348
-    - 336-360
     stream: enfo
     type: ep
   set: X
