@@ -414,7 +414,7 @@ class Request:
         # 1st of the month, where users need to provide a 'use' keyword, which we discard
         # so it's not picked up by further logic handling the 'use' keyword.
         if r.get("stream") in ("enfh", "efhs", "enwh", "wehs"):
-            while date.weekday() not in MEDIUM_RANGE_HINDCAST_DAYS:
+            while date.day not in MEDIUM_RANGE_HINDCAST_DAYS:
                 date = date - datetime.timedelta(days=1)
             r.pop("use", None)
 
@@ -422,7 +422,7 @@ class Request:
         # of the month, where users need to provide a 'use' keyword, which we discard so
         # it's not picked up by further logic handling the 'use' keyword.
         if r.get("stream") in ("eefh", "eehs", "weeh"):
-            while date.weekday() not in SUBSEASONAL_HINDCAST_DAYS:
+            while date.day not in SUBSEASONAL_HINDCAST_DAYS:
                 date = date - datetime.timedelta(days=1)
             r.pop("use", None)
 
