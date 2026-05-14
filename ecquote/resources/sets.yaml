@@ -2132,14 +2132,15 @@ XI-i-a-fc:
  set: XI
  subset: XI-i
 XII-i-a-fc:
- description: AIFS WAVE data
- frequency: 365
- mars:
-  class: ai
-  stream: wave
-  type: fc
- set: XII
- subset: XII-i
+  description: AIFS WAVE data
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: wave
+    type: fc
+  set: XII
+  subset: XII-i
 XIII-i-a:
   description: AIFS ENS
   free_data:
