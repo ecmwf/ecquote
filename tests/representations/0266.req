@@ -1,6 +1,6 @@
 class=mc,
 domain=g,
-expver=0080,
+expver=0001,
 levtype=sfc,
 param=aod550,
 step=0,

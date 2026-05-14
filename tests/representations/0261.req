@@ -1,6 +1,6 @@
 class=ai,
 domain=g,
-expver=0105,
+expver=0001,
 levelist=250/500/850,
 levtype=pl,
 model=aifs-ens,

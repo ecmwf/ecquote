@@ -1,6 +1,6 @@
 class=ai,
 domain=g,
-expver=0105,
+expver=0001,
 levtype=sfc,
 model=aifs-single,
 param=h1012/h1214/h1417/h1721/h2125/h2530/swh/mwd/mwp/cdww,

@@ -1,6 +1,6 @@
 class=ai,
 domain=g,
-expver=0105,
+expver=0001,
 levtype=sfc,
 model=aifs-ens,
 param=swhg2/swhg4/swhg6/swhg8/mwpg8/mwpg10/mwpg12/mwpg15,
