@@ -1749,21 +1749,6 @@ VII-ii-a:
     method: 3
   set: VII
   subset: VII-ii
-VII-ii-a-fc:
-  description: Seasonal forecast
-  frequency: 365
-  ic_frequency: 104
-  mars:
-    class: od
-    levtype: sfc
-    stream: mmsf
-    type: fc
-    method: 3
-    param:
-    - lsm
-    - z
-  set: VII
-  subset: VII-ii
 VII-ii-b:
   description: Seasonal forecast
   frequency: 365
@@ -1866,23 +1851,6 @@ VII-iv-a:
     stream: mmsa
     type: fcmean
     method: 3
-  set: VII
-  subset: VII-iv
-VII-iv-a-fc:
-  description: Seasonal forecast
-  frequency: 365
-  ic_frequency: 104
-  mars:
-    class: od
-    levtype: sfc
-    stream: mmsf
-    type: fc
-    method: 3
-    step: 0
-    number: 0
-    param:
-    - lsm
-    - z
   set: VII
   subset: VII-iv
 VII-iv-b:
