@@ -376,6 +376,8 @@ class Request:
             ("enfo", "pf", "ml"),
             ("eefo", "cf", "ml"),
             ("eefo", "pf", "ml"),
+            ("enfh", "cf", "ml"),
+            ("enfh", "pf", "ml"),
         ):
             # Not in MARS
             r["param"] = "q/z"
@@ -444,7 +446,6 @@ class Request:
         if r["stream"] in ("enfh", "enwh", "eefh", "weeh"):  # TODO: add to config
             hdate = datetime.date(date.year - 5, date.month, date.day)
             r["hdate"] = hdate.isoformat()
-            r["levtype"] = "sfc"
 
         if "step" in self.subset.mars:
             r["step"] = "/".join(set(str(x) for x in self.subset.mars["step"]))
