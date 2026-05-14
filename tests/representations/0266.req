@@ -1,0 +1,9 @@
+class=mc,
+domain=g,
+expver=0080,
+levtype=sfc,
+param=aod550,
+step=0,
+stream=oper,
+time=0000/1200,
+type=an
