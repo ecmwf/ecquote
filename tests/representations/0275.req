@@ -1,0 +1,9 @@
+class=od,
+domain=g,
+expver=0001,
+levtype=sfc,
+param=tprl1,
+step=120-240/120-168/168-240/240-360,
+stream=enfo,
+time=0000/1200,
+type=ep
