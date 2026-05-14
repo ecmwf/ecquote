@@ -841,9 +841,15 @@
     gaussian: N320
     type: reduced_gg
 - mars:
-    dataset:
-    - XIII-iii-a
-    - XIII-iii-b
+    dataset: XIII-iii-a
+    levtype: sfc
+    stream: waef
+    type: ep
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: XIII-iii-b
     levtype: sfc
     stream: waef
     type: ep
