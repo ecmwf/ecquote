@@ -1909,7 +1909,6 @@ VII-v-c:
   set: VII
   subset: VII-v
 VII-v-e:
-  mars:
   description: Seasonal forecast - wave (wasf)
   frequency: 365
   ic_frequency: 104
