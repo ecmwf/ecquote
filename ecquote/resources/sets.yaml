@@ -792,16 +792,6 @@ III-viii:
   subset: III-viii
 IV-i:
   description: Ensemble Wave fields
-  free_data:
-  # - levtype: sfc
-  #   stream: waef
-  #   type: cf
-  - levtype: sfc
-    stream: enwh
-    type: cf
-  - levtype: sfc
-    stream: enwh
-    type: pf
   frequency: 365
   mars:
     class: od
@@ -2399,5 +2389,29 @@ XX-x-r:
     levtype: pl
     stream: eefh
     type: taem
+  set: XX
+  subset: XX-x
+XX-x-s:
+  description: Free set with IV-i
+  free_with: IV-i
+  frequency: 84
+  deliveries_per_dow: 12
+  mars:
+    class: od
+    levtype: sfc
+    stream: enwh
+    type: cf
+  set: XX
+  subset: XX-x
+XX-x-t:
+  description: Free set with IV-i
+  free_with: IV-i
+  frequency: 84
+  deliveries_per_dow: 12
+  mars:
+    class: od
+    levtype: sfc
+    stream: enwh
+    type: pf
   set: XX
   subset: XX-x
