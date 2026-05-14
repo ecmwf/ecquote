@@ -1001,7 +1001,7 @@
     class: ai
     levtype: sfc
     stream: waef
-    type: cf
+    type: pf
   repres:
     gaussian: N320
     type: reduced_gg
@@ -1009,7 +1009,7 @@
     class: ai
     levtype: sfc
     stream: waef
-    type: pf
+    type: cf
   repres:
     gaussian: N320
     type: reduced_gg

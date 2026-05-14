@@ -2141,20 +2141,33 @@ XII-i-a-fc:
  set: XII
  subset: XII-i
 XIII-i-a:
-  description: AIFS ENS 
+  description: AIFS ENS
+  free_data:
+  - class: ai
+    levtype: sfc
+    stream: waef
+    type: cf
   frequency: 365
   mars:
     class: ai
     levtype: sfc
     stream: waef
-    type: 
-     - cf
-     - pf
+    type: pf
+  set: XIII
+  subset: XIII-i
+XIII-i-a-cf:
+  description: Free set with XIII-i-a
+  free_with: XIII-i-a
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: waef
+    type: cf
   set: XIII
   subset: XIII-i
 XIII-iii-a:
   description: AIFS ENS
-  free_with: XIII-i-a  
   frequency: 365
   mars:
     class: ai
@@ -2196,7 +2209,6 @@ XIII-iii-a:
   subset: XIII-iii
 XIII-iii-b:
   description: AIFS ENS
-  free_with: XIII-i-a  
   frequency: 365
   mars:
     class: ai
