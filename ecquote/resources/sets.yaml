@@ -43,7 +43,7 @@ I-i-d:
     - pv
     - pt
     stream: oper
-    type: 
+    type:
     - an
     - fc
   set: I
@@ -1336,7 +1336,7 @@ VI-iii-a:
   free_data:
     levtype: sfc
     stream: eefh
-    type: 
+    type:
     - fcmean
     - fcmax
     param:
@@ -1383,7 +1383,7 @@ VI-iii-a:
     - avg_mucape
     - sf
     stream: eefo
-    type: 
+    type:
     - fcmean
     - fcmax
   set: VI
@@ -1583,7 +1583,7 @@ VI-v-d:
     levtype:
     - pt
     - pv
-    stream: 
+    stream:
     - eefo
     - eefh
     type: pf
@@ -1599,7 +1599,7 @@ VI-v-d-cf:
     levtype:
     - pt
     - pv
-    stream: 
+    stream:
     - eefo
     - eefh
     type: cf
@@ -1721,7 +1721,7 @@ VII-i-a:
     class: od
     levtype: sfc
     stream: msmm
-    type: 
+    type:
     - em
     method: 3
   set: VII
@@ -1770,7 +1770,7 @@ VII-ii-c:
     class: od
     levtype: pt
     stream: mmsa
-    type: 
+    type:
     - em
     - fcmean
     method: 3
@@ -1784,7 +1784,7 @@ VII-iii-a:
     class: od
     levtype: sfc
     stream: msmm
-    type: 
+    type:
     - fcmean
     fcmonth:
     - 1
@@ -1811,7 +1811,7 @@ VII-iii-b:
     class: od
     levtype: pl
     stream: msmm
-    type: 
+    type:
     - fcmean
     method: 3
     fcmonth:
@@ -2114,23 +2114,23 @@ X-viii-a-tf:
   set: X
   subset: X-viii
 XI-i-a-an:
- description: CAMS Analysis - Surface
- frequency: 365
- mars:
-  class: mc
-  stream: oper
-  type: an
- set: XI
- subset: XI-i
+  description: CAMS Analysis - Surface
+  frequency: 365
+  mars:
+    class: mc
+    stream: oper
+    type: an
+  set: XI
+  subset: XI-i
 XI-i-a-fc:
- description: CAMS Forecast - Surface
- frequency: 365
- mars:
-  class: mc
-  stream: oper
-  type: fc
- set: XI
- subset: XI-i
+  description: CAMS Forecast - Surface
+  frequency: 365
+  mars:
+    class: mc
+    stream: oper
+    type: fc
+  set: XI
+  subset: XI-i
 XII-i-a-fc:
   description: AIFS WAVE data
   frequency: 365
