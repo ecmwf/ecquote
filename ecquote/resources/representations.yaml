@@ -217,7 +217,10 @@
   model_levels: 137
   repres:
     gaussian: O1280
-    type: reduced_gg
+    resol: 1279
+    type:
+    - reduced_gg
+    - sh
 - mars:
     class: od
     levtype: ml
@@ -226,7 +229,10 @@
   model_levels: 137
   repres:
     gaussian: O1280
-    type: reduced_gg
+    resol: 1279
+    type:
+    - reduced_gg
+    - sh
 - mars:
     class: od
     levtype: pv
@@ -709,14 +715,6 @@
 - mars:
     class: od
     levtype: pv
-    stream: eefh
-    type: cf
-  repres:
-    gaussian: O320
-    type: reduced_gg
-- mars:
-    class: od
-    levtype: pv
     stream: eefo
     type: cf
   repres:
@@ -725,6 +723,14 @@
     type:
     - reduced_gg
     - sh
+- mars:
+    class: od
+    levtype: pv
+    stream: eefh
+    type: cf
+  repres:
+    gaussian: O320
+    type: reduced_gg
 - mars:
     class: od
     levtype: ml
@@ -923,6 +929,14 @@
     type: tf
 - mars:
     class: mc
+    levtype: sfc
+    stream: oper
+    type: an
+  repres:
+    gaussian: N256
+    type: reduced_gg
+- mars:
+    class: mc
     levtype: pl
     stream: oper
     type: an
@@ -944,14 +958,6 @@
     type:
     - reduced_gg
     - sh
-- mars:
-    class: mc
-    levtype: sfc
-    stream: oper
-    type: an
-  repres:
-    gaussian: N256
-    type: reduced_gg
 - mars:
     class: mc
     levtype: sfc
