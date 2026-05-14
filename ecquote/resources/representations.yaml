@@ -123,6 +123,7 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    dataset: II-i
     levtype: sfc
     stream: wave
     type: fc
@@ -339,6 +340,7 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    dataset: IV-i
     levtype: sfc
     stream: waef
     type: pf
@@ -346,6 +348,9 @@
     gaussian: O1280
     type: reduced_gg
 - mars:
+    dataset:
+    - IV-ii-a
+    - IV-ii-b
     levtype: sfc
     stream: waef
     type: ep
@@ -804,6 +809,40 @@
     levtype: pl
     stream: enfo
     type: es
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: XII-i-a-fc
+    levtype: sfc
+    stream: wave
+    type: fc
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: XIII-i-a
+    levtype: sfc
+    stream: waef
+    type: cf
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset: XIII-i-a
+    levtype: sfc
+    stream: waef
+    type: pf
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    dataset:
+    - XIII-iii-a
+    - XIII-iii-b
+    levtype: sfc
+    stream: waef
+    type: ep
   repres:
     gaussian: N320
     type: reduced_gg
