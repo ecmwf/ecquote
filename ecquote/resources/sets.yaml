@@ -616,6 +616,9 @@ III-v-a:
   set: III
   subset: III-v
 III-v-b:
+  # The 06z/18z step ranges below (6-*, 18-*, 30-*, 42-*, 54-*, 66-*) appear
+  # in the operational tagging file for set-III-v-b but are not advertised
+  # in the ECMWF PRC or on www.ecmwf.int. Kept here for tagging-file coverage.
   comment: 240-360 and 0-360 are not in the catalogue
   description: Extreme Forecast Index (EFI) 3, 5 and 10-day ranges
   frequency: 365
@@ -627,16 +630,24 @@ III-v-b:
     - 0-120
     - 0-240
     - 0-360
+    - 6-78
+    - 6-126
     - 12-84
     - 12-132
+    - 18-90
+    - 18-138
     - 24-96
     - 24-144
+    - 30-102
     - 36-108
     - 36-156
+    - 42-114
     - 48-120
     - 48-168
+    - 54-126
     - 60-132
     - 60-180
+    - 66-138
     - 72-144
     - 72-192
     - 84-156
