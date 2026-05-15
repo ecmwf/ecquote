@@ -4,9 +4,7 @@ I-i-a:
   mars:
     class: od
     levtype: sfc
-    stream:
-    - oper
-    - scda
+    stream: oper
     type:
     - an
     - fc
@@ -18,9 +16,7 @@ I-i-b:
   mars:
     class: od
     levtype: pl
-    stream:
-    - oper
-    - scda
+    stream: oper
     type:
     - an
     - fc
@@ -32,9 +28,7 @@ I-i-c:
   mars:
     class: od
     levtype: ml
-    stream:
-    - oper
-    - scda
+    stream: oper
     type:
     - an
     - fc
@@ -48,10 +42,8 @@ I-i-d:
     levtype:
     - pv
     - pt
-    stream:
-    - oper
-    - scda
-    type: 
+    stream: oper
+    type:
     - an
     - fc
   set: I
@@ -63,9 +55,7 @@ I-i-e:
     class: od
     levtype:
     - sol
-    stream:
-    - oper
-    - scda
+    stream: oper
     type:
     - an
     - fc
@@ -79,9 +69,7 @@ I-i-f:
     class: od
     levtype:
     - sfc
-    stream:
-    - oper
-    - scda
+    stream: oper
     type:
     - fc
     never: match # never match with any request
@@ -104,9 +92,7 @@ I-ii:
   frequency: 365
   mars:
     class: od
-    stream:
-    - oper
-    - scda
+    stream: oper
     type: wp
   set: I
   subset: I-ii
@@ -115,9 +101,7 @@ I-iii:
   frequency: 365
   mars:
     class: od
-    stream:
-    - oper
-    - scda
+    stream: oper
     type: tf
   set: I
   subset: I-iii
@@ -126,9 +110,7 @@ I-iv:
   frequency: 365
   mars:
     class: od
-    stream:
-    - oper
-    - scda
+    stream: oper
     type: ssd
   set: I
   subset: I-iv
@@ -138,9 +120,7 @@ II-i:
   mars:
     class: od
     levtype: sfc
-    stream:
-    - scwv
-    - wave
+    stream: wave
     type:
     - an
     - fc
@@ -149,9 +129,9 @@ II-i:
 III-i-a:
   description: Atmospheric fields - Single level
   free_data:
-  - levtype: sfc
-    stream: enfo
-    type: cf
+  # - levtype: sfc
+  #   stream: enfo
+  #   type: cf
   - levtype: sfc
     stream: enfh
     type: pf
@@ -166,17 +146,17 @@ III-i-a:
     type: pf
   set: III
   subset: III-i
-III-i-a-cf:
-  description: Free set with III-i-a
-  free_with: III-i-a
-  frequency: 365
-  mars:
-    class: od
-    levtype: sfc
-    stream: enfo
-    type: cf
-  set: III
-  subset: III-i
+# III-i-a-cf:
+#   description: Free set with III-i-a
+#   free_with: III-i-a
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype: sfc
+#     stream: enfo
+#     type: cf
+#   set: III
+#   subset: III-i
 III-i-a-hf:
   description: Free set with III-i-a
   free_with: III-i-a
@@ -194,9 +174,9 @@ III-i-a-hf:
 III-i-b:
   description: Atmospheric fields - Pressure levels
   free_data:
-  - levtype: pl
-    stream: enfo
-    type: cf
+  # - levtype: pl
+    # stream: enfo
+    # type: cf
   - levtype: pl
     stream: enfh
     type: pf
@@ -211,17 +191,17 @@ III-i-b:
     type: pf
   set: III
   subset: III-i
-III-i-b-cf:
-  description: Free set with III-i-b
-  free_with: III-i-b
-  frequency: 365
-  mars:
-    class: od
-    levtype: pl
-    stream: enfo
-    type: cf
-  set: III
-  subset: III-i
+# III-i-b-cf:
+#   description: Free set with III-i-b
+#   free_with: III-i-b
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype: pl
+#     stream: enfo
+#     type: cf
+#   set: III
+#   subset: III-i
 III-i-b-hf:
   description: Free set with III-i-b
   free_with: III-i-b
@@ -239,9 +219,9 @@ III-i-b-hf:
 III-i-c:
   description: Atmospheric fields - Model levels
   free_data:
-  - levtype: ml
-    stream: enfo
-    type: cf
+  # - levtype: ml
+    # stream: enfo
+    # type: cf
   - levtype: ml
     stream: enfh
     type: pf
@@ -256,17 +236,17 @@ III-i-c:
     type: pf
   set: III
   subset: III-i
-III-i-c-cf:
-  description: Free set with III-i-c
-  free_with: III-i-c
-  frequency: 365
-  mars:
-    class: od
-    levtype: ml
-    stream: enfo
-    type: cf
-  set: III
-  subset: III-i
+# III-i-c-cf:
+#   description: Free set with III-i-c
+#   free_with: III-i-c
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype: ml
+#     stream: enfo
+#     type: cf
+#   set: III
+#   subset: III-i
 III-i-c-hf:
   description: Free set with III-i-c
   free_with: III-i-c
@@ -284,11 +264,11 @@ III-i-c-hf:
 III-i-d:
   description: Atmospheric fields - Potential vorticity levels
   free_data:
-  - levtype:
-    - pv
-    - pt
-    stream: enfo
-    type: cf
+  # - levtype:
+  #   - pv
+  #   - pt
+  #   stream: enfo
+  #   type: cf
   - levtype:
     - pv
     - pt
@@ -314,19 +294,19 @@ III-i-d:
     type: pf
   set: III
   subset: III-i
-III-i-d-cf:
-  description: Free set with III-i-d
-  free_with: III-i-d
-  frequency: 365
-  mars:
-    class: od
-    levtype:
-    - pt
-    - pv
-    stream: enfo
-    type: cf
-  set: III
-  subset: III-i
+# III-i-d-cf:
+#   description: Free set with III-i-d
+#   free_with: III-i-d
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype:
+#     - pt
+#     - pv
+#     stream: enfo
+#     type: cf
+#   set: III
+#   subset: III-i
 III-i-d-hf:
   description: Free set with III-i-d
   free_with: III-i-d
@@ -346,9 +326,9 @@ III-i-d-hf:
 III-i-e:
   description: Atmospheric fields - Other surface levels
   free_data:
-  - levtype: sol
-    stream: enfo
-    type: cf
+  # - levtype: sol
+  #   stream: enfo
+  #   type: cf
   - levtype: sol
     stream: enfh
     type: pf
@@ -363,17 +343,17 @@ III-i-e:
     type: pf
   set: III
   subset: III-i
-III-i-e-cf:
-  description: Free set with III-i-e
-  free_with: III-i-e
-  frequency: 365
-  mars:
-    class: od
-    levtype: sol
-    stream: enfo
-    type: cf
-  set: III
-  subset: III-i
+# III-i-e-cf:
+#   description: Free set with III-i-e
+#   free_with: III-i-e
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype: sol
+#     stream: enfo
+#     type: cf
+#   set: III
+#   subset: III-i
 III-i-e-hf:
   description: Free set with III-i-e
   free_with: III-i-e
@@ -392,9 +372,9 @@ III-i-f:
   # costed with III-i-a as same composition
   description: Atmospheric fields - Thermofeel Products
   free_data:
-  - levtype: sfc
-    stream: enfo
-    type: cf
+  # - levtype: sfc
+  #   stream: enfo
+  #   type: cf
   frequency: 365
   mars:
     class: od
@@ -416,30 +396,30 @@ III-i-f:
     - wpbt
   set: III
   subset: III-i
-III-i-f-cf:
-  description: Free set with III-i-f
-  free_with: III-i-e
-  frequency: 365
-  mars:
-    class: od
-    levtype: sfc
-    stream: enfo
-    type: cf
-    never: match # never match with any request
-    param:
-    - 2r
-    - utci
-    - mrt
-    - heatx
-    - wcf
-    - aptmp
-    - hmdx
-    - nefft
-    - gt
-    - wbgt
-    - wpbt
-  set: III
-  subset: III-i
+# III-i-f-cf:
+#   description: Free set with III-i-f
+#   free_with: III-i-e
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype: sfc
+#     stream: enfo
+#     type: cf
+#     never: match # never match with any request
+#     param:
+#     - 2r
+#     - utci
+#     - mrt
+#     - heatx
+#     - wcf
+#     - aptmp
+#     - hmdx
+#     - nefft
+#     - gt
+#     - wbgt
+#     - wpbt
+#   set: III
+#   subset: III-i
 III-ii:
   description: Clusters
   frequency: 365
@@ -510,6 +490,7 @@ III-iii-b:
     - tprg5
     - tprl1
     step:
+    - 120-144
     - 120-168
     - 120-240
     - 168-240
@@ -605,15 +586,25 @@ III-v-a:
     levtype: sfc
     step:
     - 0-24
+    - 6-30/
     - 12-36
+    - 18-42
     - 24-48
+    - 30-54
     - 36-60
+    - 42-66
     - 48-72
+    - 54-78
     - 60-84
+    - 66-90
     - 72-96
+    - 78-102
     - 84-108
+    - 90-114
     - 96-120
+    - 102-126
     - 108-132
+    - 114-138
     - 120-144
     - 132-156
     - 144-168
@@ -625,6 +616,9 @@ III-v-a:
   set: III
   subset: III-v
 III-v-b:
+  # The 06z/18z step ranges below (6-*, 18-*, 30-*, 42-*, 54-*, 66-*) appear
+  # in the operational tagging file for set-III-v-b but are not advertised
+  # in the ECMWF PRC or on www.ecmwf.int. Kept here for tagging-file coverage.
   comment: 240-360 and 0-360 are not in the catalogue
   description: Extreme Forecast Index (EFI) 3, 5 and 10-day ranges
   frequency: 365
@@ -636,16 +630,24 @@ III-v-b:
     - 0-120
     - 0-240
     - 0-360
+    - 6-78
+    - 6-126
     - 12-84
     - 12-132
+    - 18-90
+    - 18-138
     - 24-96
     - 24-144
+    - 30-102
     - 36-108
     - 36-156
+    - 42-114
     - 48-120
     - 48-168
+    - 54-126
     - 60-132
     - 60-180
+    - 66-138
     - 72-144
     - 72-192
     - 84-156
@@ -673,15 +675,25 @@ III-v-c:
     levtype: sfc
     step:
     - 0-24
+    - 6-30/
     - 12-36
+    - 18-42
     - 24-48
+    - 30-54
     - 36-60
+    - 42-66
     - 48-72
+    - 54-78
     - 60-84
+    - 66-90
     - 72-96
+    - 78-102
     - 84-108
+    - 90-114
     - 96-120
+    - 102-126
     - 108-132
+    - 114-138
     - 120-144
     - 132-156
     - 144-168
@@ -780,16 +792,6 @@ III-viii:
   subset: III-viii
 IV-i:
   description: Ensemble Wave fields
-  free_data:
-  - levtype: sfc
-    stream: waef
-    type: cf
-  - levtype: sfc
-    stream: enwh
-    type: cf
-  - levtype: sfc
-    stream: enwh
-    type: pf
   frequency: 365
   mars:
     class: od
@@ -798,17 +800,17 @@ IV-i:
     type: pf
   set: IV
   subset: IV-i
-IV-i-cf:
-  description: Free set with IV-i
-  free_with: IV-i
-  frequency: 365
-  mars:
-    class: od
-    levtype: sfc
-    stream: waef
-    type: cf
-  set: IV
-  subset: IV-i
+# IV-i-cf:
+#   description: Free set with IV-i
+#   free_with: IV-i
+#   frequency: 365
+#   mars:
+#     class: od
+#     levtype: sfc
+#     stream: waef
+#     type: cf
+#   set: IV
+#   subset: IV-i
 IV-ii-a:
   description: Probabilities - Instantaneous weather events
   frequency: 365
@@ -1335,7 +1337,26 @@ VI-iii-a:
   free_data:
     levtype: sfc
     stream: eefh
-    type: fcmean
+    type:
+    - fcmean
+    - fcmax
+    param:
+    - tcc
+    - stl1
+    - msdr
+    - tprate
+    - sd
+    - mn2t6
+    - mx2t6
+    - msl
+    - rsn
+    - sf
+    - 2t
+    - 2d
+    - 10v
+    - 10u
+    - 100u
+    - 100v
   frequency: 365
   ic_frequency: 104
   mars:
@@ -1360,8 +1381,12 @@ VI-iii-a:
     - tcc
     - tprate
     - z
+    - avg_mucape
+    - sf
     stream: eefo
-    type: fcmean
+    type:
+    - fcmean
+    - fcmax
   set: VI
   subset: VI-iii
 VI-iii-b:
@@ -1559,7 +1584,7 @@ VI-v-d:
     levtype:
     - pt
     - pv
-    stream: 
+    stream:
     - eefo
     - eefh
     type: pf
@@ -1575,7 +1600,7 @@ VI-v-d-cf:
     levtype:
     - pt
     - pv
-    stream: 
+    stream:
     - eefo
     - eefh
     type: cf
@@ -1697,9 +1722,8 @@ VII-i-a:
     class: od
     levtype: sfc
     stream: msmm
-    type: 
+    type:
     - em
-    - fc
     method: 3
   set: VII
   subset: VII-i
@@ -1723,9 +1747,7 @@ VII-ii-a:
     class: od
     levtype: sfc
     stream: mmsa
-    type: 
-    - em
-    - fc
+    type: em
     method: 3
   set: VII
   subset: VII-ii
@@ -1749,7 +1771,7 @@ VII-ii-c:
     class: od
     levtype: pt
     stream: mmsa
-    type: 
+    type:
     - em
     - fcmean
     method: 3
@@ -1763,9 +1785,22 @@ VII-iii-a:
     class: od
     levtype: sfc
     stream: msmm
-    type: 
+    type:
     - fcmean
-    - fc
+    fcmonth:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
     method: 3
   set: VII
   subset: VII-iii
@@ -1777,8 +1812,23 @@ VII-iii-b:
     class: od
     levtype: pl
     stream: msmm
-    type: fcmean
+    type:
+    - fcmean
     method: 3
+    fcmonth:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
   set: VII
   subset: VII-iii
 VII-iii-c:
@@ -1805,18 +1855,6 @@ VII-iv-a:
     method: 3
   set: VII
   subset: VII-iv
-VII-iv-a-fc:
-  description: Seasonal forecast
-  frequency: 365
-  ic_frequency: 104
-  mars:
-    class: od
-    levtype: sfc
-    stream: mmsf
-    type: fc
-    method: 3
-  set: VII
-  subset: VII-iv
 VII-iv-b:
   description: Seasonal forecast
   frequency: 365
@@ -1829,35 +1867,59 @@ VII-iv-b:
     method: 3
   set: VII
   subset: VII-iv
+VII-v-a:
+  description: Seasonal data - 12-hourly
+  frequency: 365
+  ic_frequency: 104
+  mars:
+    class: od
+    stream: mmsf
+    type: fc
+    method: 3
+    system: 5
+    origin: ecmf
+    levtype: sfc
+  set: VII
+  subset: VII-v
+# VII-v-b:
+#   description: Seasonal data - 24-hourly
+#   frequency: 365
+#   ic_frequency: 104
+#   mars:
+#     class: od
+#     stream: mmsf
+#     type: fc
+#     method: 3
+#     system: 5
+#     origin: ecmf
+#     levtype: sfc
+#   set: VII
+#   subset: VII-v
 VII-v-c:
   description: Seasonal data
   frequency: 365
   ic_frequency: 104
   mars:
     class: od
-    levtype: pl
     stream: mmsf
     type: fc
     method: 3
-    param:
-    - d
-    - gh
-    - t
-    - u
-    - vo
-    - z
+    system: 5
+    origin: ecmf
+    levtype: pl
   set: VII
   subset: VII-v
 VII-v-e:
-  description: Seasonal data
+  description: Seasonal forecast - wave (wasf)
   frequency: 365
   ic_frequency: 104
   mars:
     class: od
-    levtype: sfc
     stream: wasf
     type: fc
     method: 3
+    system: 5
+    levtype: sfc
   set: VII
   subset: VII-v
 IX-i-a:
@@ -1975,37 +2037,6 @@ X-iii-a:
     - 10spg10
     - 10spg15
     - 2tl273
-    step:
-    - 12
-    - 24
-    - 36
-    - 48
-    - 60
-    - 72
-    - 84
-    - 96
-    - 108
-    - 120
-    - 132
-    - 144
-    - 156
-    - 168
-    - 180
-    - 192
-    - 204
-    - 216
-    - 228
-    - 240
-    - 252
-    - 264
-    - 276
-    - 288
-    - 300
-    - 312
-    - 324
-    - 336
-    - 348
-    - 360
     stream: enfo
     type: ep
   set: X
@@ -2017,52 +2048,17 @@ X-iii-b:
     class: ai
     levtype: sfc
     param:
-    - 2tl273
     - tpg1
+    - tpg5
     - tpg10
-    - tpg100
     - tpg20
     - tpg25
-    - tpg5
     - tpg50
+    - tpg100
     - tpl01
+    - tprl1
     - tprg3
     - tprg5
-    - tprl1
-    step:
-    - 0-24
-    - 12-36
-    - 24-48
-    - 36-60
-    - 48-72
-    - 60-84
-    - 72-96
-    - 84-108
-    - 96-120
-    - 108-132
-    - 120-144
-    - 120-168
-    - 120-240
-    - 132-156
-    - 144-168
-    - 156-180
-    - 168-192
-    - 168-240
-    - 180-204
-    - 192-216
-    - 204-228
-    - 216-240
-    - 228-252
-    - 240-264
-    - 240-360
-    - 252-276
-    - 264-288
-    - 276-300
-    - 288-312
-    - 300-324
-    - 312-336
-    - 324-348
-    - 336-360
     stream: enfo
     type: ep
   set: X
@@ -2118,23 +2114,115 @@ X-viii-a-tf:
   set: X
   subset: X-viii
 XI-i-a-an:
- description: CAMS Analysis - Surface
- frequency: 365
- mars:
-  class: mc
-  stream: oper
-  type: an
- set: XI
- subset: XI-i
+  description: CAMS Analysis - Surface
+  frequency: 365
+  mars:
+    class: mc
+    stream: oper
+    type: an
+  set: XI
+  subset: XI-i
 XI-i-a-fc:
- description: CAMS Forecast - Surface
- frequency: 365
- mars:
-  class: mc
-  stream: oper
-  type: fc
- set: XI
- subset: XI-i
+  description: CAMS Forecast - Surface
+  frequency: 365
+  mars:
+    class: mc
+    stream: oper
+    type: fc
+  set: XI
+  subset: XI-i
+XII-i-a-fc:
+  description: AIFS WAVE data
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: wave
+    type: fc
+  set: XII
+  subset: XII-i
+XIII-i-a:
+  description: AIFS ENS
+  free_data:
+  - class: ai
+    levtype: sfc
+    stream: waef
+    type: cf
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: waef
+    type: pf
+  set: XIII
+  subset: XIII-i
+XIII-i-a-cf:
+  description: Free set with XIII-i-a
+  free_with: XIII-i-a
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: waef
+    type: cf
+  set: XIII
+  subset: XIII-i
+XIII-iii-a:
+  description: AIFS ENS
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: waef
+    type: ep
+    step:
+    - 12
+    - 24
+    - 36
+    - 48
+    - 60
+    - 72
+    - 84
+    - 96
+    - 108
+    - 120
+    - 132
+    - 144
+    - 156
+    - 168
+    - 180
+    - 192
+    - 204
+    - 216
+    - 228
+    - 240
+    - 252
+    - 264
+    - 276
+    - 288
+    - 300
+    - 312
+    - 324
+    - 336
+    - 348
+    - 360
+  set: XIII
+  subset: XIII-iii
+XIII-iii-b:
+  description: AIFS ENS
+  frequency: 365
+  mars:
+    class: ai
+    levtype: sfc
+    stream: waef
+    type: ep
+    step:
+    - 120-240
+    - 120-168
+    - 168-240
+    - 240-360
+  set: XIII
+  subset: XIII-iii
 XX-x-a:
   description: Free set with VI-i-a
   free_with: VI-i-a
@@ -2301,5 +2389,29 @@ XX-x-r:
     levtype: pl
     stream: eefh
     type: taem
+  set: XX
+  subset: XX-x
+XX-x-s:
+  description: Free set with IV-i
+  free_with: IV-i
+  frequency: 84
+  deliveries_per_dow: 12
+  mars:
+    class: od
+    levtype: sfc
+    stream: enwh
+    type: cf
+  set: XX
+  subset: XX-x
+XX-x-t:
+  description: Free set with IV-i
+  free_with: IV-i
+  frequency: 84
+  deliveries_per_dow: 12
+  mars:
+    class: od
+    levtype: sfc
+    stream: enwh
+    type: pf
   set: XX
   subset: XX-x

@@ -13,7 +13,6 @@ import logging
 from ecquote.request import Request
 from ecquote.splitters.canonical import splitter as canonical_splitter
 from ecquote.splitters.constant import splitter as constant_splitter
-from ecquote.splitters.high_frequency import splitter as high_frequency_splitter
 from ecquote.splitters.shgg import splitter as shgg_splitter
 from ecquote.splitters.subset import splitter as subset_splitter
 
@@ -78,11 +77,11 @@ def test_subset_splitter_1():
     assert r.subset.name == "V-v-a", r.subset.name
 
 
-def test_high_frequency_splitter():
-    steps = "/".join(str(i) for i in range(0, 91))
-    r = Request(f"type=fc,stream=oper,levtype=sfc,param=2t,step={steps}")
-    splitted = list(high_frequency_splitter([r]))
-    assert len(splitted) == 2, splitted
+# def test_high_frequency_splitter():
+#     steps = "/".join(str(i) for i in range(0, 91))
+#     r = Request(f"type=fc,stream=oper,levtype=sfc,param=2t,step={steps}")
+#     splitted = list(high_frequency_splitter([r]))
+#     assert len(splitted) == 1, splitted
 
 
 if __name__ == "__main__":

@@ -1,0 +1,10 @@
+class=ai,
+domain=g,
+expver=0001,
+levtype=sfc,
+model=aifs-ens,
+param=swhg2/swhg4/swhg6/swhg8/mwpg8/mwpg10/mwpg12/mwpg15,
+step=12/24/36/48/60/72/84/96/108/120/132/144/156/168/180/192/204/216/228/240/252/264/276/288/300/312/324/336/348/360,
+stream=waef,
+time=0000/0600/1200/1800,
+type=ep

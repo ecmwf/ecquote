@@ -1,0 +1,12 @@
+# subset=XIII-iii-b
+
+disseminate,
+    expver          =    0105,
+    class           =    ai,
+    stream          =    waef,
+    model           =    aifs-ens,
+    time            =    0000/0600/1200/1800,
+    type            =    ep,
+    step            =    120-240/120-168/168-240/240-360,
+    levtype         =    sfc,
+    param           =    swhg2/swhg4/swhg6/swhg8/mwpg8/mwpg10/mwpg12/mwpg15

@@ -1,9 +1,9 @@
-class=od,
+class=mc,
 domain=g,
 expver=0001,
 levtype=sfc,
-param=mwp/sh10/mwd/swh,
+param=aod550,
 step=0,
-stream=waef,
+stream=oper,
 time=0000/1200,
-type=cf
+type=an

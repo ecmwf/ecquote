@@ -158,11 +158,30 @@ def bytes(n):
     return "%g%s" % (int(n * 10 + 0.5) / 10.0, u[i])
 
 
-ROMAN = dict(i=1, ii=2, iii=3, iv=4, v=5, vi=6, vii=7, viii=8, ix=9, x=10, xx=20)
+ROMAN_DIGITS = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
+
+
+def _roman_to_int(s):
+    if not s or any(c not in ROMAN_DIGITS for c in s):
+        return None
+    total = 0
+    prev = 0
+    for c in reversed(s):
+        v = ROMAN_DIGITS[c]
+        total += -v if v < prev else v
+        prev = v
+    return total
 
 
 def roman(s):
-    return tuple(ROMAN.get(x, x) if i < 2 else x for i, x in enumerate(s.lower().split("-")))
+    result = []
+    for i, x in enumerate(s.lower().split("-")):
+        if i < 2:
+            n = _roman_to_int(x)
+            result.append(n if n is not None else x)
+        else:
+            result.append(x)
+    return tuple(result)
 
 
 def iterate_request(r):
