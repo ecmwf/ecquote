@@ -87,30 +87,6 @@ I-i-f:
     - wpbt
   set: I
   subset: I-i
-I-i-g:
-  description: New level type
-  frequency: 365
-  mars:
-    class: od
-    levtype:
-    - o3d
-    stream: oper
-    type:
-    - fc
-  set: I
-  subset: I-i
-I-i-h:
-  description: New level type
-  frequency: 365
-  mars:
-    class: od
-    levtype:
-    - o2d
-    stream: oper
-    type:
-    - fc
-  set: I
-  subset: I-i
 I-ii:
   description: Time series of weather parameters
   frequency: 365
@@ -444,30 +420,6 @@ III-i-f:
 #     - wpbt
 #   set: III
 #   subset: III-i
-III-i-g:
-  description: New level type
-  frequency: 365
-  mars:
-    class: od
-    levtype:
-    - o3d
-    stream: enfo
-    type:
-    - pf
-  set: III
-  subset: III-i
-III-i-h:
-  description: New level type
-  frequency: 365
-  mars:
-    class: od
-    levtype:
-    - o2d
-    stream: enfo
-    type:
-    - pf
-  set: III
-  subset: III-i
 III-ii:
   description: Clusters
   frequency: 365
@@ -1435,7 +1387,6 @@ VI-iii-a:
     type:
     - fcmean
     - fcmax
-    - fcmin
   set: VI
   subset: VI-iii
 VI-iii-b:

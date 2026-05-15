@@ -1,9 +1,10 @@
-class=od,
+class=ai,
 domain=g,
 expver=0001,
-levtype=o2d,
-param=sithick/siconc/sisnthick/siue/sivn/sitemptop/sivol/sipf/sipd/icesalt/sos/tos/svn,
-step=3/6/9/12/15/18/21/24/27/30/33/36/39/42/45/48/51/54/57/60/63/66/69/72/75/78/81/84/87/90/93/96/99/102/105/108/111/114/117/120/123/126/129/132/135/138/141/144,
-stream=oper,
+levtype=sfc,
+model=aifs-ens,
+param=swhg2/swhg4/swhg6/swhg8/mwpg8/mwpg10/mwpg12/mwpg15,
+step=120-240/120-168/168-240/240-360,
+stream=waef,
 time=0000/0600/1200/1800,
-type=fc
+type=ep
