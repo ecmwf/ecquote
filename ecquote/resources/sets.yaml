@@ -88,7 +88,7 @@ I-i-f:
   set: I
   subset: I-i
 I-i-g:
-  description: New level type o3d
+  description: New level type
   frequency: 365
   mars:
     class: od
@@ -100,24 +100,12 @@ I-i-g:
   set: I
   subset: I-i
 I-i-h:
-  description: New level type o2d
+  description: New level type
   frequency: 365
   mars:
     class: od
     levtype:
     - o2d
-    stream: oper
-    type:
-    - fc
-  set: I
-  subset: I-i
-I-i-i:
-  description: New level type fl
-  frequency: 365
-  mars:
-    class: od
-    levtype:
-    - fl
     stream: oper
     type:
     - fc
@@ -475,18 +463,6 @@ III-i-h:
     class: od
     levtype:
     - o2d
-    stream: enfo
-    type:
-    - pf
-  set: III
-  subset: III-i
-III-i-i:
-  description: New level type fl
-  frequency: 365
-  mars:
-    class: od
-    levtype:
-    - fl
     stream: enfo
     type:
     - pf
