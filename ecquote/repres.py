@@ -1120,6 +1120,7 @@ class WP(Repres):
             param=("2t",),
             levtype=("sfc",),
             type=(TYPES[self.request.stream],),
+            number=("1",),
         )
         return prepare_request(r)
 
