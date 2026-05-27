@@ -1,0 +1,15 @@
+# subset=VII-i-b
+
+disseminate, 		
+class 	    = 	od,
+stream 	    = 	msmm,
+expver      =   0001,
+type 	    = 	em,
+time 	    = 	00,
+levtype     = 	pl,
+fcmonth 	= 	1/2/3/4/5/6/7/8/9/10/11/12/13,
+system 	    = 	5,
+origin 	    = 	ecmf,
+method 	    = 	3,
+levelist    =   1000/925/850/700/500/400/300/200/150/100/70/50/30/20/10/5/2/1,
+param       =   GH/T/VO/D/Q/U/V/O3

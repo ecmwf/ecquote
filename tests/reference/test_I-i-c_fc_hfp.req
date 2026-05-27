@@ -1,7 +1,7 @@
 # subset=I-i-c
 
 class=od,
-stream=scda,
+stream=oper,
 expver=0001,
 type=fc,
 time=0600/1800,
@@ -26,7 +26,7 @@ use=bc
 
 
 class=od,
-stream=scda,
+stream=oper,
 expver=0001,
 type=fc,
 time=0600/1800,

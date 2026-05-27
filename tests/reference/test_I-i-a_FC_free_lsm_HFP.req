@@ -1,7 +1,7 @@
 # subset=I-i-a
 
 time=0600,
-stream=scda,
+stream=oper,
 step=0/to/90/by/3,
 levtype=sfc,
 type=fc,

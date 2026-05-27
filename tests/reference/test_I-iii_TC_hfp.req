@@ -1,7 +1,7 @@
 # subset=I-iii
 
 class=od,
-stream=scda,
+stream=oper,
 expver=0001,
 type=tf,
 time=0600/1800,

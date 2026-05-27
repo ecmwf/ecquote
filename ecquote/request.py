@@ -12,6 +12,7 @@ import itertools
 import logging
 from collections import defaultdict
 
+from ._compat import UTC
 from .landsea import land_sea_ratio
 from .matching import Matcher
 from .repres import repres
@@ -346,7 +347,7 @@ class Request:
             s.update(r)
 
     def sample_mars_request(self):
-        date = datetime.datetime.utcnow() - datetime.timedelta(days=2)
+        date = datetime.datetime.now(UTC) - datetime.timedelta(days=2)
         date = date.date()
 
         # https://confluence.ecmwf.int/display/PGEN/ENS-extended+weekly+means+in+48r1#ENSextendedweeklymeansin48r1-MondaytoSunday
@@ -368,13 +369,6 @@ class Request:
         r.update(self.use)
         r.setdefault("levtype", "off")
 
-        if (r["stream"], r["type"], r["levtype"]) in (
-            ("scda", "an", "pv"),
-            ("scda", "an", "pt"),
-        ):
-            # Not in MARS
-            r["stream"] = "oper"
-
         if (r["stream"], r["type"], r["levtype"]) in (("enfo", "cs", "pl"),):
             pass
         elif (r["stream"], r["type"], r["levtype"]) in (
@@ -382,6 +376,8 @@ class Request:
             ("enfo", "pf", "ml"),
             ("eefo", "cf", "ml"),
             ("eefo", "pf", "ml"),
+            ("enfh", "cf", "ml"),
+            ("enfh", "pf", "ml"),
         ):
             # Not in MARS
             r["param"] = "q/z"
@@ -420,7 +416,7 @@ class Request:
         # 1st of the month, where users need to provide a 'use' keyword, which we discard
         # so it's not picked up by further logic handling the 'use' keyword.
         if r.get("stream") in ("enfh", "efhs", "enwh", "wehs"):
-            while date.weekday() not in MEDIUM_RANGE_HINDCAST_DAYS:
+            while date.day not in MEDIUM_RANGE_HINDCAST_DAYS:
                 date = date - datetime.timedelta(days=1)
             r.pop("use", None)
 
@@ -428,7 +424,7 @@ class Request:
         # of the month, where users need to provide a 'use' keyword, which we discard so
         # it's not picked up by further logic handling the 'use' keyword.
         if r.get("stream") in ("eefh", "eehs", "weeh"):
-            while date.weekday() not in SUBSEASONAL_HINDCAST_DAYS:
+            while date.day not in SUBSEASONAL_HINDCAST_DAYS:
                 date = date - datetime.timedelta(days=1)
             r.pop("use", None)
 
@@ -450,7 +446,6 @@ class Request:
         if r["stream"] in ("enfh", "enwh", "eefh", "weeh"):  # TODO: add to config
             hdate = datetime.date(date.year - 5, date.month, date.day)
             r["hdate"] = hdate.isoformat()
-            r["levtype"] = "sfc"
 
         if "step" in self.subset.mars:
             r["step"] = "/".join(set(str(x) for x in self.subset.mars["step"]))

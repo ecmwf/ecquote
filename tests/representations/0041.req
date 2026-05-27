@@ -4,6 +4,6 @@ expver=0001,
 levtype=sfc,
 param=z/lsm,
 step=0,
-stream=scda,
+stream=oper,
 time=0600/1800,
 type=an

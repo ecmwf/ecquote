@@ -26,8 +26,11 @@ def splitter(requests):
         multiple=multiple,
     )
 
-    # Simply annotate with subset
+    # Simply annotate with subset; ensure canonical defaults so matching works
     for request in requests:
+        request.fields.setdefault("class", ("od",))
+        request.fields.setdefault("domain", ("g",))
+        request.fields.setdefault("expver", ("0001",))
         with capture_warnings(request):
             subset = sets_matcher.get_match(request)
             if isinstance(subset, list):

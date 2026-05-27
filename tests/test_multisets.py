@@ -11,8 +11,7 @@ from ecquote.cart import Cart
 
 
 def test_efi():
-    cart = Cart.from_strings(
-        """
+    cart = Cart.from_strings("""
    stream=eefo,
    type=efi,
    param=2ti,
@@ -70,8 +69,7 @@ def test_efi():
         840-1008/
         936-1104
 
-   """
-    )
+   """)
 
     cart.costing()
 

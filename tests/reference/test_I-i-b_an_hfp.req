@@ -1,7 +1,7 @@
 # subset=I-i-b
 
 class=od,
-stream=scda,
+stream=oper,
 expver=0001,
 type=an,
 time=0600/1800,

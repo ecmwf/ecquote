@@ -8,7 +8,7 @@ disseminate,
   type                = fc,
   levtype             = sfc,
   param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/msl/mucape/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
-  time                = 0000/1200,
+  time                = 0000/0600/1200/1800,
   step                = 0/to/144/by/3,
   area                = 90/-180/-90/179.75,
   grid                = .25/.25,
@@ -23,45 +23,25 @@ disseminate,
   step                = 150/to/360/by/6
 
 disseminate,
-  stream              = scda,
-  param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/msl/mucape/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
-  time                = 0600/1800,
-  step                = 0/to/144/by/3
-
-disseminate,
-  param               = mn2t3/mx2t3,
-  step                = 3/to/144/by/3
-
-disseminate,
   stream              = oper,
   levtype             = pl,
   param               = d/gh/q/r/t/u/v/vo/w,
   levelist            = 1000/925/850/700/600/500/400/300/250/200/150/100/50,
-  time                = 0000/1200,
+  time                = 0000/0600/1200/1800,
   step                = 0/to/144/by/3
 
 disseminate,
   step                = 150/to/360/by/6
-
-disseminate,
-  stream              = scda,
-  time                = 0600/1800,
-  step                = 0/to/144/by/3
 
 disseminate,
   stream              = wave,
   levtype             = sfc,
   param               = mp2/mwd/mwp/pp1d/swh,
   levelist            = off,
-  time                = 0000/1200
+  time                = 0000/0600/1200/1800
 
 disseminate,
   step                = 150/to/360/by/6
-
-disseminate,
-  stream              = scwv,
-  time                = 0600/1800,
-  step                = 0/to/144/by/3
 
 disseminate,
   stream              = enfo,
@@ -79,36 +59,11 @@ disseminate,
   step                = 150/to/360/by/6
 
 disseminate,
-  type                = cf,
-  param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/msl/mucape/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
-  step                = 0/to/144/by/3,
-  number              = off
-
-disseminate,
-  param               = mn2t3/mx2t3,
-  step                = 3/to/144/by/3
-
-disseminate,
-  param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/mn2t6/msl/mucape/mx2t6/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
-  step                = 150/to/360/by/6
-
-disseminate,
   type                = pf,
   param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/msl/mucape/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
   time                = 0600/1800,
   step                = 0/to/144/by/3,
-  use                 = bc,
   number              = 1/to/50
-
-disseminate,
-  param               = mn2t3/mx2t3,
-  step                = 3/to/144/by/3
-
-disseminate,
-  type                = cf,
-  param               = 100u/100v/10fg/10u/10v/2d/2t/asn/ewss/lsm/msl/mucape/nsss/ocu/ocv/ptype/ro/sithick/skt/sp/ssr/ssrd/stl1/stl2/stl3/stl4/str/strd/swvl1/swvl2/swvl3/swvl4/tcw/tcwv/tp/tprate/ttr/zos,
-  step                = 0/to/144/by/3,
-  number              = off
 
 disseminate,
   param               = mn2t3/mx2t3,
@@ -128,23 +83,10 @@ disseminate,
   step                = 150/to/360/by/6
 
 disseminate,
-  type                = cf,
-  step                = 0/to/144/by/3,
-  number              = off
-
-disseminate,
-  step                = 150/to/360/by/6
-
-disseminate,
   type                = pf,
   time                = 0600/1800,
   step                = 0/to/144/by/3,
-  use                 = bc,
   number              = 1/to/50
-
-disseminate,
-  type                = cf,
-  number              = off
 
 disseminate,
   stream              = waef,
@@ -160,23 +102,10 @@ disseminate,
   step                = 150/to/360/by/6
 
 disseminate,
-  type                = cf,
-  step                = 0/to/144/by/3,
-  number              = off
-
-disseminate,
-  step                = 150/to/360/by/6
-
-disseminate,
   type                = pf,
   time                = 0600/1800,
   step                = 0/to/144/by/3,
-  use                 = bc,
   number              = 1/to/50
-
-disseminate,
-  type                = cf,
-  number              = off
 
 disseminate,
   stream              = enfo,
@@ -275,7 +204,7 @@ disseminate,
   grid                = off
 
 disseminate,
-  stream              = scda,
+  stream              = oper,
   time                = 0600/1800,
   step                = 90
 
@@ -286,8 +215,7 @@ disseminate,
 
 disseminate,
   time                = 0600/1800,
-  step                = 144,
-  use                 = bc
+  step                = 144
 
 
 # AIFS
@@ -431,7 +359,7 @@ disseminate,
   packing             = simple
 
 disseminate,
-  stream              = scda,
+  stream              = oper,
   time                = 0600/1800,
   step                = 90
 
@@ -442,5 +370,4 @@ disseminate,
 
 disseminate,
   time                = 0600/1800,
-  step                = 144,
-  use                 = bc
+  step                = 144

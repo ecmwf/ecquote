@@ -1113,7 +1113,7 @@ class WP(Repres):
         from .request import Request
         from .splitters import prepare_request
 
-        TYPES = dict(oper="fc", enfo="cf")
+        TYPES = dict(oper="fc", enfo="pf")
 
         r = Request(
             self.request.fields,

@@ -1,0 +1,23 @@
+# subset=XII-i-a-fc
+
+disseminate,
+    expver          =    0105,
+    class           =    ai,
+    stream          =    wave,
+    model           =    aifs-single,
+    time            =    0000/0600/1200/1800,
+    type            =    fc,
+    step            =    0/to/360/by/6,
+    levtype         =    sfc,
+    param           =    h1012/h1214/h1417/h1721/h2125/h2530/swh/mwd/mwp/cdww
+
+disseminate,
+    expver          =    0105,
+    class           =    ai,
+    stream          =    wave,
+    model           =    aifs-single,
+    time            =    0000/0600/1200/1800,
+    type            =    fc,
+    step            =    0,
+    levtype         =    sfc,
+    param           =    wmb

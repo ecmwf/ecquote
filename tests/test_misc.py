@@ -15,9 +15,9 @@ from ecquote.splitters import prepare_request
 FREQUENCIES = (
     ("type=an,levtype=sfc,stream=oper", 365, 365),
     ("type=fc,levtype=sfc,stream=oper", 365, 365),
-    ("type=an,levtype=sfc,stream=scda", 365, 365),
-    ("type=fc,levtype=sfc,stream=scda", 365, 365),
-    ("type=cf,levtype=sfc,stream=enfo,step=24", 365, 365),
+    # ("type=an,levtype=sfc,stream=scda", 365, 365),
+    # ("type=fc,levtype=sfc,stream=scda", 365, 365),
+    # ("type=cf,levtype=sfc,stream=enfo,step=24", 365, 365),
     ("type=cf,levtype=sfc,stream=eefo,step=24,use=monday", 52, 52),
     ("type=cf,levtype=sfc,stream=eefo,step=24,use=thursday", 52, 52),
     ("type=cf,levtype=sfc,stream=eefo,step=24,use=monday/thursday", 104, 104),
