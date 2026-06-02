@@ -940,6 +940,49 @@ class ReducedLL(Gridded):
         return f"area: {self.area}"
 
 
+class UnstructuredGrid(Field):
+    name = "unstructured_grid"
+
+    def encoded_values(self):
+        return self.numberOfDataPoints, 0
+
+    def number_of_points(self):
+        return self.numberOfDataPoints
+
+    def number_of_pl(self):
+        return 0
+
+    def factor_A(self):
+        return 1
+
+    def explain_A(self):
+        return "unstructured grid, always global, A=1"
+
+    def factor_R(self, reference):
+        return 1
+
+    def explain_R(self, reference):
+        return "unstructured grid, native resolution, R=1"
+
+    def reference_grid(self, reference):
+        return reference[0]
+
+    def number_of_chargeable_items(self, request):
+        return request.number_of_fields()
+
+    def explain_items(self, request):
+        return f"{request.number_of_fields()} fields"
+
+    def is_global(self):
+        return True
+
+    def details(self):
+        return f"unstructured grid, {self.numberOfDataPoints} points"
+
+    def used_when_computing_free_data_grid(self):
+        return True
+
+
 class Mixed(Field):
     _sh = None
     _gg = None
@@ -1224,6 +1267,7 @@ REPRES = {
     "sh": Spectral,
     "reduced_ll": ReducedLL,
     "regular_ll": LatLon,
+    "unstructured_grid": UnstructuredGrid,
     "unknown": Unknown,
 }
 

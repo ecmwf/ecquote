@@ -68,11 +68,15 @@ def grib2_section3(
     def spectral():
         return 28
 
+    def unstructured_grid():
+        return 19
+
     return dict(
         spectral=spectral,
         gaussian=gaussian,
         latlon=latlon,
         reduced_ll=reduced_ll,
+        unstructured_grid=unstructured_grid,
     )[request.repres.name]()
 
 
@@ -104,6 +108,7 @@ def grib2_section5(
         gaussian=21,
         latlon=21,
         reduced_ll=21,
+        unstructured_grid=21,
     )[request.repres.name]
 
 
