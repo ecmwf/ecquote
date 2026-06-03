@@ -109,6 +109,16 @@
     - sh
 - mars:
     class: od
+    levtype:
+    - o2d
+    - o3d
+    stream: oper
+    type: fc
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
+    class: od
     levtype: sol
     stream: oper
     type: fc

@@ -3,7 +3,9 @@ I-i-a:
   frequency: 365
   mars:
     class: od
-    levtype: sfc
+    levtype:
+    - sfc
+    - o2d
     stream: oper
     type:
     - an
@@ -27,7 +29,9 @@ I-i-c:
   frequency: 365
   mars:
     class: od
-    levtype: ml
+    levtype:
+    - ml
+    - o3d
     stream: oper
     type:
     - an

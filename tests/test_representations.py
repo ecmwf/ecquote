@@ -31,7 +31,7 @@ def list_of_tests():
 
 
 TESTS = list_of_tests()
-TESTS = []
+# TESTS = []
 
 
 @pytest.mark.parametrize("req", TESTS)
