@@ -1,9 +1,10 @@
 class=od,
 domain=g,
 expver=0001,
-levtype=o2d,
-param=siconc,
-step=3,
+levtype=o3d,
+levelist=1,
+param=thetao,
+step=1,
 stream=oper,
 time=0000,
 type=fc

@@ -3,9 +3,7 @@ I-i-a:
   frequency: 365
   mars:
     class: od
-    levtype:
-    - sfc
-    - o2d
+    levtype: sfc
     stream: oper
     type:
     - an
@@ -29,9 +27,7 @@ I-i-c:
   frequency: 365
   mars:
     class: od
-    levtype:
-    - ml
-    - o3d
+    levtype: ml
     stream: oper
     type:
     - an
@@ -89,6 +85,30 @@ I-i-f:
     - gt
     - wbgt
     - wpbt
+  set: I
+  subset: I-i
+I-i-g:
+  description: Ocean 3D level
+  frequency: 365
+  mars:
+    class: od
+    levtype:
+    - o3d
+    stream: oper
+    type:
+    - fc
+  set: I
+  subset: I-i
+I-i-h:
+  description: Ocean 2D level
+  frequency: 365
+  mars:
+    class: od
+    levtype:
+    - o2d
+    stream: oper
+    type:
+    - fc
   set: I
   subset: I-i
 I-ii:
@@ -424,6 +444,30 @@ III-i-f:
 #     - wpbt
 #   set: III
 #   subset: III-i
+III-i-g:
+  description: Ocean 3D level
+  frequency: 365
+  mars:
+    class: od
+    levtype:
+    - o3d
+    stream: enfo
+    type:
+    - pf
+  set: III
+  subset: III-i
+III-i-h:
+  description: Ocean 2D level
+  frequency: 365
+  mars:
+    class: od
+    levtype:
+    - o2d
+    stream: enfo
+    type:
+    - pf
+  set: III
+  subset: III-i
 III-ii:
   description: Clusters
   frequency: 365
