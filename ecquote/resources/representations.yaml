@@ -109,16 +109,6 @@
     - sh
 - mars:
     class: od
-    levtype:
-    - o2d
-    - o3d
-    stream: oper
-    type: fc
-  repres:
-    gaussian: O1280
-    type: reduced_gg
-- mars:
-    class: od
     levtype: sol
     stream: oper
     type: fc
@@ -133,6 +123,24 @@
   repres:
     gaussian: O1280
     type: reduced_gg
+- mars:
+    class: od
+    levtype: o3d
+    stream: oper
+    type: fc
+  repres:
+    numberOfDataPoints: 1740494
+    type: unstructured_grid
+    unstructured_grid: eORCA025
+- mars:
+    class: od
+    levtype: o2d
+    stream: oper
+    type: fc
+  repres:
+    numberOfDataPoints: 1740494
+    type: unstructured_grid
+    unstructured_grid: eORCA025
 - mars:
     class: od
     stream: oper
@@ -262,6 +270,24 @@
   repres:
     gaussian: O1280
     type: reduced_gg
+- mars:
+    class: od
+    levtype: o3d
+    stream: enfo
+    type: pf
+  repres:
+    numberOfDataPoints: 1740494
+    type: unstructured_grid
+    unstructured_grid: eORCA025
+- mars:
+    class: od
+    levtype: o2d
+    stream: enfo
+    type: pf
+  repres:
+    numberOfDataPoints: 1740494
+    type: unstructured_grid
+    unstructured_grid: eORCA025
 - mars:
     class: od
     levtype: pl
