@@ -188,7 +188,10 @@
     type: pf
   repres:
     gaussian: O1280
-    type: reduced_gg
+    resol: 1279
+    type:
+    - reduced_gg
+    - sh
 - mars:
     class: od
     levtype: pl
@@ -196,7 +199,10 @@
     type: cf
   repres:
     gaussian: O1280
-    type: reduced_gg
+    resol: 1279
+    type:
+    - reduced_gg
+    - sh
 - mars:
     class: od
     levtype: ml
@@ -585,6 +591,7 @@
     type: reduced_ll
 - mars:
     class: od
+    dataset: VI-i-a
     levtype: sfc
     stream: eefo
     type: taem
@@ -593,6 +600,7 @@
     type: reduced_gg
 - mars:
     class: od
+    dataset: VI-i-b
     levtype: pl
     stream: eefo
     type: taem
@@ -602,6 +610,24 @@
     type:
     - reduced_gg
     - sh
+- mars:
+    class: od
+    dataset: VI-ii-a
+    levtype: sfc
+    stream: eefo
+    type: taem
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
+    class: od
+    dataset: VI-ii-b
+    levtype: pl
+    stream: eefo
+    type: taem
+  repres:
+    resol: 319
+    type: sh
 - mars:
     class: od
     levtype: sfc
@@ -615,6 +641,14 @@
     levtype: sfc
     stream: eefo
     type: fcmax
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
+    class: od
+    levtype: sfc
+    stream: eefo
+    type: fcmin
   repres:
     gaussian: O320
     type: reduced_gg
@@ -710,8 +744,8 @@
     stream: eefh
     type: pf
   repres:
-    gaussian: O320
-    type: reduced_gg
+    resol: 319
+    type: sh
 - mars:
     class: od
     levtype: pv
@@ -729,8 +763,8 @@
     stream: eefh
     type: cf
   repres:
-    gaussian: O320
-    type: reduced_gg
+    resol: 319
+    type: sh
 - mars:
     class: od
     levtype: ml
@@ -751,6 +785,16 @@
     type: reduced_gg
 - mars:
     class: od
+    dataset: VI-vi-a
+    levtype: sfc
+    stream: eefo
+    type: ep
+  repres:
+    gaussian: O320
+    type: reduced_gg
+- mars:
+    class: od
+    dataset: VI-vi-b
     levtype: sfc
     stream: eefo
     type: ep
@@ -1032,6 +1076,228 @@
     gaussian: N320
     type: reduced_gg
 - mars:
+    class: ea
+    levtype: sfc
+    stream: oper
+    type: an
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    class: ea
+    levtype: sfc
+    stream: oper
+    type: fc
+  repres:
+    gaussian: N320
+    type: reduced_gg
+- mars:
+    class: ea
+    levtype: pl
+    stream: oper
+    type: an
+  repres:
+    gaussian: N320
+    resol: 639
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    class: ea
+    levtype: pl
+    stream: oper
+    type: fc
+  repres:
+    gaussian: N320
+    resol: 639
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    class: ea
+    levtype: ml
+    stream: oper
+    type: an
+  model_levels: 137
+  repres:
+    gaussian: N320
+    resol: 639
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    class: ea
+    levtype: ml
+    stream: oper
+    type: fc
+  model_levels: 137
+  repres:
+    gaussian: N320
+    resol: 639
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    class: ea
+    levtype: sfc
+    stream: wave
+    type: an
+  repres:
+    reduced_ll: 0.36
+    type: reduced_ll
+- mars:
+    class: ea
+    levtype: sfc
+    stream: wave
+    type: fc
+  repres:
+    reduced_ll: 0.36
+    type: reduced_ll
+- mars:
+    class: ea
+    levtype: sfc
+    stream: enda
+    type: an
+  repres:
+    gaussian: N160
+    type: reduced_gg
+- mars:
+    class: ea
+    levtype: sfc
+    stream: enda
+    type: fc
+  repres:
+    gaussian: N160
+    type: reduced_gg
+- mars:
+    class: ea
+    levtype: pl
+    stream: enda
+    type: an
+  repres:
+    gaussian: N160
+    resol: 319
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    class: ea
+    levtype: pl
+    stream: enda
+    type: fc
+  repres:
+    gaussian: N160
+    resol: 319
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    class: ea
+    levtype: ml
+    stream: enda
+    type: an
+  model_levels: 137
+  repres:
+    gaussian: N160
+    resol: 319
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    class: ea
+    levtype: ml
+    stream: enda
+    type: fc
+  model_levels: 137
+  repres:
+    gaussian: N160
+    resol: 319
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    class: ea
+    levtype: sfc
+    stream: enda
+    type: em
+  repres:
+    gaussian: N160
+    type: reduced_gg
+- mars:
+    class: ea
+    levtype: pl
+    stream: enda
+    type: em
+  repres:
+    gaussian: N160
+    type: reduced_gg
+- mars:
+    class: ea
+    levtype: ml
+    stream: enda
+    type: em
+  model_levels: 137
+  repres:
+    gaussian: N160
+    type: reduced_gg
+- mars:
+    class: ea
+    levtype: sfc
+    stream: enda
+    type: es
+  repres:
+    gaussian: N160
+    type: reduced_gg
+- mars:
+    class: ea
+    levtype: pl
+    stream: enda
+    type: es
+  repres:
+    gaussian: N160
+    type: reduced_gg
+- mars:
+    class: ea
+    levtype: ml
+    stream: enda
+    type: es
+  model_levels: 137
+  repres:
+    gaussian: N160
+    type: reduced_gg
+- mars:
+    class: ea
+    levtype: sfc
+    stream: ewda
+    type: an
+  repres:
+    reduced_ll: 1.0
+    type: reduced_ll
+- mars:
+    class: ea
+    levtype: sfc
+    stream: ewda
+    type: fc
+  repres:
+    reduced_ll: 1.0
+    type: reduced_ll
+- mars:
+    class: ea
+    levtype: sfc
+    stream: ewda
+    type: em
+  repres:
+    reduced_ll: 1.0
+    type: reduced_ll
+- mars:
+    class: ea
+    levtype: sfc
+    stream: ewda
+    type: es
+  repres:
+    reduced_ll: 1.0
+    type: reduced_ll
+- mars:
     class: od
     levtype: sfc
     stream: eehs
@@ -1065,7 +1331,10 @@
     type: fcmean
   repres:
     gaussian: O320
-    type: reduced_gg
+    resol: 319
+    type:
+    - reduced_gg
+    - sh
 - mars:
     class: od
     levtype: sfc
@@ -1089,7 +1358,10 @@
     type: cf
   repres:
     gaussian: O320
-    type: reduced_gg
+    resol: 319
+    type:
+    - reduced_gg
+    - sh
 - mars:
     class: od
     levtype: pl
@@ -1097,7 +1369,10 @@
     type: pf
   repres:
     gaussian: O320
-    type: reduced_gg
+    resol: 319
+    type:
+    - reduced_gg
+    - sh
 - mars:
     class: od
     levtype: sfc

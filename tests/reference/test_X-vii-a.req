@@ -1,0 +1,15 @@
+# subset=X-vii-a
+
+disseminate,
+    expver          =    0001,
+    class           =    ai,
+    stream          =    enfo,
+    model           =    aifs-ens,
+    time            =    0000/0600/1200/1800,
+    type            =    es,
+    step            =    0/to/360/by/6,
+    levtype         =    sfc,
+    param           =   msl
+                        /2t
+                        /10si
+                        /100si

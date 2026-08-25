@@ -1,0 +1,23 @@
+# subset=X-iii-a
+
+disseminate,
+    expver          =    0001,
+    class           =    ai,
+    stream          =    enfo,
+    model           =    aifs-ens,
+    time            =    0000/0600/1200/1800,
+    type            =    ep,
+    step            =    12/24/36/48/60/72/84/96/108/120/132/144/156/168/180/192/204/216/228/240/252/264/276/288/300/312/324/336/348/360,
+    levtype         =    sfc,
+    param           =    2tl273
+
+disseminate,
+    expver          =    0001,
+    class           =    ai,
+    stream          =    enfo,
+    model           =    aifs-ens,
+    time            =    0000/0600/1200/1800,
+    type            =    ep,
+    step            =    12/24/36/48/60/72/84/96/108/120/132/144/156/168/180/192/204/216/228/240/252/264/276/288/300/312/324/336/348/360,
+    levtype         =    sfc,
+    param           =    10spg10/10spg15

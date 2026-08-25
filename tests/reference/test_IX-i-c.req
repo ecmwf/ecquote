@@ -1,0 +1,14 @@
+# subset=IX-i-c
+
+disseminate,
+    expver          =    0001,
+    class           =    ai,
+    stream          =    oper,
+    model           =    aifs-single,
+    time            =    0000/0600/1200/1800,
+    type            =    fc,
+    step            =    0/to/360/by/6,
+    levtype         =    sol,
+    levelist        =    1/2,
+    param           =    sot
+                        /vsw

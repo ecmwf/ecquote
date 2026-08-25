@@ -1,0 +1,49 @@
+# subset=IV-iii-b
+
+disseminate,
+class 	= 	od,
+stream 	= 	waef,
+expver = 0001,
+type 	= 	sot,
+time 	= 	00,
+levtype 	= 	sfc,
+step 	= 	0-24/24-48/48-72/72-96/96-120/120-144/144-168,
+domain 	= 	g,
+number 	= 	90,
+param 	= 	MAXSWHI
+
+disseminate,
+class 	= 	od,
+stream 	= 	waef,
+expver = 0001,
+type 	= 	sot,
+time 	= 	12,
+levtype 	= 	sfc,
+domain 	= 	g,
+step 	= 	12-36/36-60/60-84/84-108/108-132/132-156/156-180,
+number 	= 	90,
+param 	= 	MAXSWHI
+
+disseminate,
+class 	= 	od,
+stream 	= 	waef,
+expver = 0001,
+type 	= 	sot,
+time 	= 	06,
+levtype 	= 	sfc,
+step 	= 	18-42/42-66/66-90/90-114/114-138,
+domain 	= 	g,
+number 	= 	90,
+param 	= 	MAXSWHI
+
+disseminate,
+class 	= 	od,
+stream 	= 	waef,
+expver = 0001,
+type 	= 	sot,
+time 	= 	18,
+levtype 	= 	sfc,
+domain 	= 	g,
+step 	= 	6-30/30-54/54-78/78-102/102-126,
+number 	= 	90,
+param 	= 	MAXSWHI

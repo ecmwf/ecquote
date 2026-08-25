@@ -1,0 +1,31 @@
+# subset=X-i-b
+
+disseminate,
+    expver          =    0001,
+    class           =    ai,
+    stream          =    enfo,
+    model           =    aifs-ens,
+    time            =    0000/0600/1200/1800,
+    type            =    pf,
+    step            =    0/to/360/by/6,
+    levtype         =    pl,
+    levelist        =    10/50/100/150/200/250/300/400/500/600/700/850/925/1000,
+    number 	        = 	 1/to/50,
+    param           =    t
+                        /u
+                        /v
+                        /w
+                        /z
+
+disseminate,
+    expver          =    0001,
+    class           =    ai,
+    stream          =    enfo,
+    model           =    aifs-ens,
+    time            =    0000/0600/1200/1800,
+    type            =    pf,
+    step            =    0/to/360/by/6,
+    levtype         =    pl,
+    levelist        =    50/100/150/200/250/300/400/500/600/700/850/925/1000,
+    number 	        = 	 1/to/50,
+    param           =    q
