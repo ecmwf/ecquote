@@ -1,23 +1,25 @@
-# subset=XVI-ii-b
+# subset=XV-i-b
 
 disseminate,
 class 		= 	ea,
 stream 		= 	enda,
 expver 		= 	0005,
-type 		= 	em,
-time 		= 	00/03/09/12/15/21,
+type 		= 	an,
+time 		= 	00/03/06/09/12/15/18/21,
 levtype 	= 	pl,
 levelist    =   1/2/3/5/7/10/20/30/50/70/100/125/150/175/200/225/250/300/350/400/450/500/550/600/650/700/750/775/800/825/850/875/900/925/950/975/1000,
 step 		= 	0,
-param 		= 	cc/ciwc/clwc/crwc/cswc/d/o3/pv/q/r/t/u/v/vo/w/z
+param 		= 	cc/ciwc/clwc/crwc/cswc/d/o3/pv/q/r/t/vo/w/z,
+number      =   0/1/2/3/4/5/6/7/8/9
 
 disseminate,
 class 		= 	ea,
 stream 		= 	enda,
 expver 		= 	0005,
-type 		= 	em,
+type 		= 	fc,
 time 		= 	06/18,
 levtype 	= 	pl,
 levelist    =   1/2/3/5/7/10/20/30/50/70/100/125/150/175/200/225/250/300/350/400/450/500/550/600/650/700/750/775/800/825/850/875/900/925/950/975/1000,
-step 		= 	0/3/6/9/12/15/18,
-param 		=   cc/ciwc/clwc/crwc/cswc/d/o3/pv/q/r/t/u/v/vo/w/z
+step 		= 	0/1/2/3/4/5/6/7/8/9/12/15/18,
+param 		= 	cc/ciwc/clwc/crwc/cswc/d/o3/pv/q/r/t/vo/w/z,
+number      =   0/1/2/3/4/5/6/7/8/9

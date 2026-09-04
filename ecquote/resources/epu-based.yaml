@@ -434,39 +434,39 @@ XV-i-a:
   E: 1
   D: 0
   M: 1
+XV-i-b:
+  E: 1
+  D: 0
+  M: 1
+XV-i-c:
+  E: 1
+  D: 0
+  M: 1
+XV-ii-a:
+  E: 1
+  D: 0
+  M: 1
+XV-ii-b:
+  E: 1
+  D: 0
+  M: 1
+XV-ii-c:
+  E: 1
+  D: 0
+  M: 1
+XV-iii-a:
+  E: 1
+  D: 0
+  M: 1
+XV-iii-b:
+  E: 1
+  D: 0
+  M: 1
+XV-iii-c:
+  E: 1
+  D: 0
+  M: 1
 XVI-i-a:
-  E: 1
-  D: 0
-  M: 1
-XVI-i-b:
-  E: 1
-  D: 0
-  M: 1
-XVI-i-c:
-  E: 1
-  D: 0
-  M: 1
-XVI-ii-a:
-  E: 1
-  D: 0
-  M: 1
-XVI-ii-b:
-  E: 1
-  D: 0
-  M: 1
-XVI-ii-c:
-  E: 1
-  D: 0
-  M: 1
-XVI-iii-a:
-  E: 1
-  D: 0
-  M: 1
-XVI-iii-b:
-  E: 1
-  D: 0
-  M: 1
-XVI-iii-c:
   E: 1
   D: 0
   M: 1
@@ -474,11 +474,11 @@ XVII-i-a:
   E: 1
   D: 0
   M: 1
-XVII-ii:
+XVII-ii-a:
   E: 1
   D: 0
   M: 1
-XVII-iii:
+XVII-iii-a:
   E: 1
   D: 0
   M: 1

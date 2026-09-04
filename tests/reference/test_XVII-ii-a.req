@@ -1,10 +1,10 @@
-# subset=XVII-iii
+# subset=XVII-ii-a
 
 disseminate,
 class 		= 	ea,
 stream 		= 	ewda,
 expver 		= 	0005,
-type 		= 	es,
+type 		= 	em,
 time 		= 	00/03/09/12/15/21,
 levtype 	= 	sfc,
 step 		= 	0,
@@ -17,7 +17,7 @@ disseminate,
 class 		= 	ea,
 stream 		= 	ewda,
 expver 		= 	0005,
-type 		= 	es,
+type 		= 	em,
 time 		= 	06/18,
 levtype 	= 	sfc,
 step 		= 	0/3/6/9/12/15/18,
