@@ -1,0 +1,47 @@
+# subset=XIV-i-c
+
+disseminate,
+class 		= 	ea,
+stream 		= 	oper,
+expver 		= 	0005,
+type 		= 	an,
+time 		= 	00/01/02/03/04/05/06/07/08/09/10/11/12/13/14/15/16/17/18/19/20/21/22/23,
+levtype 	= 	ml,
+levelist    =   1/to/137,
+step 		= 	0,
+param 		= 	cc/ciwc/clwc/crwc/cswc/d/etadot/o3/q/t/vo/w/u/v
+
+disseminate,
+class 		= 	ea,
+stream 		= 	oper,
+expver 		= 	0005,
+type 		= 	an,
+time 		= 	00/01/02/03/04/05/06/07/08/09/10/11/12/13/14/15/16/17/18/19/20/21/22/23,
+levtype 	= 	ml,
+levelist    =   1,
+step 		= 	0,
+param 		= 	lnsp/z
+
+disseminate,
+class 		= 	ea,
+stream 		= 	oper,
+expver 		= 	0005,
+type 		= 	fc,
+time 		= 	06/18,
+levtype 	= 	ml,
+levelist    =   1/to/137,
+step 		= 	0/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18,
+param 		= 	avg_ddr/avg_dmf/avg_qtpm/avg_tdch/avg_tpf/avg_ttlwr/avg_ttlwrcs/
+avg_ttpm/avg_ttswr/avg_ttswrcs/avg_udr/avg_umf/avg_utpm/avg_vtpm/cc/ciwc/clwc/
+crwc/cswc/d/etadot/o3/q/t/vo/w/u/v
+
+disseminate,
+class 		= 	ea,
+stream 		= 	oper,
+expver 		= 	0005,
+type 		= 	fc,
+time 		= 	06/18,
+levtype 	= 	ml,
+levelist    =   1,
+step 		= 	0/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18,
+param 		= 	lnsp/z

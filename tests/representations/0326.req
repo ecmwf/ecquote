@@ -1,0 +1,8 @@
+class=ea,
+stream=ewda,
+expver=0005,
+type=em,
+time=06/18,
+levtype=sfc,
+step=0/3/6/9/12/15/18,
+param=bfi/cdww/dwi/dwps/dwww/hmax/mdts/mdww/mp1/mp2/mpts/mpww/msqs/mwd/mwd1/mwd2/mwd3/mwp/mwp1/mwp2/mwp3/p1ps/p1ww/p2ps/p2ww/phiaw/phioc/pp1d/rhoao/shts/shww/swh/swh1/swh2/swh3/tauoc/tmax/ust/vst/wdw/wind/wmb/wsk/wsp/wss/wstar

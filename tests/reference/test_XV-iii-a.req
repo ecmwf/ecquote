@@ -1,0 +1,45 @@
+# subset=XV-iii-a
+
+disseminate,
+class 		= 	ea,
+stream 		= 	enda,
+expver 		= 	0005,
+type 		= 	es,
+time 		= 	00/03/09/12/15/21,
+levtype 	= 	sfc,
+step 		= 	0,
+param 		= 	alnid/alnip/aluvd/aluvp/asn/blh/cape/chnk/ci/cl/
+dl/fal/flsr/fsr/hcc/ie/iews/inss/ishf/istl1/istl2/istl3/istl4/lai_hv/
+lai_lv/lblt/lcc/licd/lict/lmld/lmlt/lshf/lsm/ltlt/mcc/msl/rsn/sd/skt/
+sp/src/sst/stl1/stl2/stl3/stl4/swvl1/swvl2/swvl3/swvl4/tcc/tsn/u10n/
+v10n/z/2d/2t/10u/10v/100u/100v
+
+disseminate,
+class 		= 	ea,
+stream 		= 	enda,
+expver 		= 	0005,
+type 		= 	es,
+time 		= 	06/18,
+levtype 	= 	sfc,
+step 		= 	3/6/9/12/15/18,
+param 		= 	avg_cpr/avg_csfr/avg_esrwe/avg_ibld/avg_ie/avg_iegwss/avg_iews/avg_igwd/avg_ilspf/
+avg_ingwss/avg_inss/avg_ishf/avg_lsprate/avg_lssfr/avg_pevr/avg_rorwe/avg_sdirswrf/avg_sdirswrfcs/
+avg_sdlwrf/avg_sdlwrfcs/avg_sdswrf/avg_sdswrfcs/avg_sduvrf/avg_slhtf/avg_smr/avg_snlwrf/avg_snlwrfcs/
+avg_snswrf/avg_snswrfcs/avg_ssurfror/avg_surfror/avg_tdswrf/avg_tnlwrf/avg_tnlwrfcs/avg_tnswrf/
+avg_tnswrfcs/avg_tprate/avg_tsrwe/avg_vimdf/bld/cbh/cdir/cin/cp/crr/csf/csfr/dctb/deg0l/dndza/dndzn/
+e/es/ewss/fdir/gwd/i10fg/ilspf/kx/lgws/lsf/lsp/lspf/lsrr/lssfr/mgws/mn2t/mntpr/mx2t/mxtpr/nsss/pev/
+ptype/ro/sf/slhf/smlt/sro/sshf/ssr/ssrc/ssrd/ssrdc/ssro/str/strc/strd/strdc/tisr/totalx/tp/tplb/tplt/
+tsr/tsrc/ttr/ttrc/uvb/vimd/zust/10fg
+
+disseminate,
+class 		= 	ea,
+stream 		= 	enda,
+expver 		= 	0005,
+type 		= 	es,
+time 		= 	06/18,
+levtype 	= 	sfc,
+step 		= 	0/3/6/9/12/15/18,
+param 		= 	alnid/alnip/aluvd/aluvp/asn/blh/cape/chnk/ci/cl/dl/fal/
+flsr/fsr/hcc/ie/iews/inss/ishf/istl1/istl2/istl3/istl4/lai_hv/lai_lv/lblt/
+lcc/licd/lict/lmld/lmlt/lshf/lsm/ltlt/mcc/msl/rsn/sd/skt/sp/src/sst/stl1/
+stl2/stl3/stl4/swvl1/swvl2/swvl3/swvl4/tcc/tsn/u10n/v10n/z/2d/2t/10u/10v/100u/100v

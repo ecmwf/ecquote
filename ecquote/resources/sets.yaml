@@ -586,7 +586,7 @@ III-v-a:
     levtype: sfc
     step:
     - 0-24
-    - 6-30/
+    - 6-30
     - 12-36
     - 18-42
     - 24-48
@@ -675,7 +675,7 @@ III-v-c:
     levtype: sfc
     step:
     - 0-24
-    - 6-30/
+    - 6-30
     - 12-36
     - 18-42
     - 24-48
@@ -2223,6 +2223,182 @@ XIII-iii-b:
     - 240-360
   set: XIII
   subset: XIII-iii
+XIV-i-a:
+  description: ERA5T Single level
+  frequency: 365
+  mars:
+    class: ea
+    levtype: sfc
+    stream: oper
+    type:
+    - an
+    - fc
+  set: XIV
+  subset: XIV-i
+XIV-i-b:
+  description: ERA5T Pressure levels
+  frequency: 365
+  mars:
+    class: ea
+    levtype: pl
+    stream: oper
+    type:
+    - an
+    - fc
+  set: XIV
+  subset: XIV-i
+XIV-i-c:
+  description: ERA5T Model levels
+  frequency: 365
+  mars:
+    class: ea
+    levtype: ml
+    stream: oper
+    type:
+    - an
+    - fc
+  set: XIV
+  subset: XIV-i
+XV-i-a:
+  description: ERA5T Ensemble Data Assimilation - Single level
+  frequency: 365
+  mars:
+    class: ea
+    levtype: sfc
+    stream: enda
+    type:
+    - an
+    - fc
+  set: XV
+  subset: XV-i
+XV-i-b:
+  description: ERA5T Ensemble Data Assimilation - Pressure levels
+  frequency: 365
+  mars:
+    class: ea
+    levtype: pl
+    stream: enda
+    type:
+    - an
+    - fc
+  set: XV
+  subset: XV-i
+XV-i-c:
+  description: ERA5T Ensemble Data Assimilation - Model levels
+  frequency: 365
+  mars:
+    class: ea
+    levtype: ml
+    stream: enda
+    type:
+    - an
+    - fc
+  set: XV
+  subset: XV-i
+XV-ii-a:
+  description: ERA5T Ensemble Data Assimilation mean - Single level
+  frequency: 365
+  mars:
+    class: ea
+    levtype: sfc
+    stream: enda
+    type: em
+  set: XV
+  subset: XV-ii
+XV-ii-b:
+  description: ERA5T Ensemble Data Assimilation mean - Pressure levels
+  frequency: 365
+  mars:
+    class: ea
+    levtype: pl
+    stream: enda
+    type: em
+  set: XV
+  subset: XV-ii
+XV-ii-c:
+  description: ERA5T Ensemble Data Assimilation mean - Model levels
+  frequency: 365
+  mars:
+    class: ea
+    levtype: ml
+    stream: enda
+    type: em
+  set: XV
+  subset: XV-ii
+XV-iii-a:
+  description: ERA5T Ensemble Data Assimilation standard deviation - Single level
+  frequency: 365
+  mars:
+    class: ea
+    levtype: sfc
+    stream: enda
+    type: es
+  set: XV
+  subset: XV-iii
+XV-iii-b:
+  description: ERA5T Ensemble Data Assimilation standard deviation - Pressure levels
+  frequency: 365
+  mars:
+    class: ea
+    levtype: pl
+    stream: enda
+    type: es
+  set: XV
+  subset: XV-iii
+XV-iii-c:
+  description: ERA5T Ensemble Data Assimilation standard deviation - Model levels
+  frequency: 365
+  mars:
+    class: ea
+    levtype: ml
+    stream: enda
+    type: es
+  set: XV
+  subset: XV-iii
+XVI-i-a:
+  description: ERA5T Wave model
+  frequency: 365
+  mars:
+    class: ea
+    levtype: sfc
+    stream: wave
+    type:
+    - an
+    - fc
+  set: XVI
+  subset: XVI-i
+XVII-i-a:
+  description: ERA5T Wave Ensemble Data Assimilation
+  frequency: 365
+  mars:
+    class: ea
+    levtype: sfc
+    stream: ewda
+    type:
+    - an
+    - fc
+  set: XVII
+  subset: XVII-i
+XVII-ii-a:
+  description: ERA5T Wave Ensemble Data Assimilation mean
+  frequency: 365
+  mars:
+    class: ea
+    levtype: sfc
+    stream: ewda
+    type: em
+  set: XVII
+  subset: XVII-ii
+XVII-iii-a:
+  description: ERA5T Wave Ensemble Data Assimilation standard deviation
+  frequency: 365
+  mars:
+    class: ea
+    levtype: sfc
+    stream: ewda
+    type: es
+  set: XVII
+  subset: XVII-iii
 XX-x-a:
   description: Free set with VI-i-a
   free_with: VI-i-a
