@@ -1,0 +1,9 @@
+class=ea,
+stream=enda,
+expver=0005,
+type=an,
+time=00/03/06/09/12/15/18/21,
+levtype=sfc,
+step=0,
+param=alnid/alnip/aluvd/aluvp/asn/blh/cape/cdir/chnk/ci/cl/dl/fal/fdir/flsr/fsr/hcc/ie/iews/inss/ishf/istl1/istl2/istl3/istl4/lai_hv/lai_lv/lblt/lcc/licd/lict/lmld/lmlt/lshf/lsm/ltlt/mcc/msl/rsn/sd/skt/sp/src/sst/stl1/stl2/stl3/stl4/swvl1/swvl2/swvl3/swvl4/tcc/tciw/tclw/tco3/tcrw/tcsw/tcw/tcwv/tsn/u10n/v10n/viec/vigd/vige/vign/viiwd/viiwe/viiwn/vike/viked/vikee/viken/vilwd/vilwe/vilwn/vima/vimad/vimae/viman/vimdf/viozd/vioze/viozn/vipie/vipile/vit/vited/vitee/viten/vithe/vithed/vithee/vithen/vitoe/viwve/viwvn/z/2d/2t/10u/10v/100u/100v,
+number=0/1/2/3/4/5/6/7/8/9

@@ -1,0 +1,9 @@
+class=ea,
+stream=oper,
+expver=0005,
+type=fc,
+time=06/18,
+levtype=ml,
+levelist=1/to/137,
+step=0/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18,
+param=avg_ddr/avg_dmf/avg_qtpm/avg_tdch/avg_tpf/avg_ttlwr/avg_ttlwrcs/avg_ttpm/avg_ttswr/avg_ttswrcs/avg_udr/avg_umf/avg_utpm/avg_vtpm/cc/ciwc/clwc/crwc/cswc/d/etadot/o3/q/t/vo/w/u/v

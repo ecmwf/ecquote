@@ -1,0 +1,8 @@
+class=ea,
+stream=wave,
+expver=0005,
+type=fc,
+time=06/18,
+levtype=sfc,
+step=0/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18,
+param=bfi/cdww/dwi/dwps/dwww/hmax/mdts/mp1/mp2/mpts/msqs/mwd/mwd1/mwd2/mwd3/mwp/mwp1/mwp2/mwp3/p1ps/p1ww/p2ps/p2ww/phiaw/phioc/pp1d/rhoao/shts/swh1/swh2/swh3/tauoc/ust/vst/wdw/wind/wmb/wsk/wsp/wss/wstar/mdww/mpww/shww/swh/tmax

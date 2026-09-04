@@ -1,0 +1,8 @@
+class=ea,
+stream=oper,
+expver=0005,
+type=fc,
+time=06/18,
+levtype=sfc,
+step=0/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18,
+param=alnid/alnip/aluvd/aluvp/asn/bld/blh/cape/chnk/ci/cl/cp/csf/e/es/ewss/fal/flsr/fsr/gwd/hcc/ie/iews/inss/ishf/istl1/istl2/istl3/istl4/lai_hv/lai_lv/lcc/lgws/lsf/lsm/lsp/lspf/mcc/mgws/mn2t/msl/mx2t/nsss/ro/rsn/sd/sf/skt/slhf/smlt/sp/src/sro/sshf/ssr/ssrc/ssrd/ssro/sst/stl1/stl2/stl3/stl4/str/strc/strd/swvl1/swvl2/swvl3/swvl4/tcc/tciw/tclw/tco3/tcw/tcwv/tisr/tp/tsn/tsr/tsrc/ttr/ttrc/uvb/viec/vige/vign/viiwd/vike/vikee/viken/vilwd/vima/vimad/vimae/viman/vimd/vioze/viozn/vipie/vipile/vit/vitee/viten/vithe/vithee/vithen/vitoe/viwve/viwvn/z/2d/2t/10fg/10u/10v/avg_cpr/avg_csfr/avg_esrwe/avg_ibld/avg_ie/avg_iegwss/avg_iews/avg_igwd/avg_ilspf/avg_ingwss/avg_inss/avg_ishf/avg_lsprate/avg_lssfr/avg_pevr/avg_rorwe/avg_sdirswrf/avg_sdirswrfcs/avg_sdlwrf/avg_sdlwrfcs/avg_sdswrf/avg_sdswrfcs/avg_sduvrf/avg_slhtf/avg_smr/avg_snlwrf/avg_snlwrfcs/avg_snswrf/avg_snswrfcs/avg_ssurfror/avg_surfror/avg_tdswrf/avg_tnlwrf/avg_tnlwrfcs/avg_tnswrf/avg_tnswrfcs/avg_tprate/avg_tsrwe/avg_vimdf/cbh/cdir/cin/crr/csfr/dctb/deg0l/dl/dndza/dndzn/fdir/i10fg/ilspf/kx/lblt/licd/lict/lmld/lmlt/lshf/lsrr/lssfr/ltlt/mntpr/mxtpr/pev/ptype/ssrdc/strdc/tcrw/tcslw/tcsw/totalx/tplb/tplt/u10n/v10n/vigd/viiwe/viiwn/viked/vilwe/vilwn/vimdf/viozd/vited/vithed/zust/100u/100v
