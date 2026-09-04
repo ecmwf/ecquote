@@ -1340,7 +1340,6 @@ VI-iii-a:
     type:
     - fcmean
     - fcmax
-    - fcmin
     param:
     - tcc
     - stl1
@@ -1388,7 +1387,6 @@ VI-iii-a:
     type:
     - fcmean
     - fcmax
-    - fcmin
   set: VI
   subset: VI-iii
 VI-iii-b:

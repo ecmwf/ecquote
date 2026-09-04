@@ -188,10 +188,7 @@
     type: pf
   repres:
     gaussian: O1280
-    resol: 1279
-    type:
-    - reduced_gg
-    - sh
+    type: reduced_gg
 - mars:
     class: od
     levtype: pl
@@ -199,10 +196,7 @@
     type: cf
   repres:
     gaussian: O1280
-    resol: 1279
-    type:
-    - reduced_gg
-    - sh
+    type: reduced_gg
 - mars:
     class: od
     levtype: ml
@@ -591,7 +585,6 @@
     type: reduced_ll
 - mars:
     class: od
-    dataset: VI-i-a
     levtype: sfc
     stream: eefo
     type: taem
@@ -600,7 +593,6 @@
     type: reduced_gg
 - mars:
     class: od
-    dataset: VI-i-b
     levtype: pl
     stream: eefo
     type: taem
@@ -610,24 +602,6 @@
     type:
     - reduced_gg
     - sh
-- mars:
-    class: od
-    dataset: VI-ii-a
-    levtype: sfc
-    stream: eefo
-    type: taem
-  repres:
-    gaussian: O320
-    type: reduced_gg
-- mars:
-    class: od
-    dataset: VI-ii-b
-    levtype: pl
-    stream: eefo
-    type: taem
-  repres:
-    resol: 319
-    type: sh
 - mars:
     class: od
     levtype: sfc
@@ -641,14 +615,6 @@
     levtype: sfc
     stream: eefo
     type: fcmax
-  repres:
-    gaussian: O320
-    type: reduced_gg
-- mars:
-    class: od
-    levtype: sfc
-    stream: eefo
-    type: fcmin
   repres:
     gaussian: O320
     type: reduced_gg
@@ -744,8 +710,8 @@
     stream: eefh
     type: pf
   repres:
-    resol: 319
-    type: sh
+    gaussian: O320
+    type: reduced_gg
 - mars:
     class: od
     levtype: pv
@@ -763,8 +729,8 @@
     stream: eefh
     type: cf
   repres:
-    resol: 319
-    type: sh
+    gaussian: O320
+    type: reduced_gg
 - mars:
     class: od
     levtype: ml
@@ -785,16 +751,6 @@
     type: reduced_gg
 - mars:
     class: od
-    dataset: VI-vi-a
-    levtype: sfc
-    stream: eefo
-    type: ep
-  repres:
-    gaussian: O320
-    type: reduced_gg
-- mars:
-    class: od
-    dataset: VI-vi-b
     levtype: sfc
     stream: eefo
     type: ep
@@ -1331,10 +1287,7 @@
     type: fcmean
   repres:
     gaussian: O320
-    resol: 319
-    type:
-    - reduced_gg
-    - sh
+    type: reduced_gg
 - mars:
     class: od
     levtype: sfc
@@ -1358,10 +1311,7 @@
     type: cf
   repres:
     gaussian: O320
-    resol: 319
-    type:
-    - reduced_gg
-    - sh
+    type: reduced_gg
 - mars:
     class: od
     levtype: pl
@@ -1369,10 +1319,7 @@
     type: pf
   repres:
     gaussian: O320
-    resol: 319
-    type:
-    - reduced_gg
-    - sh
+    type: reduced_gg
 - mars:
     class: od
     levtype: sfc

@@ -786,7 +786,6 @@ avg_mlotst030: 263114
 avg_mlotst125: 263115
 avg_mlott02: 263116
 avg_mlott05: 263117
-avg_mucape: 235117
 avg_pet24: 260438
 avg_pevr: 235070
 avg_qtpm: 235006
@@ -1013,7 +1012,6 @@ cdif: 228243
 cdir: 228022
 cdirvar: 230022
 cdlyr: 260110
-cdrfl: 260512
 cduvb: 260341
 cdww: 140233
 ceil: 260109
@@ -1218,7 +1216,6 @@ ctzwa: 171222
 ctzwdiff: 200222
 ctzwgrd: 129222
 cuefi: 260112
-cur: 229001
 cvh: 28
 cvha: 171028
 cvhdiff: 200028
@@ -2079,7 +2076,6 @@ hcl: 217200
 hcnfire: 219219
 hco: 217201
 hcooh: 217043
-hct26: 262141
 hddf: 300220
 heatx: 260004
 hf: 217202
@@ -2160,7 +2156,6 @@ icediff: 200250
 iceg: 3097
 icegrd: 129250
 ices: 300094
-icesalt: 262023
 icet: 300092
 icetk: 3092
 iceu: 300095
@@ -2971,12 +2966,6 @@ ptsa_lt_1p5stdev: 133097
 ptsa_lt_1stdev: 133096
 ptsa_lt_2stdev: 133098
 ptype: 260015
-ptype_freq1h: 260320
-ptype_freq3h: 260321
-ptype_freq6h: 260339
-ptype_sev1h: 260318
-ptype_sev3h: 260319
-ptype_sev6h: 260338
 pv: 60
 pva: 171060
 pvdiff: 200060
@@ -3085,7 +3074,6 @@ ror: 217036
 rorea: 160205
 rosmrk: 260559
 rovar: 230205
-rowe: 231002
 rprate: 260058
 rr_c: 500139
 rr_f: 500138
@@ -3243,10 +3231,8 @@ sif757: 228108
 sif771: 228107
 sigmat: 151138
 sigrowth: 262007
-sihc: 262014
 simt: 300247
 sipd: 260417
-sipf: 262017
 sisnthick: 174097
 sist: 260649
 sitd: 260650
@@ -3254,7 +3240,6 @@ sitemptop: 174093
 sithick: 174098
 siue: 174112
 sivn: 174113
-sivol: 262008
 skt: 235
 skta: 171235
 sktd: 65
@@ -3303,7 +3288,6 @@ smr: 260475
 smref: 260207
 smups: 240022
 snfalb: 260162
-snhc: 262015
 snmr: 260021
 snoag: 260013
 snoc: 260011
@@ -3322,8 +3306,6 @@ snr: 149
 snra: 171149
 snrdiff: 200149
 snrgrd: 129149
-sntemp: 262011
-snvol: 262009
 so: 151130
 so2: 210122
 so2diff: 211122
@@ -3517,11 +3499,9 @@ stal1: 171139
 stal2: 171170
 stal3: 171183
 stal4: 171236
-stcmax: 140133
 stf: 228092
 stfbarot: 151147
 stheig: 262125
-sthmax: 140134
 stl1: 139
 stl1diff: 200139
 stl1grd: 129139
@@ -3577,8 +3557,6 @@ sundvar: 230189
 suns: 260119
 surge: 260491
 suvf: 300196
-sve: 262140
-svn: 262139
 swal1: 171140
 swal2: 171171
 swal3: 171184
@@ -4054,8 +4032,6 @@ td_2m: 500017
 td_2m_av: 500018
 td_2m_s: 500375
 tdcha: 162109
-tdcmax: 140131
-tdhmax: 140132
 tdiff: 200130
 tdiv_hum: 500109
 te-132: 500255
@@ -4652,7 +4628,6 @@ w_so_ice: 500168
 wa: 171135
 watr: 260181
 wbgt: 261014
-wbt: 261023
 wcconv: 260464
 wcf: 260005
 wcinc: 260462
@@ -4753,7 +4728,6 @@ zhmt: 300238
 zht: 151169
 zorl: 300083
 zos: 151145
-zosib: 262143
 zp: 131129
 zr-95: 500258
 zr-95d: 500259
