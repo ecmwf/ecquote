@@ -2399,6 +2399,19 @@ XVII-iii-a:
     type: es
   set: XVII
   subset: XVII-iii
+XVIII-i-a:
+  description: Greenhouse gases chemical species and meteorological parameters - Single level, Pressure level and Model levels
+  frequency: 365
+  mars:
+    class: gg
+    levtype: 
+    - sfc
+    - pl
+    - ml
+    stream: oper
+    type: fc
+  set: XVIII
+  subset: XVIII-i
 XX-x-a:
   description: Free set with VI-i-a
   free_with: VI-i-a

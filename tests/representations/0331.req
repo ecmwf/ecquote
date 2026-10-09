@@ -1,0 +1,10 @@
+class=gg,
+domain=g,
+expver=0001,
+levelist=1/to/137,
+levtype=ml,
+param=ch4/co/co2/cc/ciwc/clwc/crwc/cswc/q/t/u/v/w/d/vo/lnsp/z,
+step=0/to/120/by/3,
+stream=oper,
+time=0000/1200,
+type=fc
