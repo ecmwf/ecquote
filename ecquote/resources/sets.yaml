@@ -2400,7 +2400,7 @@ XVII-iii-a:
   set: XVII
   subset: XVII-iii
 XVIII-i-a:
-  description: Greenhouse gases chemical species and meteorological parameters - Single level, Pressure level and Model levels
+  description: Greenhouse gases chemical species - Single level, Pressure level and Model levels
   frequency: 365
   mars:
     class: gg
