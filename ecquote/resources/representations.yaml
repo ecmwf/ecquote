@@ -1254,6 +1254,37 @@
     reduced_ll: 1.0
     type: reduced_ll
 - mars:
+    class: gg
+    levtype: sfc
+    stream: oper
+    type: fc
+  repres:
+    gaussian: O1280
+    type: reduced_gg
+- mars:
+    class: gg
+    levtype: pl
+    stream: oper
+    type: fc
+  repres:
+    gaussian: O1280
+    resol: 1279
+    type:
+    - reduced_gg
+    - sh
+- mars:
+    class: gg
+    levtype: ml
+    stream: oper
+    type: fc
+  model_levels: 137
+  repres:
+    gaussian: O1280
+    resol: 1279
+    type:
+    - reduced_gg
+    - sh
+- mars:
     class: od
     levtype: sfc
     stream: eehs
@@ -1352,35 +1383,4 @@
   repres:
     gaussian: O1280
     type: reduced_gg
-- mars:
-    class: gg
-    levtype: sfc
-    stream: oper
-    type: fc
-  repres:
-    gaussian: O1280
-    type: reduced_gg
-- mars:
-    class: gg
-    levtype: pl
-    stream: oper
-    type: fc
-  repres:
-    gaussian: O1280
-    resol: 1279
-    type:
-    - reduced_gg
-    - sh
-- mars:
-    class: gg
-    levtype: ml
-    stream: oper
-    type: fc
-  model_levels: 137
-  repres:
-    gaussian: O1280
-    resol: 1279
-    type:
-    - reduced_gg
-    - sh
 
