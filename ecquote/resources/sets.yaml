@@ -2399,6 +2399,36 @@ XVII-iii-a:
     type: es
   set: XVII
   subset: XVII-iii
+XVIII-i-a:
+  description: CAMS Global Greenhouse Gas Forecasts - Single levels chemical
+  frequency: 365
+  mars:
+    class: gg
+    levtype: sfc
+    stream: oper
+    type: fc
+  set: XVIII
+  subset: XVIII-i
+XVIII-i-b:
+  description: CAMS Global Greenhouse Gas Forecasts - Pressure levels chemical
+  frequency: 365
+  mars:
+    class: gg
+    levtype: pl
+    stream: oper
+    type: fc
+  set: XVIII
+  subset: XVIII-i
+XVIII-i-c:
+  description: CAMS Global Greenhouse Gas Forecasts - Model levels chemical
+  frequency: 365
+  mars:
+    class: gg
+    levtype: ml
+    stream: oper
+    type: fc
+  set: XVIII
+  subset: XVIII-i
 XX-x-a:
   description: Free set with VI-i-a
   free_with: VI-i-a
